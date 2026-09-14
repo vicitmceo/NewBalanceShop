@@ -19,4 +19,6 @@
 | Scrum Master | Панчук Вадим |
 | Development Team | Панчук Вадим, Ноцколіні Рафаїл |
 
-Канбан-дошка та беклог — див. [BACKLOG.md](BACKLOG.md).
+Канбан-дошка та беклог (Jira Scrum board): https://newbalance-team1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
+
+Деталі беклогу дубльовано в [BACKLOG.md](BACKLOG.md).
