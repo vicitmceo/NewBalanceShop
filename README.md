@@ -8,6 +8,7 @@
 - [SRS.md](SRS.md) — Software Requirements Specification
 - [BACKLOG.md](BACKLOG.md) — Product Backlog і план спринтів
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — Clean Architecture, UML-діаграма класів
+- [docs/STRUCTURE.md](docs/STRUCTURE.md) — структура проєкту (бек/фронт/БД) за зразком викладача
 
 ## Стек
 
