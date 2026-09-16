@@ -1,5 +1,21 @@
 # Архітектура системи — New Balance Shop
 
+Проєктування виконано за планом підготовки до захисту: https://gist.github.com/sunmeat/fd6d78db7e5298d3c1ee6378f4880a4d — архітектура враховує вимоги [SRS.md](../SRS.md), нижче наведено структуру backend/frontend/БД (скріни) та UML-діаграму класів з обґрунтуванням.
+
+## 0. Скріни структури проєкту
+
+**Backend** (реалізовано):
+
+![Backend structure](architecture/structure-backend.png)
+
+**Frontend** (заплановано, наступна ітерація):
+
+![Frontend structure](architecture/structure-frontend.png)
+
+**База даних** (SQL Server, EF Core Migrations):
+
+![Database schema](architecture/structure-database.png)
+
 ## 1. Шари Clean Architecture
 
 - **Presentation** (`Presentation/Controllers/`, `Program.cs`) — HTTP-шар, ApiController повертає JSON.
