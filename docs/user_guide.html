@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Користувацька документація New Balance Shop">
-<title>New Balance Shop — Користувацька документація</title>
+<meta name="description" content="Посібник користувача New Balance Shop">
+<title>New Balance Shop — Посібник користувача</title>
 <style>
 :root {
   --bg: #f4f5f6;
@@ -165,21 +165,10 @@ li { margin: 6px 0; }
 .feature-list li { padding: 12px 16px; border-radius: 10px; background: var(--surface-soft); border: 1px solid var(--line); }
 .feature-list li::before { content: "✓"; margin-right: 9px; color: var(--accent); font-weight: 900; }
 
-code {
-  background: var(--surface-soft); border: 1px solid var(--line); border-radius: 6px;
-  padding: 1px 6px; font-size: 13px; font-family: "SFMono-Regular", Consolas, Menlo, monospace;
-}
-
 table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); }
 th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
 th { color: #52565d; background: var(--surface-soft); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
 tr:last-child td { border-bottom: 0; }
-
-.badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
-.badge.get { background: #e6f4ea; color: #1e7a34; }
-.badge.post { background: #e6eefc; color: #1a4fb4; }
-.badge.put { background: #fff2d9; color: #9a6400; }
-.badge.delete { background: #fde8e8; color: #b3261e; }
 
 .footer { margin-top: 28px; padding: 28px; text-align: center; color: var(--muted); font-size: 13px; }
 .footer strong { color: var(--text); }
@@ -221,128 +210,108 @@ tr:last-child td { border-bottom: 0; }
 <aside>
   <div class="brand">
     <div class="brand-mark">NB</div>
-    <div>New Balance Shop<small>User Guide</small></div>
+    <div>New Balance Shop<small>Посібник</small></div>
   </div>
 
   <nav>
     <h4>Початок</h4>
-    <a href="#intro">1. Вступ</a>
-    <a href="#start">2. Початок роботи</a>
-    <a href="#roles">3. Ролі користувачів</a>
+    <a href="#intro">1. Вітаємо</a>
+    <a href="#start">2. Як зайти в магазин</a>
+    <a href="#account">3. Особистий кабінет</a>
 
-    <h4>Робота з магазином</h4>
+    <h4>Покупки</h4>
     <a href="#catalog">4. Каталог товарів</a>
-    <a href="#product">5. Картка товару</a>
-    <a href="#cart">6. Кошик і замовлення</a>
-    <a href="#admin">7. Адміністрування каталогу</a>
+    <a href="#product">5. Сторінка товару</a>
+    <a href="#cart">6. Кошик і оформлення</a>
+    <a href="#orders">7. Мої замовлення</a>
 
     <h4>Довідково</h4>
-    <a href="#api">8. Довідник API</a>
-    <a href="#security">9. Безпека</a>
+    <a href="#faq">8. Часті запитання</a>
+    <a href="#security">9. Безпека покупок</a>
     <a href="#support">10. Підтримка</a>
-    <a href="#changes">11. Зміни документа</a>
+    <a href="#changes">11. Про документ</a>
   </nav>
 </aside>
 
 <main>
   <header class="hero">
-    <span class="eyebrow">Користувацька документація · попередня версія</span>
+    <span class="eyebrow">Посібник користувача · попередня версія</span>
     <h1>New Balance Shop</h1>
     <p>
-      Практичний посібник для покупців і адміністратора інтернет-магазину
-      спортивного одягу та взуття New Balance.
+      Простий посібник для покупців інтернет-магазину спортивного одягу
+      та взуття New Balance: як знайти потрібну річ, покласти в кошик
+      і оформити замовлення.
     </p>
     <div class="meta">
-      <span>Версія 0.1 (попередня)</span>
+      <span>Версія 0.1</span>
       <span>16 вересня 2026</span>
-      <span>Team 1</span>
-      <span>Курсовий командний проєкт</span>
+      <span>Для покупців</span>
     </div>
   </header>
 
   <div class="toc" aria-label="Швидка навігація">
-    <a href="#catalog"><strong>🧢 Каталог</strong><span>Перегляд товарів і категорій</span></a>
-    <a href="#product"><strong>👟 Товар</strong><span>Деталі, розмір, колір, ціна</span></a>
+    <a href="#catalog"><strong>🧢 Каталог</strong><span>Знайдіть свій розмір і колір</span></a>
+    <a href="#product"><strong>👟 Товар</strong><span>Опис, ціна, наявність</span></a>
     <a href="#cart"><strong>🛒 Кошик</strong><span>Оформлення замовлення</span></a>
-    <a href="#admin"><strong>🛠️ Адмін</strong><span>Керування каталогом</span></a>
-    <a href="#api"><strong>🔌 API</strong><span>Список ендпоінтів</span></a>
-    <a href="#security"><strong>🛡️ Безпека</strong><span>Поточний стан і плани</span></a>
+    <a href="#orders"><strong>📦 Замовлення</strong><span>Статус і історія покупок</span></a>
+    <a href="#faq"><strong>❓ Питання</strong><span>Відповіді на популярні питання</span></a>
+    <a href="#security"><strong>🛡️ Безпека</strong><span>Захист ваших даних</span></a>
   </div>
 
   <section id="intro">
     <div class="section-number">Розділ 01</div>
-    <h2>Вступ</h2>
-    <h3>Про цей документ</h3>
+    <h2>Вітаємо в New Balance Shop</h2>
     <p>
-      Це <strong>попередня версія</strong> користувацької документації для
-      <strong>New Balance Shop</strong> — курсового командного проєкту (Team 1),
-      побудована на основі
-      <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/SRS.md">SRS</a>
-      та <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/BACKLOG.md">беклогу</a>
-      проєкту. Документ описує як уже реалізований функціонал, так і те, що
-      заплановано на наступні спринти — це прямо позначено в тексті.
+      <strong>New Balance Shop</strong> — це інтернет-магазин, де можна
+      підібрати кросівки, спортивний одяг і аксесуари New Balance:
+      переглянути каталог, обрати потрібний розмір і колір, скласти
+      замовлення в кошик і оформити покупку.
     </p>
 
     <div class="grid">
-      <div class="card"><div class="icon">🧢</div><strong>Каталог</strong><span class="muted">Кросівки, одяг, аксесуари New Balance.</span></div>
-      <div class="card"><div class="icon">🛒</div><strong>Кошик і замовлення</strong><span class="muted">Модель готова, API — наступна ітерація.</span></div>
-      <div class="card"><div class="icon">🛠️</div><strong>Адмін-панель</strong><span class="muted">CRUD товарів через REST API.</span></div>
-      <div class="card"><div class="icon">🔐</div><strong>Безпека</strong><span class="muted">Реєстрація/вхід — заплановано.</span></div>
+      <div class="card"><div class="icon">👟</div><strong>Кросівки</strong><span class="muted">Класика й новинки New Balance.</span></div>
+      <div class="card"><div class="icon">👕</div><strong>Одяг</strong><span class="muted">Худі, футболки, спортивні костюми.</span></div>
+      <div class="card"><div class="icon">🧢</div><strong>Аксесуари</strong><span class="muted">Шапки, сумки, шкарпетки.</span></div>
+      <div class="card"><div class="icon">🚚</div><strong>Доставка</strong><span class="muted">Замовлення з доставкою по Україні.</span></div>
     </div>
 
-    <h3>Що вже реалізовано (Sprint 1)</h3>
-    <ul class="feature-list">
-      <li>Каталог товарів з категоріями, розміром, кольором, ціною, залишком</li>
-      <li>Повний CRUD товарів через REST API</li>
-      <li>Фільтрація товарів за категорією</li>
-      <li>Clean Architecture: Domain / Application / Infrastructure / Presentation</li>
-      <li>Repository pattern + EF Core + SQL Server</li>
-    </ul>
+    <div class="callout warning">
+      <strong>⚠️ Це рання версія магазину:</strong> деякі функції (реєстрація,
+      онлайн-оплата, оформлення замовлення) ще у розробці — про це ви
+      побачите позначку в відповідних розділах цього посібника.
+    </div>
   </section>
 
   <section id="start">
     <div class="section-number">Розділ 02</div>
-    <h2>Початок роботи</h2>
+    <h2>Як зайти в магазин</h2>
 
-    <h3>Як зараз працює застосунок</h3>
-    <p>
-      Окремого веб-інтерфейсу (frontend) ще немає — це заплановано на одну
-      з наступних ітерацій (React SPA, див. беклог). Наразі магазин доступний
-      як <strong>REST API</strong>, і взаємодіяти з ним можна через:
-    </p>
-
+    <h3>Підтримувані пристрої</h3>
     <div class="grid">
-      <div class="card"><strong>🧪 Swagger / Postman</strong><span class="muted">Ручні запити до ендпоінтів API.</span></div>
-      <div class="card"><strong>💻 curl / HTTP-клієнт</strong><span class="muted">Командний рядок або будь-який REST-клієнт.</span></div>
-      <div class="card"><strong>🗄️ SQL Server LocalDB</strong><span class="muted">База створюється автоматично при першому запуску.</span></div>
-      <div class="card"><strong>⚙️ .NET 9</strong><span class="muted">Потрібен встановлений SDK для запуску проєкту.</span></div>
+      <div class="card"><strong>🌐 Браузер</strong><span class="muted">Chrome, Safari, Firefox, Edge — останні версії.</span></div>
+      <div class="card"><strong>📱 Телефон і планшет</strong><span class="muted">Сторінки адаптуються під екран.</span></div>
+      <div class="card"><strong>💻 Комп'ютер</strong><span class="muted">Зручний перегляд великих фото товарів.</span></div>
+      <div class="card"><strong>🗣️ Мова</strong><span class="muted">Українська.</span></div>
     </div>
 
-    <h3>Запуск проєкту</h3>
-    <ol class="steps">
-      <li>Клонуйте репозиторій: <code>git clone https://github.com/vicitmceo/NewBalanceShop.git</code></li>
-      <li>Перевірте рядок підключення в <code>appsettings.json</code> (<code>ConnectionStrings:ShopDb</code>).</li>
-      <li>Виконайте <code>dotnet run</code> — база та тестові дані створяться автоматично.</li>
-      <li>Відкрийте <code>https://localhost:PORT/api/products</code>, щоб побачити каталог.</li>
-    </ol>
+    <div class="callout">
+      <strong>💡 На замітку:</strong> реєстрація не потрібна, щоб просто
+      переглядати каталог і ціни — зайти в магазин може будь-хто.
+    </div>
   </section>
 
-  <section id="roles">
+  <section id="account">
     <div class="section-number">Розділ 03</div>
-    <h2>Ролі користувачів</h2>
-    <p>Відповідно до SRS, у системі передбачені такі ролі:</p>
+    <h2>Особистий кабінет</h2>
+    <p>Магазином можна користуватися у два способи:</p>
     <ul>
-      <li><strong>Гість</strong> — перегляд каталогу, фільтрація, перегляд картки товару.</li>
-      <li><strong>Покупець</strong> — кошик, оформлення замовлення, історія замовлень
-        <em class="muted">(реєстрація/авторизація — у беклозі, ще не реалізовано)</em>.</li>
-      <li><strong>Адміністратор</strong> — CRUD товарів і категорій, перегляд замовлень
-        <em class="muted">(наразі доступ до CRUD не обмежений — авторизація в планах)</em>.</li>
+      <li><strong>Без реєстрації</strong> — перегляд каталогу, пошук потрібного товару, перегляд ціни й наявності.</li>
+      <li><strong>З особистим кабінетом</strong> — збереження кошика, історія замовлень, швидше повторне оформлення покупки.</li>
     </ul>
 
     <div class="callout warning">
-      <strong>⚠️ Поточний стан:</strong> у цій версії немає розмежування доступу
-      за ролями — усі ендпоінти відкриті. Розмежування зʼявиться разом із
-      реєстрацією/авторизацією (ASP.NET Core Identity) у наступному спринті.
+      <strong>⚠️ Скоро:</strong> реєстрація та вхід в особистий кабінет
+      готуються — наразі ця можливість ще не доступна покупцям.
     </div>
   </section>
 
@@ -350,36 +319,38 @@ tr:last-child td { border-bottom: 0; }
     <div class="section-number">Розділ 04</div>
     <h2>Каталог товарів</h2>
 
-    <h3>Перегляд усіх товарів</h3>
+    <h3>Перегляд товарів</h3>
     <p>
-      Запит <span class="badge get">GET</span> <code>/api/products</code> повертає
-      список усіх товарів у форматі JSON: назва, бренд, категорія, розмір,
-      колір, ціна, залишок на складі, зображення, опис.
+      На головній сторінці каталогу зібрані всі товари магазину: назва,
+      фото, ціна, розмір, колір і скільки одиниць є в наявності.
     </p>
 
-    <h3>Фільтрація за категорією</h3>
-    <p>
-      Додайте параметр <code>categoryId</code>, щоб отримати товари лише
-      однієї категорії, наприклад:
-      <code>GET /api/products?categoryId=1</code> — усі кросівки.
-    </p>
+    <h3>Пошук за категорією</h3>
+    <p>Товари розділені на три категорії — оберіть потрібну, щоб швидше знайти те, що шукаєте:</p>
 
     <div class="grid">
-      <div class="card"><strong>👟 Кросівки</strong><span class="muted">Категорія Id = 1</span></div>
-      <div class="card"><strong>👕 Одяг</strong><span class="muted">Категорія Id = 2</span></div>
-      <div class="card"><strong>🧢 Аксесуари</strong><span class="muted">Категорія Id = 3</span></div>
+      <div class="card"><strong>👟 Кросівки</strong><span class="muted">Усе взуття New Balance.</span></div>
+      <div class="card"><strong>👕 Одяг</strong><span class="muted">Спортивний одяг для щодня й тренувань.</span></div>
+      <div class="card"><strong>🧢 Аксесуари</strong><span class="muted">Дрібні речі й доповнення до образу.</span></div>
     </div>
   </section>
 
   <section id="product">
     <div class="section-number">Розділ 05</div>
-    <h2>Картка товару</h2>
-    <p>
-      Запит <span class="badge get">GET</span> <code>/api/products/{'{id}'}</code>
-      повертає детальну інформацію про один товар: назву, бренд, розмір,
-      колір, ціну, кількість на складі, посилання на зображення та опис.
-      Якщо товару з таким id не існує — API поверне код <code>404 Not Found</code>.
-    </p>
+    <h2>Сторінка товару</h2>
+    <p>Натиснувши на будь-який товар у каталозі, ви побачите його картку з деталями:</p>
+    <ul class="feature-list">
+      <li>Велике фото товару</li>
+      <li>Назва, бренд і опис</li>
+      <li>Розмір і колір</li>
+      <li>Ціна</li>
+      <li>Наявність на складі — чи можна замовити прямо зараз</li>
+    </ul>
+
+    <div class="callout">
+      <strong>💡 Порада:</strong> якщо товару немає в наявності, спробуйте
+      заглянути пізніше — асортимент оновлюється.
+    </div>
   </section>
 
   <section id="cart">
@@ -387,123 +358,86 @@ tr:last-child td { border-bottom: 0; }
     <h2>Кошик і оформлення замовлення</h2>
 
     <div class="callout warning">
-      <strong>⚠️ Заплановано, ще не реалізовано:</strong> модель кошика та
-      замовлення (<code>Order</code>, <code>OrderItem</code>) уже описана
-      на рівні Domain-шару, але публічного API для оформлення замовлення
-      поки немає. Це перший пункт наступного спринту (див. беклог).
+      <strong>⚠️ Ця функція готується:</strong> кошик і оформлення
+      замовлення онлайн скоро зʼявляться в магазині. Нижче — як це буде
+      працювати після запуску.
     </div>
 
-    <h3>Як це працюватиме (за планом)</h3>
+    <h3>Як оформити покупку (після запуску)</h3>
     <ol class="steps">
-      <li>Покупець додає товари в кошик.</li>
-      <li>Покупець підтверджує кошик і оформлює замовлення.</li>
-      <li>Система створює <code>Order</code> зі списком <code>OrderItem</code> і розраховує <code>TotalPrice</code>.</li>
-      <li>Замовлення отримує статус <code>New</code> і зʼявляється в історії покупця.</li>
+      <li>Оберіть потрібний товар, розмір і колір.</li>
+      <li>Натисніть «Додати в кошик».</li>
+      <li>Перевірте вміст кошика — можна змінити кількість або прибрати зайве.</li>
+      <li>Натисніть «Оформити замовлення» та вкажіть адресу доставки.</li>
+      <li>Отримайте підтвердження замовлення.</li>
     </ol>
-
-    <h3>Статуси замовлення</h3>
-    <p>Передбачені статуси: <code>New</code> → <code>Confirmed</code> → <code>Shipped</code> → <code>Delivered</code>, або <code>Cancelled</code>.</p>
   </section>
 
-  <section id="admin">
+  <section id="orders">
     <div class="section-number">Розділ 07</div>
-    <h2>Адміністрування каталогу</h2>
-
-    <h3>Додавання товару</h3>
+    <h2>Мої замовлення</h2>
     <p>
-      <span class="badge post">POST</span> <code>/api/products</code> з тілом
-      запиту у форматі JSON (назва, бренд, категорія, розмір, колір, ціна,
-      залишок, зображення, опис). У відповідь повертається створений товар
-      з присвоєним <code>id</code>.
+      Після оформлення замовлення ви зможете відстежувати його статус:
     </p>
 
-    <h3>Оновлення товару</h3>
-    <p>
-      <span class="badge put">PUT</span> <code>/api/products/{'{id}'}</code> —
-      повністю оновлює дані товару. Якщо товару не існує — <code>404</code>.
-    </p>
+    <div class="grid">
+      <div class="card"><strong>🆕 Нове</strong><span class="muted">Замовлення прийнято.</span></div>
+      <div class="card"><strong>✅ Підтверджено</strong><span class="muted">Магазин почав збирати замовлення.</span></div>
+      <div class="card"><strong>🚚 Відправлено</strong><span class="muted">Замовлення в дорозі.</span></div>
+      <div class="card"><strong>📦 Доставлено</strong><span class="muted">Замовлення отримано.</span></div>
+    </div>
 
-    <h3>Видалення товару</h3>
-    <p>
-      <span class="badge delete">DELETE</span> <code>/api/products/{'{id}'}</code> —
-      видаляє товар з каталогу.
-    </p>
-
-    <div class="callout">
-      <strong>💡 Порада:</strong> усі дані валідуються на рівні моделі
-      (обов'язкові поля, довжина рядків, діапазон ціни та залишку) — при
-      невалідних даних API поверне <code>400 Bad Request</code> з описом помилок.
+    <div class="callout warning">
+      <strong>⚠️ Скоро:</strong> розділ «Мої замовлення» стане доступний
+      разом із запуском кошика й особистого кабінету.
     </div>
   </section>
 
-  <section id="api">
+  <section id="faq">
     <div class="section-number">Розділ 08</div>
-    <h2>Довідник API</h2>
-    <table>
-      <thead>
-        <tr><th>Метод</th><th>URL</th><th>Опис</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><span class="badge get">GET</span></td><td><code>/api/products</code></td><td>Список усіх товарів (опційно <code>?categoryId=</code>)</td></tr>
-        <tr><td><span class="badge get">GET</span></td><td><code>/api/products/{'{id}'}</code></td><td>Один товар за id</td></tr>
-        <tr><td><span class="badge post">POST</span></td><td><code>/api/products</code></td><td>Створити товар</td></tr>
-        <tr><td><span class="badge put">PUT</span></td><td><code>/api/products/{'{id}'}</code></td><td>Оновити товар</td></tr>
-        <tr><td><span class="badge delete">DELETE</span></td><td><code>/api/products/{'{id}'}</code></td><td>Видалити товар</td></tr>
-      </tbody>
-    </table>
+    <h2>Часті запитання</h2>
+
+    <h3>Чи потрібна реєстрація, щоб дивитися каталог?</h3>
+    <p>Ні, переглядати товари та ціни можна без реєстрації.</p>
+
+    <h3>Коли зʼявиться можливість купити онлайн?</h3>
+    <p>Кошик і оформлення замовлення — у розробці, слідкуйте за оновленнями магазину.</p>
+
+    <h3>Чи можна повернути товар?</h3>
+    <p>Умови повернення та обміну буде опубліковано разом із запуском онлайн-оплати.</p>
   </section>
 
   <section id="security">
     <div class="section-number">Розділ 09</div>
-    <h2>Безпека</h2>
-
-    <h3>Поточний стан</h3>
-    <p>
-      На етапі MVP автентифікація й авторизація не реалізовані — усі
-      ендпоінти доступні без обмежень. Захист від SQL Injection забезпечено
-      параметризованими запитами Entity Framework Core, вхідні дані
-      валідуються через Data Annotations.
-    </p>
-
-    <h3>Заплановано</h3>
+    <h2>Безпека покупок</h2>
     <ul class="feature-list">
-      <li>Реєстрація та авторизація покупців (ASP.NET Core Identity)</li>
-      <li>Розмежування доступу: гість / покупець / адміністратор</li>
-      <li>CI: перевірка збірки та тестів через GitHub Actions</li>
+      <li>Ваші дані не передаються стороннім сайтам</li>
+      <li>Оплата (коли зʼявиться) відбуватиметься через захищені сервіси</li>
+      <li>Особистий кабінет захищатиметься паролем</li>
     </ul>
 
     <div class="callout warning">
-      <strong>⚠️ Не для продакшену:</strong> у поточному вигляді застосунок
-      призначений виключно для навчальних/демонстраційних цілей курсового проєкту.
+      <strong>⚠️ Важливо:</strong> це рання, тестова версія магазину —
+      вона створена для навчального проєкту й поки не призначена для
+      реальних покупок і платежів.
     </div>
   </section>
 
   <section id="support">
     <div class="section-number">Розділ 10</div>
     <h2>Підтримка</h2>
-    <p>З питаннями щодо проєкту звертайтеся до команди Team 1:</p>
-    <ul>
-      <li>Репозиторій: <a href="https://github.com/vicitmceo/NewBalanceShop">github.com/vicitmceo/NewBalanceShop</a></li>
-      <li>Канбан-дошка (Jira): <a href="https://newbalance-team1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">SCRUM board</a></li>
-      <li>Team Lead: Панчук Вадим Владиславович</li>
-      <li>Розробник: Ноцколіні Рафаїл Львович</li>
-    </ul>
+    <p>Якщо у вас виникли питання щодо магазину чи замовлення, скористайтеся розділом «Допомога» на сайті або напишіть нам у службу підтримки New Balance Shop.</p>
   </section>
 
   <section id="changes">
     <div class="section-number">Розділ 11</div>
-    <h2>Зміни в документі</h2>
-    <table>
-      <thead><tr><th>Версія</th><th>Дата</th><th>Опис</th></tr></thead>
-      <tbody>
-        <tr><td><strong>0.1</strong></td><td>16.09.2026</td><td>Попередня версія User Guide на основі SRS та беклогу Sprint 1.</td></tr>
-      </tbody>
-    </table>
+    <h2>Про цей посібник</h2>
+    <p>Це перша версія посібника покупця New Balance Shop. Ми будемо оновлювати його разом із появою нових можливостей магазину — оформлення замовлень, особистого кабінету та онлайн-оплати.</p>
   </section>
 
   <footer class="footer">
     <strong>New Balance Shop</strong><br>
-    Дякуємо за інтерес до проєкту. Гарного шопінгу! 🏃
+    Дякуємо, що завітали. Гарного шопінгу! 🏃
   </footer>
 </main>
 </div>
