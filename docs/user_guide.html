@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Користувацька документація New Balance Shop">
+<title>New Balance Shop — Користувацька документація</title>
+<style>
+:root {
+  --bg: #f4f5f6;
+  --surface: #ffffff;
+  --surface-soft: #f7f7f8;
+  --text: #161719;
+  --muted: #666a70;
+  --line: #e4e5e7;
+  --accent: #d61f26;
+  --accent-dark: #a3181d;
+  --accent-soft: #fdecec;
+  --warning: #fff4d6;
+  --warning-text: #775800;
+  --shadow: 0 14px 40px rgba(20, 20, 24, .08);
+  --radius: 18px;
+  --sidebar: 285px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 85% 0%, rgba(214,31,38,.07), transparent 30%),
+    var(--bg);
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 16px;
+  background: rgba(255,255,255,.92);
+  border-right: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+aside::-webkit-scrollbar { width: 5px; }
+aside::-webkit-scrollbar-thumb { background: #d0d3d7; border-radius: 10px; }
+
+.brand { display: flex; align-items: center; gap: 12px; margin: 0 8px 28px; font-weight: 800; letter-spacing: -.02em; }
+
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 11px;
+  display: grid; place-items: center; color: white;
+  background: linear-gradient(145deg, var(--accent), #ff4d4f);
+  box-shadow: 0 7px 18px rgba(214,31,38,.28);
+  font-size: 17px;
+}
+
+.brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+nav h4 { margin: 22px 10px 9px; color: #8f939a; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+
+nav a {
+  position: relative; display: flex; align-items: center;
+  padding: 9px 12px; margin: 3px 0; border-radius: 10px;
+  text-decoration: none; color: #52565d; font-size: 13.5px; font-weight: 500;
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover { color: var(--accent-dark); background: var(--accent-soft); transform: translateX(3px); }
+
+nav a.active {
+  color: var(--accent-dark); background: var(--accent-soft); font-weight: 700;
+  padding-left: 16px; box-shadow: inset 3px 0 0 var(--accent);
+}
+
+main { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 52px 0 80px; }
+
+.hero {
+  position: relative; overflow: hidden; padding: 48px; border-radius: 28px; color: white;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255,255,255,.16), transparent 25%),
+    linear-gradient(135deg, #16181b, #2b2e33 55%, #3a3d43);
+  box-shadow: 0 24px 60px rgba(20,20,24,.22);
+}
+
+.hero::after {
+  content: ""; position: absolute; width: 300px; height: 300px;
+  right: -100px; bottom: -170px; border: 55px solid rgba(214,31,38,.18);
+  border-radius: 50%; pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex; padding: 6px 12px; border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px; background: rgba(214,31,38,.28); font-size: 12px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+
+.hero h1 { max-width: 760px; margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -.04em; }
+.hero p { max-width: 720px; margin: 0; color: rgba(255,255,255,.85); font-size: 17px; }
+
+.meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
+.meta span { padding: 7px 11px; border-radius: 9px; background: rgba(255,255,255,.12); font-size: 12px; font-weight: 650; backdrop-filter: blur(4px); }
+
+.toc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+
+.toc a {
+  padding: 17px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); text-decoration: none;
+  box-shadow: 0 5px 20px rgba(20,20,24,.03); transition: all .2s ease;
+}
+
+.toc a:hover { border-color: rgba(214,31,38,.35); transform: translateY(-3px); box-shadow: var(--shadow); }
+.toc strong { display: block; font-size: 14px; }
+.toc span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+
+section {
+  margin-top: 28px; padding: 36px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); box-shadow: 0 6px 25px rgba(20,20,24,.03); transition: border-color .3s ease;
+}
+
+.section-number { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+
+h2 { margin: 5px 0 18px; font-size: 28px; letter-spacing: -.02em; }
+h3 { margin: 27px 0 10px; font-size: 18px; }
+p { margin: 10px 0; }
+.muted { color: var(--muted); }
+ul, ol { padding-left: 23px; }
+li { margin: 6px 0; }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+
+.card { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-soft); transition: transform .2s ease, border-color .2s ease; }
+.card:hover { transform: translateY(-2px); border-color: rgba(214,31,38,.3); }
+.card .icon { font-size: 24px; margin-bottom: 8px; }
+.card strong { display: block; margin-bottom: 4px; }
+
+.callout { margin: 20px 0; padding: 18px 20px; border-left: 4px solid var(--accent); border-radius: 12px; background: var(--accent-soft); }
+.warning { border-left-color: #d69e00; background: var(--warning); color: var(--warning-text); }
+
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { position: relative; min-height: 42px; padding: 3px 0 8px 49px; }
+.steps li::before {
+  counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0;
+  width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%;
+  color: white; background: var(--accent); font-size: 13px; font-weight: 800;
+  box-shadow: 0 4px 10px rgba(214,31,38,.28);
+}
+
+.feature-list { display: grid; gap: 8px; padding: 0; list-style: none; }
+.feature-list li { padding: 12px 16px; border-radius: 10px; background: var(--surface-soft); border: 1px solid var(--line); }
+.feature-list li::before { content: "✓"; margin-right: 9px; color: var(--accent); font-weight: 900; }
+
+code {
+  background: var(--surface-soft); border: 1px solid var(--line); border-radius: 6px;
+  padding: 1px 6px; font-size: 13px; font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); }
+th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+th { color: #52565d; background: var(--surface-soft); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+tr:last-child td { border-bottom: 0; }
+
+.badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.badge.get { background: #e6f4ea; color: #1e7a34; }
+.badge.post { background: #e6eefc; color: #1a4fb4; }
+.badge.put { background: #fff2d9; color: #9a6400; }
+.badge.delete { background: #fde8e8; color: #b3261e; }
+
+.footer { margin-top: 28px; padding: 28px; text-align: center; color: var(--muted); font-size: 13px; }
+.footer strong { color: var(--text); }
+
+@media (max-width: 900px) {
+  .layout { display: block; }
+  aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  nav { display: none; }
+  main { width: min(100% - 28px, 760px); padding-top: 28px; }
+  .hero { padding: 34px 27px; }
+  .toc { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  main { width: min(100% - 18px, 760px); }
+  .hero { border-radius: 20px; padding: 29px 22px; }
+  .hero h1 { font-size: 34px; }
+  section { padding: 23px 19px; border-radius: 15px; }
+  .toc, .grid { grid-template-columns: 1fr; }
+  .meta { gap: 6px; }
+  .meta span { font-size: 11px; }
+  table { font-size: 13px; }
+  th, td { padding: 10px; }
+}
+
+@media print {
+  aside { display: none; }
+  .layout { display: block; }
+  main { width: 100%; padding: 0; }
+  .hero { box-shadow: none; }
+  section { break-inside: avoid; box-shadow: none; }
+  body { background: white; }
+}
+</style>
+</head>
+
+<body>
+<div class="layout">
+<aside>
+  <div class="brand">
+    <div class="brand-mark">NB</div>
+    <div>New Balance Shop<small>User Guide</small></div>
+  </div>
+
+  <nav>
+    <h4>Початок</h4>
+    <a href="#intro">1. Вступ</a>
+    <a href="#start">2. Початок роботи</a>
+    <a href="#roles">3. Ролі користувачів</a>
+
+    <h4>Робота з магазином</h4>
+    <a href="#catalog">4. Каталог товарів</a>
+    <a href="#product">5. Картка товару</a>
+    <a href="#cart">6. Кошик і замовлення</a>
+    <a href="#admin">7. Адміністрування каталогу</a>
+
+    <h4>Довідково</h4>
+    <a href="#api">8. Довідник API</a>
+    <a href="#security">9. Безпека</a>
+    <a href="#support">10. Підтримка</a>
+    <a href="#changes">11. Зміни документа</a>
+  </nav>
+</aside>
+
+<main>
+  <header class="hero">
+    <span class="eyebrow">Користувацька документація · попередня версія</span>
+    <h1>New Balance Shop</h1>
+    <p>
+      Практичний посібник для покупців і адміністратора інтернет-магазину
+      спортивного одягу та взуття New Balance.
+    </p>
+    <div class="meta">
+      <span>Версія 0.1 (попередня)</span>
+      <span>16 вересня 2026</span>
+      <span>Team 1</span>
+      <span>Курсовий командний проєкт</span>
+    </div>
+  </header>
+
+  <div class="toc" aria-label="Швидка навігація">
+    <a href="#catalog"><strong>🧢 Каталог</strong><span>Перегляд товарів і категорій</span></a>
+    <a href="#product"><strong>👟 Товар</strong><span>Деталі, розмір, колір, ціна</span></a>
+    <a href="#cart"><strong>🛒 Кошик</strong><span>Оформлення замовлення</span></a>
+    <a href="#admin"><strong>🛠️ Адмін</strong><span>Керування каталогом</span></a>
+    <a href="#api"><strong>🔌 API</strong><span>Список ендпоінтів</span></a>
+    <a href="#security"><strong>🛡️ Безпека</strong><span>Поточний стан і плани</span></a>
+  </div>
+
+  <section id="intro">
+    <div class="section-number">Розділ 01</div>
+    <h2>Вступ</h2>
+    <h3>Про цей документ</h3>
+    <p>
+      Це <strong>попередня версія</strong> користувацької документації для
+      <strong>New Balance Shop</strong> — курсового командного проєкту (Team 1),
+      побудована на основі
+      <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/SRS.md">SRS</a>
+      та <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/BACKLOG.md">беклогу</a>
+      проєкту. Документ описує як уже реалізований функціонал, так і те, що
+      заплановано на наступні спринти — це прямо позначено в тексті.
+    </p>
+
+    <div class="grid">
+      <div class="card"><div class="icon">🧢</div><strong>Каталог</strong><span class="muted">Кросівки, одяг, аксесуари New Balance.</span></div>
+      <div class="card"><div class="icon">🛒</div><strong>Кошик і замовлення</strong><span class="muted">Модель готова, API — наступна ітерація.</span></div>
+      <div class="card"><div class="icon">🛠️</div><strong>Адмін-панель</strong><span class="muted">CRUD товарів через REST API.</span></div>
+      <div class="card"><div class="icon">🔐</div><strong>Безпека</strong><span class="muted">Реєстрація/вхід — заплановано.</span></div>
+    </div>
+
+    <h3>Що вже реалізовано (Sprint 1)</h3>
+    <ul class="feature-list">
+      <li>Каталог товарів з категоріями, розміром, кольором, ціною, залишком</li>
+      <li>Повний CRUD товарів через REST API</li>
+      <li>Фільтрація товарів за категорією</li>
+      <li>Clean Architecture: Domain / Application / Infrastructure / Presentation</li>
+      <li>Repository pattern + EF Core + SQL Server</li>
+    </ul>
+  </section>
+
+  <section id="start">
+    <div class="section-number">Розділ 02</div>
+    <h2>Початок роботи</h2>
+
+    <h3>Як зараз працює застосунок</h3>
+    <p>
+      Окремого веб-інтерфейсу (frontend) ще немає — це заплановано на одну
+      з наступних ітерацій (React SPA, див. беклог). Наразі магазин доступний
+      як <strong>REST API</strong>, і взаємодіяти з ним можна через:
+    </p>
+
+    <div class="grid">
+      <div class="card"><strong>🧪 Swagger / Postman</strong><span class="muted">Ручні запити до ендпоінтів API.</span></div>
+      <div class="card"><strong>💻 curl / HTTP-клієнт</strong><span class="muted">Командний рядок або будь-який REST-клієнт.</span></div>
+      <div class="card"><strong>🗄️ SQL Server LocalDB</strong><span class="muted">База створюється автоматично при першому запуску.</span></div>
+      <div class="card"><strong>⚙️ .NET 9</strong><span class="muted">Потрібен встановлений SDK для запуску проєкту.</span></div>
+    </div>
+
+    <h3>Запуск проєкту</h3>
+    <ol class="steps">
+      <li>Клонуйте репозиторій: <code>git clone https://github.com/vicitmceo/NewBalanceShop.git</code></li>
+      <li>Перевірте рядок підключення в <code>appsettings.json</code> (<code>ConnectionStrings:ShopDb</code>).</li>
+      <li>Виконайте <code>dotnet run</code> — база та тестові дані створяться автоматично.</li>
+      <li>Відкрийте <code>https://localhost:PORT/api/products</code>, щоб побачити каталог.</li>
+    </ol>
+  </section>
+
+  <section id="roles">
+    <div class="section-number">Розділ 03</div>
+    <h2>Ролі користувачів</h2>
+    <p>Відповідно до SRS, у системі передбачені такі ролі:</p>
+    <ul>
+      <li><strong>Гість</strong> — перегляд каталогу, фільтрація, перегляд картки товару.</li>
+      <li><strong>Покупець</strong> — кошик, оформлення замовлення, історія замовлень
+        <em class="muted">(реєстрація/авторизація — у беклозі, ще не реалізовано)</em>.</li>
+      <li><strong>Адміністратор</strong> — CRUD товарів і категорій, перегляд замовлень
+        <em class="muted">(наразі доступ до CRUD не обмежений — авторизація в планах)</em>.</li>
+    </ul>
+
+    <div class="callout warning">
+      <strong>⚠️ Поточний стан:</strong> у цій версії немає розмежування доступу
+      за ролями — усі ендпоінти відкриті. Розмежування зʼявиться разом із
+      реєстрацією/авторизацією (ASP.NET Core Identity) у наступному спринті.
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="section-number">Розділ 04</div>
+    <h2>Каталог товарів</h2>
+
+    <h3>Перегляд усіх товарів</h3>
+    <p>
+      Запит <span class="badge get">GET</span> <code>/api/products</code> повертає
+      список усіх товарів у форматі JSON: назва, бренд, категорія, розмір,
+      колір, ціна, залишок на складі, зображення, опис.
+    </p>
+
+    <h3>Фільтрація за категорією</h3>
+    <p>
+      Додайте параметр <code>categoryId</code>, щоб отримати товари лише
+      однієї категорії, наприклад:
+      <code>GET /api/products?categoryId=1</code> — усі кросівки.
+    </p>
+
+    <div class="grid">
+      <div class="card"><strong>👟 Кросівки</strong><span class="muted">Категорія Id = 1</span></div>
+      <div class="card"><strong>👕 Одяг</strong><span class="muted">Категорія Id = 2</span></div>
+      <div class="card"><strong>🧢 Аксесуари</strong><span class="muted">Категорія Id = 3</span></div>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="section-number">Розділ 05</div>
+    <h2>Картка товару</h2>
+    <p>
+      Запит <span class="badge get">GET</span> <code>/api/products/{'{id}'}</code>
+      повертає детальну інформацію про один товар: назву, бренд, розмір,
+      колір, ціну, кількість на складі, посилання на зображення та опис.
+      Якщо товару з таким id не існує — API поверне код <code>404 Not Found</code>.
+    </p>
+  </section>
+
+  <section id="cart">
+    <div class="section-number">Розділ 06</div>
+    <h2>Кошик і оформлення замовлення</h2>
+
+    <div class="callout warning">
+      <strong>⚠️ Заплановано, ще не реалізовано:</strong> модель кошика та
+      замовлення (<code>Order</code>, <code>OrderItem</code>) уже описана
+      на рівні Domain-шару, але публічного API для оформлення замовлення
+      поки немає. Це перший пункт наступного спринту (див. беклог).
+    </div>
+
+    <h3>Як це працюватиме (за планом)</h3>
+    <ol class="steps">
+      <li>Покупець додає товари в кошик.</li>
+      <li>Покупець підтверджує кошик і оформлює замовлення.</li>
+      <li>Система створює <code>Order</code> зі списком <code>OrderItem</code> і розраховує <code>TotalPrice</code>.</li>
+      <li>Замовлення отримує статус <code>New</code> і зʼявляється в історії покупця.</li>
+    </ol>
+
+    <h3>Статуси замовлення</h3>
+    <p>Передбачені статуси: <code>New</code> → <code>Confirmed</code> → <code>Shipped</code> → <code>Delivered</code>, або <code>Cancelled</code>.</p>
+  </section>
+
+  <section id="admin">
+    <div class="section-number">Розділ 07</div>
+    <h2>Адміністрування каталогу</h2>
+
+    <h3>Додавання товару</h3>
+    <p>
+      <span class="badge post">POST</span> <code>/api/products</code> з тілом
+      запиту у форматі JSON (назва, бренд, категорія, розмір, колір, ціна,
+      залишок, зображення, опис). У відповідь повертається створений товар
+      з присвоєним <code>id</code>.
+    </p>
+
+    <h3>Оновлення товару</h3>
+    <p>
+      <span class="badge put">PUT</span> <code>/api/products/{'{id}'}</code> —
+      повністю оновлює дані товару. Якщо товару не існує — <code>404</code>.
+    </p>
+
+    <h3>Видалення товару</h3>
+    <p>
+      <span class="badge delete">DELETE</span> <code>/api/products/{'{id}'}</code> —
+      видаляє товар з каталогу.
+    </p>
+
+    <div class="callout">
+      <strong>💡 Порада:</strong> усі дані валідуються на рівні моделі
+      (обов'язкові поля, довжина рядків, діапазон ціни та залишку) — при
+      невалідних даних API поверне <code>400 Bad Request</code> з описом помилок.
+    </div>
+  </section>
+
+  <section id="api">
+    <div class="section-number">Розділ 08</div>
+    <h2>Довідник API</h2>
+    <table>
+      <thead>
+        <tr><th>Метод</th><th>URL</th><th>Опис</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge get">GET</span></td><td><code>/api/products</code></td><td>Список усіх товарів (опційно <code>?categoryId=</code>)</td></tr>
+        <tr><td><span class="badge get">GET</span></td><td><code>/api/products/{'{id}'}</code></td><td>Один товар за id</td></tr>
+        <tr><td><span class="badge post">POST</span></td><td><code>/api/products</code></td><td>Створити товар</td></tr>
+        <tr><td><span class="badge put">PUT</span></td><td><code>/api/products/{'{id}'}</code></td><td>Оновити товар</td></tr>
+        <tr><td><span class="badge delete">DELETE</span></td><td><code>/api/products/{'{id}'}</code></td><td>Видалити товар</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="security">
+    <div class="section-number">Розділ 09</div>
+    <h2>Безпека</h2>
+
+    <h3>Поточний стан</h3>
+    <p>
+      На етапі MVP автентифікація й авторизація не реалізовані — усі
+      ендпоінти доступні без обмежень. Захист від SQL Injection забезпечено
+      параметризованими запитами Entity Framework Core, вхідні дані
+      валідуються через Data Annotations.
+    </p>
+
+    <h3>Заплановано</h3>
+    <ul class="feature-list">
+      <li>Реєстрація та авторизація покупців (ASP.NET Core Identity)</li>
+      <li>Розмежування доступу: гість / покупець / адміністратор</li>
+      <li>CI: перевірка збірки та тестів через GitHub Actions</li>
+    </ul>
+
+    <div class="callout warning">
+      <strong>⚠️ Не для продакшену:</strong> у поточному вигляді застосунок
+      призначений виключно для навчальних/демонстраційних цілей курсового проєкту.
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="section-number">Розділ 10</div>
+    <h2>Підтримка</h2>
+    <p>З питаннями щодо проєкту звертайтеся до команди Team 1:</p>
+    <ul>
+      <li>Репозиторій: <a href="https://github.com/vicitmceo/NewBalanceShop">github.com/vicitmceo/NewBalanceShop</a></li>
+      <li>Канбан-дошка (Jira): <a href="https://newbalance-team1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">SCRUM board</a></li>
+      <li>Team Lead: Панчук Вадим Владиславович</li>
+      <li>Розробник: Ноцколіні Рафаїл Львович</li>
+    </ul>
+  </section>
+
+  <section id="changes">
+    <div class="section-number">Розділ 11</div>
+    <h2>Зміни в документі</h2>
+    <table>
+      <thead><tr><th>Версія</th><th>Дата</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0.1</strong></td><td>16.09.2026</td><td>Попередня версія User Guide на основі SRS та беклогу Sprint 1.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="footer">
+    <strong>New Balance Shop</strong><br>
+    Дякуємо за інтерес до проєкту. Гарного шопінгу! 🏃
+  </footer>
+</main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href').substring(1);
+          if (href === id) {
+            link.classList.add('active');
+            link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { root: null, rootMargin: '-10% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>
