@@ -15,12 +15,18 @@
 | 3 | Repository pattern (`IRepository<T>`, `IProductRepository`, `IOrderRepository`) + EF Core | Must | ✅ Done |
 | 4 | UML-діаграма класів з обґрунтуванням | Must | ✅ Done |
 | 5 | CRUD товарів через REST API | Must | ✅ Done |
-| 6 | Domain-модель кошика/замовлення (`Order`, `OrderItem`) | Should | ✅ Done (модель), API — заплановано |
-| 7 | Реєстрація/авторизація покупців | Could | 🔲 To Do |
-| 8 | API для оформлення замовлення (`POST /api/orders`) | Must | 🔲 To Do (наступний тиждень) |
-| 9 | Unit-тести (NUnit) для `ProductService` | Should | 🔲 To Do |
-| 10 | Frontend (React) | Should | 🔲 To Do |
-| 11 | CI (GitHub Actions: build + test) | Could | 🔲 To Do |
+| 6 | Domain-модель кошика/замовлення (`Order`, `OrderItem`) | Should | ✅ Done |
+| 7 | API оформлення замовлення (`POST /api/orders`) | Must | ✅ Done |
+| 8 | `CustomersController` — кабінет покупця (FR-10/FR-11) | Must | 🔲 To Do |
+| 9 | Адміністрування користувачів — блокування/видалення (FR-12/FR-13) | Must | 🔲 To Do |
+| 10 | Реєстрація/авторизація покупців (ASP.NET Core Identity/JWT) | Could | 🔲 To Do |
+| 11 | Unit-тести (NUnit) для `ProductService`, `OrderService` | Should | 🔲 To Do |
+| 12 | Кешування списку категорій/популярних товарів (`IMemoryCache`) | Could | 🔲 To Do |
+| 13 | Логування (middleware обробки помилок + `ILogger`) | Should | 🔲 To Do |
+| 14 | Документація API (Swagger/OpenAPI → HTML) | Must | 🔲 To Do |
+| 15 | Frontend (React) | Should | 🔲 To Do |
+| 16 | CI (GitHub Actions: build + test) | Could | 🔲 To Do |
+| 17 | Деплой застосунку (для посилання на захисті) | Must | 🔲 To Do |
 
 ## Sprint "Catch-up" (14.09.2026) — наздоганяючий спринт
 
@@ -34,13 +40,28 @@
 | UML-діаграма класів (docs/ARCHITECTURE.md) | ✅ Done |
 | CRUD `ProductsController` (перевірено складанням) | ✅ Done |
 
-## Наступний спринт (з 15.09.2026)
+## Тиждень 3 — Sprint 2 (31.08 – 06.09.2026): Початок розробки
 
-- Реалізувати `POST /api/orders` (оформлення замовлення з кошика) — ✅ Done (16.09.2026)
-- `CustomersController` — кабінет покупця (FR-10/FR-11) та адміністрування користувачів (FR-12/FR-13)
-- Додати unit-тести для `ProductService`, `OrderService` (NUnit + Moq, за зразком з іншого курсового проєкту команди)
-- Почати авторизацію покупців (ASP.NET Core Identity або JWT)
-- Налаштувати канбан-дошку (GitHub Projects) для щотижневого трекінгу
+| Задача | Статус |
+|---|---|
+| Вступ до методології SCRUM: ролі Product Owner / Scrum Master / Development Team, обов'язки в команді | ✅ Done — [TEAM.md](TEAM.md) |
+| Планування спринтів, ведення беклогу, канбан-дошка | ✅ Done — Jira Scrum board (посилання вище) |
+| Базова структура проєкту ASP.NET Core (без поділу на 3–4 проєкти в солюшені — дозволено умовою) | ✅ Done — `Domain/Application/Infrastructure/Presentation` |
+| Встановлення та налаштування інструментів (EF Core, SQL Server LocalDB) | ✅ Done |
+| Реалізація початкових класів і модулів відповідно до архітектури (`Product`, `Category`, `Customer`, `Order`, репозиторії, `ProductService`) | ✅ Done |
+| Планування та запуск наступного спринту (задачі нижче) | ✅ Done |
+
+## Тиждень 4 — Sprint 3 (07.09 – 13.09.2026, дедлайн наздоганяючої здачі 08.09.2026)
+
+| Задача | Статус |
+|---|---|
+| `POST /api/orders` — оформлення замовлення з кошика | ✅ Done (16.09.2026) |
+| `Infrastructure/Repositories/CustomerRepository.cs` + `ICustomerRepository` | ✅ Done |
+| `CustomersController` — кабінет покупця (FR-10/FR-11) | 🔲 To Do — задача на поточний тиждень |
+| Адміністрування користувачів: блокування/видалення (FR-12/FR-13) | 🔲 To Do — задача на поточний тиждень |
+| Unit-тести (NUnit + Moq) для `ProductService`, `OrderService` | 🔲 To Do — задача на поточний тиждень |
+| Почати авторизацію покупців (ASP.NET Core Identity або JWT) | 🔲 To Do |
+| Налаштувати канбан-дошку (Jira) для щотижневого трекінгу — додавати задачі на кожен тиждень наперед | ✅ Done, підтримується щотижня |
 
 ## Обов'язкові пункти до захисту (5 жовтня 2026, за методичкою)
 
