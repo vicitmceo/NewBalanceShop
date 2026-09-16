@@ -7,9 +7,30 @@ using NewBalanceShop.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Render надає порт через змінну середовища PORT — слухаємо саме її,
+// якщо вона задана (локально ж використовується стандартний launchSettings)
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(port))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+}
+
 builder.Services.AddControllers();
-builder.Services.AddDbContext<ShopDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ShopDb")));
+
+// Render видає підключення до Postgres через змінну DATABASE_URL у форматі
+// postgres://user:pass@host:port/db — Npgsql такий формат не розуміє напряму,
+// тож конвертуємо його в keyword=value рядок підключення
+var connectionString = builder.Configuration.GetConnectionString("ShopDb");
+var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+if (!string.IsNullOrEmpty(databaseUrl))
+{
+    var uri = new Uri(databaseUrl);
+    var userInfo = uri.UserInfo.Split(':', 2);
+    connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};" +
+                        $"Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+}
+
+builder.Services.AddDbContext<ShopDbContext>(options => options.UseNpgsql(connectionString));
 
 // сесія зберігає "кошик" неавторизованого відвідувача (список товарів
 // до оформлення замовлення) — це тимчасові дані конкретного браузера,

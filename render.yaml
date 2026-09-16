@@ -1,0 +1,19 @@
+databases:
+  - name: newbalanceshop-db
+    plan: free
+    databaseName: newbalanceshop
+    user: newbalanceshop
+
+services:
+  - type: web
+    name: newbalanceshop-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: newbalanceshop-db
+          property: connectionString
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
