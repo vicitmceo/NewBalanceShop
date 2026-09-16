@@ -35,6 +35,10 @@ public class ShopDbContext : DbContext
             new Category { Id = 3, Name = "Аксесуари" }
         );
 
+        modelBuilder.Entity<Customer>().HasData(
+            new Customer { Id = 1, FullName = "Тестовий Покупець", Email = "test.customer@example.com", PasswordHash = "seed-no-auth-yet" }
+        );
+
         modelBuilder.Entity<Product>().HasData(
             new Product { Id = 1, Name = "New Balance 574", Brand = "New Balance", CategoryId = 1, Size = "42", Color = "Сірий", Price = 3299m, Stock = 15, ImageUrl = "/images/nb574.jpg", Description = "Класичні кросівки New Balance 574." },
             new Product { Id = 2, Name = "New Balance 550", Brand = "New Balance", CategoryId = 1, Size = "43", Color = "Білий", Price = 4199m, Stock = 10, ImageUrl = "/images/nb550.jpg", Description = "Ретро-баскетбольні кросівки New Balance 550." },

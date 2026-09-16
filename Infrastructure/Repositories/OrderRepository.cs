@@ -14,8 +14,15 @@ public class OrderRepository : Repository<Order>, IOrderRepository
     public async Task<List<Order>> GetByCustomerAsync(int customerId)
     {
         return await Db.Orders.AsNoTracking()
-            .Include(o => o.Items)
+            .Include(o => o.Items).ThenInclude(i => i.Product)
             .Where(o => o.CustomerId == customerId)
             .ToListAsync();
+    }
+
+    public async Task<Order?> GetByIdWithItemsAsync(int id)
+    {
+        return await Db.Orders.AsNoTracking()
+            .Include(o => o.Items).ThenInclude(i => i.Product)
+            .FirstOrDefaultAsync(o => o.Id == id);
     }
 }
