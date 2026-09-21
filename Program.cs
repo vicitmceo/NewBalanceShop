@@ -16,6 +16,8 @@ if (!string.IsNullOrEmpty(port))
 }
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Render видає підключення до Postgres через змінну DATABASE_URL у форматі
 // postgres://user:pass@host:port/db — Npgsql такий формат не розуміє напряму,
@@ -56,6 +58,9 @@ using (var scope = app.Services.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<ShopDbContext>();
     db.Database.Migrate();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseSession();
 
