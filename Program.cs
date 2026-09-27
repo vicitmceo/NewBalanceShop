@@ -19,6 +19,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// фронтенд (React, Netlify/Vercel) — інший домен, тож потрібен CORS з підтримкою
+// кук (кошик зберігається в сесії, а не в БД, див. CartController)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+        policy.SetIsOriginAllowed(_ => true)
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials());
+});
+
 // Render видає підключення до Postgres через змінну DATABASE_URL у форматі
 // postgres://user:pass@host:port/db — Npgsql такий формат не розуміє напряму,
 // тож конвертуємо його в keyword=value рядок підключення
@@ -44,6 +55,9 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    // кросс-доменний фронтенд (Netlify/Vercel) — кука сесії має бути SameSite=None+Secure
+    options.Cookie.SameSite = SameSiteMode.None;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 });
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -62,6 +76,8 @@ using (var scope = app.Services.CreateScope())
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseCors("AllowFrontend");
 
 app.UseSession();
 
