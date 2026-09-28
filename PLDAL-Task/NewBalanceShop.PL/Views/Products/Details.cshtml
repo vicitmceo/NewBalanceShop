@@ -1,0 +1,13 @@
+@model Product
+@{ ViewData["Title"] = "Деталі товару"; }
+
+<h1>@Model.Name</h1>
+<p><strong>Бренд:</strong> @Model.Brand</p>
+<p><strong>Категорія:</strong> @Model.Category</p>
+<p><strong>Розмір:</strong> @Model.Size</p>
+<p><strong>Колір:</strong> @Model.Color</p>
+<p><strong>Ціна:</strong> @Model.Price ₴</p>
+<p><strong>Залишок:</strong> @Model.Stock</p>
+<p><strong>Опис:</strong> @Model.Description</p>
+
+<a class="btn" asp-action="Index">Назад до каталогу</a>

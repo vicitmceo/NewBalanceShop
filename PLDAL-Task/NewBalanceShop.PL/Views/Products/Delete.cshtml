@@ -1,0 +1,11 @@
+@model Product
+@{ ViewData["Title"] = "Видалити товар"; }
+
+<h1>Видалити товар?</h1>
+<p>Ви впевнені, що хочете видалити <strong>@Model.Name</strong>?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn">Так, видалити</button>
+    <a asp-action="Index">Скасувати</a>
+</form>

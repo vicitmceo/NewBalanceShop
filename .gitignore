@@ -2,3 +2,8 @@ bin/
 obj/
 *.user
 .vs/
+PLDAL-Task/**/bin/
+PLDAL-Task/**/obj/
+PLDAL-Task/**/*.db
+PLDAL-Task/**/*.db-shm
+PLDAL-Task/**/*.db-wal

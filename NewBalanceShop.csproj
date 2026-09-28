@@ -15,4 +15,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- окремий навчальний приклад (PL+DAL без BLL) — не частина прод-API -->
+    <Compile Remove="PLDAL-Task\**\*.cs" />
+    <Content Remove="PLDAL-Task\**\*" />
+    <None Remove="PLDAL-Task\**\*" />
+  </ItemGroup>
+
 </Project>

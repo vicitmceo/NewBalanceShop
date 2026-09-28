@@ -1,0 +1,43 @@
+@model Product
+@{ ViewData["Title"] = "Додати товар"; }
+
+<h1>Додати товар</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="field-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Brand"></label>
+        <input asp-for="Brand" value="New Balance" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <input asp-for="Category" placeholder="Кросівки / Одяг / Аксесуари" />
+        <span asp-validation-for="Category" class="field-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Size"></label>
+        <input asp-for="Size" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Color"></label>
+        <input asp-for="Color" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price" class="field-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock"></label>
+        <input asp-for="Stock" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn">Створити</button>
+</form>

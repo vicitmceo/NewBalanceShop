@@ -1,0 +1,37 @@
+@model List<Product>
+@{ ViewData["Title"] = "Каталог"; }
+
+<h1>Каталог товарів New Balance</h1>
+<a class="btn" asp-action="Create">+ Додати товар</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Категорія</th>
+            <th>Розмір</th>
+            <th>Колір</th>
+            <th>Ціна</th>
+            <th>Залишок</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Category</td>
+                <td>@p.Size</td>
+                <td>@p.Color</td>
+                <td>@p.Price ₴</td>
+                <td>@p.Stock</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@p.Id">Деталі</a> |
+                    <a asp-action="Edit" asp-route-id="@p.Id">Редагувати</a> |
+                    <a asp-action="Delete" asp-route-id="@p.Id">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
