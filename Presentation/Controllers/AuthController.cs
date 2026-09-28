@@ -52,6 +52,22 @@ public class AuthController : ControllerBase
         }
     }
 
+    // POST api/auth/google — вхід через кнопку "Увійти через Google" (Firebase Authentication)
+    [HttpPost("google")]
+    public async Task<ActionResult<CustomerDto>> Google(GoogleLoginDto dto)
+    {
+        try
+        {
+            var customer = await _authService.GoogleLoginAsync(dto.IdToken);
+            HttpContext.Session.SetInt32(CustomerIdSessionKey, customer.Id);
+            return Ok(customer);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Unauthorized(new { error = ex.Message });
+        }
+    }
+
     // POST api/auth/logout
     [HttpPost("logout")]
     public IActionResult Logout()

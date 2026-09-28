@@ -10,4 +10,8 @@
     <ProjectReference Include="..\NewBalanceShop.Domain\NewBalanceShop.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+  </ItemGroup>
+
 </Project>

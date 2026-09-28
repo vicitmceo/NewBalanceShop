@@ -1,3 +1,4 @@
+using FirebaseAdmin.Auth;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Mapping;
@@ -53,5 +54,54 @@ public class AuthService : IAuthService
     {
         var customer = await _customerRepository.GetByIdAsync(customerId);
         return customer?.ToDto();
+    }
+
+    // ідентифікуємо покупця по ID-токену, виданому Firebase після входу через Google
+    // на фронтенді (signInWithPopup + GoogleAuthProvider); FirebaseAuth сам звіряє
+    // підпис токена з публічними ключами Google, тож паролі тут не потрібні
+    public async Task<CustomerDto> GoogleLoginAsync(string idToken)
+    {
+        if (FirebaseAuth.DefaultInstance is null)
+            throw new InvalidOperationException("Firebase не налаштовано на сервері (FIREBASE_SERVICE_ACCOUNT_JSON).");
+
+        FirebaseToken decoded;
+        try
+        {
+            decoded = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+        }
+        catch (Exception)
+        {
+            throw new InvalidOperationException("Недійсний токен Google.");
+        }
+
+        var email = decoded.Claims.TryGetValue("email", out var emailClaim) ? emailClaim.ToString() : null;
+        if (string.IsNullOrEmpty(email))
+            throw new InvalidOperationException("Google-акаунт не має email.");
+
+        var fullName = decoded.Claims.TryGetValue("name", out var nameClaim) ? nameClaim.ToString() : email;
+
+        var customer = await _customerRepository.GetByEmailAsync(email);
+        if (customer is null)
+        {
+            customer = new Customer
+            {
+                FullName = fullName ?? email,
+                Email = email,
+                GoogleUid = decoded.Uid,
+                PasswordHash = string.Empty
+            };
+            await _customerRepository.AddAsync(customer);
+        }
+        else if (customer.GoogleUid is null)
+        {
+            customer.GoogleUid = decoded.Uid;
+        }
+
+        if (customer.IsBlocked)
+            throw new InvalidOperationException("Обліковий запис заблоковано.");
+
+        await _customerRepository.SaveChangesAsync();
+
+        return customer.ToDto();
     }
 }

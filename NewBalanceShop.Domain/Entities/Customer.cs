@@ -9,6 +9,7 @@ public class Customer
     public string Phone { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
+    public string? GoogleUid { get; set; }
     public bool IsBlocked { get; set; }
 
     public List<Order> Orders { get; set; } = new();

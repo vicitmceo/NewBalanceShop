@@ -16,6 +16,11 @@ public class LoginDto
     public string Password { get; set; } = string.Empty;
 }
 
+public class GoogleLoginDto
+{
+    public string IdToken { get; set; } = string.Empty;
+}
+
 public class CustomerDto
 {
     public int Id { get; set; }

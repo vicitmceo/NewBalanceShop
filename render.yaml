@@ -17,3 +17,5 @@ services:
           property: connectionString
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
+      - key: GitHub__ClientSecret
+        sync: false

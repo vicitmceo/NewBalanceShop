@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -20,12 +24,18 @@
     <Compile Remove="NewBalanceShop.Domain\**\*.cs" />
     <Compile Remove="NewBalanceShop.Application\**\*.cs" />
     <Compile Remove="NewBalanceShop.Infrastructure\**\*.cs" />
+    <Compile Remove="NewBalanceShop.Tests.Unit\**\*.cs" />
+    <Compile Remove="NewBalanceShop.Tests.Integration\**\*.cs" />
     <Content Remove="NewBalanceShop.Domain\**\*" />
     <Content Remove="NewBalanceShop.Application\**\*" />
     <Content Remove="NewBalanceShop.Infrastructure\**\*" />
+    <Content Remove="NewBalanceShop.Tests.Unit\**\*" />
+    <Content Remove="NewBalanceShop.Tests.Integration\**\*" />
     <None Remove="NewBalanceShop.Domain\**\*" />
     <None Remove="NewBalanceShop.Application\**\*" />
     <None Remove="NewBalanceShop.Infrastructure\**\*" />
+    <None Remove="NewBalanceShop.Tests.Unit\**\*" />
+    <None Remove="NewBalanceShop.Tests.Integration\**\*" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,5 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using Microsoft.EntityFrameworkCore;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Services;
@@ -18,6 +20,7 @@ if (!string.IsNullOrEmpty(port))
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 
 // фронтенд (React, Netlify/Vercel) — інший домен, тож потрібен CORS з підтримкою
 // кук (кошик зберігається в сесії, а не в БД, див. CartController)
@@ -67,12 +70,29 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+// вхід через Google (Firebase Authentication): службовий обліковий запис Firebase
+// кладеться в env var, а не в файл у репозиторії (Firebase Console > Project
+// Settings > Service Accounts > Generate new private key > вміст JSON в FIREBASE_SERVICE_ACCOUNT_JSON)
+var firebaseCredentialsJson = Environment.GetEnvironmentVariable("FIREBASE_SERVICE_ACCOUNT_JSON");
+if (!string.IsNullOrEmpty(firebaseCredentialsJson) && FirebaseApp.DefaultInstance is null)
+{
+    FirebaseApp.Create(new AppOptions
+    {
+        Credential = GoogleCredential.FromJson(firebaseCredentialsJson)
+    });
+}
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ShopDbContext>();
-    db.Database.Migrate();
+    // інтеграційні тести підміняють ShopDbContext на EF InMemory (NewBalanceShop.Tests.Integration),
+    // а InMemory-провайдер не підтримує реляційні міграції — тож там БД просто створюється напряму
+    if (app.Environment.IsEnvironment("Testing"))
+        db.Database.EnsureCreated();
+    else
+        db.Database.Migrate();
 }
 
 app.UseSwagger();
@@ -85,3 +105,7 @@ app.UseSession();
 app.MapControllers();
 
 app.Run();
+
+// WebApplicationFactory<Program> (NewBalanceShop.Tests.Integration) потребує публічного
+// класу Program, а top-level statements за замовчуванням генерують internal
+public partial class Program;
