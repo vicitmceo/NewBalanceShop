@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="NewBalanceShop.Application/NewBalanceShop.Application.csproj" />
+  <Project Path="NewBalanceShop.csproj" />
+  <Project Path="NewBalanceShop.Domain/NewBalanceShop.Domain.csproj" />
+  <Project Path="NewBalanceShop.Infrastructure/NewBalanceShop.Infrastructure.csproj" />
+</Solution>

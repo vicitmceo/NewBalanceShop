@@ -2,10 +2,12 @@
 
 Формат за зразком викладача ([cinema hikes p43 architecture](https://gist.github.com/sunmeat/64abb14b88aca398afeacbd4354dab7a)).
 
-> **Примітка:** поточна реалізація (тиждень наздоганяючого спринту) — спрощений однопроєктний варіант з папками
-> `Domain/Application/Infrastructure/Presentation` (дозволено умовою завдання: "поки що можна БЕЗ розділу на 3-4
-> проєкти в солюшені"). Дерево нижче — **цільова** структура, до якої проєкт мігрує на наступних тижнях, коли
-> з'явиться реєстрація користувачів, кошик/checkout і React-фронтенд.
+> **Оновлено (Sprint 4):** проєкт розділено на 4 фізичні csproj у спільному солюшені `NewBalanceShop.slnx` —
+> `NewBalanceShop.Domain`, `NewBalanceShop.Application`, `NewBalanceShop.Infrastructure` та кореневий
+> `NewBalanceShop` (Presentation/Web API, composition root). Зв'язки між проєктами: `NewBalanceShop` →
+> `Application` + `Infrastructure`; `Infrastructure` → `Domain`; `Application` → `Domain`. Дерево нижче —
+> цільова структура на майбутнє (детальніший поділ усередині кожного шару), поточна вже відповідає їй на рівні
+> самих csproj-проєктів.
 
 ## ⚙️ Backend
 

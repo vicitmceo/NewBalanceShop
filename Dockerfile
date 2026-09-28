@@ -2,6 +2,9 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 COPY NewBalanceShop.csproj .
+COPY NewBalanceShop.Domain/NewBalanceShop.Domain.csproj NewBalanceShop.Domain/
+COPY NewBalanceShop.Application/NewBalanceShop.Application.csproj NewBalanceShop.Application/
+COPY NewBalanceShop.Infrastructure/NewBalanceShop.Infrastructure.csproj NewBalanceShop.Infrastructure/
 RUN dotnet restore NewBalanceShop.csproj
 
 COPY . .
