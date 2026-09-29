@@ -123,4 +123,13 @@ public class AuthServiceTests
 
         Assert.Null(result);
     }
+
+    [Fact]
+    public async Task GoogleLoginAsync_WhenFirebaseNotConfigured_ThrowsInvalidOperationException()
+    {
+        // у тестовому процесі FirebaseApp.Create() ніколи не викликається,
+        // тож FirebaseAuth.DefaultInstance завжди null — саме цю (реальну!) поведінку й перевіряємо
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("any-token"));
+        Assert.Contains("Firebase не налаштовано", ex.Message);
+    }
 }

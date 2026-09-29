@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>NewBalanceShop — dotnet test</title>
+<style>
+  body { background:#0f1115; color:#e8e8ec; font-family:'Cascadia Code','Consolas',monospace; margin:0; padding:32px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:#9aa0ac; margin-bottom:20px; font-size:13px; }
+  .summary { display:flex; gap:16px; margin-bottom:24px; }
+  .card { background:#1a1d29; border:1px solid #2a2d3a; border-radius:10px; padding:14px 20px; }
+  .card .n { font-size:26px; font-weight:700; color:#3ddc84; }
+  .card .l { font-size:12px; color:#9aa0ac; }
+  pre { background:#161822; border:1px solid #2a2d3a; border-radius:10px; padding:16px; font-size:12px; line-height:1.55; overflow:auto; max-height:640px; }
+  .pass { color:#3ddc84; }
+  .name { color:#e8e8ec; }
+  .time { color:#6b7280; }
+</style>
+</head>
+<body>
+<h1>dotnet test — NewBalanceShop.slnx</h1>
+<div class="sub">Sprint 5: модульні + інтеграційні тести · 2026-09-29</div>
+<div class="summary">
+  <div class="card"><div class="n">104</div><div class="l">тестів усього</div></div>
+  <div class="card"><div class="n">104</div><div class="l">passed</div></div>
+  <div class="card"><div class="n">0</div><div class="l">failed</div></div>
+  <div class="card"><div class="n">73 / 31</div><div class="l">unit / integration</div></div>
+</div>
+<pre id="out"></pre>
+<script>
+fetch('test_run_raw.txt').then(r => r.text()).then(txt => {
+  const lines = txt.trim().split('\n');
+  document.getElementById('out').innerHTML = lines.map(l => {
+    const m = l.match(/^Passed (\S+)\s+(\[.*\])$/);
+    if (!m) return l;
+    return `<span class="pass">✓ Passed</span> <span class="name">${m[1]}</span> <span class="time">${m[2]}</span>`;
+  }).join('\n');
+});
+</script>
+</body>
+</html>

@@ -58,9 +58,14 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
-    // кросс-доменний фронтенд (Netlify/Vercel) — кука сесії має бути SameSite=None+Secure
+    // кросс-доменний фронтенд (Netlify/Vercel) — кука сесії має бути SameSite=None+Secure;
+    // виняток — інтеграційні тести (NewBalanceShop.Tests.Integration), де WebApplicationFactory
+    // ганяє запити по звичайному http://localhost, і Secure-кука там просто не зберігається
+    // клієнтом між запитами, через що сесія (кошик, логін) "губиться" між тестовими викликами
     options.Cookie.SameSite = SameSiteMode.None;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SecurePolicy = builder.Environment.IsEnvironment("Testing")
+        ? CookieSecurePolicy.None
+        : CookieSecurePolicy.Always;
 });
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();

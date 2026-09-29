@@ -3,4 +3,6 @@
   <Project Path="NewBalanceShop.csproj" />
   <Project Path="NewBalanceShop.Domain/NewBalanceShop.Domain.csproj" />
   <Project Path="NewBalanceShop.Infrastructure/NewBalanceShop.Infrastructure.csproj" />
+  <Project Path="NewBalanceShop.Tests.Unit/NewBalanceShop.Tests.Unit.csproj" />
+  <Project Path="NewBalanceShop.Tests.Integration/NewBalanceShop.Tests.Integration.csproj" />
 </Solution>

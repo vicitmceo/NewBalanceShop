@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using NewBalanceShop.Infrastructure.Data;
 
 namespace NewBalanceShop.Tests.Integration.Infrastructure;
@@ -19,8 +21,14 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
         builder.ConfigureServices(services =>
         {
-            var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(DbContextOptions<ShopDbContext>));
-            if (descriptor is not null) services.Remove(descriptor);
+            // Program.cs реєструє ShopDbContext з UseNpgsql через AddDbContext, який окрім
+            // DbContextOptions<ShopDbContext> додає ще й internal IDbContextOptionsConfiguration<T> —
+            // якщо прибрати лише перший дескриптор, конфігурація Npgsql всеодно виконається
+            // поруч з InMemory і EF впаде на "тільки один провайдер БД". Тож зносимо все,
+            // що стосується ShopDbContext, і реєструємо його заново з InMemory.
+            services.RemoveAll<DbContextOptions<ShopDbContext>>();
+            services.RemoveAll<ShopDbContext>();
+            services.RemoveAll<IDbContextOptionsConfiguration<ShopDbContext>>();
 
             services.AddDbContext<ShopDbContext>(options => options.UseInMemoryDatabase(_dbName));
         });

@@ -129,4 +129,26 @@ public class AuthControllerTests
         Assert.IsType<UnauthorizedResult>(result.Result);
         Assert.Null(_sut.ControllerContext.HttpContext.Session.GetInt32("customerId"));
     }
+
+    [Fact]
+    public async Task Google_WithValidIdToken_ReturnsOkAndSetsSession()
+    {
+        _service.Setup(s => s.GoogleLoginAsync("valid-token")).ReturnsAsync(MakeCustomer(3));
+
+        var result = await _sut.Google(new GoogleLoginDto { IdToken = "valid-token" });
+
+        Assert.IsType<OkObjectResult>(result.Result);
+        Assert.Equal(3, _sut.ControllerContext.HttpContext.Session.GetInt32("customerId"));
+    }
+
+    [Fact]
+    public async Task Google_WhenServiceThrows_ReturnsUnauthorized()
+    {
+        _service.Setup(s => s.GoogleLoginAsync(It.IsAny<string>()))
+            .ThrowsAsync(new InvalidOperationException("Недійсний токен Google."));
+
+        var result = await _sut.Google(new GoogleLoginDto { IdToken = "bad-token" });
+
+        Assert.IsType<UnauthorizedObjectResult>(result.Result);
+    }
 }
