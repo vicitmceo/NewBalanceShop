@@ -74,6 +74,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 // вхід через Google (Firebase Authentication): службовий обліковий запис Firebase
 // кладеться в env var, а не в файл у репозиторії (Firebase Console > Project

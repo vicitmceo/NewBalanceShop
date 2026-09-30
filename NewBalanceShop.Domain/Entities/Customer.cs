@@ -11,6 +11,7 @@ public class Customer
     public string PasswordHash { get; set; } = string.Empty;
     public string? GoogleUid { get; set; }
     public bool IsBlocked { get; set; }
+    public bool IsAdmin { get; set; }
 
     public List<Order> Orders { get; set; } = new();
 }

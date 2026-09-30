@@ -12,6 +12,8 @@ public static class CustomerMapper
         Email = customer.Email,
         City = customer.City,
         Country = customer.Country,
-        Phone = customer.Phone
+        Phone = customer.Phone,
+        IsBlocked = customer.IsBlocked,
+        IsAdmin = customer.IsAdmin
     };
 }

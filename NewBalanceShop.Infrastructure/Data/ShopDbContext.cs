@@ -36,7 +36,10 @@ public class ShopDbContext : DbContext
         );
 
         modelBuilder.Entity<Customer>().HasData(
-            new Customer { Id = 1, FullName = "Тестовий Покупець", Email = "test.customer@example.com", PasswordHash = "seed-no-auth-yet" }
+            new Customer { Id = 1, FullName = "Тестовий Покупець", Email = "test.customer@example.com", PasswordHash = "seed-no-auth-yet" },
+            // сід-адмін для перевірки FR-12/FR-13 (перегляд/блокування/видалення користувачів) —
+            // пароль "Admin123!", хеш згенеровано тим самим NewBalanceShop.Application.Services.PasswordHasher
+            new Customer { Id = 2, FullName = "Адміністратор", Email = "admin@newbalanceshop.com", PasswordHash = "100000.F143Lucn3B8Aosfv7xB7fw==.2DJjkGv3OvBUOCcnZWmuo0Fd0cg4FgHHCECXf17sCFc=", IsAdmin = true }
         );
 
         modelBuilder.Entity<Product>().HasData(

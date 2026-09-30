@@ -29,4 +29,17 @@ public class CustomerDto
     public string City { get; set; } = string.Empty;
     public string Country { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
+    public bool IsBlocked { get; set; }
+    public bool IsAdmin { get; set; }
+}
+
+// FR-10: покупець редагує особисті дані (ПІБ, місто, країна, телефон, e-mail);
+// пароль і історія замовлень через цей ендпоінт не змінюються
+public class UpdateCustomerDto
+{
+    public string FullName { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string City { get; set; } = string.Empty;
+    public string Country { get; set; } = string.Empty;
+    public string Phone { get; set; } = string.Empty;
 }
