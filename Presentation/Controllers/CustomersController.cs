@@ -7,7 +7,9 @@ namespace NewBalanceShop.Presentation.Controllers;
 // FR-10/FR-11 — кабінет покупця (перегляд/редагування власних даних, історія замовлень);
 // FR-12/FR-13 — адміністрування користувачів (список/блокування/видалення), лише для IsAdmin.
 // Роль перевіряється по тій самій сесійній куці, що й логін (AuthController) — окремого
-// JWT/ролевого middleware для навчального проєкту не заводимо.
+// JWT/ролевого middleware для навчального проєкту не заводимо. Forbid() тут не годиться:
+// воно запускає ASP.NET Core auth challenge, а authentication-схему (cookie/JWT) ми не
+// реєстрували, тож Forbid() падав у 500 замість 403 — повертаємо статус напряму.
 [ApiController]
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
@@ -29,12 +31,17 @@ public class CustomersController : ControllerBase
         return id is null ? null : await _customerService.GetByIdAsync(id.Value);
     }
 
+    private static ActionResult Denied(CustomerDto? me) =>
+        me is null
+            ? new UnauthorizedResult()
+            : new StatusCodeResult(StatusCodes.Status403Forbidden);
+
     // GET api/customers — FR-12, лише адміністратор
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAll()
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || !me.IsAdmin) return Forbid();
+        if (me is null || !me.IsAdmin) return Denied(me);
 
         return Ok(await _customerService.GetAllAsync());
     }
@@ -44,7 +51,7 @@ public class CustomersController : ControllerBase
     public async Task<ActionResult<CustomerDto>> GetById(int id)
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || (me.Id != id && !me.IsAdmin)) return Forbid();
+        if (me is null || (me.Id != id && !me.IsAdmin)) return Denied(me);
 
         var customer = await _customerService.GetByIdAsync(id);
         if (customer is null) return NotFound();
@@ -57,7 +64,7 @@ public class CustomersController : ControllerBase
     public async Task<ActionResult<CustomerDto>> Update(int id, UpdateCustomerDto dto)
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || (me.Id != id && !me.IsAdmin)) return Forbid();
+        if (me is null || (me.Id != id && !me.IsAdmin)) return Denied(me);
 
         try
         {
@@ -77,7 +84,7 @@ public class CustomersController : ControllerBase
     public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders(int id)
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || (me.Id != id && !me.IsAdmin)) return Forbid();
+        if (me is null || (me.Id != id && !me.IsAdmin)) return Denied(me);
 
         return Ok(await _orderService.GetByCustomerAsync(id));
     }
@@ -87,7 +94,7 @@ public class CustomersController : ControllerBase
     public async Task<ActionResult<CustomerDto>> SetBlocked(int id, [FromBody] SetBlockedDto dto)
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || !me.IsAdmin) return Forbid();
+        if (me is null || !me.IsAdmin) return Denied(me);
 
         var updated = await _customerService.SetBlockedAsync(id, dto.Blocked);
         if (updated is null) return NotFound();
@@ -100,7 +107,7 @@ public class CustomersController : ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         var me = await GetSessionCustomerAsync();
-        if (me is null || !me.IsAdmin) return Forbid();
+        if (me is null || !me.IsAdmin) return Denied(me);
 
         var deleted = await _customerService.DeleteAsync(id);
         if (!deleted) return NotFound();
