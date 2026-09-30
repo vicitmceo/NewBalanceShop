@@ -1,5 +1,6 @@
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Services;
@@ -89,6 +90,19 @@ if (!string.IsNullOrEmpty(firebaseCredentialsJson) && FirebaseApp.DefaultInstanc
 }
 
 var app = builder.Build();
+
+// Render термінує TLS на своєму проксі й передає запит далі по HTTP, тож
+// Request.Scheme без цього завжди "http" (наприклад, GithubAuthController
+// будував би http:// redirect_uri, що не збігається з зареєстрованим на
+// GitHub https-callback). KnownNetworks/KnownProxies чистимо, бо проксі
+// Render не входить у дефолтний довірений діапазон (loopback).
+var forwardedHeadersOptions = new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
+};
+forwardedHeadersOptions.KnownNetworks.Clear();
+forwardedHeadersOptions.KnownProxies.Clear();
+app.UseForwardedHeaders(forwardedHeadersOptions);
 
 using (var scope = app.Services.CreateScope())
 {
