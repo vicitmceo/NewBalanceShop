@@ -9,6 +9,7 @@
 - [BACKLOG.md](BACKLOG.md) — Product Backlog і план спринтів
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — Clean Architecture, UML-діаграма класів
 - [docs/STRUCTURE.md](docs/STRUCTURE.md) — структура проєкту (бек/фронт/БД) за зразком викладача
+- [docs/api/index.html](docs/api/index.html) — HTML-документація ендпоінтів API (Scalar, зі специфікації OpenAPI)
 
 ## Стек
 
