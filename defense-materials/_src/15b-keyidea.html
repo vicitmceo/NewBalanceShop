@@ -1,18 +1,38 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
 <style>
 body { background: var(--black); color:#fff; }
-.wrap { position:absolute; inset:0; padding: 110px 110px; display:flex; flex-direction:column; justify-content:center; }
-.wrap::after { content:""; position:absolute; top:0; right:-4%; width:44%; height:100%; background: linear-gradient(120deg, transparent 40%, var(--red) 40.5% 41.6%, transparent 42%); }
-.eyebrow { margin-bottom: 22px; }
-.idea { font-size: 78px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; max-width: 1150px; position:relative; z-index:2; }
-.idea em { color: var(--red); font-style: normal; }
-.q { margin-top: 70px; font-size: 40px; font-weight: 800; letter-spacing:-0.01em; color:#d8d8d8; position:relative; z-index:2; }
-.sub { margin-top: 14px; font-size: 22px; color:#9a9a9a; position:relative; z-index:2; }
+.wrap { position:absolute; inset:0; padding: 84px 100px; }
+.wrap::after { content:""; position:absolute; top:0; right:-4%; width:44%; height:100%; background: linear-gradient(120deg, transparent 40%, var(--red) 40.5% 41.6%, transparent 42%); pointer-events:none; }
+.eyebrow { margin-bottom: 20px; }
+.idea { font-size: 68px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; max-width: 1200px; position:relative; z-index:2; }
+.idea em { color: var(--red); font-style: normal; white-space: nowrap; }
+.q { margin-top: 34px; font-size: 40px; font-weight: 800; letter-spacing:-0.01em; color:#d8d8d8; position:relative; z-index:2; }
+.sub { margin-top: 10px; font-size: 22px; color:#9a9a9a; position:relative; z-index:2; }
+.qrs { position:absolute; left:100px; bottom: 56px; display:flex; gap: 26px; z-index:3; }
+.qr { background:#fff; border-radius:12px; padding: 14px; text-align:center; color:#111; width: 230px; }
+.qr svg { width:160px; height:160px; display:block; margin:0 auto; }
+.qr b { display:block; font-size: 15px; margin-top: 8px; }
+.qr span.u { display:block; font-size: 11px; color:#5c5c5c; margin-top: 2px; word-break: break-all; line-height: 1.25; }
+.mail { position:absolute; right: 100px; bottom: 74px; z-index:3; text-align:right; font-size: 18px; color:#d0d0d0; line-height:1.7; }
+.mail b { color:#fff; }
 </style></head><body>
 <div class="wrap">
  <div class="eyebrow">Ключова думка проєкту</div>
  <div class="idea">Від каталогу до замовлення <em>за кілька кліків</em>, без зайвої реєстрації.</div>
  <div class="q">Ваші питання?</div>
  <div class="sub">New Balance Shop · Team 1 · дякуємо за увагу</div>
+ <div class="qrs">
+  <div class="qr"><span id="q1"></span><b>Живий сайт</b><span class="u">newbalanceshop-frontend.vercel.app</span></div>
+  <div class="qr"><span id="q2"></span><b>Код (GitHub)</b><span class="u">github.com/vicitmceo/NewBalanceShop</span></div>
+  <div class="qr"><span id="q3"></span><b>Документація</b><span class="u">vicitmceo.github.io/NewBalanceShop</span></div>
+ </div>
+ <div class="mail"><b>Панчук Вадим</b><br>alfa40957@gmail.com<br><b>Ноцколіні Рафаїл</b><br>vicitmceo@gmail.com</div>
 </div>
+<script>
+function qr(id,url){var q=qrcode(0,'M');q.addData(url);q.make();document.getElementById(id).innerHTML=q.createSvgTag({cellSize:6,margin:0,scalable:true});}
+qr('q1','https://newbalanceshop-frontend.vercel.app');
+qr('q2','https://github.com/vicitmceo/NewBalanceShop');
+qr('q3','https://vicitmceo.github.io/NewBalanceShop/');
+</script>
 </body></html>
