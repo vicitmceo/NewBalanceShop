@@ -1,0 +1,34 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cjm { display:grid; grid-template-columns: 150px repeat(5, 1fr); gap: 0; border:1px solid var(--g200); border-radius:8px; overflow:hidden; }
+.cjm > div { padding: 12px 14px; border-bottom:1px solid var(--g200); border-right:1px solid var(--g200); font-size:15px; line-height:1.4; }
+.cjm .h { background: var(--black); color:#fff; font-weight:800; font-size:17px; text-align:center; }
+.cjm .r { background: var(--g100); font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:.07em; color:var(--g600); display:flex; align-items:center; }
+.cjm .emo { padding:0; position:relative; grid-column: 2 / span 5; height: 120px; }
+.good { color: var(--green); font-weight:700; } .bad { color: var(--red); font-weight:700; }
+</style></head><body data-title="Customer Journey Map" data-sub="Шлях покупця від пошуку до замовлення і що ми для цього зробили">
+<div class="body" style="padding-top:26px">
+ <div class="cjm">
+  <div class="h" style="background:#fff"></div><div class="h">Пошук</div><div class="h">Вибір товару</div><div class="h">Кошик</div><div class="h">Оформлення</div><div class="h">Після покупки</div>
+
+  <div class="r">Дії</div>
+  <div>Відкриває сайт магазину</div><div>Переглядає каталог, обирає категорію</div><div>Додає пару у кошик, перевіряє суму</div><div>Вказує ID покупця й підтверджує замовлення</div><div>Дивиться історію замовлень у кабінеті</div>
+
+  <div class="r">Думки</div>
+  <div>«Де тут кросівки?»</div><div>«Який є розмір і колір?»</div><div>«Скільки разом?»</div><div>«Чи треба реєструватися?»</div><div>«Де моє замовлення?»</div>
+
+  <div class="r">Емоції</div>
+  <div class="emo"><svg width="100%" height="120" viewBox="0 0 1000 120" preserveAspectRatio="none">
+    <line x1="0" y1="60" x2="1000" y2="60" stroke="#e2e2e2" stroke-dasharray="6 6"/>
+    <polyline points="100,70 300,40 500,55 700,28 900,35" fill="none" stroke="#cf0a2c" stroke-width="4"/>
+    <g fill="#cf0a2c"><circle cx="100" cy="70" r="8"/><circle cx="300" cy="40" r="8"/><circle cx="500" cy="55" r="8"/><circle cx="700" cy="28" r="8"/><circle cx="900" cy="35" r="8"/></g>
+    <text x="8" y="16" font-size="13" fill="#8c8c8c">позитив</text><text x="8" y="112" font-size="13" fill="#8c8c8c">негатив</text></svg></div>
+
+  <div class="r">Біль</div>
+  <div class="bad">Складно знайти потрібну категорію</div><div class="bad">Не видно розмір і колір</div><div class="bad">Кошик може зникнути</div><div class="bad">Примусова реєстрація</div><div class="bad">Немає історії</div>
+
+  <div class="r">Наше рішення</div>
+  <div class="good">Каталог одразу на головній, меню з 2 розділів</div><div class="good">Картка: розмір, колір, ціна, категорія</div><div class="good">Кошик у сесії, підсумок в реальному часі</div><div class="good">Замовлення без обов'язкового акаунта</div><div class="good">Вкладка «Мої замовлення», кабінет покупця</div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

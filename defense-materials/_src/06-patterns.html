@@ -1,0 +1,25 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.p { min-height: 330px; padding: 20px 24px; } .p h3 { font-size:22px; margin-bottom:4px; } .where { font-size:13px; font-family:Consolas,monospace; color:var(--red); font-weight:700; margin-bottom:10px; }
+.p .why { margin-top:10px; padding:10px 12px; background:var(--g100); border-radius:6px; font-size:15px; color:var(--g900); line-height:1.4; } .p p { font-size:16px; }
+.p pre { margin-top:8px; background:#111; color:#e8e8e8; border-radius:6px; padding:9px 12px; font-size:12.5px; line-height:1.4; overflow:hidden; font-family:Consolas,monospace; }
+</style></head><body data-title="Використані патерни" data-sub="Кожен патерн розв'язує конкретну задачу проєкту">
+<div class="body" style="padding-top:26px">
+ <div class="grid3">
+  <div class="card p"><h3>Repository</h3><div class="where">IRepository&lt;T&gt; → Repository&lt;T&gt;</div><p>Доступ до даних сховано за інтерфейсом у Domain.</p><pre>public interface IProductRepository
+  : IRepository&lt;Product&gt;
+{ Task&lt;List&lt;Product&gt;&gt; GetByCategoryAsync(int id); }</pre><div class="why"><b>Навіщо:</b> сервіси не знають про EF Core; у юніт-тестах репозиторій підміняється Moq.</div></div>
+  <div class="card p"><h3>Dependency Injection</h3><div class="where">Program.cs</div><p>Усі залежності передаються через конструктор, реєстрація в одному місці.</p><pre>builder.Services
+ .AddScoped&lt;IProductService, ProductService&gt;();</pre><div class="why"><b>Навіщо:</b> слабка зв'язаність; в інтеграційних тестах підміняємо БД на InMemory.</div></div>
+  <div class="card p"><h3>Service Layer (Use Cases)</h3><div class="where">Application/Services</div><p>Бізнес-логіка в сервісах, контролер лише приймає й повертає HTTP.</p><pre>OrderService.CreateAsync:
+ перевірка складу, UnitPrice,
+ TotalPrice, зменшення Stock</pre><div class="why"><b>Навіщо:</b> логіку можна тестувати без HTTP і без БД.</div></div>
+  <div class="card p"><h3>DTO + Mapper</h3><div class="where">Application/DTO, Mapping</div><p>API повертає DTO, а не сутності EF; мапінг у extension-методах.</p><pre>public static CustomerDto ToDto(
+  this Customer c) =&gt; new() { … };</pre><div class="why"><b>Навіщо:</b> PasswordHash ніколи не потрапляє у відповідь (є тест на це).</div></div>
+  <div class="card p"><h3>Middleware Pipeline</h3><div class="where">Program.cs</div><p>Запит проходить послідовність компонентів.</p><pre>UseSwagger → UseCors
+ → UseSession → MapControllers</pre><div class="why"><b>Навіщо:</b> CORS із cookie й сесія для кошика та логіну налаштовані централізовано.</div></div>
+  <div class="card p"><h3>Session State</h3><div class="where">CartController, AuthController</div><p>Кошик гостя й ID залогіненого покупця живуть у серверній сесії.</p><pre>HttpContext.Session
+ .SetInt32("customerId", id);</pre><div class="why"><b>Навіщо:</b> кошик не пишемо в БД до оформлення; логін без токенів.</div></div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

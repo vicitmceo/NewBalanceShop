@@ -1,0 +1,41 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: 1.2fr 1fr; gap:22px; }
+td { font-size:16px; } .st { font-weight:800; font-size:14px; white-space:nowrap; } .y { color:var(--green); } .p { color:var(--amber); } .n { color:var(--red); }
+.tree { font-family: Consolas, monospace; font-size:14.5px; line-height:1.55; background:#111; color:#e8e8e8; border-radius:8px; padding:18px 22px; white-space:pre; }
+.tree b { color:#ff7b8f; font-weight:700; }
+</style></head><body data-title="Документація" data-sub="README, документація API (Scalar / OpenAPI), архітектурні й користувацькі документи">
+<div class="body" style="padding-top:22px">
+ <div class="cols">
+  <div class="card">
+   <h3>Що є в репозиторії</h3>
+   <table>
+    <tr><th>Документ</th><th>Призначення</th><th>Стан</th></tr>
+    <tr><td>README.md</td><td>Опис, стек, запуск, ендпоінти</td><td class="st p">Частково, оновити стек і ендпоінти</td></tr>
+    <tr><td>SRS.md</td><td>Вимоги, use cases, NFR, матриця трасування</td><td class="st y">Є</td></tr>
+    <tr><td>docs/ARCHITECTURE.md</td><td>Clean Architecture, UML класів</td><td class="st y">Є</td></tr>
+    <tr><td>docs/STRUCTURE.md</td><td>Структура бекенду, фронтенду, БД</td><td class="st y">Є</td></tr>
+    <tr><td>docs/api/index.html</td><td>Документація REST API на Scalar з OpenAPI</td><td class="st y">Є</td></tr>
+    <tr><td>Swagger UI (/swagger)</td><td>Інтерактивний API-провайдер на Render</td><td class="st y">Є</td></tr>
+    <tr><td>docs/user_guide.html</td><td>Інструкція для покупця</td><td class="st y">Є</td></tr>
+    <tr><td>docs/test_report.html</td><td>Звіт про тестування (145 тестів)</td><td class="st y">Є</td></tr>
+    <tr><td>DocFX на GitHub Pages</td><td>Документація публічних методів із коментарів коду</td><td class="st n">Немає, у плані</td></tr>
+   </table>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+   <div class="tree"><b>NewBalanceShop/</b>
+├─ README.md · SRS.md · TEAM.md · BACKLOG.md
+├─ <b>docs/</b>
+│  ├─ ARCHITECTURE.md · STRUCTURE.md
+│  ├─ api/  index.html (Scalar) + openapi.json
+│  ├─ architecture/  структура back/front/DB
+│  ├─ db/  postgres-tables.png
+│  ├─ user_guide.html
+│  └─ test_report.html
+├─ <b>defense-materials/</b>  слайди до захисту
+└─ Dockerfile · render.yaml</div>
+   <div class="card"><h3>Документація API</h3><p>Специфікація OpenAPI генерується Swashbuckle, HTML-сторінка побудована на Scalar. Ендпоінти згруповані: Products, Cart, Orders, Auth, Customers.</p></div>
+  </div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

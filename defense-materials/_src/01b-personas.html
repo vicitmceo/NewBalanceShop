@@ -1,0 +1,29 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.persona { display:flex; flex-direction:column; gap:12px; min-height: 600px; }
+.avatar { width:78px; height:78px; border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; }
+.persona.admin .avatar { background: var(--red); }
+.persona h3 { font-size:26px; margin:0; }
+.age { color:var(--g400); font-weight:700; font-size:16px; }
+.row b { display:block; font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--red); margin-bottom:3px; }
+.row span { font-size:17px; line-height:1.45; color:var(--g900); }
+.note { margin-top:16px; font-size:15px; color:var(--g600); }
+</style></head><body data-title="Персони" data-sub="Три типові користувачі продукту (проєктні персони)">
+<div class="body">
+ <div class="grid3">
+  <div class="card persona"><div class="avatar">О</div><div><h3>Олексій, покупець</h3><div class="age">22 роки · студент</div></div>
+   <div class="row"><b>Де і як користується</b><span>Заходить зі смартфона між парами, швидко дивиться каталог і ціни.</span></div>
+   <div class="row"><b>Яку потребу закриває</b><span>Знайти кросівки свого розміру й замовити без реєстрації та зайвих кроків.</span></div>
+   <div class="row"><b>Що для нього важливо</b><span>Швидкість, зрозумілий кошик, ціна в гривнях.</span></div></div>
+  <div class="card persona"><div class="avatar">М</div><div><h3>Марія, регулярна клієнтка</h3><div class="age">31 рік · менеджерка, бігає 3 рази на тиждень</div></div>
+   <div class="row"><b>Де і як користується</b><span>Вдома з ноутбука, обирає одяг і взуття для тренувань, повертається за новинками.</span></div>
+   <div class="row"><b>Яку потребу закриває</b><span>Мати профіль, бачити історію замовлень, змінювати контактні дані.</span></div>
+   <div class="row"><b>Що для неї важливо</b><span>Кабінет покупця, вхід через Google, мова інтерфейсу.</span></div></div>
+  <div class="card persona admin"><div class="avatar">А</div><div><h3>Андрій, адміністратор</h3><div class="age">28 років · модератор магазину</div></div>
+   <div class="row"><b>Де і як користується</b><span>З робочого комп'ютера, керує каталогом і списком користувачів.</span></div>
+   <div class="row"><b>Яку потребу закриває</b><span>Додавати та змінювати товари, блокувати або видаляти порушників.</span></div>
+   <div class="row"><b>Що для нього важливо</b><span>Права доступу: звичайний покупець не бачить адмін-функцій.</span></div></div>
+ </div>
+ <p class="note">Персони сформовано проєктною командою за очікуваним сценарієм використання; це не результати опитування реальних користувачів.</p>
+</div>
+<script src="slide.js"></script></body></html>

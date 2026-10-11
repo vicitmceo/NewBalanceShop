@@ -1,0 +1,35 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.grp { margin-bottom: 18px; } .grp h3 { font-size:15px; text-transform:uppercase; letter-spacing:.1em; color:var(--red); margin-bottom:10px; }
+.row { display:flex; gap:16px; flex-wrap:wrap; }
+.t { width: 168px; height: 118px; border:1px solid var(--g200); border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:#fff; }
+.t img { width:44px; height:44px; object-fit:contain; } .t .ph { width:44px; height:44px; border-radius:8px; background:var(--black); color:#fff; font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; }
+.t span { font-size:15px; font-weight:700; }
+.flow { margin-top: 6px; display:flex; align-items:center; gap:10px; font-weight:700; font-size:16px; flex-wrap:wrap; }
+.flow b { background:var(--black); color:#fff; padding:8px 14px; border-radius:6px; } .flow i { font-style:normal; color:var(--red); font-size:22px; }
+</style></head><body data-title="Tools & Workflow" data-sub="Інструменти розробки, деплою та командної роботи">
+<div class="body" style="padding-top:22px">
+ <div class="grp"><h3>Бекенд і дані</h3><div class="row">
+  <div class="t"><img src="https://cdn.simpleicons.org/dotnet"><span>.NET 9 / ASP.NET Core</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/postgresql"><span>PostgreSQL</span></div>
+  <div class="t"><div class="ph">EF</div><span>EF Core + Npgsql</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/swagger"><span>Swagger / Scalar</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/firebase"><span>Firebase Auth</span></div></div></div>
+ <div class="grp"><h3>Фронтенд</h3><div class="row">
+  <div class="t"><img src="https://cdn.simpleicons.org/react"><span>React</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/vite"><span>Vite</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/i18next"><span>i18next (UA/EN/FR)</span></div></div></div>
+ <div class="grp"><h3>Тестування</h3><div class="row">
+  <div class="t"><div class="ph">xU</div><span>xUnit</span></div>
+  <div class="t"><div class="ph">Mq</div><span>Moq</span></div>
+  <div class="t"><div class="ph">WAF</div><span>WebAppFactory</span></div>
+  <div class="t"><div class="ph">cov</div><span>coverlet</span></div></div></div>
+ <div class="grp"><h3>Процес і деплой</h3><div class="row">
+  <div class="t"><img src="https://cdn.simpleicons.org/github"><span>GitHub</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/jira"><span>Jira (Scrum)</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/docker"><span>Docker</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/render"><span>Render (API + БД)</span></div>
+  <div class="t"><img src="https://cdn.simpleicons.org/vercel"><span>Vercel (фронтенд)</span></div></div></div>
+ <div class="flow"><b>Код</b><i>→</i><b>git push</b><i>→</i><b>GitHub</b><i>→</i><b>Render збирає Docker</b> <i>/</i> <b>Vercel збирає React</b><i>→</i><b>онлайн</b></div>
+</div>
+<script src="slide.js"></script></body></html>

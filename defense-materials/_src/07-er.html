@@ -1,0 +1,47 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.h { font-size:17px; font-weight:800; fill:#fff; } .c { font-size:13.5px; font-family:Consolas,monospace; fill:#1a1a1a; } .ty { font-size:12px; fill:#8c8c8c; font-family:Consolas,monospace; }
+.pk { font-weight:800; fill:#cf0a2c; } .fk { fill:#1f6fd0; font-weight:700; }
+.why { display:grid; grid-template-columns: 1.2fr 1fr 1fr; gap:16px; margin-top:6px; }
+.why .card { padding: 12px 18px; } .why h3 { font-size:16px; margin-bottom:4px; } .why li, .why p { font-size:14px; line-height:1.38; }
+</style></head><body data-title="База даних: ER-діаграма" data-sub="PostgreSQL (Render) · 5 таблиць · EF Core Migrations + seed">
+<div class="body" style="padding:8px 34px">
+<svg width="1530" height="500" viewBox="0 0 1530 500">
+ <defs><marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111"/></marker></defs>
+ <!-- Categories -->
+ <rect x="10" y="30" width="250" height="110" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="10" y="30" width="250" height="30" fill="#111"/><text x="135" y="52" text-anchor="middle" class="h">Categories</text>
+ <text x="22" y="86" class="c"><tspan class="pk">PK</tspan> Id</text><text x="150" y="86" class="ty">int</text><text x="22" y="108" class="c">Name</text><text x="150" y="108" class="ty">text</text>
+ <!-- Products -->
+ <rect x="330" y="10" width="300" height="270" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="330" y="10" width="300" height="30" fill="#111"/><text x="480" y="32" text-anchor="middle" class="h">Products</text>
+ <g class="c"><text x="342" y="66"><tspan class="pk">PK</tspan> Id</text><text x="342" y="88">Name</text><text x="342" y="110">Brand</text><text x="342" y="132"><tspan class="fk">FK</tspan> CategoryId</text><text x="342" y="154">Size</text><text x="342" y="176">Color</text><text x="342" y="198">Price</text><text x="342" y="220">Stock</text><text x="342" y="242">ImageUrl</text><text x="342" y="264">Description</text></g>
+ <g class="ty"><text x="500" y="66">int</text><text x="500" y="88">varchar(150)</text><text x="500" y="110">varchar(80)</text><text x="500" y="132">int</text><text x="500" y="154">varchar(20)</text><text x="500" y="176">varchar(40)</text><text x="500" y="198">numeric(10,2)</text><text x="500" y="220">int</text><text x="500" y="242">varchar(300)</text><text x="500" y="264">varchar(1000)</text></g>
+ <!-- OrderItems -->
+ <rect x="730" y="150" width="280" height="190" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="730" y="150" width="280" height="30" fill="#111"/><text x="870" y="172" text-anchor="middle" class="h">OrderItems</text>
+ <g class="c"><text x="742" y="206"><tspan class="pk">PK</tspan> Id</text><text x="742" y="228"><tspan class="fk">FK</tspan> OrderId</text><text x="742" y="250"><tspan class="fk">FK</tspan> ProductId</text><text x="742" y="272">Quantity</text><text x="742" y="294">UnitPrice</text></g>
+ <g class="ty"><text x="900" y="206">int</text><text x="900" y="228">int</text><text x="900" y="250">int</text><text x="900" y="272">int</text><text x="900" y="294">numeric(10,2)</text></g>
+ <!-- Orders -->
+ <rect x="730" y="-4" width="0" height="0"/>
+ <rect x="1100" y="150" width="280" height="190" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="1100" y="150" width="280" height="30" fill="#111"/><text x="1240" y="172" text-anchor="middle" class="h">Orders</text>
+ <g class="c"><text x="1112" y="206"><tspan class="pk">PK</tspan> Id</text><text x="1112" y="228"><tspan class="fk">FK</tspan> CustomerId</text><text x="1112" y="250">CreatedAt</text><text x="1112" y="272">Status</text><text x="1112" y="294">TotalPrice</text></g>
+ <g class="ty"><text x="1272" y="206">int</text><text x="1272" y="228">int</text><text x="1272" y="250">timestamptz</text><text x="1272" y="272">int (enum)</text><text x="1272" y="294">numeric(10,2)</text></g>
+ <!-- Customers -->
+ <rect x="1100" y="-0" width="0" height="0"/>
+ <rect x="1130" y="-10" width="0" height="0"/>
+ <rect x="1100" y="360" width="0" height="0"/>
+ <rect x="730" y="360" width="650" height="130" rx="6" fill="#fff" stroke="#cf0a2c" stroke-width="2.5"/><rect x="730" y="360" width="650" height="30" fill="#cf0a2c"/><text x="1055" y="382" text-anchor="middle" class="h">Customers</text>
+ <g class="c"><text x="742" y="416"><tspan class="pk">PK</tspan> Id</text><text x="742" y="438">FullName</text><text x="742" y="460">City, Country, Phone</text><text x="742" y="480">Email</text>
+  <text x="1070" y="416">PasswordHash</text><text x="1070" y="438">GoogleUid (null)</text><text x="1070" y="460">IsBlocked (bool)</text><text x="1070" y="480">IsAdmin (bool)</text></g>
+ <!-- relations -->
+ <line x1="260" y1="95" x2="330" y2="132" stroke="#111" stroke-width="2.2"/><line x1="330" y1="132" x2="326" y2="132" marker-end="url(#m)" stroke="#111"/><text x="290" y="96" font-size="13" font-weight="700">1</text><text x="316" y="150" font-size="13" font-weight="700">N</text>
+ <line x1="630" y1="250" x2="730" y2="250" stroke="#111" stroke-width="2.2" marker-end="url(#m)"/><text x="640" y="244" font-size="13" font-weight="700">1</text><text x="708" y="244" font-size="13" font-weight="700">N</text>
+ <line x1="1100" y1="228" x2="1010" y2="228" stroke="#111" stroke-width="2.2" marker-end="url(#m)"/><text x="1088" y="220" font-size="13" font-weight="700">1</text><text x="1016" y="220" font-size="13" font-weight="700">N</text>
+ <line x1="1240" y1="360" x2="1240" y2="340" stroke="#111" stroke-width="2.2"/><line x1="1240" y1="345" x2="1240" y2="341" stroke="#111" stroke-width="2" marker-end="url(#m)"/><text x="1252" y="356" font-size="13" font-weight="700">1</text><text x="1252" y="338" font-size="13" font-weight="700">N</text>
+</svg>
+<div class="why">
+ <div class="card"><h3>Чому PostgreSQL</h3><ul><li>Реляційні зв'язки замовлення → позиції → товар, потрібна транзакційність.</li><li>Безкоштовний managed-інстанс на Render, є провайдер Npgsql для EF Core.</li></ul></div>
+ <div class="card"><h3>Структура</h3><p>3НФ: ціна позиції (UnitPrice) фіксується на момент замовлення; Customer не дублює дані замовлень. Індекси на всіх зовнішніх ключах.</p></div>
+ <div class="card" style="border-color:#cf0a2c"><h3 style="color:#cf0a2c">Що покращити</h3><p>Унікальний індекс на Customers.Email; м'яке видалення замість каскадного (зараз видалення клієнта прибирає його замовлення).</p></div>
+</div>
+</div>
+<script src="slide.js"></script></body></html>

@@ -1,0 +1,48 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: 1fr 1.05fr 1fr; gap:18px; }
+.step { display:flex; align-items:center; gap:10px; margin-bottom:9px; font-size:16px; } .step b { background:var(--black); color:#fff; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
+.hash { background:#111; color:#e8e8e8; border-radius:8px; padding:12px 14px; font-family:Consolas,monospace; font-size:13px; line-height:1.5; margin-top:10px; }
+.hash em { color:#ff7b8f; font-style:normal; }
+td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800; } .p { color:var(--amber); font-weight:800; } .n { color:var(--red); font-weight:800; }
+.card h3 { font-size:19px; } .card li { font-size:15px; line-height:1.4; margin-bottom:5px; }
+</style></head><body data-title="Authentication / Authorization та безпека" data-sub="Як зберігаємо паролі, як перевіряємо права і що ще треба закрити">
+<div class="body" style="padding-top:20px">
+ <div class="cols">
+  <div class="card">
+   <h3>Аутентифікація: 3 способи входу</h3>
+   <div class="step"><b>1</b>Email + пароль: <span class="mono">/api/Auth/register, login</span></div>
+   <div class="step"><b>2</b>Google: Firebase ID-токен, API перевіряє підпис</div>
+   <div class="step"><b>3</b>GitHub OAuth (authorization code flow)</div>
+   <div class="step"><b>→</b>Сесія: cookie HttpOnly, Secure, таймаут 30 хв</div>
+   <div class="hash"><em>Пароль:</em> PBKDF2-HMAC-SHA256<br>100 000 ітерацій · сіль 16 байт · хеш 32 байти<br>формат: ітерації.сіль.хеш · FixedTimeEquals<br><em>Google-користувачі:</em> пароль не зберігається</div>
+  </div>
+  <div class="card">
+   <h3>Авторизація і захист</h3>
+   <table>
+    <tr><th>Загроза</th><th>Захист</th><th></th></tr>
+    <tr><td>SQL Injection</td><td>EF Core, параметризовані запити</td><td class="y">OK</td></tr>
+    <tr><td>XSS</td><td>React екранує вивід</td><td class="y">OK</td></tr>
+    <tr><td>Паролі</td><td>Hash + salt, не SHA256(password)</td><td class="y">OK</td></tr>
+    <tr><td>Адмін-функції</td><td>Перевірка IsAdmin: 401 / 403</td><td class="y">OK</td></tr>
+    <tr><td>Чужий профіль</td><td>Тільки власник або адмін</td><td class="y">OK</td></tr>
+    <tr><td>Секрети</td><td>DATABASE_URL, Firebase JSON у env</td><td class="y">OK</td></tr>
+    <tr><td>BOLA (замовлення)</td><td>customerId у запиті довільний</td><td class="n">Ризик</td></tr>
+    <tr><td>CRUD товарів</td><td>Без перевірки ролі</td><td class="n">Ризик</td></tr>
+    <tr><td>CORS / CSRF</td><td>Будь-який origin з cookie</td><td class="p">Спрощено</td></tr>
+   </table>
+  </div>
+  <div class="card" style="border-color:#cf0a2c">
+   <h3 style="color:#cf0a2c">План закриття ризиків</h3>
+   <ul>
+    <li><b>BOLA:</b> брати customerId із сесії в /api/Orders і checkout, а не з параметра.</li>
+    <li><b>Товари:</b> POST/PUT/DELETE лише для IsAdmin (FR-04–06).</li>
+    <li><b>CORS:</b> білий список origin: Vercel-домен і localhost.</li>
+    <li><b>Сесії:</b> зараз у пам'яті процесу; перенести в Redis або БД.</li>
+    <li><b>Brute-force:</b> rate limiting на login.</li>
+    <li><b>Email:</b> унікальний індекс у БД.</li>
+   </ul>
+  </div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

@@ -1,0 +1,32 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.kp { padding:20px 24px; } .kp .num { font-size:58px; } .kp .num small { font-size:24px; color:var(--g400); font-weight:700; }
+.bars { margin-top: 6px; } .bar { display:grid; grid-template-columns: 260px 1fr 70px; align-items:center; gap:14px; margin-bottom:12px; font-size:17px; }
+.track { height:26px; background:var(--g100); border-radius:6px; overflow:hidden; } .fill { height:100%; background:var(--red); border-radius:6px; } .fill.dark { background:var(--black); }
+.bar b { text-align:right; font-weight:800; }
+.src { font-size:13px; color:var(--g400); margin-top:8px; }
+</style></head><body data-title="Ключові метрики" data-sub="Фактичні цифри на 05.10.2026, виміряно з репозиторіїв і прогону тестів">
+<div class="body" style="padding-top:26px">
+ <div class="grid4">
+  <div class="card kp dark"><div class="num">12<small>/13</small></div><div class="lbl" style="color:#bbb">вимог SRS повністю</div></div>
+  <div class="card kp"><div class="num">29</div><div class="lbl">REST-ендпоінтів</div></div>
+  <div class="card kp"><div class="num">145</div><div class="lbl">тестів (102 unit + 43 integration)</div></div>
+  <div class="card kp"><div class="num">86,7<small>%</small></div><div class="lbl">code coverage (рядки)</div></div>
+  <div class="card kp"><div class="num">30</div><div class="lbl">комітів (бекенд 24 + фронтенд 6)</div></div>
+  <div class="card kp"><div class="num">3<small> тиж.</small></div><div class="lbl">активної розробки: 14.09 – 05.10</div></div>
+  <div class="card kp"><div class="num">1,6<small>k</small></div><div class="lbl">рядків C# у бекенді (без тестів і міграцій)</div></div>
+  <div class="card kp"><div class="num">2,2<small>k</small></div><div class="lbl">рядків C# у тестах</div></div>
+ </div>
+ <div class="card" style="margin-top:22px">
+  <h3>Покриття тестами за проєктами (unit + integration, злиті звіти coverlet)</h3>
+  <div class="bars">
+   <div class="bar"><span>NewBalanceShop.Infrastructure</span><div class="track"><div class="fill dark" style="width:95.8%"></div></div><b>95,8%</b></div>
+   <div class="bar"><span>NewBalanceShop.Application</span><div class="track"><div class="fill dark" style="width:90.2%"></div></div><b>90,2%</b></div>
+   <div class="bar"><span>NewBalanceShop.Domain</span><div class="track"><div class="fill dark" style="width:84.6%"></div></div><b>84,6%</b></div>
+   <div class="bar"><span>NewBalanceShop (Web API)</span><div class="track"><div class="fill dark" style="width:82%"></div></div><b>82,0%</b></div>
+   <div class="bar"><span><b style="text-align:left">Разом</b></span><div class="track"><div class="fill" style="width:86.7%"></div></div><b>86,7%</b></div>
+  </div>
+  <div class="src">804 рядки, 697 покрито. Без міграцій і тестових проєктів. Команда: dotnet test --collect:"XPlat Code Coverage".</div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

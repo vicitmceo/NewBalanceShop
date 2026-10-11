@@ -1,0 +1,28 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.tree { display:flex; flex-direction:column; align-items:center; gap: 26px; }
+.root { background:var(--black); color:#fff; border-radius:8px; padding:14px 40px; font-weight:800; font-size:22px; }
+.lvl { display:grid; gap:18px; width:100%; }
+.l1 { grid-template-columns: repeat(4, 1fr); }
+.node { border:2px solid var(--black); border-radius:8px; padding:12px 16px; text-align:center; background:#fff; }
+.node b { display:block; font-size:19px; margin-bottom:4px; } .node span { font-size:14px; color:var(--g600); line-height:1.35; display:block; }
+.node.red { border-color:var(--red); } .node.red b { color:var(--red); }
+.kids { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.kid { background:var(--g100); border-radius:6px; padding:9px 12px; font-size:14px; font-weight:600; text-align:center; }
+.conn { width:100%; height:2px; background:var(--g200); margin:-8px 0 -8px; }
+.legend { margin-top:6px; font-size:14px; color:var(--g600); }
+</style></head><body data-title="Інформаційна архітектура" data-sub="Структура інтерфейсу та сторінок, які бачить користувач">
+<div class="body" style="padding-top:26px">
+ <div class="tree">
+  <div class="root">New Balance Shop · веб-застосунок</div>
+  <div class="conn"></div>
+  <div class="lvl l1">
+   <div class="node"><b>Шапка</b><span>на кожній сторінці</span><div class="kids"><div class="kid">Логотип і назва</div><div class="kid">Меню: Каталог / Мої замовлення</div><div class="kid">Мова UA / EN / FR</div><div class="kid">Акаунт: Google, GitHub</div><div class="kid">Кошик (лічильник)</div></div></div>
+   <div class="node"><b>Каталог</b><span>головна сторінка</span><div class="kids"><div class="kid">Hero: «Новий сезон»</div><div class="kid">Сітка карток товарів</div><div class="kid">Картка: розмір, колір, ціна</div><div class="kid">Кнопка «В кошик»</div></div></div>
+   <div class="node"><b>Кошик і замовлення</b><span>права панель каталогу</span><div class="kids"><div class="kid">Список позицій і сума</div><div class="kid">Видалення позиції</div><div class="kid">ID покупця</div><div class="kid">«Оформити замовлення»</div></div></div>
+   <div class="node"><b>Мої замовлення</b><span>окрема вкладка</span><div class="kids"><div class="kid">Список замовлень покупця</div><div class="kid">Статус і дата</div><div class="kid">Склад і сума замовлення</div></div></div>
+  </div>
+  <div class="legend">Бекенд (REST): /api/Products · /api/Cart · /api/Orders · /api/Auth (register, login, logout, me, google) · /api/Customers (кабінет, адмін) · /api/auth/github</div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

@@ -1,0 +1,43 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: 1.25fr 1fr; gap: 24px; }
+td.s { width: 110px; } .st { font-weight:800; font-size:14px; }
+.done { color: var(--green); } .part { color: var(--amber); }
+table td { font-size:16px; padding: 8px 10px; }
+.kpi { display:flex; gap: 30px; margin-bottom: 18px; }
+.kpi div { flex:1; }
+</style></head><body data-title="SRS: вимоги до системи" data-sub="13 функціональних вимог + нефункціональні · файл SRS.md у репозиторії">
+<div class="body">
+ <div class="cols">
+  <div class="card">
+   <h3>Функціональні вимоги (FR) і стан реалізації</h3>
+   <table>
+    <tr><th>ID</th><th>Вимога</th><th>Стан</th></tr>
+    <tr><td>FR-01, 02</td><td>Перегляд списку товарів і одного товару</td><td class="st done">Готово</td></tr>
+    <tr><td>FR-03</td><td>Фільтр/пошук (за категорією; бренд, ціна — ні)</td><td class="st part">Частково</td></tr>
+    <tr><td>FR-04, 05, 06</td><td>Створення, оновлення, видалення товару</td><td class="st done">Готово</td></tr>
+    <tr><td>FR-07, 08</td><td>Кошик і оформлення замовлення без реєстрації</td><td class="st done">Готово</td></tr>
+    <tr><td>FR-09</td><td>Статус замовлення (New … Cancelled)</td><td class="st done">Готово</td></tr>
+    <tr><td>FR-10, 11</td><td>Кабінет покупця: профіль, історія замовлень</td><td class="st done">Готово</td></tr>
+    <tr><td>FR-12, 13</td><td>Адмін: список, блокування, видалення користувачів</td><td class="st done">Готово</td></tr>
+   </table>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:22px;">
+   <div class="grid2">
+    <div class="card dark"><div class="num">12 / 13</div><div class="lbl" style="color:#bbb">FR повністю</div></div>
+    <div class="card"><div class="num">1</div><div class="lbl">FR частково (FR-03)</div></div>
+   </div>
+   <div class="card">
+    <h3>Нефункціональні вимоги (NFR)</h3>
+    <ul>
+     <li><b>Продуктивність:</b> читання через AsNoTracking, DTO замість сутностей.</li>
+     <li><b>Масштабованість:</b> Clean Architecture, окремі проєкти, stateless-сервіси з DI.</li>
+     <li><b>Безпека:</b> хеш паролів PBKDF2, перевірка ролі адміна на ендпоінтах користувачів, HttpOnly-сесія.</li>
+     <li><b>Надійність:</b> міграції EF Core, 145 автотестів, покриття 86,7%.</li>
+     <li><b>Зручність:</b> інтерфейс UA/EN/FR, кошик без обов'язкової реєстрації.</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

@@ -1,0 +1,27 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.tl { display:grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position:relative; margin-top: 6px; }
+.tl::before { content:""; position:absolute; left:0; right:0; top: 22px; height:3px; background: var(--g200); }
+.sp { position:relative; padding-top: 52px; }
+.dot { position:absolute; top:10px; left:0; width:26px; height:26px; border-radius:50%; background:var(--red); border:5px solid #fff; box-shadow: 0 0 0 2px var(--red); }
+.sp h3 { font-size: 21px; margin-bottom: 2px; font-weight:800; }
+.dates { font-size: 15px; font-weight: 700; color: var(--red); margin-bottom: 10px; }
+.sp .card { min-height: 360px; padding: 18px 20px; }
+.sp li { font-size: 15.5px; line-height: 1.42; margin-bottom: 4px; }
+.goal { font-size:15px; font-weight:700; color:var(--g900); margin-bottom: 8px; }
+</style></head><body data-title="Потижневий план робіт" data-sub="Спринти курсу (Scrum) і що зроблено в кожному">
+<div class="body">
+ <div class="tl">
+  <div class="sp"><div class="dot"></div><div class="card"><h3>Sprint 1–2</h3><div class="dates">до 14.09 · Старт</div><div class="goal">SRS, команда, архітектура</div>
+   <ul><li>SRS.md, TEAM.md, BACKLOG.md</li><li>Jira Scrum-дошка</li><li>Clean Architecture, UML-діаграма</li><li>Repository + EF Core</li><li>CRUD товарів (REST)</li></ul></div></div>
+  <div class="sp"><div class="dot"></div><div class="card"><h3>Sprint 3</h3><div class="dates">07.09 – 13.09 · Замовлення</div><div class="goal">Domain-модель і замовлення</div>
+   <ul><li>Order, OrderItem, Customer</li><li>POST /api/orders</li><li>CustomerRepository, сид-дані</li><li>Інструкція користувача</li></ul></div></div>
+  <div class="sp"><div class="dot"></div><div class="card"><h3>Sprint 4</h3><div class="dates">14.09 – 20.09 · Деплой і фронтенд</div><div class="goal">Працюючий продукт онлайн</div>
+   <ul><li>PostgreSQL, Docker, Render</li><li>Swagger UI</li><li>Кошик у сесії + CORS/cookies</li><li>React-фронтенд на Vercel</li><li>Локалізація UA/EN/FR</li></ul></div></div>
+  <div class="sp"><div class="dot"></div><div class="card"><h3>Sprint 5</h3><div class="dates">21.09 – 27.09 · MVP</div><div class="goal">Завершення основної функціональності</div>
+   <ul><li>Поділ на 4 проєкти Clean Architecture</li><li>Реєстрація, логін, логаут, сесії</li><li>Вхід через GitHub OAuth</li><li>Вхід через Google (Firebase)</li></ul></div></div>
+  <div class="sp"><div class="dot"></div><div class="card"><h3>Sprint 6</h3><div class="dates">28.09 – 04.10 · Тестування</div><div class="goal">Додаткові можливості та тести</div>
+   <ul><li>Кабінет покупця (FR-10, 11)</li><li>Адмін: блокування/видалення (FR-12, 13)</li><li>145 автотестів (xUnit)</li><li>Покриття коду 86,7%</li><li>Scalar-документація API</li></ul></div></div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

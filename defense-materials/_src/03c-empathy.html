@@ -1,0 +1,24 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.map { display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; height: 640px; position:relative; }
+.q { padding: 22px 26px; }
+.q h3 { font-size: 22px; } .q li { font-size: 18px; line-height:1.45; margin-bottom:4px; color:var(--g900); }
+.center { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--red); color:#fff; border-radius:50%; width:190px; height:190px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:800; font-size:20px; line-height:1.2; border:8px solid #fff; z-index:3; }
+.bottom { margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.bottom .card { padding:14px 22px; } .bottom h3 { font-size:18px; margin-bottom:6px; color:var(--red);} .bottom li { font-size:16px; }
+.who { font-size:15px; color:var(--g600); margin-bottom:10px; }
+</style></head><body data-title="Empathy Map" data-sub="Покупець Олексій, 22 роки, купує кросівки онлайн (проєктна карта емпатії)">
+<div class="body" style="padding-top:26px">
+ <div class="map">
+  <div class="card q"><h3>Думає й відчуває</h3><ul><li>«Хочу швидко знайти свій розмір».</li><li>«Не хочу витрачати час на реєстрацію».</li><li>Боїться помилитися з ціною чи розміром.</li></ul></div>
+  <div class="card q"><h3>Бачить</h3><ul><li>Великі каталоги з купою фільтрів і банерів.</li><li>Знижки та новинки на головній.</li><li>Відгуки й поради друзів у соцмережах.</li></ul></div>
+  <div class="card q"><h3>Каже й робить</h3><ul><li>Порівнює ціни в кількох магазинах.</li><li>Відкриває сайт зі смартфона між заняттями.</li><li>Кидає кошик, якщо оформлення складне.</li></ul></div>
+  <div class="card q"><h3>Чує</h3><ul><li>Друзі радять модель 574 або 550.</li><li>Блогери показують нові колекції.</li><li>Продавці обіцяють швидку доставку.</li></ul></div>
+  <div class="center">Купити без зайвого</div>
+ </div>
+ <div class="bottom">
+  <div class="card"><h3>Болі</h3><ul><li>Обов'язкова реєстрація перед покупкою.</li><li>Складно зрозуміти, чи є товар у потрібному розмірі.</li></ul></div>
+  <div class="card"><h3>Очікуваний результат</h3><ul><li>Замовлення за кілька кліків без акаунта.</li><li>Одразу видно розмір, колір, ціну в гривнях.</li></ul></div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

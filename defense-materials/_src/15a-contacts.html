@@ -1,0 +1,24 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<style>
+body { background: var(--black); color:#fff; } .top { border-color:#333; } .top h1 { color:#fff; } .top h1 small { color:#aaa; } .brand { color:#fff; }
+.qrs { display:grid; grid-template-columns: repeat(3, 1fr); gap:34px; margin-top: 8px; }
+.q { background:#fff; color:#111; border-radius:14px; padding:26px; text-align:center; } .q svg { width:260px; height:260px; display:block; margin:0 auto 14px; }
+.q b { display:block; font-size:24px; margin-bottom:6px; } .q span { font-size:16px; color:#5c5c5c; word-break:break-all; }
+.mail { margin-top:34px; display:flex; gap:40px; font-size:22px; color:#d8d8d8; } .mail b { color:#fff; }
+</style></head><body data-title="Контакти і посилання" data-sub="Скануйте QR-код, щоб відкрити проєкт">
+<div class="body">
+ <div class="qrs">
+  <div class="q"><span id="q1"></span><b>Живий сайт</b><span>newbalanceshop-frontend.vercel.app</span></div>
+  <div class="q"><span id="q2"></span><b>Код бекенду (GitHub)</b><span>github.com/vicitmceo/NewBalanceShop</span></div>
+  <div class="q"><span id="q3"></span><b>Документація API</b><span>newbalanceshop-api.onrender.com/swagger</span></div>
+ </div>
+ <div class="mail"><span><b>Панчук Вадим</b> · alfa40957@gmail.com</span><span><b>Ноцколіні Рафаїл</b> · vicitmceo@gmail.com</span></div>
+</div>
+<script>
+function qr(id,url){var q=qrcode(0,'M');q.addData(url);q.make();document.getElementById(id).innerHTML=q.createSvgTag({cellSize:6,margin:0,scalable:true});}
+qr('q1','https://newbalanceshop-frontend.vercel.app');
+qr('q2','https://github.com/vicitmceo/NewBalanceShop');
+qr('q3','https://newbalanceshop-api.onrender.com/swagger');
+</script>
+<script src="slide.js"></script></body></html>
