@@ -9,6 +9,7 @@ namespace NewBalanceShop.Presentation.Controllers;
 // 2) GitHub після згоди користувача повертає код на GET api/auth/github/callback
 // 3) бекенд обмінює код на access_token і забирає профіль користувача GitHub,
 //    кладе його в сесію (ту саму сесійну куку, що й кошик/логін) і редіректить назад на фронтенд
+/// <summary>Вхід через GitHub (OAuth, authorization code flow).</summary>
 [ApiController]
 [Route("api/auth/github")]
 public class GithubAuthController : ControllerBase
@@ -24,6 +25,7 @@ public class GithubAuthController : ControllerBase
         _httpClientFactory = httpClientFactory;
     }
 
+    /// <summary>Перенаправляє на сторінку авторизації GitHub.</summary>
     [HttpGet("login")]
     public IActionResult Login()
     {
@@ -37,6 +39,8 @@ public class GithubAuthController : ControllerBase
         return Redirect(authorizeUrl);
     }
 
+    /// <summary>Обмінює код на токен, зберігає профіль GitHub у сесії й повертає на фронтенд.</summary>
+    /// <param name="code">Одноразовий код від GitHub.</param>
     [HttpGet("callback")]
     public async Task<IActionResult> Callback([FromQuery] string code)
     {
@@ -90,6 +94,7 @@ public class GithubAuthController : ControllerBase
         return Redirect($"{frontendUrl}?githubLogin=success");
     }
 
+    /// <summary>Профіль GitHub із сесії або 401.</summary>
     [HttpGet("me")]
     public IActionResult Me()
     {
@@ -99,6 +104,7 @@ public class GithubAuthController : ControllerBase
         return Content(json, "application/json");
     }
 
+    /// <summary>Прибирає профіль GitHub із сесії.</summary>
     [HttpPost("logout")]
     public IActionResult Logout()
     {

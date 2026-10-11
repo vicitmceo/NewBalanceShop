@@ -4,6 +4,8 @@ using NewBalanceShop.Infrastructure.Data;
 
 namespace NewBalanceShop.Infrastructure.Repositories;
 
+/// <summary>Універсальна реалізація <see cref="NewBalanceShop.Domain.Interfaces.IRepository{T}"/> на EF Core.</summary>
+/// <typeparam name="T">Тип сутності.</typeparam>
 public class Repository<T> : IRepository<T> where T : class
 {
     protected readonly ShopDbContext Db;

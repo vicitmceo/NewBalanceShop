@@ -1,0 +1,4 @@
+- name: Архітектура
+  href: architecture.md
+- name: Запуск і конфігурація
+  href: getting-started.md

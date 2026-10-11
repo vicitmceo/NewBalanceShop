@@ -5,12 +5,16 @@ namespace NewBalanceShop.Application.Services;
 // PBKDF2-хешування пароля без зовнішніх залежностей (System.Security.Cryptography
 // вже входить в BCL, не потрібен пакет Microsoft.AspNetCore.Identity).
 // Формат збереженого хешу: {iterations}.{saltBase64}.{hashBase64}
+/// <summary>Хешування паролів алгоритмом PBKDF2-HMAC-SHA256 (100 000 ітерацій, сіль 16 байт).</summary>
 public static class PasswordHasher
 {
     private const int SaltSize = 16;
     private const int HashSize = 32;
     private const int Iterations = 100_000;
 
+    /// <summary>Хешує пароль із випадковою сіллю.</summary>
+    /// <param name="password">Пароль у відкритому вигляді.</param>
+    /// <returns>Рядок «ітерації.сіль.хеш».</returns>
     public static string Hash(string password)
     {
         var salt = RandomNumberGenerator.GetBytes(SaltSize);
@@ -18,6 +22,10 @@ public static class PasswordHasher
         return $"{Iterations}.{Convert.ToBase64String(salt)}.{Convert.ToBase64String(hash)}";
     }
 
+    /// <summary>Перевіряє пароль за збереженим хешем у сталий за часом спосіб.</summary>
+    /// <param name="password">Введений пароль.</param>
+    /// <param name="storedHash">Хеш із БД.</param>
+    /// <returns><c>true</c>, якщо пароль збігається.</returns>
     public static bool Verify(string password, string storedHash)
     {
         var parts = storedHash.Split('.', 3);

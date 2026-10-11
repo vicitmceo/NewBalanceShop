@@ -5,6 +5,7 @@ namespace NewBalanceShop.Presentation.Controllers;
 // Кукі тут логічні: кольорова тема сайту — це налаштування конкретного
 // браузера відвідувача, а не дані, які треба зберігати в БД чи привʼязувати
 // до облікового запису (якого в магазині поки що й немає).
+/// <summary>Налаштування інтерфейсу в cookie (тема оформлення).</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class PreferencesController : ControllerBase
@@ -12,6 +13,7 @@ public class PreferencesController : ControllerBase
     private const string ThemeCookie = "nb_theme";
 
     // GET api/preferences/theme
+    /// <summary>Поточна тема з cookie.</summary>
     [HttpGet("theme")]
     public IActionResult GetTheme()
     {
@@ -20,6 +22,8 @@ public class PreferencesController : ControllerBase
     }
 
     // POST api/preferences/theme/dark  (або /light)
+    /// <summary>Зберігає тему в cookie.</summary>
+    /// <param name="value">Назва теми.</param>
     [HttpPost("theme/{value}")]
     public IActionResult SetTheme(string value)
     {

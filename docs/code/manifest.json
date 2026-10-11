@@ -1,0 +1,953 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "/mnt/d/клауд реал/NewBalanceShop/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.AddToCartDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.AddToCartDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.AddToCartDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.AddToCartDto.yml\" sourcestartlinenumber=\"1\">Запит на додавання товару в кошик.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.CartItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.CartItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.CartItemDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CartItemDto.yml\" sourcestartlinenumber=\"1\">Позиція кошика, що зберігається в сесії.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.CreateOrderDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.CreateOrderDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.CreateOrderDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CreateOrderDto.yml\" sourcestartlinenumber=\"1\">Запит на створення замовлення.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.CreateOrderItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.CreateOrderItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.CreateOrderItemDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CreateOrderItemDto.yml\" sourcestartlinenumber=\"1\">Позиція в запиті на створення замовлення.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.CustomerDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.CustomerDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.CustomerDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CustomerDto.yml\" sourcestartlinenumber=\"1\">Профіль покупця у відповідях API (без хеша пароля).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.GoogleLoginDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.GoogleLoginDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.GoogleLoginDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.GoogleLoginDto.yml\" sourcestartlinenumber=\"1\">Firebase ID-токен, отриманий фронтендом після входу через Google.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.LoginDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.LoginDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.LoginDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.LoginDto.yml\" sourcestartlinenumber=\"1\">Дані для входу за email і паролем.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.OrderDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.OrderDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.OrderDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.OrderDto.yml\" sourcestartlinenumber=\"1\">Замовлення у відповіді API.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.OrderItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.OrderItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.OrderItemDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.OrderItemDto.yml\" sourcestartlinenumber=\"1\">Позиція замовлення у відповіді API.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.ProductDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.ProductDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.ProductDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.ProductDto.yml\" sourcestartlinenumber=\"1\">Товар у запитах і відповідях API.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.RegisterDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.RegisterDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.RegisterDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.RegisterDto.yml\" sourcestartlinenumber=\"1\">Дані для реєстрації нового покупця.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.UpdateCustomerDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.UpdateCustomerDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.UpdateCustomerDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.UpdateCustomerDto.yml\" sourcestartlinenumber=\"1\">Поля профілю, які покупець може змінити: ПІБ, email, місто, країна, телефон.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.IAuthService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.IAuthService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.IAuthService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.IAuthService.yml\" sourcestartlinenumber=\"1\">Реєстрація й автентифікація покупців.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.ICustomerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.ICustomerService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.ICustomerService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.ICustomerService.yml\" sourcestartlinenumber=\"1\">Кабінет покупця та адміністрування користувачів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.IOrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.IOrderService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.IOrderService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.IOrderService.yml\" sourcestartlinenumber=\"1\">Сценарії оформлення та перегляду замовлень.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.IProductService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.IProductService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.IProductService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.IProductService.yml\" sourcestartlinenumber=\"1\">Сценарії роботи з товарами (каталог і керування).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Mapping.CustomerMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Mapping.CustomerMapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Mapping.CustomerMapper",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Mapping.CustomerMapper.yml\" sourcestartlinenumber=\"1\">Перетворення <code>Customer</code> у <code>CustomerDto</code>: хеш пароля у DTO не потрапляє.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Mapping.OrderMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Mapping.OrderMapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Mapping.OrderMapper",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Mapping.OrderMapper.yml\" sourcestartlinenumber=\"1\">Перетворення <code>Order</code> у <code>OrderDto</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Mapping.ProductMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Mapping.ProductMapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Mapping.ProductMapper",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Mapping.ProductMapper.yml\" sourcestartlinenumber=\"1\">Перетворення між <code>Product</code> і <code>ProductDto</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Mapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Mapping.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Mapping",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.AuthService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.AuthService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.AuthService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.AuthService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.IAuthService\" data-throw-if-not-resolved=\"false\"></xref>: реєстрація, вхід за паролем і через Google.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.CustomerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.CustomerService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.CustomerService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.CustomerService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.ICustomerService\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.OrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.OrderService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.OrderService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.OrderService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.IOrderService\" data-throw-if-not-resolved=\"false\"></xref>: бізнес-правила замовлення (склад, ціна, сума).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.PasswordHasher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.PasswordHasher.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.PasswordHasher",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.PasswordHasher.yml\" sourcestartlinenumber=\"1\">Хешування паролів алгоритмом PBKDF2-HMAC-SHA256 (100 000 ітерацій, сіль 16 байт).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.ProductService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.ProductService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.ProductService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.ProductService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.IProductService\" data-throw-if-not-resolved=\"false\"></xref> поверх <xref href=\"NewBalanceShop.Domain.Interfaces.IProductRepository\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.Category.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.Category.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.Category",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.Category.yml\" sourcestartlinenumber=\"1\">Категорія товарів (кросівки, одяг, аксесуари).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.Customer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.Customer",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.Customer.yml\" sourcestartlinenumber=\"1\">Покупець або адміністратор магазину.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.Order.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.Order.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.Order",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.Order.yml\" sourcestartlinenumber=\"1\">Замовлення покупця з переліком позицій.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.OrderItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.OrderItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.OrderItem",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.OrderItem.yml\" sourcestartlinenumber=\"1\">Позиція замовлення: товар, кількість і ціна на момент покупки.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.OrderStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.OrderStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.OrderStatus",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.OrderStatus.yml\" sourcestartlinenumber=\"1\">Статус замовлення.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.Product.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.Product.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities.Product",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Entities.Product.yml\" sourcestartlinenumber=\"1\">Товар магазину: взуття, одяг або аксесуар New Balance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Interfaces.ICustomerRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Interfaces.ICustomerRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Interfaces.ICustomerRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Interfaces.ICustomerRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій покупців.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Interfaces.IOrderRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Interfaces.IOrderRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Interfaces.IOrderRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Interfaces.IOrderRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій замовлень.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Interfaces.IProductRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Interfaces.IProductRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Interfaces.IProductRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Interfaces.IProductRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій товарів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Interfaces.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Interfaces.IRepository-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Interfaces.IRepository<T>",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Domain.Interfaces.IRepository-1.yml\" sourcestartlinenumber=\"1\">Базовий контракт репозиторія: доступ до даних без прив'язки до EF Core.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Domain.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Domain.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Domain.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Data.ShopDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Data.ShopDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Data.ShopDbContext",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Data.ShopDbContext.yml\" sourcestartlinenumber=\"1\">Контекст EF Core (PostgreSQL): таблиці магазину, зв'язки й початкові дані (seed).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Repositories.CustomerRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Repositories.CustomerRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Repositories.CustomerRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Repositories.CustomerRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій покупців на EF Core.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Repositories.OrderRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій замовлень на EF Core (підвантажує позиції й товари).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Repositories.ProductRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Repositories.ProductRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Repositories.ProductRepository",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Repositories.ProductRepository.yml\" sourcestartlinenumber=\"1\">Репозиторій товарів на EF Core.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Repositories.Repository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Repositories.Repository-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Repositories.Repository<T>",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Repositories.Repository-1.yml\" sourcestartlinenumber=\"1\">Універсальна реалізація <xref href=\"NewBalanceShop.Domain.Interfaces.IRepository%601\" data-throw-if-not-resolved=\"false\"></xref> на EF Core.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Repositories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Repositories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Repositories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Migrations.AddGoogleUidToCustomer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Migrations.AddGoogleUidToCustomer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Migrations.AddGoogleUidToCustomer",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Migrations.AddGoogleUidToCustomer.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Migrations.InitialCreate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Migrations.InitialCreate",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Migrations.InitialCreate.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.AuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.AuthController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.AuthController.yml\" sourcestartlinenumber=\"1\">Реєстрація, вхід, вихід і поточний користувач (автентифікація на сесійній куці).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.CartController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.CartController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.CartController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.CartController.yml\" sourcestartlinenumber=\"1\">Кошик покупця: зберігається в сесії, а не в БД, до оформлення замовлення.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.CustomersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.CustomersController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.CustomersController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.CustomersController.yml\" sourcestartlinenumber=\"1\">Кабінет покупця (FR-10, FR-11) та адміністрування користувачів (FR-12, FR-13). Адмін-ендпоінти повертають 401 без входу та 403 без прав адміністратора.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.GithubAuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.GithubAuthController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.GithubAuthController.yml\" sourcestartlinenumber=\"1\">Вхід через GitHub (OAuth, authorization code flow).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.OrdersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.OrdersController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.OrdersController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.OrdersController.yml\" sourcestartlinenumber=\"1\">Перегляд і створення замовлень.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.PreferencesController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.PreferencesController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.PreferencesController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.PreferencesController.yml\" sourcestartlinenumber=\"1\">Налаштування інтерфейсу в cookie (тема оформлення).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.ProductsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.ProductsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.ProductsController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.ProductsController.yml\" sourcestartlinenumber=\"1\">REST-ендпоінти каталогу товарів: перегляд і CRUD.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.SetBlockedDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.SetBlockedDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.SetBlockedDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.SetBlockedDto.yml\" sourcestartlinenumber=\"1\">Запит на блокування або розблокування.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

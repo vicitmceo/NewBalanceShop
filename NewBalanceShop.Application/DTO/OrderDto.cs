@@ -3,6 +3,7 @@ using NewBalanceShop.Domain.Entities;
 
 namespace NewBalanceShop.Application.DTO;
 
+/// <summary>Позиція в запиті на створення замовлення.</summary>
 public class CreateOrderItemDto
 {
     public int ProductId { get; set; }
@@ -11,6 +12,7 @@ public class CreateOrderItemDto
     public int Quantity { get; set; }
 }
 
+/// <summary>Запит на створення замовлення.</summary>
 public class CreateOrderDto
 {
     public int CustomerId { get; set; }
@@ -19,6 +21,7 @@ public class CreateOrderDto
     public List<CreateOrderItemDto> Items { get; set; } = new();
 }
 
+/// <summary>Позиція замовлення у відповіді API.</summary>
 public class OrderItemDto
 {
     public int ProductId { get; set; }
@@ -27,6 +30,7 @@ public class OrderItemDto
     public decimal UnitPrice { get; set; }
 }
 
+/// <summary>Замовлення у відповіді API.</summary>
 public class OrderDto
 {
     public int Id { get; set; }

@@ -1,0 +1,6 @@
+- name: Головна
+  href: index.md
+- name: Статті
+  href: articles/
+- name: Довідник API (код)
+  href: api/

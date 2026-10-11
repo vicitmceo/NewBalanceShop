@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Balance Shop: документація</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #111; color: #fff; min-height: 100vh; }
+    main { max-width: 960px; margin: 0 auto; padding: 72px 24px; }
+    .eyebrow { color: #cf0a2c; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: 52px; letter-spacing: -0.03em; margin: 10px 0 14px; }
+    p.lead { color: #c9c9c9; font-size: 19px; line-height: 1.5; max-width: 640px; margin-bottom: 44px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    a.card { display: block; background: #1c1c1c; border: 1px solid #2c2c2c; border-radius: 10px; padding: 24px; color: #fff; text-decoration: none; transition: border-color .15s, transform .15s; }
+    a.card:hover { border-color: #cf0a2c; transform: translateY(-2px); }
+    a.card h2 { font-size: 21px; margin-bottom: 8px; }
+    a.card p { color: #aaa; font-size: 15px; line-height: 1.45; }
+    footer { margin-top: 48px; color: #777; font-size: 14px; }
+    footer a { color: #aaa; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Team 1 · курсовий проєкт</div>
+    <h1>New Balance Shop</h1>
+    <p class="lead">Інтернет-магазин спортивного одягу та взуття на ASP.NET Core. Технічна документація проєкту.</p>
+    <div class="grid">
+      <a class="card" href="code/index.html">
+        <h2>Документація коду</h2>
+        <p>Публічні класи, інтерфейси та методи з XML-коментарів. Згенеровано DocFX, є пошук і навігація.</p>
+      </a>
+      <a class="card" href="api/index.html">
+        <h2>Документація ендпоінтів</h2>
+        <p>HTTP API: запити, відповіді, моделі. Scalar на основі специфікації OpenAPI.</p>
+      </a>
+      <a class="card" href="https://newbalanceshop-frontend.vercel.app">
+        <h2>Живий сайт</h2>
+        <p>Задеплоєний фронтенд на Vercel: каталог, кошик, замовлення.</p>
+      </a>
+    </div>
+    <footer>Репозиторій: <a href="https://github.com/vicitmceo/NewBalanceShop">github.com/vicitmceo/NewBalanceShop</a></footer>
+  </main>
+</body>
+</html>

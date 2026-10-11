@@ -3,6 +3,7 @@ using NewBalanceShop.Domain.Entities;
 
 namespace NewBalanceShop.Infrastructure.Data;
 
+/// <summary>Контекст EF Core (PostgreSQL): таблиці магазину, зв'язки й початкові дані (seed).</summary>
 public class ShopDbContext : DbContext
 {
     public ShopDbContext(DbContextOptions<ShopDbContext> options) : base(options)

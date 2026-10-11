@@ -1,0 +1,33 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "..",
+          "files": [
+            "NewBalanceShop.csproj",
+            "NewBalanceShop.Domain/*.csproj",
+            "NewBalanceShop.Application/*.csproj",
+            "NewBalanceShop.Infrastructure/*.csproj"
+          ]
+        }
+      ],
+      "dest": "api",
+      "properties": { "TargetFramework": "net9.0" }
+    }
+  ],
+  "build": {
+    "content": [
+      { "files": ["api/**.yml", "api/index.md"] },
+      { "files": ["articles/**.md", "articles/toc.yml", "toc.yml", "index.md"] }
+    ],
+    "output": "../docs/code",
+    "template": ["default", "modern"],
+    "globalMetadata": {
+      "_appName": "New Balance Shop",
+      "_appTitle": "New Balance Shop: документація коду",
+      "_enableSearch": true,
+      "_lang": "uk"
+    }
+  }
+}

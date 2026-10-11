@@ -3,6 +3,7 @@ using NewBalanceShop.Domain.Entities;
 
 namespace NewBalanceShop.Application.Mapping;
 
+/// <summary>Перетворення між <c>Product</c> і <c>ProductDto</c>.</summary>
 public static class ProductMapper
 {
     public static ProductDto ToDto(this Product p) => new()

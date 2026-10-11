@@ -6,6 +6,7 @@ using NewBalanceShop.Domain.Interfaces;
 
 namespace NewBalanceShop.Application.Services;
 
+/// <summary>Реалізація <see cref="IOrderService"/>: бізнес-правила замовлення (склад, ціна, сума).</summary>
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;

@@ -5,6 +5,7 @@ using NewBalanceShop.Infrastructure.Data;
 
 namespace NewBalanceShop.Infrastructure.Repositories;
 
+/// <summary>Репозиторій замовлень на EF Core (підвантажує позиції й товари).</summary>
 public class OrderRepository : Repository<Order>, IOrderRepository
 {
     public OrderRepository(ShopDbContext db) : base(db)

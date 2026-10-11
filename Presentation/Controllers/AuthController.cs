@@ -7,6 +7,7 @@ namespace NewBalanceShop.Presentation.Controllers;
 // Автентифікація на сесіях (ті самі AddSession/UseSession, що й для кошика,
 // див. CartController): після логіну CustomerId кладеться в сесію-куку,
 // окремий JWT/токен для навчального проєкту зайвий.
+/// <summary>Реєстрація, вхід, вихід і поточний користувач (автентифікація на сесійній куці).</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
@@ -21,6 +22,9 @@ public class AuthController : ControllerBase
     }
 
     // POST api/auth/register
+    /// <summary>Реєструє покупця й одразу входить.</summary>
+    /// <param name="dto">Дані реєстрації.</param>
+    /// <returns>200 і профіль, 400 якщо email зайнятий.</returns>
     [HttpPost("register")]
     public async Task<ActionResult<CustomerDto>> Register(RegisterDto dto)
     {
@@ -37,6 +41,9 @@ public class AuthController : ControllerBase
     }
 
     // POST api/auth/login
+    /// <summary>Вхід за email і паролем.</summary>
+    /// <param name="dto">Облікові дані.</param>
+    /// <returns>200 і профіль, 401 при невдачі.</returns>
     [HttpPost("login")]
     public async Task<ActionResult<CustomerDto>> Login(LoginDto dto)
     {
@@ -53,6 +60,9 @@ public class AuthController : ControllerBase
     }
 
     // POST api/auth/google — вхід через кнопку "Увійти через Google" (Firebase Authentication)
+    /// <summary>Вхід через Google за Firebase ID-токеном.</summary>
+    /// <param name="dto">Токен.</param>
+    /// <returns>200 і профіль, 401 при невдачі.</returns>
     [HttpPost("google")]
     public async Task<ActionResult<CustomerDto>> Google(GoogleLoginDto dto)
     {
@@ -69,6 +79,7 @@ public class AuthController : ControllerBase
     }
 
     // POST api/auth/logout
+    /// <summary>Вихід: прибирає покупця із сесії.</summary>
     [HttpPost("logout")]
     public IActionResult Logout()
     {
@@ -77,6 +88,8 @@ public class AuthController : ControllerBase
     }
 
     // GET api/auth/me — поточний залогінений покупець (null, якщо сесія не має логіну)
+    /// <summary>Профіль поточного користувача.</summary>
+    /// <returns>200 або 401, якщо вхід не виконано.</returns>
     [HttpGet("me")]
     public async Task<ActionResult<CustomerDto>> Me()
     {

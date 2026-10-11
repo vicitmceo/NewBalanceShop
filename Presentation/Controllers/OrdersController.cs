@@ -4,6 +4,7 @@ using NewBalanceShop.Application.Interfaces;
 
 namespace NewBalanceShop.Presentation.Controllers;
 
+/// <summary>Перегляд і створення замовлень.</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class OrdersController : ControllerBase
@@ -15,6 +16,9 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
+    /// <summary>Замовлення за ключем.</summary>
+    /// <param name="id">Ключ замовлення.</param>
+    /// <returns>200 або 404.</returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<OrderDto>> GetById(int id)
     {
@@ -24,6 +28,8 @@ public class OrdersController : ControllerBase
         return Ok(order);
     }
 
+    /// <summary>Замовлення покупця.</summary>
+    /// <param name="customerId">Ключ покупця.</param>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<OrderDto>>> GetByCustomer([FromQuery] int customerId)
     {
@@ -31,6 +37,9 @@ public class OrdersController : ControllerBase
         return Ok(orders);
     }
 
+    /// <summary>Створює замовлення.</summary>
+    /// <param name="dto">Покупець і позиції.</param>
+    /// <returns>201 і замовлення або 400.</returns>
     [HttpPost]
     public async Task<ActionResult<OrderDto>> Create(CreateOrderDto dto)
     {

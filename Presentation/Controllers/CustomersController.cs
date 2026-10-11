@@ -10,6 +10,7 @@ namespace NewBalanceShop.Presentation.Controllers;
 // JWT/ролевого middleware для навчального проєкту не заводимо. Forbid() тут не годиться:
 // воно запускає ASP.NET Core auth challenge, а authentication-схему (cookie/JWT) ми не
 // реєстрували, тож Forbid() падав у 500 замість 403 — повертаємо статус напряму.
+/// <summary>Кабінет покупця (FR-10, FR-11) та адміністрування користувачів (FR-12, FR-13). Адмін-ендпоінти повертають 401 без входу та 403 без прав адміністратора.</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
@@ -37,6 +38,7 @@ public class CustomersController : ControllerBase
             : new StatusCodeResult(StatusCodes.Status403Forbidden);
 
     // GET api/customers — FR-12, лише адміністратор
+    /// <summary>Список користувачів (лише адміністратор).</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAll()
     {
@@ -47,6 +49,8 @@ public class CustomersController : ControllerBase
     }
 
     // GET api/customers/{id} — FR-10, власник кабінету або адміністратор
+    /// <summary>Профіль (власник або адміністратор).</summary>
+    /// <param name="id">Ключ покупця.</param>
     [HttpGet("{id}")]
     public async Task<ActionResult<CustomerDto>> GetById(int id)
     {
@@ -60,6 +64,9 @@ public class CustomersController : ControllerBase
     }
 
     // PUT api/customers/{id} — FR-10, власник кабінету або адміністратор
+    /// <summary>Оновлює профіль (власник або адміністратор).</summary>
+    /// <param name="id">Ключ покупця.</param>
+    /// <param name="dto">Нові дані.</param>
     [HttpPut("{id}")]
     public async Task<ActionResult<CustomerDto>> Update(int id, UpdateCustomerDto dto)
     {
@@ -80,6 +87,8 @@ public class CustomersController : ControllerBase
     }
 
     // GET api/customers/{id}/orders — FR-11, тільки читання, власник кабінету або адміністратор
+    /// <summary>Історія замовлень (власник або адміністратор), лише читання.</summary>
+    /// <param name="id">Ключ покупця.</param>
     [HttpGet("{id}/orders")]
     public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders(int id)
     {
@@ -90,6 +99,9 @@ public class CustomersController : ControllerBase
     }
 
     // PATCH api/customers/{id}/block — FR-13, лише адміністратор
+    /// <summary>Блокує або розблоковує покупця (лише адміністратор).</summary>
+    /// <param name="id">Ключ покупця.</param>
+    /// <param name="dto">Нове значення.</param>
     [HttpPatch("{id}/block")]
     public async Task<ActionResult<CustomerDto>> SetBlocked(int id, [FromBody] SetBlockedDto dto)
     {
@@ -103,6 +115,9 @@ public class CustomersController : ControllerBase
     }
 
     // DELETE api/customers/{id} — FR-13, лише адміністратор
+    /// <summary>Видаляє покупця (лише адміністратор).</summary>
+    /// <param name="id">Ключ покупця.</param>
+    /// <returns>204 або 404.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
@@ -116,6 +131,7 @@ public class CustomersController : ControllerBase
     }
 }
 
+/// <summary>Запит на блокування або розблокування.</summary>
 public class SetBlockedDto
 {
     public bool Blocked { get; set; }

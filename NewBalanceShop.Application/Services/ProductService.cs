@@ -5,6 +5,7 @@ using NewBalanceShop.Domain.Interfaces;
 
 namespace NewBalanceShop.Application.Services;
 
+/// <summary>Реалізація <see cref="IProductService"/> поверх <see cref="NewBalanceShop.Domain.Interfaces.IProductRepository"/>.</summary>
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;

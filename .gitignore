@@ -2,3 +2,8 @@ bin/
 obj/
 *.user
 .vs/
+
+# DocFX: проміжні метадані (генеруються docfx/build.sh)
+docfx/api/*.yml
+docfx/api/.manifest
+docfx/obj/

@@ -7,6 +7,7 @@ using NewBalanceShop.Domain.Interfaces;
 
 namespace NewBalanceShop.Application.Services;
 
+/// <summary>Реалізація <see cref="IAuthService"/>: реєстрація, вхід за паролем і через Google.</summary>
 public class AuthService : IAuthService
 {
     private readonly ICustomerRepository _customerRepository;

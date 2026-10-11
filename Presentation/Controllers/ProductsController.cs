@@ -4,6 +4,7 @@ using NewBalanceShop.Application.Interfaces;
 
 namespace NewBalanceShop.Presentation.Controllers;
 
+/// <summary>REST-ендпоінти каталогу товарів: перегляд і CRUD.</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
@@ -15,6 +16,8 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
 
+    /// <summary>Список товарів, опційно за категорією.</summary>
+    /// <param name="categoryId">Ключ категорії (необов'язково).</param>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll([FromQuery] int? categoryId)
     {
@@ -25,6 +28,9 @@ public class ProductsController : ControllerBase
         return Ok(products);
     }
 
+    /// <summary>Один товар.</summary>
+    /// <param name="id">Ключ товару.</param>
+    /// <returns>200 або 404.</returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductDto>> GetById(int id)
     {
@@ -34,6 +40,9 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
+    /// <summary>Створює товар.</summary>
+    /// <param name="dto">Дані товару.</param>
+    /// <returns>201 і створений товар.</returns>
     [HttpPost]
     public async Task<ActionResult<ProductDto>> Create(ProductDto dto)
     {
@@ -43,6 +52,10 @@ public class ProductsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
     }
 
+    /// <summary>Оновлює товар.</summary>
+    /// <param name="id">Ключ товару.</param>
+    /// <param name="dto">Нові значення.</param>
+    /// <returns>204 або 404.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, ProductDto dto)
     {
@@ -54,6 +67,9 @@ public class ProductsController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>Видаляє товар.</summary>
+    /// <param name="id">Ключ товару.</param>
+    /// <returns>204 або 404.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

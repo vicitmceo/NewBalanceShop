@@ -5,6 +5,7 @@ using NewBalanceShop.Domain.Interfaces;
 
 namespace NewBalanceShop.Application.Services;
 
+/// <summary>Реалізація <see cref="ICustomerService"/>.</summary>
 public class CustomerService : ICustomerService
 {
     private readonly ICustomerRepository _customerRepository;

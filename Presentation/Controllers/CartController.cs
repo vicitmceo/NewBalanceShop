@@ -9,6 +9,7 @@ namespace NewBalanceShop.Presentation.Controllers;
 // у магазині ще немає реєстрації/входу, тож привʼязати кошик до
 // облікового запису неможливо, а тримати його в БД для "нікого" сенсу
 // немає — сесія якраз для такого тимчасового стану браузера.
+/// <summary>Кошик покупця: зберігається в сесії, а не в БД, до оформлення замовлення.</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class CartController : ControllerBase
@@ -25,6 +26,7 @@ public class CartController : ControllerBase
     }
 
     // GET api/cart
+    /// <summary>Поточний кошик.</summary>
     [HttpGet]
     public ActionResult<IEnumerable<CartItemDto>> GetCart()
     {
@@ -32,6 +34,9 @@ public class CartController : ControllerBase
     }
 
     // POST api/cart — додати товар (або збільшити кількість, якщо вже є в кошику)
+    /// <summary>Додає товар у кошик (збільшує кількість, якщо вже є).</summary>
+    /// <param name="dto">Товар і кількість.</param>
+    /// <returns>Оновлений кошик або 404.</returns>
     [HttpPost]
     public async Task<ActionResult<IEnumerable<CartItemDto>>> AddToCart(AddToCartDto dto)
     {
@@ -61,6 +66,9 @@ public class CartController : ControllerBase
     }
 
     // DELETE api/cart/{productId} — прибрати товар з кошика
+    /// <summary>Прибирає товар з кошика.</summary>
+    /// <param name="productId">Ключ товару.</param>
+    /// <returns>Оновлений кошик.</returns>
     [HttpDelete("{productId}")]
     public ActionResult<IEnumerable<CartItemDto>> RemoveFromCart(int productId)
     {
@@ -71,6 +79,9 @@ public class CartController : ControllerBase
     }
 
     // POST api/cart/checkout — оформити замовлення з поточного кошика сесії
+    /// <summary>Оформлює замовлення з кошика й очищає його.</summary>
+    /// <param name="customerId">Ключ покупця.</param>
+    /// <returns>Створене замовлення або 400.</returns>
     [HttpPost("checkout")]
     public async Task<ActionResult<OrderDto>> Checkout([FromQuery] int customerId)
     {

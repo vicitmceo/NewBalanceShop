@@ -5,6 +5,7 @@ using NewBalanceShop.Infrastructure.Data;
 
 namespace NewBalanceShop.Infrastructure.Repositories;
 
+/// <summary>Репозиторій покупців на EF Core.</summary>
 public class CustomerRepository : Repository<Customer>, ICustomerRepository
 {
     public CustomerRepository(ShopDbContext db) : base(db)

@@ -3,6 +3,7 @@ using NewBalanceShop.Domain.Entities;
 
 namespace NewBalanceShop.Application.Mapping;
 
+/// <summary>Перетворення <c>Order</c> у <c>OrderDto</c>.</summary>
 public static class OrderMapper
 {
     public static OrderDto ToDto(this Order o) => new()

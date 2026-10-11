@@ -1,5 +1,6 @@
 namespace NewBalanceShop.Application.DTO;
 
+/// <summary>Товар у запитах і відповідях API.</summary>
 public class ProductDto
 {
     public int Id { get; set; }
