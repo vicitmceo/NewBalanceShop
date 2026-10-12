@@ -27,6 +27,7 @@ $map = @{
   '12-docs'           = '12-documentation\documentation.png'
   '13-security'       = '13-auth-and-security\auth-and-security.png'
   '14-portfolio'      = '14-portfolio-value\portfolio-value.png'
+  '16-mobile'         = '16-live-ui-screenshots\slide-mobile.png'
   '15a-contacts'      = '15-contacts-and-key-idea\contacts-qr.png'
   '15b-keyidea'       = '15-contacts-and-key-idea\key-idea.png'
 }
