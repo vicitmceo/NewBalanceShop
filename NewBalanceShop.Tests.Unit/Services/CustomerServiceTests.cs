@@ -142,13 +142,33 @@ public class CustomerServiceTests
     [Fact]
     public async Task DeleteAsync_WithExistingCustomer_RemovesAndReturnsTrue()
     {
-        var customer = MakeCustomer(1);
-        _repo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(customer);
+        var customer = MakeCustomer(7);
+        _repo.Setup(r => r.GetByIdAsync(7)).ReturnsAsync(customer);
 
-        var result = await _sut.DeleteAsync(1);
+        var result = await _sut.DeleteAsync(7);
 
         Assert.True(result);
         _repo.Verify(r => r.Remove(customer), Times.Once);
+    }
+
+    [Fact]
+    public async Task DeleteAsync_WithOrders_ThrowsAndKeepsCustomer()
+    {
+        var customer = MakeCustomer(7);
+        _repo.Setup(r => r.GetByIdAsync(7)).ReturnsAsync(customer);
+        _repo.Setup(r => r.HasOrdersAsync(7)).ReturnsAsync(true);
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.DeleteAsync(7));
+
+        _repo.Verify(r => r.Remove(It.IsAny<Customer>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task DeleteAsync_Guest_Throws()
+    {
+        _repo.Setup(r => r.GetByIdAsync(Customer.GuestId)).ReturnsAsync(MakeCustomer(Customer.GuestId));
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.DeleteAsync(Customer.GuestId));
     }
 
     [Fact]

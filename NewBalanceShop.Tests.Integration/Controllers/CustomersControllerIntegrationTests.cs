@@ -185,12 +185,40 @@ public class CustomersControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Delete_AsAdmin_RemovesTargetCustomer()
     {
+        var victim = await RegisterAsync("victim@example.com");
+        await _client.PostAsync("/api/Auth/logout", null);
         await LoginAsSeedAdminAsync();
-        var response = await _client.DeleteAsync("/api/Customers/1");
+        var response = await _client.DeleteAsync($"/api/Customers/{victim.Id}");
 
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
 
-        var getResponse = await _client.GetAsync("/api/Customers/1");
+        var getResponse = await _client.GetAsync($"/api/Customers/{victim.Id}");
         Assert.Equal(HttpStatusCode.NotFound, getResponse.StatusCode);
+    }
+
+    [Fact]
+    public async Task Delete_GuestCustomer_ReturnsConflict()
+    {
+        await LoginAsSeedAdminAsync();
+
+        var response = await _client.DeleteAsync("/api/Customers/1");
+
+        Assert.Equal(HttpStatusCode.Conflict, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task Delete_CustomerWithOrders_ReturnsConflict()
+    {
+        var buyer = await RegisterAsync("buyer@example.com");
+        await _client.PostAsJsonAsync("/api/Orders", new CreateOrderDto
+        {
+            Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Quantity = 1 } }
+        });
+        await _client.PostAsync("/api/Auth/logout", null);
+        await LoginAsSeedAdminAsync();
+
+        var response = await _client.DeleteAsync($"/api/Customers/{buyer.Id}");
+
+        Assert.Equal(HttpStatusCode.Conflict, response.StatusCode);
     }
 }

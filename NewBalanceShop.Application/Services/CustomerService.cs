@@ -68,6 +68,13 @@ public class CustomerService : ICustomerService
         var customer = await _customerRepository.GetByIdAsync(id);
         if (customer is null) return false;
 
+        if (id == Domain.Entities.Customer.GuestId)
+            throw new InvalidOperationException("Службового покупця «Гість» видаляти не можна.");
+
+        // історію замовлень не губимо: видалення покупця з замовленнями заборонене (блокуйте його)
+        if (await _customerRepository.HasOrdersAsync(id))
+            throw new InvalidOperationException("У покупця є замовлення, тому його не можна видалити. Заблокуйте обліковий запис.");
+
         _customerRepository.Remove(customer);
         await _customerRepository.SaveChangesAsync();
         return true;

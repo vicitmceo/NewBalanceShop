@@ -1,4 +1,3 @@
-using FirebaseAdmin.Auth;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Mapping;
@@ -12,9 +11,12 @@ public class AuthService : IAuthService
 {
     private readonly ICustomerRepository _customerRepository;
 
-    public AuthService(ICustomerRepository customerRepository)
+    private readonly IGoogleTokenVerifier _googleVerifier;
+
+    public AuthService(ICustomerRepository customerRepository, IGoogleTokenVerifier googleVerifier)
     {
         _customerRepository = customerRepository;
+        _googleVerifier = googleVerifier;
     }
 
     public async Task<CustomerDto> RegisterAsync(RegisterDto dto)
@@ -62,40 +64,29 @@ public class AuthService : IAuthService
     // підпис токена з публічними ключами Google, тож паролі тут не потрібні
     public async Task<CustomerDto> GoogleLoginAsync(string idToken)
     {
-        if (FirebaseAuth.DefaultInstance is null)
-            throw new InvalidOperationException("Firebase не налаштовано на сервері (FIREBASE_SERVICE_ACCOUNT_JSON).");
+        var identity = await _googleVerifier.VerifyAsync(idToken);
 
-        FirebaseToken decoded;
-        try
-        {
-            decoded = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
-        }
-        catch (Exception)
-        {
-            throw new InvalidOperationException("Недійсний токен Google.");
-        }
-
-        var email = decoded.Claims.TryGetValue("email", out var emailClaim) ? emailClaim.ToString() : null;
+        var email = identity.Email;
         if (string.IsNullOrEmpty(email))
             throw new InvalidOperationException("Google-акаунт не має email.");
 
-        var fullName = decoded.Claims.TryGetValue("name", out var nameClaim) ? nameClaim.ToString() : email;
+        var fullName = identity.Name;
 
         var customer = await _customerRepository.GetByEmailAsync(email);
         if (customer is null)
         {
             customer = new Customer
             {
-                FullName = fullName ?? email,
+                FullName = string.IsNullOrEmpty(fullName) ? email : fullName,
                 Email = email,
-                GoogleUid = decoded.Uid,
+                GoogleUid = identity.Uid,
                 PasswordHash = string.Empty
             };
             await _customerRepository.AddAsync(customer);
         }
         else if (customer.GoogleUid is null)
         {
-            customer.GoogleUid = decoded.Uid;
+            customer.GoogleUid = identity.Uid;
         }
 
         if (customer.IsBlocked)

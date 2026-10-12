@@ -29,7 +29,9 @@ public class CustomersController : ControllerBase
     private async Task<CustomerDto?> GetSessionCustomerAsync()
     {
         var id = HttpContext.Session.GetInt32(CustomerIdSessionKey);
-        return id is null ? null : await _customerService.GetByIdAsync(id.Value);
+        if (id is null) return null;
+        var customer = await _customerService.GetByIdAsync(id.Value);
+        return customer is { IsBlocked: false } ? customer : null;
     }
 
     private static ActionResult Denied(CustomerDto? me) =>
@@ -117,17 +119,24 @@ public class CustomersController : ControllerBase
     // DELETE api/customers/{id} — FR-13, лише адміністратор
     /// <summary>Видаляє покупця (лише адміністратор).</summary>
     /// <param name="id">Ключ покупця.</param>
-    /// <returns>204 або 404.</returns>
+    /// <returns>204, 404 або 409 (є замовлення).</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         var me = await GetSessionCustomerAsync();
         if (me is null || !me.IsAdmin) return Denied(me);
 
-        var deleted = await _customerService.DeleteAsync(id);
-        if (!deleted) return NotFound();
+        try
+        {
+            var deleted = await _customerService.DeleteAsync(id);
+            if (!deleted) return NotFound();
 
-        return NoContent();
+            return NoContent();
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(new { error = ex.Message });
+        }
     }
 }
 

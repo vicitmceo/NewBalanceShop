@@ -30,6 +30,17 @@ public class ShopDbContext : DbContext
             .Property(oi => oi.UnitPrice)
             .HasPrecision(10, 2);
 
+        modelBuilder.Entity<Customer>()
+            .HasIndex(c => c.Email)
+            .IsUnique();
+
+        // історія замовлень не повинна зникати разом із покупцем
+        modelBuilder.Entity<Order>()
+            .HasOne(o => o.Customer)
+            .WithMany(c => c.Orders)
+            .HasForeignKey(o => o.CustomerId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         modelBuilder.Entity<Category>().HasData(
             new Category { Id = 1, Name = "Кросівки" },
             new Category { Id = 2, Name = "Одяг" },
@@ -37,7 +48,7 @@ public class ShopDbContext : DbContext
         );
 
         modelBuilder.Entity<Customer>().HasData(
-            new Customer { Id = 1, FullName = "Тестовий Покупець", Email = "test.customer@example.com", PasswordHash = "seed-no-auth-yet" },
+            new Customer { Id = 1, FullName = "Гість", Email = "guest@newbalanceshop.local", PasswordHash = "seed-no-auth-yet" },
             // сід-адмін для перевірки FR-12/FR-13 (перегляд/блокування/видалення користувачів) —
             // у репозиторії лише PBKDF2-хеш (формат PasswordHasher), сам пароль зберігається поза репозиторієм
             new Customer { Id = 2, FullName = "Адміністратор", Email = "admin@newbalanceshop.com", PasswordHash = "100000.zCfnaQu3HCBj8/w8gPw5qA==.6s19ORGZadTHN1m0Mjl/POEaX90xYzcaQbk6lOKMUZc=", IsAdmin = true }

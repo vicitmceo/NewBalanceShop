@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
 
@@ -26,6 +27,7 @@ public class AuthController : ControllerBase
     /// <param name="dto">Дані реєстрації.</param>
     /// <returns>200 і профіль, 400 якщо email зайнятий.</returns>
     [HttpPost("register")]
+    [EnableRateLimiting("auth")]
     public async Task<ActionResult<CustomerDto>> Register(RegisterDto dto)
     {
         try
@@ -45,6 +47,7 @@ public class AuthController : ControllerBase
     /// <param name="dto">Облікові дані.</param>
     /// <returns>200 і профіль, 401 при невдачі.</returns>
     [HttpPost("login")]
+    [EnableRateLimiting("auth")]
     public async Task<ActionResult<CustomerDto>> Login(LoginDto dto)
     {
         try
@@ -64,6 +67,7 @@ public class AuthController : ControllerBase
     /// <param name="dto">Токен.</param>
     /// <returns>200 і профіль, 401 при невдачі.</returns>
     [HttpPost("google")]
+    [EnableRateLimiting("auth")]
     public async Task<ActionResult<CustomerDto>> Google(GoogleLoginDto dto)
     {
         try

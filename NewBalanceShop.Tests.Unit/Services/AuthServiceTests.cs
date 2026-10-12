@@ -1,5 +1,6 @@
 using Moq;
 using NewBalanceShop.Application.DTO;
+using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Services;
 using NewBalanceShop.Domain.Entities;
 using NewBalanceShop.Domain.Interfaces;
@@ -10,11 +11,12 @@ namespace NewBalanceShop.Tests.Unit.Services;
 public class AuthServiceTests
 {
     private readonly Mock<ICustomerRepository> _repo = new();
+    private readonly Mock<IGoogleTokenVerifier> _google = new();
     private readonly AuthService _sut;
 
     public AuthServiceTests()
     {
-        _sut = new AuthService(_repo.Object);
+        _sut = new AuthService(_repo.Object, _google.Object);
     }
 
     private static RegisterDto MakeRegisterDto() => new()
@@ -125,11 +127,39 @@ public class AuthServiceTests
     }
 
     [Fact]
-    public async Task GoogleLoginAsync_WhenFirebaseNotConfigured_ThrowsInvalidOperationException()
+    public async Task GoogleLoginAsync_WhenTokenInvalid_ThrowsInvalidOperationException()
     {
-        // у тестовому процесі FirebaseApp.Create() ніколи не викликається,
-        // тож FirebaseAuth.DefaultInstance завжди null — саме цю (реальну!) поведінку й перевіряємо
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("any-token"));
-        Assert.Contains("Firebase не налаштовано", ex.Message);
+        _google.Setup(g => g.VerifyAsync("bad")).ThrowsAsync(new InvalidOperationException("Недійсний токен Google."));
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("bad"));
+    }
+
+    [Fact]
+    public async Task GoogleLoginAsync_NewUser_CreatesCustomerWithGoogleUid()
+    {
+        _google.Setup(g => g.VerifyAsync("ok")).ReturnsAsync(new GoogleIdentity("uid-1", "g@example.com", "G User"));
+        _repo.Setup(r => r.GetByEmailAsync("g@example.com")).ReturnsAsync((Customer?)null);
+
+        var result = await _sut.GoogleLoginAsync("ok");
+
+        Assert.Equal("g@example.com", result.Email);
+        _repo.Verify(r => r.AddAsync(It.Is<Customer>(c => c.GoogleUid == "uid-1" && c.PasswordHash == string.Empty)), Times.Once);
+    }
+
+    [Fact]
+    public async Task GoogleLoginAsync_WhenBlocked_Throws()
+    {
+        _google.Setup(g => g.VerifyAsync("ok")).ReturnsAsync(new GoogleIdentity("uid-1", "g@example.com", "G User"));
+        _repo.Setup(r => r.GetByEmailAsync("g@example.com")).ReturnsAsync(new Customer { Id = 9, Email = "g@example.com", IsBlocked = true });
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("ok"));
+    }
+
+    [Fact]
+    public async Task GoogleLoginAsync_WithoutEmail_Throws()
+    {
+        _google.Setup(g => g.VerifyAsync("ok")).ReturnsAsync(new GoogleIdentity("uid-1", null, null));
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("ok"));
     }
 }

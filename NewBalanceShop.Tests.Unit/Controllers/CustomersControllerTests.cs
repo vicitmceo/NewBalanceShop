@@ -218,6 +218,17 @@ public class CustomersControllerTests
     }
 
     [Fact]
+    public async Task Delete_WhenCustomerHasOrders_ReturnsConflict()
+    {
+        SignInAs(1, isAdmin: true);
+        _customerService.Setup(s => s.DeleteAsync(9)).ThrowsAsync(new InvalidOperationException("є замовлення"));
+
+        var result = await _sut.Delete(9);
+
+        Assert.IsType<ConflictObjectResult>(result);
+    }
+
+    [Fact]
     public async Task Delete_WithNonExistingCustomer_ReturnsNotFound()
     {
         SignInAs(1, isAdmin: true);

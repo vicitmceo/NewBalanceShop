@@ -24,5 +24,6 @@ public interface ICustomerService
     /// <summary>Видаляє покупця.</summary>
     /// <param name="id">Ключ покупця.</param>
     /// <returns><c>false</c>, якщо покупця немає.</returns>
+    /// <exception cref="InvalidOperationException">Покупець має замовлення або це службовий «Гість».</exception>
     Task<bool> DeleteAsync(int id);
 }
