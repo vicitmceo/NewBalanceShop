@@ -5,7 +5,7 @@
 ## Перед демо (за 5 хвилин)
 
 1. Відкрити https://newbalanceshop-api.onrender.com/api/Products: безкоштовний Render «засинає», перший запит може тривати до хвилини.
-2. Відкрити в окремих вкладках: https://newbalanceshop-frontend.vercel.app і https://newbalanceshop-api.onrender.com/swagger.
+2. Відкрити в окремих вкладках: https://newbalanceshop.vercel.app і https://newbalanceshop-api.onrender.com/swagger.
 3. Мати запасний варіант: скріни з `16-live-ui-screenshots/`.
 4. Пароль адміністратора **змінити перед захистом** (зараз він лежить у публічному репозиторії, див. «Безпека» в README).
 

@@ -322,6 +322,6 @@
   "index.html": {
     "href": "index.html",
     "title": "New Balance Shop: документація коду | New Balance Shop: документація коду",
-    "summary": "New Balance Shop: документація коду Інтернет-магазин спортивного одягу та взуття (курсовий проєкт, Team 1) на ASP.NET Core 9 із Clean Architecture. Розділ Опис Статті Архітектура, запуск і конфігурація Довідник API (код) Класи, інтерфейси й методи шарів Domain, Application, Infrastructure, Presentation Документація ендпоінтів HTTP API: Scalar з OpenAPI Посилання Живий сайт: https://newbalanceshop-frontend.vercel.app Репозиторій бекенду: https://github.com/vicitmceo/NewBalanceShop Swagger на продакшні: https://newbalanceshop-api.onrender.com/swagger"
+    "summary": "New Balance Shop: документація коду Інтернет-магазин спортивного одягу та взуття (курсовий проєкт, Team 1) на ASP.NET Core 9 із Clean Architecture. Розділ Опис Статті Архітектура, запуск і конфігурація Довідник API (код) Класи, інтерфейси й методи шарів Domain, Application, Infrastructure, Presentation Документація ендпоінтів HTTP API: Scalar з OpenAPI Посилання Живий сайт: https://newbalanceshop.vercel.app Репозиторій бекенду: https://github.com/vicitmceo/NewBalanceShop Swagger на продакшні: https://newbalanceshop-api.onrender.com/swagger"
   }
 }

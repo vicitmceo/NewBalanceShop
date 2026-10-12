@@ -23,7 +23,7 @@ body { background: var(--black); color:#fff; }
  <div class="q">Ваші питання?</div>
  <div class="sub">New Balance Shop · Team 1 · дякуємо за увагу</div>
  <div class="qrs">
-  <div class="qr"><span id="q1"></span><b>Живий сайт</b><span class="u">newbalanceshop-frontend.vercel.app</span></div>
+  <div class="qr"><span id="q1"></span><b>Живий сайт</b><span class="u">newbalanceshop.vercel.app</span></div>
   <div class="qr"><span id="q2"></span><b>Код (GitHub)</b><span class="u">github.com/vicitmceo/NewBalanceShop</span></div>
   <div class="qr"><span id="q3"></span><b>Документація</b><span class="u">vicitmceo.github.io/NewBalanceShop</span></div>
  </div>
@@ -31,7 +31,7 @@ body { background: var(--black); color:#fff; }
 </div>
 <script>
 function qr(id,url){var q=qrcode(0,'M');q.addData(url);q.make();document.getElementById(id).innerHTML=q.createSvgTag({cellSize:6,margin:0,scalable:true});}
-qr('q1','https://newbalanceshop-frontend.vercel.app');
+qr('q1','https://newbalanceshop.vercel.app');
 qr('q2','https://github.com/vicitmceo/NewBalanceShop');
 qr('q3','https://vicitmceo.github.io/NewBalanceShop/');
 </script>

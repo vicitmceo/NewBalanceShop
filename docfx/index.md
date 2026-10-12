@@ -10,6 +10,6 @@
 
 ## Посилання
 
-- Живий сайт: <https://newbalanceshop-frontend.vercel.app>
+- Живий сайт: <https://newbalanceshop.vercel.app>
 - Репозиторій бекенду: <https://github.com/vicitmceo/NewBalanceShop>
 - Swagger на продакшні: <https://newbalanceshop-api.onrender.com/swagger>

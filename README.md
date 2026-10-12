@@ -2,11 +2,11 @@
 
 > Інтернет-магазин спортивного одягу та взуття New Balance: каталог, кошик, замовлення, кабінет покупця та адмін-функції. Курсовий командний проєкт Team 1 на ASP.NET Core 9 із Clean Architecture.
 
-[🌐 Live Demo](https://newbalanceshop-frontend.vercel.app)
+[🌐 Live Demo](https://newbalanceshop.vercel.app)
 
 | | Посилання |
 |---|---|
-| 🌐 Задеплоєний фронтенд | https://newbalanceshop-frontend.vercel.app |
+| 🌐 Задеплоєний фронтенд | https://newbalanceshop.vercel.app |
 | 📘 Документація коду (DocFX) | https://vicitmceo.github.io/NewBalanceShop/code/ |
 | 📚 Документація ендпоінтів (Scalar) | https://vicitmceo.github.io/NewBalanceShop/api/ |
 | 🧪 Swagger UI на продакшні | https://newbalanceshop-api.onrender.com/swagger |
@@ -124,7 +124,7 @@ dotnet publish NewBalanceShop.csproj -c Release -o publish
 | Частина | Платформа | Адреса |
 |---|---|---|
 | API + PostgreSQL | Render (Docker, `render.yaml`) | https://newbalanceshop-api.onrender.com |
-| Фронтенд | Vercel | https://newbalanceshop-frontend.vercel.app |
+| Фронтенд | Vercel | https://newbalanceshop.vercel.app |
 | Документація | GitHub Pages (папка `docs/`) | https://vicitmceo.github.io/NewBalanceShop/ |
 
 Деплой автоматичний: пуш у `master` запускає збирання на Render, GitHub Pages публікує `docs/`. Безкоштовний Render «засинає», перший запит може тривати до хвилини.
