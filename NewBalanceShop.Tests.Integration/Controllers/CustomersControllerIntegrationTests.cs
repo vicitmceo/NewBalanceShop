@@ -153,8 +153,9 @@ public class CustomersControllerIntegrationTests : IDisposable
 
     private async Task LoginAsSeedAdminAsync()
     {
+        _factory.SetTestAdminPassword();
         var response = await _client.PostAsJsonAsync("/api/Auth/login",
-            new LoginDto { Email = "admin@newbalanceshop.com", Password = "Admin123!" });
+            new LoginDto { Email = "admin@newbalanceshop.com", Password = CustomWebApplicationFactory.TestAdminPassword });
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 
