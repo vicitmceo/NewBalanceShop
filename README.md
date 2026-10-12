@@ -135,7 +135,11 @@ dotnet publish NewBalanceShop.csproj -c Release -o publish
 |---|---|---|
 | ![Каталог](defense-materials/16-live-ui-screenshots/01-frontend-catalog-desktop.png) | ![Мобільна](defense-materials/16-live-ui-screenshots/02-frontend-catalog-mobile.png) | ![FR](defense-materials/16-live-ui-screenshots/03-frontend-french.png) |
 
-Документація ендпоінтів: ![Scalar](defense-materials/16-live-ui-screenshots/04-api-docs-scalar.png)
+Документація ендпоінтів (Scalar): ![Scalar](defense-materials/16-live-ui-screenshots/04-api-docs-scalar.png)
+
+Swagger UI на продакшні: ![Swagger](defense-materials/12-documentation/swagger-ui-render.png)
+
+Документація коду (DocFX): ![DocFX](defense-materials/12-documentation/docfx-code-docs.png)
 
 ## 🧪 Testing
 
