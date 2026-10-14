@@ -36,4 +36,6 @@ public class OrderItem
     public int Quantity { get; set; }
     /// <summary>Ціна одиниці на момент оформлення (не змінюється при зміні ціни товару).</summary>
     public decimal UnitPrice { get; set; }
+    /// <summary>Обраний розмір (порожній, якщо в товару один розмір).</summary>
+    public string Size { get; set; } = string.Empty;
 }

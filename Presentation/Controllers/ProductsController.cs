@@ -46,7 +46,8 @@ public class ProductsController : ControllerBase
         if (minPrice.HasValue) result = result.Where(p => p.Price >= minPrice.Value);
         if (maxPrice.HasValue) result = result.Where(p => p.Price <= maxPrice.Value);
         if (!string.IsNullOrWhiteSpace(size))
-            result = result.Where(p => string.Equals(p.Size, size, StringComparison.OrdinalIgnoreCase));
+            result = result.Where(p => NewBalanceShop.Application.Services.ProductSizes.Parse(p.Size)
+                .Any(x => string.Equals(x, size.Trim(), StringComparison.OrdinalIgnoreCase)));
 
         result = sort switch
         {

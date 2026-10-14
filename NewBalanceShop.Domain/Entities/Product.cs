@@ -20,8 +20,8 @@ public class Product
     public int CategoryId { get; set; }
     public Category? Category { get; set; }
 
-    /// <summary>Розмір (наприклад, 42 або L).</summary>
-    [StringLength(20)]
+    /// <summary>Доступні розміри через кому (наприклад, "40,41,42" або "S,M,L"; для аксесуарів "One size").</summary>
+    [StringLength(120)]
     public string Size { get; set; } = string.Empty;
 
     /// <summary>Колір.</summary>
@@ -39,6 +39,10 @@ public class Product
     /// <summary>Посилання на зображення товару.</summary>
     [StringLength(300)]
     public string ImageUrl { get; set; } = string.Empty;
+
+    /// <summary>Додаткові зображення галереї: посилання через кому.</summary>
+    [StringLength(1000)]
+    public string ExtraImages { get; set; } = string.Empty;
 
     /// <summary>Опис товару.</summary>
     [StringLength(1000)]

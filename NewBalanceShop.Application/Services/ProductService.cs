@@ -55,6 +55,7 @@ public class ProductService : IProductService
         existing.Price = dto.Price;
         existing.Stock = dto.Stock;
         existing.ImageUrl = dto.ImageUrl;
+        existing.ExtraImages = dto.ExtraImages;
         existing.Description = dto.Description;
 
         _productRepository.Update(existing);
