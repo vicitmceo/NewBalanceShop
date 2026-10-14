@@ -220,4 +220,13 @@ public class ProductsControllerIntegrationTests : IDisposable
         Assert.All(products!, p => Assert.True(p.Size.Split(',').Length >= 4));
         Assert.Contains(",", products!.Single(p => p.Id == 1).ExtraImages);
     }
+
+    [Fact]
+    public async Task GetAll_ClothingHasPhotoInGallery_WhileMainImageStaysIllustration()
+    {
+        var hoodie = await _client.GetFromJsonAsync<ProductDto>("/api/Products/3");
+
+        Assert.Equal(string.Empty, hoodie!.ImageUrl);
+        Assert.StartsWith("/images/", hoodie.ExtraImages);
+    }
 }
