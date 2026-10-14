@@ -162,4 +162,53 @@ public class AuthServiceTests
 
         await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GoogleLoginAsync("ok"));
     }
+
+    [Fact]
+    public async Task GithubLoginAsync_WithNewLogin_CreatesCustomerWithNoreplyEmail()
+    {
+        _repo.Setup(r => r.GetByEmailAsync("octocat@users.noreply.github.com")).ReturnsAsync((Customer?)null);
+
+        var result = await _sut.GithubLoginAsync("OctoCat", "The Octocat");
+
+        Assert.Equal("octocat@users.noreply.github.com", result.Email);
+        Assert.Equal("The Octocat", result.FullName);
+        _repo.Verify(r => r.AddAsync(It.Is<Customer>(c => c.PasswordHash == string.Empty)), Times.Once);
+    }
+
+    [Fact]
+    public async Task GithubLoginAsync_WithExistingLogin_ReusesCustomer()
+    {
+        var existing = new Customer { Id = 7, FullName = "Old", Email = "octocat@users.noreply.github.com" };
+        _repo.Setup(r => r.GetByEmailAsync("octocat@users.noreply.github.com")).ReturnsAsync(existing);
+
+        var result = await _sut.GithubLoginAsync("octocat", null);
+
+        Assert.Equal(7, result.Id);
+        _repo.Verify(r => r.AddAsync(It.IsAny<Customer>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task GithubLoginAsync_WhenBlocked_Throws()
+    {
+        _repo.Setup(r => r.GetByEmailAsync("octocat@users.noreply.github.com"))
+            .ReturnsAsync(new Customer { Id = 7, Email = "octocat@users.noreply.github.com", IsBlocked = true });
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GithubLoginAsync("octocat", null));
+    }
+
+    [Fact]
+    public async Task GithubLoginAsync_WithEmptyLogin_Throws()
+    {
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.GithubLoginAsync(" ", null));
+    }
+
+    [Fact]
+    public async Task LoginAsync_ForSocialAccountWithEmptyPasswordHash_IsRejected()
+    {
+        _repo.Setup(r => r.GetByEmailAsync("octocat@users.noreply.github.com"))
+            .ReturnsAsync(new Customer { Email = "octocat@users.noreply.github.com", PasswordHash = string.Empty });
+
+        await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            _sut.LoginAsync(new LoginDto { Email = "octocat@users.noreply.github.com", Password = "" }));
+    }
 }

@@ -96,4 +96,32 @@ public class AuthService : IAuthService
 
         return customer.ToDto();
     }
+
+    // GitHub не віддає приватний email, тому ідентифікуємо покупця за службовою адресою
+    // login@users.noreply.github.com (унікальна для кожного логіну); пароль порожній:
+    // PasswordHasher.Verify для порожнього хешу завжди повертає false, тож увійти паролем не можна
+    public async Task<CustomerDto> GithubLoginAsync(string login, string? name)
+    {
+        if (string.IsNullOrWhiteSpace(login))
+            throw new InvalidOperationException("GitHub не повернув логін.");
+
+        var email = $"{login.ToLowerInvariant()}@users.noreply.github.com";
+        var customer = await _customerRepository.GetByEmailAsync(email);
+        if (customer is null)
+        {
+            customer = new Customer
+            {
+                FullName = string.IsNullOrWhiteSpace(name) ? login : name,
+                Email = email,
+                PasswordHash = string.Empty
+            };
+            await _customerRepository.AddAsync(customer);
+            await _customerRepository.SaveChangesAsync();
+        }
+
+        if (customer.IsBlocked)
+            throw new InvalidOperationException("Обліковий запис заблоковано.");
+
+        return customer.ToDto();
+    }
 }
