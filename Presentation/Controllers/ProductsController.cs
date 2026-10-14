@@ -53,7 +53,7 @@ public class ProductsController : ControllerBase
             "price_asc" => result.OrderBy(p => p.Price),
             "price_desc" => result.OrderByDescending(p => p.Price),
             "name" => result.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase),
-            _ => result
+            _ => result.OrderBy(p => p.Id)
         };
 
         return Ok(result.ToList());
