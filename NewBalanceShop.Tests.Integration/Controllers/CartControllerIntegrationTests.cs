@@ -36,7 +36,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task AddToCart_WithValidProduct_ReturnsUpdatedCart()
     {
-        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 2 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 2 });
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         var cart = await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
@@ -47,8 +47,8 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task AddToCart_WithSameProductTwice_IncreasesQuantity()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
-        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 3 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 1 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 3 });
 
         var cart = await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
         Assert.Single(cart!);
@@ -58,7 +58,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task AddToCart_WithNonExistingProduct_ReturnsNotFound()
     {
-        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 9999, Quantity = 1 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 9999, Size = "42", Quantity = 1 });
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
@@ -66,7 +66,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task RemoveFromCart_RemovesItem()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 1 });
 
         var response = await _client.DeleteAsync("/api/Cart/1");
 
@@ -85,7 +85,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Checkout_IgnoresCustomerIdFromQuery()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 1 });
 
         var response = await _client.PostAsync("/api/Cart/checkout?customerId=2", null);
 
@@ -101,7 +101,7 @@ public class CartControllerIntegrationTests : IDisposable
             FullName = "Покупець", Email = "cart-buyer@example.com", Password = "Passw0rd!"
         });
         var me = await register.Content.ReadFromJsonAsync<CustomerDto>();
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 1 });
 
         var response = await _client.PostAsync("/api/Cart/checkout", null);
 
@@ -112,7 +112,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Checkout_WithItemsInCart_CreatesOrderAndClearsCart()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 2 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 2 });
 
         var checkoutResponse = await _client.PostAsync("/api/Cart/checkout?customerId=1", null);
         Assert.Equal(HttpStatusCode.OK, checkoutResponse.StatusCode);
@@ -128,7 +128,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task AddToCart_MoreThanStock_ReturnsBadRequestWithMessage()
     {
-        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 9999 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Size = "42", Quantity = 9999 });
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         Assert.Contains("Недостатньо", await response.Content.ReadAsStringAsync());
@@ -137,9 +137,9 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task AddToCart_TwiceBeyondStock_IsRejected()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 10 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Size = "42", Quantity = 10 });
 
-        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 1 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Size = "42", Quantity = 1 });
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
@@ -147,7 +147,7 @@ public class CartControllerIntegrationTests : IDisposable
     [Fact]
     public async Task SetQuantity_ChangesQuantity_AndRejectsOverStock()
     {
-        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 1 });
 
         var ok = await _client.PutAsJsonAsync("/api/Cart/1", new SetCartQuantityDto { Quantity = 5 });
         Assert.Equal(HttpStatusCode.OK, ok.StatusCode);
@@ -164,5 +164,67 @@ public class CartControllerIntegrationTests : IDisposable
         var response = await _client.PutAsJsonAsync("/api/Cart/1", new SetCartQuantityDto { Quantity = 2 });
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task AddToCart_WithoutSizeWhenSeveralExist_ReturnsBadRequest()
+    {
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        Assert.Contains("розмір", await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
+    public async Task AddToCart_WithUnknownSize_ReturnsBadRequest()
+    {
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "99", Quantity = 1 });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task AddToCart_SingleSizeProduct_DoesNotRequireSize()
+    {
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 8, Quantity = 1 });
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var cart = await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
+        Assert.Equal("One size", cart![0].Size);
+    }
+
+    [Fact]
+    public async Task AddToCart_DifferentSizesOfSameProduct_AreSeparateLines()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "41", Quantity = 1 });
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "43", Quantity = 2 });
+
+        var cart = await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
+        Assert.Equal(2, cart!.Count);
+        Assert.Equal(new[] { "41", "43" }, cart.Select(i => i.Size).OrderBy(x => x));
+    }
+
+    [Fact]
+    public async Task RemoveFromCart_WithSize_RemovesOnlyThatSize()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "41", Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "43", Quantity = 1 });
+
+        var response = await _client.DeleteAsync("/api/Cart/1?size=41");
+
+        var cart = await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
+        Assert.Single(cart!);
+        Assert.Equal("43", cart![0].Size);
+    }
+
+    [Fact]
+    public async Task Checkout_StoresChosenSizeInOrder()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "44", Quantity = 1 });
+
+        var response = await _client.PostAsync("/api/Cart/checkout", null);
+
+        var order = await response.Content.ReadFromJsonAsync<OrderDto>();
+        Assert.Equal("44", order!.Items[0].Size);
     }
 }

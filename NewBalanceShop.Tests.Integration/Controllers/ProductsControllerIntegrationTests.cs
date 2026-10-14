@@ -95,7 +95,7 @@ public class ProductsControllerIntegrationTests : IDisposable
         var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products");
 
         Assert.NotNull(products);
-        Assert.Equal(10, products!.Count);
+        Assert.Equal(18, products!.Count);
     }
 
     [Fact]
@@ -201,5 +201,23 @@ public class ProductsControllerIntegrationTests : IDisposable
 
         Assert.Single(products!);
         Assert.Contains("Hoodie", products![0].Name);
+    }
+
+    [Fact]
+    public async Task GetAll_FilterBySize_MatchesAnySizeInTheList()
+    {
+        var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products?size=46");
+
+        Assert.NotEmpty(products!);
+        Assert.All(products, p => Assert.Contains("46", p.Size.Split(',')));
+    }
+
+    [Fact]
+    public async Task GetAll_SeededSneakersHaveSeveralSizes_AndFirstOneHasGallery()
+    {
+        var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products?categoryId=1");
+
+        Assert.All(products!, p => Assert.True(p.Size.Split(',').Length >= 4));
+        Assert.Contains(",", products!.Single(p => p.Id == 1).ExtraImages);
     }
 }

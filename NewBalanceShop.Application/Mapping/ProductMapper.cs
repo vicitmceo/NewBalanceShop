@@ -17,6 +17,7 @@ public static class ProductMapper
         Price = p.Price,
         Stock = p.Stock,
         ImageUrl = p.ImageUrl,
+        ExtraImages = p.ExtraImages,
         Description = p.Description
     };
 
@@ -31,6 +32,7 @@ public static class ProductMapper
         Price = dto.Price,
         Stock = dto.Stock,
         ImageUrl = dto.ImageUrl,
+        ExtraImages = dto.ExtraImages,
         Description = dto.Description
     };
 }

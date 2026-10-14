@@ -47,6 +47,8 @@ public class OrderService : IOrderService
             if (product.Stock < itemDto.Quantity)
                 throw new InvalidOperationException($"Недостатньо товару '{product.Name}' на складі (в наявності: {product.Stock}).");
 
+            var size = ProductSizes.Resolve(product.Name, product.Size, itemDto.Size);
+
             product.Stock -= itemDto.Quantity;
             _productRepository.Update(product);
 
@@ -57,7 +59,8 @@ public class OrderService : IOrderService
             {
                 ProductId = product.Id,
                 Quantity = itemDto.Quantity,
-                UnitPrice = unitPrice
+                UnitPrice = unitPrice,
+                Size = size
             });
         }
 

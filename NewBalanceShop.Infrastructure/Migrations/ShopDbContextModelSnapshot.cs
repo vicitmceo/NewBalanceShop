@@ -176,6 +176,10 @@ namespace NewBalanceShop.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<decimal>("UnitPrice")
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
@@ -215,6 +219,11 @@ namespace NewBalanceShop.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
+                    b.Property<string>("ExtraImages")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -231,8 +240,8 @@ namespace NewBalanceShop.Migrations
 
                     b.Property<string>("Size")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("integer");
@@ -251,10 +260,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Сірий",
                             Description = "Класичні кросівки New Balance 574.",
+                            ExtraImages = "/images/nb574-b.jpg,/images/nb574-c.jpg",
                             ImageUrl = "/images/nb574.jpg",
                             Name = "New Balance 574",
                             Price = 3299m,
-                            Size = "42",
+                            Size = "38,39,40,41,42,43,44,45",
                             Stock = 15
                         },
                         new
@@ -264,10 +274,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Білий",
                             Description = "Ретро-баскетбольні кросівки New Balance 550.",
+                            ExtraImages = "",
                             ImageUrl = "/images/nb550.jpg",
                             Name = "New Balance 550",
                             Price = 4199m,
-                            Size = "43",
+                            Size = "40,41,42,43,44,45",
                             Stock = 10
                         },
                         new
@@ -277,10 +288,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 2,
                             Color = "Чорний",
                             Description = "Худі з логотипом New Balance.",
+                            ExtraImages = "",
                             ImageUrl = "",
                             Name = "NB Essentials Hoodie",
                             Price = 1899m,
-                            Size = "L",
+                            Size = "S,M,L,XL",
                             Stock = 20
                         },
                         new
@@ -290,10 +302,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Бежевий",
                             Description = "Низькі кросівки в стилі баскетбольної класики 80-х: шкіра, масивна підошва.",
+                            ExtraImages = "",
                             ImageUrl = "/images/nb480.jpg",
                             Name = "New Balance 480",
                             Price = 3799m,
-                            Size = "40",
+                            Size = "36,37,38,39,40,41,42",
                             Stock = 12
                         },
                         new
@@ -303,10 +316,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Срібний",
                             Description = "Технологічні кросівки з металізованими вставками й амортизацією ABZORB.",
+                            ExtraImages = "",
                             ImageUrl = "/images/nb1906r.jpg",
                             Name = "New Balance 1906R",
                             Price = 5599m,
-                            Size = "44",
+                            Size = "40,41,42,43,44,45,46",
                             Stock = 8
                         },
                         new
@@ -316,10 +330,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Сливовий",
                             Description = "Замша та сітка, підошва N-ERGY: комфорт на цілий день.",
+                            ExtraImages = "",
                             ImageUrl = "/images/nb2002r.jpg",
                             Name = "New Balance 2002R",
                             Price = 5999m,
-                            Size = "41",
+                            Size = "38,39,40,41,42,43",
                             Stock = 6
                         },
                         new
@@ -329,10 +344,11 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 1,
                             Color = "Коричневий",
                             Description = "Скейт-версія 480 із замшею й посиленою підошвою.",
+                            ExtraImages = "",
                             ImageUrl = "/images/nb-numeric480.jpg",
                             Name = "New Balance Numeric 480",
                             Price = 3999m,
-                            Size = "45",
+                            Size = "41,42,43,44,45,46",
                             Stock = 9
                         },
                         new
@@ -342,6 +358,7 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 3,
                             Color = "Сірий",
                             Description = "Бейсболка з вишитим логотипом, регульований ремінець.",
+                            ExtraImages = "",
                             ImageUrl = "",
                             Name = "NB Essentials Cap",
                             Price = 799m,
@@ -355,6 +372,7 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 3,
                             Color = "Чорний",
                             Description = "Рюкзак 25 л для тренувань і міста, відділення для ноутбука.",
+                            ExtraImages = "",
                             ImageUrl = "",
                             Name = "NB Sport Backpack",
                             Price = 1599m,
@@ -368,11 +386,124 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 2,
                             Color = "Білий",
                             Description = "Бавовняна футболка прямого крою з логотипом на грудях.",
+                            ExtraImages = "",
                             ImageUrl = "",
                             Name = "NB Classic Tee",
                             Price = 999m,
-                            Size = "M",
+                            Size = "S,M,L,XL",
                             Stock = 30
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Сірий",
+                            Description = "Версія 1906 із темним сітчастим верхом і амортизацією ABZORB для щоденного бігу.",
+                            ExtraImages = "",
+                            ImageUrl = "/images/nb1906d.jpg",
+                            Name = "New Balance 1906D",
+                            Price = 5799m,
+                            Size = "40,41,42,43,44,45",
+                            Stock = 14
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Сірий",
+                            Description = "Жіноча модель легендарної лінійки 990: замша, сітка, підтримка стопи.",
+                            ExtraImages = "",
+                            ImageUrl = "/images/nb990w.jpg",
+                            Name = "New Balance 990 Women",
+                            Price = 6499m,
+                            Size = "36,37,38,39,40,41",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Білий",
+                            Description = "Максимально м'яка бігова пара на піні Fresh Foam X.",
+                            ExtraImages = "",
+                            ImageUrl = "/images/nb-freshfoam.jpg",
+                            Name = "New Balance Fresh Foam More",
+                            Price = 4899m,
+                            Size = "40,41,42,43,44,45,46",
+                            Stock = 16
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Чорний",
+                            Description = "Трейлові кросівки з агресивним протектором і піною Fresh Foam.",
+                            ExtraImages = "",
+                            ImageUrl = "/images/nb-trailmore.jpg",
+                            Name = "New Balance Fresh Foam Trail",
+                            Price = 4599m,
+                            Size = "40,41,42,43,44,45,46",
+                            Stock = 11
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Brand = "New Balance",
+                            CategoryId = 2,
+                            Color = "Чорний",
+                            Description = "Легка спортивна куртка на блискавці з кишенями.",
+                            ExtraImages = "",
+                            ImageUrl = "",
+                            Name = "NB Track Jacket",
+                            Price = 2499m,
+                            Size = "S,M,L,XL,XXL",
+                            Stock = 22
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Brand = "New Balance",
+                            CategoryId = 2,
+                            Color = "Сірий",
+                            Description = "Шорти для тренувань із вологовідвідною тканиною.",
+                            ExtraImages = "",
+                            ImageUrl = "",
+                            Name = "NB Training Shorts",
+                            Price = 1199m,
+                            Size = "S,M,L,XL",
+                            Stock = 28
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Brand = "New Balance",
+                            CategoryId = 3,
+                            Color = "Чорний",
+                            Description = "В'язана шапка з відворотом і вишитим логотипом.",
+                            ExtraImages = "",
+                            ImageUrl = "",
+                            Name = "NB Knit Beanie",
+                            Price = 699m,
+                            Size = "One size",
+                            Stock = 35
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Brand = "New Balance",
+                            CategoryId = 3,
+                            Color = "Білий",
+                            Description = "Три пари спортивних шкарпеток із посиленою п'ятою.",
+                            ExtraImages = "",
+                            ImageUrl = "",
+                            Name = "NB Performance Socks (3 pack)",
+                            Price = 549m,
+                            Size = "S,M,L",
+                            Stock = 60
                         });
                 });
 

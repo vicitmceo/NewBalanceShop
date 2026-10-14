@@ -212,7 +212,7 @@ public class CustomersControllerIntegrationTests : IDisposable
         var buyer = await RegisterAsync("buyer@example.com");
         await _client.PostAsJsonAsync("/api/Orders", new CreateOrderDto
         {
-            Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Quantity = 1 } }
+            Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Size = "42", Quantity = 1 } }
         });
         await _client.PostAsync("/api/Auth/logout", null);
         await LoginAsSeedAdminAsync();

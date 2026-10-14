@@ -25,7 +25,7 @@ public class OrdersControllerIntegrationTests : IDisposable
     private static CreateOrderDto OneItemOrder(int customerId = 0, int quantity = 1) => new()
     {
         CustomerId = customerId,
-        Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Quantity = quantity } }
+        Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Size = "42", Quantity = quantity } }
     };
 
     private async Task<CustomerDto> RegisterAsync(string email, HttpClient? client = null)

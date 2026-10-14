@@ -10,6 +10,8 @@ public class CreateOrderItemDto
 
     [Range(1, int.MaxValue)]
     public int Quantity { get; set; }
+
+    public string Size { get; set; } = string.Empty;
 }
 
 /// <summary>Запит на створення замовлення.</summary>
@@ -28,6 +30,7 @@ public class OrderItemDto
     public string ProductName { get; set; } = string.Empty;
     public int Quantity { get; set; }
     public decimal UnitPrice { get; set; }
+    public string Size { get; set; } = string.Empty;
 }
 
 /// <summary>Замовлення у відповіді API.</summary>

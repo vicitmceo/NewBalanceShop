@@ -18,7 +18,8 @@ public static class OrderMapper
             ProductId = i.ProductId,
             ProductName = i.Product?.Name ?? string.Empty,
             Quantity = i.Quantity,
-            UnitPrice = i.UnitPrice
+            UnitPrice = i.UnitPrice,
+            Size = i.Size
         }).ToList()
     };
 }

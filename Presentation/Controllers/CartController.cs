@@ -2,6 +2,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
+using NewBalanceShop.Application.Services;
 using NewBalanceShop.Domain.Entities;
 using NewBalanceShop.Presentation.Security;
 
@@ -39,9 +40,9 @@ public class CartController : ControllerBase
     }
 
     // POST api/cart — додати товар (або збільшити кількість, якщо вже є в кошику)
-    /// <summary>Додає товар у кошик (збільшує кількість, якщо вже є).</summary>
-    /// <param name="dto">Товар і кількість.</param>
-    /// <returns>Оновлений кошик або 404.</returns>
+    /// <summary>Додає товар у кошик (збільшує кількість, якщо така позиція вже є). Розмір обов'язковий, якщо їх кілька.</summary>
+    /// <param name="dto">Товар, розмір і кількість.</param>
+    /// <returns>Оновлений кошик, 404 або 400 (розмір не обрано / не вистачає на складі).</returns>
     [HttpPost]
     public async Task<ActionResult<IEnumerable<CartItemDto>>> AddToCart(AddToCartDto dto)
     {
@@ -50,12 +51,22 @@ public class CartController : ControllerBase
 
         if (dto.Quantity < 1) return BadRequest(new { error = "Кількість має бути більшою за нуль" });
 
-        var cart = GetCartFromSession();
-        var existing = cart.FirstOrDefault(i => i.ProductId == dto.ProductId);
+        string size;
+        try
+        {
+            size = ProductSizes.Resolve(product.Name, product.Size, dto.Size);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
 
-        // кількість у кошику не може перевищувати залишок на складі
-        var wanted = dto.Quantity + (existing?.Quantity ?? 0);
-        if (wanted > product.Stock)
+        var cart = GetCartFromSession();
+        var existing = FindLine(cart, dto.ProductId, size);
+
+        // залишок на складі спільний для всіх розмірів товару
+        var inCart = cart.Where(i => i.ProductId == dto.ProductId).Sum(i => i.Quantity);
+        if (inCart + dto.Quantity > product.Stock)
             return BadRequest(new { error = $"Недостатньо товару '{product.Name}' на складі (в наявності: {product.Stock})." });
 
         if (existing is not null)
@@ -70,7 +81,8 @@ public class CartController : ControllerBase
                 ProductName = product.Name,
                 Price = product.Price,
                 Quantity = dto.Quantity,
-                ImageUrl = product.ImageUrl
+                ImageUrl = product.ImageUrl,
+                Size = size
             });
         }
 
@@ -78,23 +90,26 @@ public class CartController : ControllerBase
         return Ok(cart);
     }
 
-    // PUT api/cart/{productId} — встановити кількість
-    /// <summary>Встановлює кількість товару в кошику (не більше залишку на складі).</summary>
+    // PUT api/cart/{productId}?size= — встановити кількість
+    /// <summary>Встановлює кількість позиції в кошику (не більше залишку на складі).</summary>
     /// <param name="productId">Ключ товару.</param>
     /// <param name="dto">Нова кількість.</param>
-    /// <returns>Оновлений кошик; 404, якщо товару немає в кошику; 400 при перевищенні залишку.</returns>
+    /// <param name="size">Розмір позиції (якщо розмірів кілька).</param>
+    /// <returns>Оновлений кошик; 404, якщо позиції немає; 400 при перевищенні залишку.</returns>
     [HttpPut("{productId}")]
-    public async Task<ActionResult<IEnumerable<CartItemDto>>> SetQuantity(int productId, SetCartQuantityDto dto)
+    public async Task<ActionResult<IEnumerable<CartItemDto>>> SetQuantity(int productId, SetCartQuantityDto dto, [FromQuery] string? size = null)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var cart = GetCartFromSession();
-        var item = cart.FirstOrDefault(i => i.ProductId == productId);
+        var item = FindLine(cart, productId, size);
         if (item is null) return NotFound(new { error = "Товару немає в кошику" });
 
         var product = await _productService.GetByIdAsync(productId);
         if (product is null) return NotFound(new { error = "Товар не знайдено" });
-        if (dto.Quantity > product.Stock)
+
+        var others = cart.Where(i => i.ProductId == productId && !ReferenceEquals(i, item)).Sum(i => i.Quantity);
+        if (others + dto.Quantity > product.Stock)
             return BadRequest(new { error = $"Недостатньо товару '{product.Name}' на складі (в наявності: {product.Stock})." });
 
         item.Quantity = dto.Quantity;
@@ -102,15 +117,19 @@ public class CartController : ControllerBase
         return Ok(cart);
     }
 
-    // DELETE api/cart/{productId} — прибрати товар з кошика
-    /// <summary>Прибирає товар з кошика.</summary>
+    // DELETE api/cart/{productId}?size= — прибрати позицію з кошика
+    /// <summary>Прибирає позицію з кошика.</summary>
     /// <param name="productId">Ключ товару.</param>
+    /// <param name="size">Розмір позиції; без нього прибираються всі розміри товару.</param>
     /// <returns>Оновлений кошик.</returns>
     [HttpDelete("{productId}")]
-    public ActionResult<IEnumerable<CartItemDto>> RemoveFromCart(int productId)
+    public ActionResult<IEnumerable<CartItemDto>> RemoveFromCart(int productId, [FromQuery] string? size = null)
     {
         var cart = GetCartFromSession();
-        cart.RemoveAll(i => i.ProductId == productId);
+        if (string.IsNullOrWhiteSpace(size))
+            cart.RemoveAll(i => i.ProductId == productId);
+        else
+            cart.RemoveAll(i => i.ProductId == productId && string.Equals(i.Size, size.Trim(), StringComparison.OrdinalIgnoreCase));
         SaveCartToSession(cart);
         return Ok(cart);
     }
@@ -131,7 +150,7 @@ public class CartController : ControllerBase
         var createDto = new CreateOrderDto
         {
             CustomerId = customerId,
-            Items = cart.Select(i => new CreateOrderItemDto { ProductId = i.ProductId, Quantity = i.Quantity }).ToList()
+            Items = cart.Select(i => new CreateOrderItemDto { ProductId = i.ProductId, Quantity = i.Quantity, Size = i.Size }).ToList()
         };
 
         try
@@ -144,6 +163,15 @@ public class CartController : ControllerBase
         {
             return BadRequest(new { error = ex.Message });
         }
+    }
+
+    // позиція кошика однозначно визначається парою «товар + розмір»; без розміру шукаємо єдину позицію товару
+    private static CartItemDto? FindLine(List<CartItemDto> cart, int productId, string? size)
+    {
+        var lines = cart.Where(i => i.ProductId == productId).ToList();
+        if (string.IsNullOrWhiteSpace(size))
+            return lines.Count == 1 ? lines[0] : null;
+        return lines.FirstOrDefault(i => string.Equals(i.Size, size.Trim(), StringComparison.OrdinalIgnoreCase));
     }
 
     private List<CartItemDto> GetCartFromSession()
