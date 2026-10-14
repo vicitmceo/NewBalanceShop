@@ -13,13 +13,13 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
  <text x="185" y="82" text-anchor="middle" font-size="22" font-weight="800">NewBalanceShop</text><text x="185" y="108" text-anchor="middle" font-size="15" fill="#5c5c5c">Presentation / Web API</text><text x="185" y="132" text-anchor="middle" font-size="14" fill="#5c5c5c">Controllers, Program.cs (DI, CORS, Session)</text><text x="185" y="156" text-anchor="middle" font-size="13" fill="#8c8c8c">Swashbuckle</text>
 
  <rect x="450" y="40" width="330" height="140" rx="10" fill="#fff" stroke="#111" stroke-width="2.5"/>
- <text x="615" y="82" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Application</text><text x="615" y="108" text-anchor="middle" font-size="15" fill="#5c5c5c">Use cases: services, DTO, mapping</text><text x="615" y="132" text-anchor="middle" font-size="14" fill="#5c5c5c">PasswordHasher (PBKDF2)</text><text x="615" y="156" text-anchor="middle" font-size="13" fill="#cf0a2c">пакет FirebaseAdmin ⚠</text>
+ <text x="615" y="82" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Application</text><text x="615" y="108" text-anchor="middle" font-size="15" fill="#5c5c5c">Use cases: services, DTO, mapping</text><text x="615" y="132" text-anchor="middle" font-size="14" fill="#5c5c5c">PasswordHasher (PBKDF2)</text><text x="615" y="156" text-anchor="middle" font-size="13" fill="#1f8f4a">IGoogleTokenVerifier (інтерфейс)</text>
 
  <rect x="880" y="40" width="270" height="140" rx="10" fill="#111" stroke="#111" stroke-width="2.5"/>
  <text x="1015" y="82" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">NewBalanceShop.Domain</text><text x="1015" y="108" text-anchor="middle" font-size="15" fill="#d0d0d0">Entities, інтерфейси репозиторіїв</text><text x="1015" y="132" text-anchor="middle" font-size="14" fill="#d0d0d0">без залежностей</text>
 
  <rect x="1250" y="40" width="250" height="140" rx="10" fill="#fff" stroke="#111" stroke-width="2.5"/>
- <text x="1375" y="74" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop</text><text x="1375" y="98" text-anchor="middle" font-size="19" font-weight="800">.Infrastructure</text><text x="1375" y="124" text-anchor="middle" font-size="14" fill="#5c5c5c">EF Core, Npgsql, Repositories</text><text x="1375" y="146" text-anchor="middle" font-size="14" fill="#5c5c5c">Migrations, ShopDbContext</text>
+ <text x="1375" y="74" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop</text><text x="1375" y="98" text-anchor="middle" font-size="19" font-weight="800">.Infrastructure</text><text x="1375" y="124" text-anchor="middle" font-size="14" fill="#5c5c5c">EF Core, Npgsql, Repositories</text><text x="1375" y="146" text-anchor="middle" font-size="14" fill="#5c5c5c">Migrations, Firebase verifier</text>
 
  <line x1="350" y1="110" x2="446" y2="110" stroke="#111" stroke-width="3" marker-end="url(#a)"/>
  <line x1="780" y1="110" x2="876" y2="110" stroke="#111" stroke-width="3" marker-end="url(#a)"/>
@@ -29,16 +29,16 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
  <!-- tests -->
  <rect x="130" y="290" width="420" height="100" rx="10" fill="#f4f4f4" stroke="#8c8c8c" stroke-width="2"/>
- <text x="340" y="326" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Tests.Unit</text><text x="340" y="352" text-anchor="middle" font-size="15" fill="#5c5c5c">xUnit + Moq · 102 тести</text><text x="340" y="374" text-anchor="middle" font-size="13" fill="#8c8c8c">→ Web API, Application, Domain</text>
+ <text x="340" y="326" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Tests.Unit</text><text x="340" y="352" text-anchor="middle" font-size="15" fill="#5c5c5c">xUnit + Moq · 141 тест</text><text x="340" y="374" text-anchor="middle" font-size="13" fill="#8c8c8c">→ Web API, Application, Domain</text>
  <rect x="680" y="290" width="470" height="100" rx="10" fill="#f4f4f4" stroke="#8c8c8c" stroke-width="2"/>
- <text x="915" y="326" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Tests.Integration</text><text x="915" y="352" text-anchor="middle" font-size="15" fill="#5c5c5c">WebApplicationFactory + EF InMemory · 43 тести</text><text x="915" y="374" text-anchor="middle" font-size="13" fill="#8c8c8c">→ Web API, Application, Domain, Infrastructure</text>
+ <text x="915" y="326" text-anchor="middle" font-size="19" font-weight="800">NewBalanceShop.Tests.Integration</text><text x="915" y="352" text-anchor="middle" font-size="15" fill="#5c5c5c">WebApplicationFactory + EF InMemory · 78 тестів</text><text x="915" y="374" text-anchor="middle" font-size="13" fill="#8c8c8c">→ Web API, Application, Domain, Infrastructure</text>
  <line x1="340" y1="290" x2="250" y2="184" stroke="#8c8c8c" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
  <line x1="915" y1="290" x2="330" y2="184" stroke="#8c8c8c" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
  <text x="760" y="440" text-anchor="middle" font-size="15" font-weight="700" fill="#111">Правило залежностей: усі стрілки між шарами спрямовані до Domain</text>
 </svg>
 <div class="right">
- <div class="card"><h3>Що дотримано</h3><ul><li>Domain не посилається ні на що (немає ProjectReference).</li><li>Infrastructure залежить лише від Domain: контракти репозиторіїв лежать у Domain.</li><li>Controllers викликають лише сервіси Application, EF Core у них немає.</li></ul></div>
- <div class="card" style="border-color:#cf0a2c"><h3 style="color:#cf0a2c">Відоме відхилення і план виправлення</h3><p>Application має пакет FirebaseAdmin: перевірка Google-токена лежить у AuthService. План: інтерфейс <b>IGoogleTokenVerifier</b> у Domain/Application, реалізація в Infrastructure.</p></div>
+ <div class="card"><h3>Що дотримано</h3><ul><li>Domain не посилається ні на що (немає ProjectReference).</li><li>Infrastructure реалізує контракти з Domain і Application, самі шари від неї не залежать.</li><li>Controllers викликають лише сервіси Application, EF Core у них немає.</li></ul></div>
+ <div class="card" style="border-color:#1f8f4a"><h3 style="color:#1f8f4a">Відхилення виправлено</h3><p>Раніше Application мав пакет FirebaseAdmin. Тепер перевірка Google-токена йде через інтерфейс <b>IGoogleTokenVerifier</b>, а реалізація <b>FirebaseGoogleTokenVerifier</b> лежить в Infrastructure.</p></div>
 </div>
 </div>
 <script src="slide.js"></script></body></html>

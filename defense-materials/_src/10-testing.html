@@ -11,22 +11,22 @@
 <div class="body" style="padding-top:22px">
  <div class="cols">
   <div class="card">
-   <h3>Піраміда тестів <span class="ok">145 / 145 passed</span></h3>
+   <h3>Піраміда тестів <span class="ok">219 / 219 passed</span></h3>
    <div class="pyr">
-    <div class="lv" style="background:#cf0a2c;width:55%">Integration · 43<small>повний HTTP-конвеєр, EF InMemory</small></div>
-    <div class="lv" style="background:#111;width:90%">Unit · 102<small>сервіси, мапери, контролери (Moq)</small></div>
+    <div class="lv" style="background:#cf0a2c;width:55%">Integration · 78<small>повний HTTP-конвеєр, EF InMemory</small></div>
+    <div class="lv" style="background:#111;width:90%">Unit · 141<small>сервіси, мапери, контролери (Moq)</small></div>
    </div>
-   <div class="grp"><b>Unit (NewBalanceShop.Tests.Unit)</b><span>Product/Order/Auth/CustomerService · PasswordHasher (5) · Mapping · контролери: Products, Orders, Auth, Customers, GithubAuth</span></div>
-   <div class="grp"><b>Integration (NewBalanceShop.Tests.Integration)</b><span>Products 10 · Cart 7 · Orders 6 · Auth 8 · Customers 12; кожен тест на власній InMemory-БД</span></div>
-   <div class="grp"><b>Покриття: 86,7%</b><span>Infrastructure 95,8% · Application 90,2% · Domain 84,6% · Web API 82,0%</span></div>
+   <div class="grp"><b>Unit (NewBalanceShop.Tests.Unit)</b><span>Product/Order/Auth/CustomerService · PasswordHasher · ProductSizes · Mapping · контролери (Products з фільтрами, Orders, Auth, Customers, GithubAuth)</span></div>
+   <div class="grp"><b>Integration (NewBalanceShop.Tests.Integration)</b><span>Products, Cart, Orders, Auth, Customers: розміри, залишок, права 401/403, захист від BOLA; кожен тест на власній InMemory-БД</span></div>
+   <div class="grp"><b>Покриття: 91,1%</b><span>Infrastructure 89,5% · Application 99,7% · Domain 87,8% · Web API 85,6%</span></div>
   </div>
   <div style="display:flex;flex-direction:column;gap:20px">
    <div class="card"><h3>Що знайшли тести (реальні баги)</h3><ul>
     <li><b>Forbid() давав 500</b> замість 403, бо схему автентифікації не реєстровано; тепер явні 401/403.</li>
     <li><b>Secure-cookie ламала сесію</b> у тестах по http; у середовищі Testing вимкнено.</li>
     <li><b>Два провайдери БД</b> при підміні Npgsql на InMemory; усунуто видаленням конфігурації контексту.</li></ul></div>
-   <div class="card"><h3>Logging</h3><p>Використовується вбудований <b>ILogger</b> ASP.NET Core: запити, EF Core і помилки йдуть у консоль/логи Render. Окремих логів бізнес-подій немає.</p></div>
-   <div class="card gap"><h3>План покращення</h3><ul><li>Middleware глобальної обробки помилок + ILogger у сервісах.</li><li>Запуск тестів у GitHub Actions на кожен push.</li></ul></div>
+   <div class="card"><h3>Logging</h3><p>Вбудований <b>ILogger</b> і глобальний <b>ExceptionHandlingMiddleware</b>: непередбачені помилки логуються, клієнт отримує коректну відповідь. Логи доступні в Render.</p></div>
+   <div class="card gap"><h3>План покращення</h3><ul><li>Запуск тестів у GitHub Actions на кожен push (workflow готовий, потрібне право workflow для токена).</li><li>Звіт сканера ZAP для додатка.</li></ul></div>
   </div>
  </div>
 </div>

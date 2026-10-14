@@ -13,13 +13,13 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
  <rect x="10" y="30" width="250" height="110" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="10" y="30" width="250" height="30" fill="#111"/><text x="135" y="52" text-anchor="middle" class="h">Categories</text>
  <text x="22" y="86" class="c"><tspan class="pk">PK</tspan> Id</text><text x="150" y="86" class="ty">int</text><text x="22" y="108" class="c">Name</text><text x="150" y="108" class="ty">text</text>
  <!-- Products -->
- <rect x="330" y="10" width="300" height="270" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="330" y="10" width="300" height="30" fill="#111"/><text x="480" y="32" text-anchor="middle" class="h">Products</text>
- <g class="c"><text x="342" y="66"><tspan class="pk">PK</tspan> Id</text><text x="342" y="88">Name</text><text x="342" y="110">Brand</text><text x="342" y="132"><tspan class="fk">FK</tspan> CategoryId</text><text x="342" y="154">Size</text><text x="342" y="176">Color</text><text x="342" y="198">Price</text><text x="342" y="220">Stock</text><text x="342" y="242">ImageUrl</text><text x="342" y="264">Description</text></g>
- <g class="ty"><text x="500" y="66">int</text><text x="500" y="88">varchar(150)</text><text x="500" y="110">varchar(80)</text><text x="500" y="132">int</text><text x="500" y="154">varchar(20)</text><text x="500" y="176">varchar(40)</text><text x="500" y="198">numeric(10,2)</text><text x="500" y="220">int</text><text x="500" y="242">varchar(300)</text><text x="500" y="264">varchar(1000)</text></g>
+ <rect x="330" y="10" width="300" height="296" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="330" y="10" width="300" height="30" fill="#111"/><text x="480" y="32" text-anchor="middle" class="h">Products</text>
+ <g class="c"><text x="342" y="66"><tspan class="pk">PK</tspan> Id</text><text x="342" y="88">Name</text><text x="342" y="110">Brand</text><text x="342" y="132"><tspan class="fk">FK</tspan> CategoryId</text><text x="342" y="154">Size (список)</text><text x="342" y="176">Color</text><text x="342" y="198">Price</text><text x="342" y="220">Stock</text><text x="342" y="242">ImageUrl</text><text x="342" y="264">ExtraImages</text><text x="342" y="286">Description</text></g>
+ <g class="ty"><text x="500" y="66">int</text><text x="500" y="88">varchar(150)</text><text x="500" y="110">varchar(80)</text><text x="500" y="132">int</text><text x="500" y="154">varchar(120)</text><text x="500" y="176">varchar(40)</text><text x="500" y="198">numeric(10,2)</text><text x="500" y="220">int</text><text x="500" y="242">varchar(300)</text><text x="500" y="264">varchar(1000)</text><text x="500" y="286">varchar(1000)</text></g>
  <!-- OrderItems -->
- <rect x="730" y="150" width="280" height="190" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="730" y="150" width="280" height="30" fill="#111"/><text x="870" y="172" text-anchor="middle" class="h">OrderItems</text>
- <g class="c"><text x="742" y="206"><tspan class="pk">PK</tspan> Id</text><text x="742" y="228"><tspan class="fk">FK</tspan> OrderId</text><text x="742" y="250"><tspan class="fk">FK</tspan> ProductId</text><text x="742" y="272">Quantity</text><text x="742" y="294">UnitPrice</text></g>
- <g class="ty"><text x="900" y="206">int</text><text x="900" y="228">int</text><text x="900" y="250">int</text><text x="900" y="272">int</text><text x="900" y="294">numeric(10,2)</text></g>
+ <rect x="730" y="150" width="280" height="214" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="730" y="150" width="280" height="30" fill="#111"/><text x="870" y="172" text-anchor="middle" class="h">OrderItems</text>
+ <g class="c"><text x="742" y="206"><tspan class="pk">PK</tspan> Id</text><text x="742" y="228"><tspan class="fk">FK</tspan> OrderId</text><text x="742" y="250"><tspan class="fk">FK</tspan> ProductId</text><text x="742" y="272">Quantity</text><text x="742" y="294">UnitPrice</text><text x="742" y="316">Size</text></g>
+ <g class="ty"><text x="900" y="206">int</text><text x="900" y="228">int</text><text x="900" y="250">int</text><text x="900" y="272">int</text><text x="900" y="294">numeric(10,2)</text><text x="900" y="316">text</text></g>
  <!-- Orders -->
  <rect x="730" y="-4" width="0" height="0"/>
  <rect x="1100" y="150" width="280" height="190" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><rect x="1100" y="150" width="280" height="30" fill="#111"/><text x="1240" y="172" text-anchor="middle" class="h">Orders</text>
@@ -40,8 +40,8 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 </svg>
 <div class="why">
  <div class="card"><h3>Чому PostgreSQL</h3><ul><li>Реляційні зв'язки замовлення → позиції → товар, потрібна транзакційність.</li><li>Безкоштовний managed-інстанс на Render, є провайдер Npgsql для EF Core.</li></ul></div>
- <div class="card"><h3>Структура</h3><p>3НФ: ціна позиції (UnitPrice) фіксується на момент замовлення; Customer не дублює дані замовлень. Індекси на всіх зовнішніх ключах.</p></div>
- <div class="card" style="border-color:#cf0a2c"><h3 style="color:#cf0a2c">Що покращити</h3><p>Унікальний індекс на Customers.Email; м'яке видалення замість каскадного (зараз видалення клієнта прибирає його замовлення).</p></div>
+ <div class="card"><h3>Структура</h3><p>3НФ: ціна позиції (UnitPrice) фіксується на момент замовлення; Customer не дублює дані замовлень. Індекси на всіх зовнішніх ключах, унікальний Email, видалення покупця із замовленнями заборонено (Restrict).</p></div>
+ <div class="card" style="border-color:#cf0a2c"><h3 style="color:#cf0a2c">Що покращити</h3><p>Залишок зараз спільний для всіх розмірів: наступний крок — окрема таблиця розмірів із залишком на кожен. Ще м'яке видалення товарів.</p></div>
 </div>
 </div>
 <script src="slide.js"></script></body></html>

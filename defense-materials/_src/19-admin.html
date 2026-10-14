@@ -1,0 +1,18 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.rows { display:flex; flex-direction:column; gap:14px; }
+.r { display:grid; grid-template-columns: 840px 1fr; gap:26px; align-items:center; }
+.shot { border:1px solid var(--g200); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.10); background:#fff; }
+.shot img { display:block; width:100%; height:auto; }
+.cap b { font-size:23px; display:block; margin-bottom:6px; } .cap span { font-size:17px; color:var(--g600); line-height:1.5; display:block; }
+.note { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; } .note .pill { font-size:15px; }
+</style></head><body data-title="Адмін-панель модератора" data-sub="Сторінка /admin доступна лише ролі адміністратора · сервер повертає 401 / 403">
+<div class="body" style="padding-top:18px">
+ <div class="rows">
+  <div class="r"><div class="shot"><img src="../16-live-ui-screenshots/crop-admin-users.png"></div><div class="cap"><b>Користувачі (FR-12, 13)</b><span>Список, блокування і розблокування, видалення з підтвердженням. Користувача із замовленнями видалити не можна, лише заблокувати.</span></div></div>
+  <div class="r"><div class="shot"><img src="../16-live-ui-screenshots/crop-admin-products.png"></div><div class="cap"><b>Товари (FR-04–06)</b><span>Додавання, редагування й видалення: ціна, залишок, розміри через кому, головне й додаткові фото.</span></div></div>
+  <div class="r"><div class="shot"><img src="../16-live-ui-screenshots/crop-admin-orders.png"></div><div class="cap"><b>Замовлення (FR-09)</b><span>Усі замовлення магазину від нових до старих, зміна статусу: New, Confirmed, Shipped, Delivered, Cancelled.</span></div></div>
+ </div>
+ <div class="note"><span class="pill green">пароль адміна не лежить у репозиторії, лише PBKDF2-хеш</span><span class="pill green">запис товарів: тільки IsAdmin</span><span class="pill">службовий «Гість» без кнопок блокування</span></div>
+</div>
+<script src="slide.js"></script></body></html>

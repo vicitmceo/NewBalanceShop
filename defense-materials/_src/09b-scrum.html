@@ -3,9 +3,9 @@
 .cols { display:grid; grid-template-columns: 0.9fr 1.4fr; gap:22px; }
 td { font-size:15px; padding:8px 10px; } td.d { white-space:nowrap; color:var(--red); font-weight:700; }
 .board { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
-.colm { background:var(--g100); border-radius:8px; padding:12px; min-height: 560px; }
+.colm { background:var(--g100); border-radius:8px; padding:12px; min-height: 0; }
 .colm h4 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--g600); margin-bottom:10px; display:flex; justify-content:space-between; }
-.tk { background:#fff; border:1px solid var(--g200); border-radius:6px; padding:8px 10px; margin-bottom:8px; font-size:13.5px; line-height:1.3; }
+.tk { background:#fff; border:1px solid var(--g200); border-radius:6px; padding:6px 10px; margin-bottom:6px; font-size:13px; line-height:1.3; }
 .tk.done { border-left:4px solid var(--green); } .tk.todo { border-left:4px solid var(--g400); } .tk.prog { border-left:4px solid var(--amber); }
 .src { font-size:13px; color:var(--g400); margin-top:8px; }
 </style></head><body data-title="Scrum: спринти, беклог, канбан" data-sub="Jira Scrum board SCRUM · newbalance-team1.atlassian.net">
@@ -25,31 +25,33 @@ td { font-size:15px; padding:8px 10px; } td.d { white-space:nowrap; color:var(--
    <div class="src">Team Lead — Панчук Вадим; команда розробки — обидва учасники.</div>
   </div>
   <div class="card">
-   <h3>Канбан-дошка (стан на 05.10.2026)</h3>
+   <h3>Канбан-дошка (стан на 14.10.2026)</h3>
    <div class="board">
-    <div class="colm"><h4><span>Backlog</span><span>6</span></h4>
-     <div class="tk todo">CI: GitHub Actions (build + test)</div>
+    <div class="colm"><h4><span>Backlog</span><span>4</span></h4>
+     <div class="tk todo">CI: GitHub Actions (workflow готовий)</div>
      <div class="tk todo">Кешування категорій (IMemoryCache)</div>
-     <div class="tk todo">Логування й обробка помилок (middleware)</div>
-     <div class="tk todo">DocFX для публічних методів</div>
-     <div class="tk todo">Форми логіну/реєстрації й адмін-панель у React</div>
-     <div class="tk todo">Фільтр за брендом, ціною, розміром (FR-03)</div></div>
+     <div class="tk todo">Звіт ZAP (безпека)</div>
+     <div class="tk todo">Залишок по кожному розміру</div></div>
     <div class="colm"><h4><span>In progress</span><span>2</span></h4>
-     <div class="tk prog">Презентація й сценарій доповіді</div>
-     <div class="tk prog">Матеріали до захисту (скріни, схеми)</div></div>
-    <div class="colm"><h4><span>Done</span><span>12</span></h4>
+     <div class="tk prog">Презентація і сценарій доповіді</div>
+     <div class="tk prog">Jira: спринти і внесок команди</div></div>
+    <div class="colm"><h4><span>Done</span><span>16</span></h4>
      <div class="tk done">SRS, UML, архітектура</div>
-     <div class="tk done">CRUD товарів</div>
-     <div class="tk done">Замовлення та кошик</div>
+     <div class="tk done">CRUD товарів, замовлення, кошик</div>
      <div class="tk done">PostgreSQL + Docker + Render</div>
-     <div class="tk done">React-фронтенд (Vercel)</div>
-     <div class="tk done">Локалізація UA/EN/FR</div>
+     <div class="tk done">React-фронтенд (Vercel), UA/EN/FR</div>
      <div class="tk done">Clean Architecture: 4 проєкти</div>
-     <div class="tk done">Авторизація: сесії, GitHub, Google</div>
-     <div class="tk done">Кабінет покупця (FR-10, 11)</div>
-     <div class="tk done">Адмін-функції (FR-12, 13)</div>
-     <div class="tk done">145 автотестів, покриття 86,7%</div>
-     <div class="tk done">Scalar-документація API</div></div>
+     <div class="tk done">Авторизація: пароль, Google, GitHub</div>
+     <div class="tk done">Кабінет, адмін-функції (FR-10–13)</div>
+     <div class="tk done">Фільтри, пошук, сортування (FR-03)</div>
+     <div class="tk done">React Router: /order, /fav, /product</div>
+     <div class="tk done">Форми входу і реєстрації</div>
+     <div class="tk done">Адмін-панель у React</div>
+     <div class="tk done">Розміри і галерея товарів</div>
+     <div class="tk done">Безпека: BOLA, CORS, rate limit</div>
+     <div class="tk done">219 автотестів, покриття 91,1%</div>
+     <div class="tk done">Помилки: глобальний middleware</div>
+     <div class="tk done">Scalar, DocFX, README</div></div>
    </div>
    <div class="src">Стан зібрано за репозиторієм. Скрін самої Jira-дошки додається окремо (потрібен вхід в Atlassian).</div>
   </div>
