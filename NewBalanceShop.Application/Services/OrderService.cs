@@ -81,4 +81,21 @@ public class OrderService : IOrderService
         var orders = await _orderRepository.GetByCustomerAsync(customerId);
         return orders.Select(o => o.ToDto()).ToList();
     }
+
+    public async Task<List<OrderDto>> GetAllAsync()
+    {
+        var orders = await _orderRepository.GetAllWithItemsAsync();
+        return orders.Select(o => o.ToDto()).ToList();
+    }
+
+    public async Task<bool> UpdateStatusAsync(int id, OrderStatus status)
+    {
+        var order = await _orderRepository.GetByIdAsync(id);
+        if (order is null) return false;
+
+        order.Status = status;
+        _orderRepository.Update(order);
+        await _orderRepository.SaveChangesAsync();
+        return true;
+    }
 }

@@ -95,7 +95,7 @@ public class ProductsControllerIntegrationTests : IDisposable
         var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products");
 
         Assert.NotNull(products);
-        Assert.Equal(3, products!.Count);
+        Assert.Equal(10, products!.Count);
     }
 
     [Fact]
@@ -172,5 +172,34 @@ public class ProductsControllerIntegrationTests : IDisposable
         var response = await _client.DeleteAsync("/api/Products/9999");
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAll_ReturnsSeededCatalogWithPhotosForSneakers()
+    {
+        var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products");
+
+        Assert.True(products!.Count >= 10);
+        Assert.All(products.Where(p => p.CategoryId == 1), p => Assert.StartsWith("/images/", p.ImageUrl));
+    }
+
+    [Fact]
+    public async Task GetAll_WithFiltersAndSort_ReturnsMatchingProducts()
+    {
+        var products = await _client.GetFromJsonAsync<List<ProductDto>>(
+            "/api/Products?categoryId=1&minPrice=4000&maxPrice=6000&sort=price_desc");
+
+        Assert.NotEmpty(products!);
+        Assert.All(products, p => Assert.InRange(p.Price, 4000m, 6000m));
+        Assert.Equal(products.OrderByDescending(p => p.Price).Select(p => p.Id), products.Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithSearch_FindsByName()
+    {
+        var products = await _client.GetFromJsonAsync<List<ProductDto>>("/api/Products?q=hoodie");
+
+        Assert.Single(products!);
+        Assert.Contains("Hoodie", products![0].Name);
     }
 }

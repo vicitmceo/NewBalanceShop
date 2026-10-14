@@ -124,4 +124,45 @@ public class CartControllerIntegrationTests : IDisposable
         var cartAfter = await _client.GetFromJsonAsync<List<CartItemDto>>("/api/Cart");
         Assert.Empty(cartAfter!);
     }
+
+    [Fact]
+    public async Task AddToCart_MoreThanStock_ReturnsBadRequestWithMessage()
+    {
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 9999 });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        Assert.Contains("Недостатньо", await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
+    public async Task AddToCart_TwiceBeyondStock_IsRejected()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 10 });
+
+        var response = await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Quantity = 1 });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SetQuantity_ChangesQuantity_AndRejectsOverStock()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+
+        var ok = await _client.PutAsJsonAsync("/api/Cart/1", new SetCartQuantityDto { Quantity = 5 });
+        Assert.Equal(HttpStatusCode.OK, ok.StatusCode);
+        var cart = await ok.Content.ReadFromJsonAsync<List<CartItemDto>>();
+        Assert.Equal(5, cart![0].Quantity);
+
+        var tooMany = await _client.PutAsJsonAsync("/api/Cart/1", new SetCartQuantityDto { Quantity = 99 });
+        Assert.Equal(HttpStatusCode.BadRequest, tooMany.StatusCode);
+    }
+
+    [Fact]
+    public async Task SetQuantity_ForProductNotInCart_ReturnsNotFound()
+    {
+        var response = await _client.PutAsJsonAsync("/api/Cart/1", new SetCartQuantityDto { Quantity = 2 });
+
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
 }

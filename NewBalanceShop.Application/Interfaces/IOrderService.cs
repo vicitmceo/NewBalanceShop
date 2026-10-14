@@ -1,3 +1,4 @@
+using NewBalanceShop.Domain.Entities;
 using NewBalanceShop.Application.DTO;
 
 namespace NewBalanceShop.Application.Interfaces;
@@ -16,4 +17,10 @@ public interface IOrderService
     /// <summary>Історія замовлень покупця.</summary>
     /// <param name="customerId">Ключ покупця.</param>
     Task<List<OrderDto>> GetByCustomerAsync(int customerId);
+
+    /// <summary>Усі замовлення магазину (для адміністратора), від новіших до старіших.</summary>
+    Task<List<OrderDto>> GetAllAsync();
+
+    /// <summary>Змінює статус замовлення. <c>false</c>, якщо замовлення не знайдено.</summary>
+    Task<bool> UpdateStatusAsync(int id, OrderStatus status);
 }

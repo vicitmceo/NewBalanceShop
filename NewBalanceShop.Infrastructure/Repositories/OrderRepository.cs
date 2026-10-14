@@ -26,4 +26,12 @@ public class OrderRepository : Repository<Order>, IOrderRepository
             .Include(o => o.Items).ThenInclude(i => i.Product)
             .FirstOrDefaultAsync(o => o.Id == id);
     }
+
+    public async Task<List<Order>> GetAllWithItemsAsync()
+    {
+        return await Db.Orders.AsNoTracking()
+            .Include(o => o.Items).ThenInclude(i => i.Product)
+            .OrderByDescending(o => o.CreatedAt)
+            .ToListAsync();
+    }
 }

@@ -17,16 +17,46 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
 
-    /// <summary>Список товарів, опційно за категорією.</summary>
+    /// <summary>Список товарів із фільтрами: категорія, пошук, бренд, діапазон цін, розмір, сортування.</summary>
     /// <param name="categoryId">Ключ категорії (необов'язково).</param>
+    /// <param name="q">Підрядок у назві, описі чи кольорі (без урахування регістру).</param>
+    /// <param name="brand">Точна назва бренду.</param>
+    /// <param name="minPrice">Мінімальна ціна.</param>
+    /// <param name="maxPrice">Максимальна ціна.</param>
+    /// <param name="size">Розмір (точний збіг).</param>
+    /// <param name="sort"><c>price_asc</c>, <c>price_desc</c> або <c>name</c>.</param>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll([FromQuery] int? categoryId)
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll(
+        [FromQuery] int? categoryId, [FromQuery] string? q, [FromQuery] string? brand,
+        [FromQuery] decimal? minPrice, [FromQuery] decimal? maxPrice, [FromQuery] string? size,
+        [FromQuery] string? sort)
     {
         var products = categoryId.HasValue
             ? await _productService.GetByCategoryAsync(categoryId.Value)
             : await _productService.GetAllAsync();
 
-        return Ok(products);
+        IEnumerable<ProductDto> result = products;
+        if (!string.IsNullOrWhiteSpace(q))
+            result = result.Where(p =>
+                p.Name.Contains(q, StringComparison.OrdinalIgnoreCase) ||
+                p.Description.Contains(q, StringComparison.OrdinalIgnoreCase) ||
+                p.Color.Contains(q, StringComparison.OrdinalIgnoreCase));
+        if (!string.IsNullOrWhiteSpace(brand))
+            result = result.Where(p => string.Equals(p.Brand, brand, StringComparison.OrdinalIgnoreCase));
+        if (minPrice.HasValue) result = result.Where(p => p.Price >= minPrice.Value);
+        if (maxPrice.HasValue) result = result.Where(p => p.Price <= maxPrice.Value);
+        if (!string.IsNullOrWhiteSpace(size))
+            result = result.Where(p => string.Equals(p.Size, size, StringComparison.OrdinalIgnoreCase));
+
+        result = sort switch
+        {
+            "price_asc" => result.OrderBy(p => p.Price),
+            "price_desc" => result.OrderByDescending(p => p.Price),
+            "name" => result.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase),
+            _ => result
+        };
+
+        return Ok(result.ToList());
     }
 
     /// <summary>Один товар.</summary>
