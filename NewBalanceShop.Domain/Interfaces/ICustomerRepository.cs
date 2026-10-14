@@ -9,4 +9,7 @@ public interface ICustomerRepository : IRepository<Customer>
     /// <param name="email">Адреса електронної пошти.</param>
     /// <returns>Покупець або <c>null</c>.</returns>
     Task<Customer?> GetByEmailAsync(string email);
+    /// <summary>Чи є в покупця замовлення.</summary>
+    /// <param name="customerId">Ключ покупця.</param>
+    Task<bool> HasOrdersAsync(int customerId);
 }

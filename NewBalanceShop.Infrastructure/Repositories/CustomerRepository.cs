@@ -14,4 +14,7 @@ public class CustomerRepository : Repository<Customer>, ICustomerRepository
 
     public async Task<Customer?> GetByEmailAsync(string email) =>
         await Db.Set<Customer>().FirstOrDefaultAsync(c => c.Email == email);
+
+    public async Task<bool> HasOrdersAsync(int customerId) =>
+        await Db.Orders.AnyAsync(o => o.CustomerId == customerId);
 }

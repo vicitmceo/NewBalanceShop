@@ -13,11 +13,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NewBalanceShop.Domain\NewBalanceShop.Domain.csproj" />
+    <ProjectReference Include="..\NewBalanceShop.Application\NewBalanceShop.Application.csproj" />
   </ItemGroup>
 
 </Project>

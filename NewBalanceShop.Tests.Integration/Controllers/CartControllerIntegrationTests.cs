@@ -83,6 +83,33 @@ public class CartControllerIntegrationTests : IDisposable
     }
 
     [Fact]
+    public async Task Checkout_IgnoresCustomerIdFromQuery()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+
+        var response = await _client.PostAsync("/api/Cart/checkout?customerId=2", null);
+
+        var order = await response.Content.ReadFromJsonAsync<OrderDto>();
+        Assert.Equal(1, order!.CustomerId);
+    }
+
+    [Fact]
+    public async Task Checkout_WhenSignedIn_CreatesOrderForThatCustomer()
+    {
+        var register = await _client.PostAsJsonAsync("/api/Auth/register", new RegisterDto
+        {
+            FullName = "Покупець", Email = "cart-buyer@example.com", Password = "Passw0rd!"
+        });
+        var me = await register.Content.ReadFromJsonAsync<CustomerDto>();
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 1 });
+
+        var response = await _client.PostAsync("/api/Cart/checkout", null);
+
+        var order = await response.Content.ReadFromJsonAsync<OrderDto>();
+        Assert.Equal(me!.Id, order!.CustomerId);
+    }
+
+    [Fact]
     public async Task Checkout_WithItemsInCart_CreatesOrderAndClearsCart()
     {
         await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Quantity = 2 });

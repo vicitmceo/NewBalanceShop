@@ -1,12 +1,16 @@
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
+using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Services;
 using NewBalanceShop.Domain.Interfaces;
 using NewBalanceShop.Infrastructure.Data;
 using NewBalanceShop.Infrastructure.Repositories;
+using NewBalanceShop.Infrastructure.Services;
+using NewBalanceShop.Presentation.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,12 +31,41 @@ builder.Services.AddHttpClient();
 // кук (кошик зберігається в сесії, а не в БД, див. CartController)
 builder.Services.AddCors(options =>
 {
+    // білий список origin-ів замість "дозволити всіх" разом з AllowCredentials:
+    // інакше будь-який сайт міг би робити запити від імені залогіненого користувача
     options.AddPolicy("AllowFrontend", policy =>
-        policy.SetIsOriginAllowed(_ => true)
+        policy.WithOrigins(
+                "https://newbalanceshop.vercel.app",
+                "https://newbalanceshop-frontend.vercel.app",
+                "http://localhost:5173",
+                "http://localhost:5180")
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials());
 });
+
+// обмеження частоти запитів на вхід/реєстрацію (підбір паролів); у тестах ліміт знімаємо
+var authLimit = builder.Environment.IsEnvironment("Testing") ? int.MaxValue : 10;
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("auth", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = authLimit,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0
+            }));
+});
+
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<GzipCompressionProvider>();
+});
+builder.Services.AddMemoryCache();
 
 // Render видає підключення до Postgres через змінну DATABASE_URL у форматі
 // postgres://user:pass@host:port/db — Npgsql такий формат не розуміє напряму,
@@ -75,6 +108,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddSingleton<IGoogleTokenVerifier, FirebaseGoogleTokenVerifier>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 // вхід через Google (Firebase Authentication): службовий обліковий запис Firebase
@@ -104,6 +138,9 @@ forwardedHeadersOptions.KnownNetworks.Clear();
 forwardedHeadersOptions.KnownProxies.Clear();
 app.UseForwardedHeaders(forwardedHeadersOptions);
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseResponseCompression();
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ShopDbContext>();
@@ -119,6 +156,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseCors("AllowFrontend");
+
+app.UseRateLimiter();
 
 app.UseSession();
 

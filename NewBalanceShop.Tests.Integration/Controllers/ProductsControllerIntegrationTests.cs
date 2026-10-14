@@ -24,6 +24,63 @@ public class ProductsControllerIntegrationTests : IDisposable
         _factory.Dispose();
     }
 
+    private async Task LoginAsAdminAsync()
+    {
+        _factory.SetTestAdminPassword();
+        var response = await _client.PostAsJsonAsync("/api/Auth/login",
+            new LoginDto { Email = "admin@newbalanceshop.com", Password = CustomWebApplicationFactory.TestAdminPassword });
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    private async Task LoginAsRegularUserAsync()
+    {
+        var response = await _client.PostAsJsonAsync("/api/Auth/register", new RegisterDto
+        {
+            FullName = "Звичайний Покупець", Email = "regular@example.com", Password = "Passw0rd!"
+        });
+        Assert.True(response.IsSuccessStatusCode);
+    }
+
+    [Fact]
+    public async Task Create_WithoutLogin_ReturnsUnauthorized()
+    {
+        var dto = new ProductDto { Name = "X", CategoryId = 1, Price = 1m, Stock = 1 };
+
+        var response = await _client.PostAsJsonAsync("/api/Products", dto);
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task Create_AsRegularUser_ReturnsForbidden()
+    {
+        await LoginAsRegularUserAsync();
+        var dto = new ProductDto { Name = "X", CategoryId = 1, Price = 1m, Stock = 1 };
+
+        var response = await _client.PostAsJsonAsync("/api/Products", dto);
+
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task Update_AsRegularUser_ReturnsForbidden()
+    {
+        await LoginAsRegularUserAsync();
+
+        var response = await _client.PutAsJsonAsync("/api/Products/1", new ProductDto { Name = "X", CategoryId = 1, Price = 1m, Stock = 1 });
+
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task Delete_WithoutLogin_ReturnsUnauthorizedAndKeepsProduct()
+    {
+        var response = await _client.DeleteAsync("/api/Products/1");
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+        Assert.Equal(HttpStatusCode.OK, (await _client.GetAsync("/api/Products/1")).StatusCode);
+    }
+
     [Fact]
     public async Task GetAll_ReturnsOk()
     {
@@ -69,6 +126,7 @@ public class ProductsControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Create_WithValidProduct_ReturnsCreated()
     {
+        await LoginAsAdminAsync();
         var dto = new ProductDto { Name = "New Balance 990", CategoryId = 1, Price = 5999m, Stock = 4 };
 
         var response = await _client.PostAsJsonAsync("/api/Products", dto);
@@ -79,6 +137,7 @@ public class ProductsControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Update_WithExistingProduct_ReturnsNoContent()
     {
+        await LoginAsAdminAsync();
         var dto = new ProductDto { Name = "Updated name", CategoryId = 1, Price = 100m, Stock = 1 };
 
         var response = await _client.PutAsJsonAsync("/api/Products/1", dto);
@@ -89,6 +148,7 @@ public class ProductsControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Update_WithNonExistingProduct_ReturnsNotFound()
     {
+        await LoginAsAdminAsync();
         var response = await _client.PutAsJsonAsync("/api/Products/9999", new ProductDto());
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -97,6 +157,7 @@ public class ProductsControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Delete_WithExistingProduct_ReturnsNoContentAndRemovesIt()
     {
+        await LoginAsAdminAsync();
         var deleteResponse = await _client.DeleteAsync("/api/Products/1");
         Assert.Equal(HttpStatusCode.NoContent, deleteResponse.StatusCode);
 
@@ -107,6 +168,7 @@ public class ProductsControllerIntegrationTests : IDisposable
     [Fact]
     public async Task Delete_WithNonExistingProduct_ReturnsNotFound()
     {
+        await LoginAsAdminAsync();
         var response = await _client.DeleteAsync("/api/Products/9999");
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);

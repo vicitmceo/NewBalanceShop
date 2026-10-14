@@ -2,6 +2,8 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
+using NewBalanceShop.Domain.Entities;
+using NewBalanceShop.Presentation.Security;
 
 namespace NewBalanceShop.Presentation.Controllers;
 
@@ -19,8 +21,11 @@ public class CartController : ControllerBase
     private readonly IProductService _productService;
     private readonly IOrderService _orderService;
 
-    public CartController(IProductService productService, IOrderService orderService)
+    private readonly ICustomerService _customerService;
+
+    public CartController(IProductService productService, IOrderService orderService, ICustomerService customerService)
     {
+        _customerService = customerService;
         _productService = productService;
         _orderService = orderService;
     }
@@ -80,11 +85,14 @@ public class CartController : ControllerBase
 
     // POST api/cart/checkout — оформити замовлення з поточного кошика сесії
     /// <summary>Оформлює замовлення з кошика й очищає його.</summary>
-    /// <param name="customerId">Ключ покупця.</param>
-    /// <returns>Створене замовлення або 400.</returns>
+    /// <returns>Створене замовлення або 400. Покупець береться із сесії, гість оформлює на службового «Гостя».</returns>
     [HttpPost("checkout")]
-    public async Task<ActionResult<OrderDto>> Checkout([FromQuery] int customerId)
+    public async Task<ActionResult<OrderDto>> Checkout()
     {
+        // ідентифікатор покупця ніколи не приймаємо від клієнта (захист від BOLA/IDOR)
+        var me = await SessionAuth.GetCurrentAsync(HttpContext, _customerService);
+        var customerId = me?.Id ?? Customer.GuestId;
+
         var cart = GetCartFromSession();
         if (cart.Count == 0) return BadRequest(new { error = "Кошик порожній" });
 

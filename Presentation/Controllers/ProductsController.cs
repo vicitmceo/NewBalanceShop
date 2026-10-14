@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using NewBalanceShop.Application.DTO;
 using NewBalanceShop.Application.Interfaces;
+using NewBalanceShop.Presentation.Security;
 
 namespace NewBalanceShop.Presentation.Controllers;
 
-/// <summary>REST-ендпоінти каталогу товарів: перегляд і CRUD.</summary>
+/// <summary>REST-ендпоінти каталогу товарів: перегляд для всіх, зміни лише для адміністратора.</summary>
 [ApiController]
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
@@ -42,8 +43,9 @@ public class ProductsController : ControllerBase
 
     /// <summary>Створює товар.</summary>
     /// <param name="dto">Дані товару.</param>
-    /// <returns>201 і створений товар.</returns>
+    /// <returns>201 і створений товар; 401/403 без прав адміністратора.</returns>
     [HttpPost]
+    [RequireAdmin]
     public async Task<ActionResult<ProductDto>> Create(ProductDto dto)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -55,8 +57,9 @@ public class ProductsController : ControllerBase
     /// <summary>Оновлює товар.</summary>
     /// <param name="id">Ключ товару.</param>
     /// <param name="dto">Нові значення.</param>
-    /// <returns>204 або 404.</returns>
+    /// <returns>204, 404; 401/403 без прав адміністратора.</returns>
     [HttpPut("{id}")]
+    [RequireAdmin]
     public async Task<IActionResult> Update(int id, ProductDto dto)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -69,8 +72,9 @@ public class ProductsController : ControllerBase
 
     /// <summary>Видаляє товар.</summary>
     /// <param name="id">Ключ товару.</param>
-    /// <returns>204 або 404.</returns>
+    /// <returns>204, 404; 401/403 без прав адміністратора.</returns>
     [HttpDelete("{id}")]
+    [RequireAdmin]
     public async Task<IActionResult> Delete(int id)
     {
         var deleted = await _productService.DeleteAsync(id);

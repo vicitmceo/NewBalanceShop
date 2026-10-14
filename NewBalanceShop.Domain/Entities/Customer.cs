@@ -3,6 +3,9 @@ namespace NewBalanceShop.Domain.Entities;
 /// <summary>Покупець або адміністратор магазину.</summary>
 public class Customer
 {
+    /// <summary>Ключ службового покупця «Гість»: на нього оформлюються замовлення без входу (FR-08).</summary>
+    public const int GuestId = 1;
+
     public int Id { get; set; }
     public string FullName { get; set; } = string.Empty;
     public string City { get; set; } = string.Empty;

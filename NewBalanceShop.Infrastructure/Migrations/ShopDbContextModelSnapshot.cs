@@ -99,6 +99,9 @@ namespace NewBalanceShop.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Customers");
 
                     b.HasData(
@@ -107,8 +110,8 @@ namespace NewBalanceShop.Migrations
                             Id = 1,
                             City = "",
                             Country = "",
-                            Email = "test.customer@example.com",
-                            FullName = "Тестовий Покупець",
+                            Email = "guest@newbalanceshop.local",
+                            FullName = "Гість",
                             IsAdmin = false,
                             IsBlocked = false,
                             PasswordHash = "seed-no-auth-yet",
@@ -287,7 +290,7 @@ namespace NewBalanceShop.Migrations
                     b.HasOne("NewBalanceShop.Domain.Entities.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Customer");
