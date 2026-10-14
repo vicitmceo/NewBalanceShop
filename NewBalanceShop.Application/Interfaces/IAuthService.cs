@@ -21,4 +21,9 @@ public interface IAuthService
     /// <param name="idToken">Firebase ID-токен.</param>
     /// <returns>Профіль покупця.</returns>
     Task<CustomerDto> GoogleLoginAsync(string idToken);
+
+    /// <summary>Вхід через GitHub: знаходить або створює покупця за логіном GitHub.</summary>
+    /// <param name="login">Логін GitHub.</param>
+    /// <param name="name">Відображуване ім'я (необов'язково).</param>
+    Task<CustomerDto> GithubLoginAsync(string login, string? name);
 }
