@@ -1,6 +1,10 @@
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Caching.Memory;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Presentation.Security;
 
@@ -21,6 +25,7 @@ public class GithubAuthController : ControllerBase
     private readonly IConfiguration _config;
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IAuthService _authService;
+    private readonly IMemoryCache _cache;
 
     // сайти, на які дозволено повертати користувача після входу (збігаються з білим списком CORS)
     private static readonly string[] AllowedReturnOrigins =
@@ -34,11 +39,12 @@ public class GithubAuthController : ControllerBase
         "http://localhost:5180"
     };
 
-    public GithubAuthController(IConfiguration config, IHttpClientFactory httpClientFactory, IAuthService authService)
+    public GithubAuthController(IConfiguration config, IHttpClientFactory httpClientFactory, IAuthService authService, IMemoryCache cache)
     {
         _config = config;
         _httpClientFactory = httpClientFactory;
         _authService = authService;
+        _cache = cache;
     }
 
     // повертає origin із білого списку або null: так параметр state не перетворюється на open redirect
@@ -116,21 +122,42 @@ public class GithubAuthController : ControllerBase
             userJson.TryGetProperty("avatar_url", out var avatarProp) ? avatarProp.GetString() : null
         );
 
-        HttpContext.Session.SetString(SessionKey, JsonSerializer.Serialize(githubUser));
-
-        // GitHub-вхід створює (або знаходить) повноцінного покупця, щоб можна було оформлювати замовлення
+        // Сесійна кука ставиться на домен API, а сайт працює на іншому домені, і браузери
+        // блокують такі «сторонні» куки. Тому видаємо одноразовий код: фронтенд обміняє його
+        // на сесію через свій домен (POST api/auth/github/exchange).
         try
         {
             var customer = await _authService.GithubLoginAsync(githubUser.Login, githubUser.Name);
-            HttpContext.Session.SetInt32(SessionAuth.CustomerIdSessionKey, customer.Id);
+            var grantCode = WebEncoders.Base64UrlEncode(RandomNumberGenerator.GetBytes(32));
+            _cache.Set(GrantKey(grantCode), new GithubGrant(customer.Id, JsonSerializer.Serialize(githubUser)), TimeSpan.FromMinutes(2));
+            return Redirect($"{frontendUrl}?ghcode={grantCode}");
         }
         catch (InvalidOperationException)
         {
-            HttpContext.Session.Remove(SessionKey);
             return Redirect($"{frontendUrl}?githubError=account_blocked");
         }
+    }
 
-        return Redirect($"{frontendUrl}?githubLogin=success");
+    /// <summary>Обмінює одноразовий код, виданий після входу через GitHub, на сесію покупця.</summary>
+    /// <param name="dto">Код із параметра ghcode.</param>
+    /// <returns>200 і профіль покупця; 401, якщо код невідомий, використаний або прострочений.</returns>
+    [HttpPost("exchange")]
+    [EnableRateLimiting("auth")]
+    public async Task<ActionResult<NewBalanceShop.Application.DTO.CustomerDto>> Exchange(NewBalanceShop.Application.DTO.GithubExchangeDto dto)
+    {
+        var key = GrantKey(dto.Code ?? string.Empty);
+        if (!_cache.TryGetValue(key, out GithubGrant? grant) || grant is null)
+            return Unauthorized(new { error = "Код входу недійсний або прострочений." });
+
+        _cache.Remove(key); // код одноразовий
+
+        var customer = await _authService.GetByIdAsync(grant.CustomerId);
+        if (customer is null || customer.IsBlocked)
+            return Unauthorized(new { error = "Обліковий запис недоступний." });
+
+        HttpContext.Session.SetInt32(SessionAuth.CustomerIdSessionKey, customer.Id);
+        HttpContext.Session.SetString(SessionKey, grant.GithubUserJson);
+        return Ok(customer);
     }
 
     /// <summary>Профіль GitHub із сесії або 401.</summary>
@@ -150,6 +177,10 @@ public class GithubAuthController : ControllerBase
         HttpContext.Session.Remove(SessionKey);
         return NoContent();
     }
+
+    private static string GrantKey(string code) => "gh-grant:" + code;
+
+    private sealed record GithubGrant(int CustomerId, string GithubUserJson);
 
     private record GithubUserDto(string Login, string? Name, string? AvatarUrl);
 }

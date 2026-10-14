@@ -48,3 +48,9 @@ public class UpdateCustomerDto
     public string Country { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
 }
+
+/// <summary>Тіло запиту обміну одноразового коду GitHub-входу на сесію.</summary>
+public class GithubExchangeDto
+{
+    public string? Code { get; set; }
+}
