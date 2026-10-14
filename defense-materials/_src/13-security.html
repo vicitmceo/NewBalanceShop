@@ -6,7 +6,7 @@
 .hash em { color:#ff7b8f; font-style:normal; }
 td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800; } .p { color:var(--amber); font-weight:800; } .n { color:var(--red); font-weight:800; }
 .card h3 { font-size:19px; } .card li { font-size:15px; line-height:1.4; margin-bottom:5px; }
-</style></head><body data-title="Authentication / Authorization та безпека" data-sub="Як зберігаємо паролі, як перевіряємо права і що ще треба закрити">
+</style></head><body data-title="Authentication / Authorization та безпека" data-sub="Як зберігаємо паролі, як перевіряємо права і які ризики закрито">
 <div class="body" style="padding-top:20px">
  <div class="cols">
   <div class="card">
@@ -27,21 +27,25 @@ td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800
     <tr><td>Адмін-функції</td><td>Перевірка IsAdmin: 401 / 403</td><td class="y">OK</td></tr>
     <tr><td>Чужий профіль</td><td>Тільки власник або адмін</td><td class="y">OK</td></tr>
     <tr><td>Секрети</td><td>DATABASE_URL, Firebase JSON у env</td><td class="y">OK</td></tr>
-    <tr><td>BOLA (замовлення)</td><td>customerId у запиті довільний</td><td class="n">Ризик</td></tr>
-    <tr><td>CRUD товарів</td><td>Без перевірки ролі</td><td class="n">Ризик</td></tr>
-    <tr><td>CORS / CSRF</td><td>Будь-який origin з cookie</td><td class="p">Спрощено</td></tr>
+    <tr><td>BOLA / IDOR</td><td>customerId лише із сесії; чужі замовлення: 403/404</td><td class="y">Закрито</td></tr>
+    <tr><td>CRUD товарів</td><td>[RequireAdmin]: 401 / 403</td><td class="y">Закрито</td></tr>
+    <tr><td>CORS / сесія</td><td>Білий список origin, SameSite, /api через домен сайту</td><td class="y">Закрито</td></tr>
+    <tr><td>Підбір паролів</td><td>Rate limiting: 10 спроб на хвилину</td><td class="y">Закрито</td></tr>
+    <tr><td>Пароль адміна</td><td>У репозиторії лише хеш, пароль змінено</td><td class="y">Закрито</td></tr>
    </table>
   </div>
-  <div class="card" style="border-color:#cf0a2c">
-   <h3 style="color:#cf0a2c">План закриття ризиків</h3>
+  <div class="card" style="border-color:#1f8f4a">
+   <h3 style="color:#1f8f4a">Що закрито за цей час</h3>
    <ul>
-    <li><b>BOLA:</b> брати customerId із сесії в /api/Orders і checkout, а не з параметра.</li>
-    <li><b>Товари:</b> POST/PUT/DELETE лише для IsAdmin (FR-04–06).</li>
-    <li><b>CORS:</b> білий список origin: Vercel-домен і localhost.</li>
-    <li><b>Сесії:</b> зараз у пам'яті процесу; перенести в Redis або БД.</li>
-    <li><b>Brute-force:</b> rate limiting на login.</li>
-    <li><b>Email:</b> унікальний індекс у БД.</li>
+    <li><b>BOLA:</b> покупець береться із сесії в /api/Orders і checkout.</li>
+    <li><b>Товари:</b> запис лише для адміністратора.</li>
+    <li><b>CORS:</b> білий список сайтів замість «усім».</li>
+    <li><b>Email:</b> унікальний індекс у БД; покупця із замовленнями видалити не можна.</li>
+    <li><b>Brute-force:</b> rate limiting на login і реєстрацію.</li>
+    <li><b>Секрет:</b> пароль адміна прибрано з коду.</li>
+    <li><b>Архітектура:</b> Firebase за інтерфейсом.</li>
    </ul>
+   <p style="font-size:14px;margin-top:6px"><b>Ще в плані:</b> сесії в Redis/БД, звіт ZAP.</p>
   </div>
  </div>
 </div>

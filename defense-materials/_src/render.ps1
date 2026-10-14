@@ -28,6 +28,10 @@ $map = @{
   '13-security'       = '13-auth-and-security\auth-and-security.png'
   '14-portfolio'      = '14-portfolio-value\portfolio-value.png'
   '16-mobile'         = '16-live-ui-screenshots\slide-mobile.png'
+  '17-catalog'        = '16-live-ui-screenshots\slide-catalog.png'
+  '18-flow'           = '16-live-ui-screenshots\slide-flow.png'
+  '19-admin'          = '16-live-ui-screenshots\slide-admin.png'
+  '20-auth'           = '16-live-ui-screenshots\slide-auth.png'
   '15a-contacts'      = '15-contacts-and-key-idea\contacts-qr.png'
   '15b-keyidea'       = '15-contacts-and-key-idea\key-idea.png'
 }

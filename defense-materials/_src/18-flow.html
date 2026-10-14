@@ -1,0 +1,17 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; align-items:start; }
+.shot { border:1px solid var(--g200); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.10); background:#fff; }
+.shot img { display:block; width:100%; height:auto; }
+.cap { margin:16px 2px 0; } .cap b { font-size:22px; display:block; margin-bottom:6px; } .cap span { font-size:17px; color:var(--g600); line-height:1.5; display:block; }
+.note { margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; } .note .pill { font-size:15px; }
+</style></head><body data-title="Кошик, оформлення, обране" data-sub="Сценарій покупця без обов'язкової реєстрації · адреси /cart, /order, /fav">
+<div class="body" style="padding-top:26px">
+ <div class="cols">
+  <div><div class="shot"><img src="../16-live-ui-screenshots/crop-cart.png"></div><div class="cap"><b>Кошик /cart</b><span>Позиції «товар + розмір», зміна кількості, залишок на складі перевіряє сервер, очищення через модальне вікно.</span></div></div>
+  <div><div class="shot"><img src="../16-live-ui-screenshots/crop-order.png"></div><div class="cap"><b>Оформлення /order</b><span>Покупець береться із сесії, гість оформляє на службового «Гостя». Підсумок і підтвердження в один крок.</span></div></div>
+  <div><div class="shot"><img src="../16-live-ui-screenshots/crop-fav.png"></div><div class="cap"><b>Обране /fav</b><span>Сердечко на картці, список зберігається в браузері, лічильник у шапці.</span></div></div>
+ </div>
+ <div class="note"><span class="pill green">customerId береться із сесії (захист від BOLA)</span><span class="pill green">залишок спільний для всіх розмірів</span><span class="pill">історія замовлень: /orders</span><span class="pill">кабінет: /account</span></div>
+</div>
+<script src="slide.js"></script></body></html>

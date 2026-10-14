@@ -16,14 +16,14 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
  <rect x="300" y="230" width="250" height="220" rx="10" fill="#fff" stroke="#111" stroke-width="2"/>
  <rect x="300" y="230" width="250" height="44" rx="10" fill="#111"/><text x="425" y="259" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">Frontend</text>
  <text x="425" y="310" text-anchor="middle" font-size="20" font-weight="800">React + Vite</text>
- <text x="425" y="338" text-anchor="middle" font-size="15" fill="#5c5c5c">i18next (UA/EN/FR)</text>
+ <text x="425" y="334" text-anchor="middle" font-size="15" fill="#5c5c5c">React Router, i18next (UA/EN/FR)</text>
  <text x="425" y="360" text-anchor="middle" font-size="15" fill="#5c5c5c">Firebase SDK (Google)</text>
- <text x="425" y="400" text-anchor="middle" font-size="16" font-weight="700" fill="#cf0a2c">Vercel</text>
+ <text x="425" y="392" text-anchor="middle" font-size="16" font-weight="700" fill="#cf0a2c">Vercel</text><text x="425" y="414" text-anchor="middle" font-size="13" fill="#5c5c5c">проксі /api → Render</text><text x="425" y="432" text-anchor="middle" font-size="13" fill="#5c5c5c">newbalance.cc.cd</text>
 
  <!-- API -->
  <rect x="640" y="90" width="430" height="500" rx="10" fill="#fff" stroke="#cf0a2c" stroke-width="3"/>
  <rect x="640" y="90" width="430" height="44" rx="10" fill="#cf0a2c"/><text x="855" y="119" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">Backend: ASP.NET Core Web API (.NET 9)</text>
- <rect x="670" y="156" width="370" height="64" rx="8" fill="#f4f4f4" stroke="#8c8c8c"/><text x="855" y="183" text-anchor="middle" font-size="18" font-weight="800">Presentation</text><text x="855" y="205" text-anchor="middle" font-size="14" fill="#5c5c5c">Controllers, CORS, сесії, Swagger</text>
+ <rect x="670" y="156" width="370" height="64" rx="8" fill="#f4f4f4" stroke="#8c8c8c"/><text x="855" y="183" text-anchor="middle" font-size="18" font-weight="800">Presentation</text><text x="855" y="205" text-anchor="middle" font-size="14" fill="#5c5c5c">Controllers, CORS, rate limiting, сесії</text>
  <rect x="670" y="238" width="370" height="64" rx="8" fill="#f4f4f4" stroke="#8c8c8c"/><text x="855" y="265" text-anchor="middle" font-size="18" font-weight="800">Application</text><text x="855" y="287" text-anchor="middle" font-size="14" fill="#5c5c5c">Services, DTO, Mapping, PasswordHasher</text>
  <rect x="670" y="320" width="370" height="64" rx="8" fill="#111"/><text x="855" y="347" text-anchor="middle" font-size="18" font-weight="800" fill="#fff">Domain</text><text x="855" y="369" text-anchor="middle" font-size="14" fill="#cfcfcf">Entities, інтерфейси репозиторіїв</text>
  <rect x="670" y="402" width="370" height="64" rx="8" fill="#f4f4f4" stroke="#8c8c8c"/><text x="855" y="429" text-anchor="middle" font-size="18" font-weight="800">Infrastructure</text><text x="855" y="451" text-anchor="middle" font-size="14" fill="#5c5c5c">EF Core, Repositories, Migrations</text>
@@ -34,7 +34,7 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
  <rect x="1220" y="130" width="250" height="190" rx="12" fill="#f4f4f4" stroke="#111" stroke-width="2"/>
  <text x="1345" y="175" text-anchor="middle" font-size="24" font-weight="800">PostgreSQL</text>
  <text x="1345" y="202" text-anchor="middle" font-size="14" fill="#5c5c5c">Render managed DB</text>
- <text x="1345" y="242" text-anchor="middle" font-size="15" font-weight="700">Categories · Products</text>
+ <text x="1345" y="242" text-anchor="middle" font-size="15" font-weight="700">Categories · Products (розміри, фото)</text>
  <text x="1345" y="266" text-anchor="middle" font-size="15" font-weight="700">Customers</text>
  <text x="1345" y="290" text-anchor="middle" font-size="15" font-weight="700">Orders · OrderItems</text>
 
@@ -45,11 +45,11 @@ svg text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
  <!-- arrows -->
  <line x1="220" y1="340" x2="296" y2="340" stroke="#111" stroke-width="2.5" marker-end="url(#a)"/>
  <line x1="550" y1="340" x2="636" y2="340" stroke="#111" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)"/>
- <text x="593" y="324" text-anchor="middle" font-size="12" font-weight="700">HTTPS+cookie</text><text x="593" y="365" text-anchor="middle" font-size="13" fill="#5c5c5c">JSON</text>
+ <text x="593" y="324" text-anchor="middle" font-size="12" font-weight="700">/api, cookie</text><text x="593" y="365" text-anchor="middle" font-size="13" fill="#5c5c5c">JSON</text>
  <line x1="1070" y1="300" x2="1216" y2="240" stroke="#111" stroke-width="2.5" marker-end="url(#a)"/><text x="1143" y="334" text-anchor="middle" font-size="14" font-weight="700">Npgsql / EF Core</text>
  <line x1="1070" y1="435" x2="1216" y2="435" stroke="#111" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
  <line x1="1070" y1="510" x2="1216" y2="530" stroke="#111" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
 </svg>
-<div class="cap">Адреси: фронтенд newbalanceshop.vercel.app, API newbalanceshop-api.onrender.com.</div>
+<div class="cap">Адреси: сайт newbalance.cc.cd (запасні: newbalanceshop.vercel.app, nb.rafail.xyz), API newbalanceshop-api.onrender.com. Запити /api проходять через Vercel, тож сесійна кука належить сайту.</div>
 </div>
 <script src="slide.js"></script></body></html>
