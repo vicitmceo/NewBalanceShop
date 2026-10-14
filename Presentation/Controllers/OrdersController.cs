@@ -50,6 +50,29 @@ public class OrdersController : ControllerBase
         return Ok(await _orderService.GetByCustomerAsync(target));
     }
 
+    /// <summary>Усі замовлення магазину (лише адміністратор).</summary>
+    /// <returns>200; 401 без входу, 403 для звичайного покупця.</returns>
+    [HttpGet("all")]
+    [RequireAdmin]
+    public async Task<ActionResult<IEnumerable<OrderDto>>> GetAll()
+    {
+        return Ok(await _orderService.GetAllAsync());
+    }
+
+    /// <summary>Змінює статус замовлення (лише адміністратор).</summary>
+    /// <param name="id">Ключ замовлення.</param>
+    /// <param name="dto">Новий статус.</param>
+    /// <returns>204; 404, якщо замовлення немає; 401/403 без прав.</returns>
+    [HttpPatch("{id}/status")]
+    [RequireAdmin]
+    public async Task<IActionResult> UpdateStatus(int id, UpdateOrderStatusDto dto)
+    {
+        if (!Enum.IsDefined(dto.Status)) return BadRequest(new { error = "Невідомий статус" });
+
+        var updated = await _orderService.UpdateStatusAsync(id, dto.Status);
+        return updated ? NoContent() : NotFound();
+    }
+
     /// <summary>Створює замовлення.</summary>
     /// <param name="dto">Позиції (поле customerId ігнорується: покупець береться із сесії).</param>
     /// <returns>201 і замовлення або 400.</returns>

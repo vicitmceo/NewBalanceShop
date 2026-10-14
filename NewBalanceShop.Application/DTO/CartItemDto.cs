@@ -9,6 +9,7 @@ public class CartItemDto
     public string ProductName { get; set; } = string.Empty;
     public decimal Price { get; set; }
     public int Quantity { get; set; }
+    public string ImageUrl { get; set; } = string.Empty;
 }
 
 /// <summary>Запит на додавання товару в кошик.</summary>
@@ -16,4 +17,10 @@ public class AddToCartDto
 {
     public int ProductId { get; set; }
     public int Quantity { get; set; } = 1;
+}
+
+public class SetCartQuantityDto
+{
+    [System.ComponentModel.DataAnnotations.Range(1, 99)]
+    public int Quantity { get; set; }
 }

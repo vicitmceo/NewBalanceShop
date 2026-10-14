@@ -155,4 +155,76 @@ public class OrdersControllerIntegrationTests : IDisposable
         Assert.Single(orders!);
         Assert.Equal(HttpStatusCode.OK, (await admin.GetAsync($"/api/Orders/{created!.Id}")).StatusCode);
     }
+
+    private async Task LoginAsAdminAsync()
+    {
+        _factory.SetTestAdminPassword();
+        var response = await _client.PostAsJsonAsync("/api/Auth/login",
+            new LoginDto { Email = "admin@newbalanceshop.com", Password = CustomWebApplicationFactory.TestAdminPassword });
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAll_WithoutLogin_ReturnsUnauthorized()
+    {
+        var response = await _client.GetAsync("/api/Orders/all");
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAll_AsRegularCustomer_ReturnsForbidden()
+    {
+        await RegisterAsync("regular-all@example.com");
+
+        var response = await _client.GetAsync("/api/Orders/all");
+
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAll_AsAdmin_ReturnsOrdersOfEveryone_NewestFirst()
+    {
+        await _client.PostAsJsonAsync("/api/Orders", OneItemOrder());
+        await _client.PostAsJsonAsync("/api/Orders", OneItemOrder());
+        await LoginAsAdminAsync();
+
+        var orders = await _client.GetFromJsonAsync<List<OrderDto>>("/api/Orders/all");
+
+        Assert.Equal(2, orders!.Count);
+        Assert.True(orders[0].CreatedAt >= orders[1].CreatedAt);
+    }
+
+    [Fact]
+    public async Task UpdateStatus_AsAdmin_ChangesStatus()
+    {
+        var created = await (await _client.PostAsJsonAsync("/api/Orders", OneItemOrder())).Content.ReadFromJsonAsync<OrderDto>();
+        await LoginAsAdminAsync();
+
+        var response = await _client.PatchAsJsonAsync($"/api/Orders/{created!.Id}/status", new UpdateOrderStatusDto { Status = NewBalanceShop.Domain.Entities.OrderStatus.Shipped });
+
+        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+        var order = await _client.GetFromJsonAsync<OrderDto>($"/api/Orders/{created.Id}");
+        Assert.Equal(NewBalanceShop.Domain.Entities.OrderStatus.Shipped, order!.Status);
+    }
+
+    [Fact]
+    public async Task UpdateStatus_AsRegularCustomer_ReturnsForbidden()
+    {
+        await RegisterAsync("regular-status@example.com");
+
+        var response = await _client.PatchAsJsonAsync("/api/Orders/1/status", new UpdateOrderStatusDto { Status = NewBalanceShop.Domain.Entities.OrderStatus.Shipped });
+
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task UpdateStatus_ForMissingOrder_ReturnsNotFound()
+    {
+        await LoginAsAdminAsync();
+
+        var response = await _client.PatchAsJsonAsync("/api/Orders/9999/status", new UpdateOrderStatusDto { Status = NewBalanceShop.Domain.Entities.OrderStatus.Cancelled });
+
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
 }

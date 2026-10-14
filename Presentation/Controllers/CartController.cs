@@ -48,8 +48,15 @@ public class CartController : ControllerBase
         var product = await _productService.GetByIdAsync(dto.ProductId);
         if (product is null) return NotFound(new { error = "Товар не знайдено" });
 
+        if (dto.Quantity < 1) return BadRequest(new { error = "Кількість має бути більшою за нуль" });
+
         var cart = GetCartFromSession();
         var existing = cart.FirstOrDefault(i => i.ProductId == dto.ProductId);
+
+        // кількість у кошику не може перевищувати залишок на складі
+        var wanted = dto.Quantity + (existing?.Quantity ?? 0);
+        if (wanted > product.Stock)
+            return BadRequest(new { error = $"Недостатньо товару '{product.Name}' на складі (в наявності: {product.Stock})." });
 
         if (existing is not null)
         {
@@ -62,10 +69,35 @@ public class CartController : ControllerBase
                 ProductId = product.Id,
                 ProductName = product.Name,
                 Price = product.Price,
-                Quantity = dto.Quantity
+                Quantity = dto.Quantity,
+                ImageUrl = product.ImageUrl
             });
         }
 
+        SaveCartToSession(cart);
+        return Ok(cart);
+    }
+
+    // PUT api/cart/{productId} — встановити кількість
+    /// <summary>Встановлює кількість товару в кошику (не більше залишку на складі).</summary>
+    /// <param name="productId">Ключ товару.</param>
+    /// <param name="dto">Нова кількість.</param>
+    /// <returns>Оновлений кошик; 404, якщо товару немає в кошику; 400 при перевищенні залишку.</returns>
+    [HttpPut("{productId}")]
+    public async Task<ActionResult<IEnumerable<CartItemDto>>> SetQuantity(int productId, SetCartQuantityDto dto)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+
+        var cart = GetCartFromSession();
+        var item = cart.FirstOrDefault(i => i.ProductId == productId);
+        if (item is null) return NotFound(new { error = "Товару немає в кошику" });
+
+        var product = await _productService.GetByIdAsync(productId);
+        if (product is null) return NotFound(new { error = "Товар не знайдено" });
+        if (dto.Quantity > product.Stock)
+            return BadRequest(new { error = $"Недостатньо товару '{product.Name}' на складі (в наявності: {product.Stock})." });
+
+        item.Quantity = dto.Quantity;
         SaveCartToSession(cart);
         return Ok(cart);
     }

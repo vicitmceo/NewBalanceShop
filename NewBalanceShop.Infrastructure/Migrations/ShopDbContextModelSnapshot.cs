@@ -277,11 +277,102 @@ namespace NewBalanceShop.Migrations
                             CategoryId = 2,
                             Color = "Чорний",
                             Description = "Худі з логотипом New Balance.",
-                            ImageUrl = "/images/nb-hoodie.jpg",
+                            ImageUrl = "",
                             Name = "NB Essentials Hoodie",
                             Price = 1899m,
                             Size = "L",
                             Stock = 20
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Бежевий",
+                            Description = "Низькі кросівки в стилі баскетбольної класики 80-х: шкіра, масивна підошва.",
+                            ImageUrl = "/images/nb480.jpg",
+                            Name = "New Balance 480",
+                            Price = 3799m,
+                            Size = "40",
+                            Stock = 12
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Срібний",
+                            Description = "Технологічні кросівки з металізованими вставками й амортизацією ABZORB.",
+                            ImageUrl = "/images/nb1906r.jpg",
+                            Name = "New Balance 1906R",
+                            Price = 5599m,
+                            Size = "44",
+                            Stock = 8
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Сливовий",
+                            Description = "Замша та сітка, підошва N-ERGY: комфорт на цілий день.",
+                            ImageUrl = "/images/nb2002r.jpg",
+                            Name = "New Balance 2002R",
+                            Price = 5999m,
+                            Size = "41",
+                            Stock = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Brand = "New Balance",
+                            CategoryId = 1,
+                            Color = "Коричневий",
+                            Description = "Скейт-версія 480 із замшею й посиленою підошвою.",
+                            ImageUrl = "/images/nb-numeric480.jpg",
+                            Name = "New Balance Numeric 480",
+                            Price = 3999m,
+                            Size = "45",
+                            Stock = 9
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Brand = "New Balance",
+                            CategoryId = 3,
+                            Color = "Сірий",
+                            Description = "Бейсболка з вишитим логотипом, регульований ремінець.",
+                            ImageUrl = "",
+                            Name = "NB Essentials Cap",
+                            Price = 799m,
+                            Size = "One size",
+                            Stock = 40
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Brand = "New Balance",
+                            CategoryId = 3,
+                            Color = "Чорний",
+                            Description = "Рюкзак 25 л для тренувань і міста, відділення для ноутбука.",
+                            ImageUrl = "",
+                            Name = "NB Sport Backpack",
+                            Price = 1599m,
+                            Size = "One size",
+                            Stock = 18
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Brand = "New Balance",
+                            CategoryId = 2,
+                            Color = "Білий",
+                            Description = "Бавовняна футболка прямого крою з логотипом на грудях.",
+                            ImageUrl = "",
+                            Name = "NB Classic Tee",
+                            Price = 999m,
+                            Size = "M",
+                            Stock = 30
                         });
                 });
 

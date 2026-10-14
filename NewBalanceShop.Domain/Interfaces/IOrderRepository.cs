@@ -12,4 +12,7 @@ public interface IOrderRepository : IRepository<Order>
     /// <param name="id">Ключ замовлення.</param>
     /// <returns>Замовлення або <c>null</c>.</returns>
     Task<Order?> GetByIdWithItemsAsync(int id);
+
+    /// <summary>Усі замовлення з позиціями, від новіших до старіших.</summary>
+    Task<List<Order>> GetAllWithItemsAsync();
 }

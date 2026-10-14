@@ -40,3 +40,9 @@ public class OrderDto
     public decimal TotalPrice { get; set; }
     public List<OrderItemDto> Items { get; set; } = new();
 }
+
+/// <summary>Тіло запиту на зміну статусу замовлення.</summary>
+public class UpdateOrderStatusDto
+{
+    public OrderStatus Status { get; set; }
+}
