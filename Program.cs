@@ -37,6 +37,9 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(
                 "https://newbalanceshop.vercel.app",
                 "https://newbalanceshop-frontend.vercel.app",
+                "https://new-balance-shop.vercel.app",
+                "https://newbalance.cc.cd",
+                "https://nb.rafail.xyz",
                 "http://localhost:5173",
                 "http://localhost:5180")
               .AllowAnyMethod()
