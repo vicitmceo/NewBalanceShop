@@ -1,59 +1,36 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
-.cols { display:grid; grid-template-columns: 0.9fr 1.4fr; gap:22px; }
-td { font-size:15px; padding:8px 10px; } td.d { white-space:nowrap; color:var(--red); font-weight:700; }
-.board { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
-.colm { background:var(--g100); border-radius:8px; padding:12px; min-height: 0; }
-.colm h4 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--g600); margin-bottom:10px; display:flex; justify-content:space-between; }
-.tk { background:#fff; border:1px solid var(--g200); border-radius:6px; padding:6px 10px; margin-bottom:6px; font-size:13px; line-height:1.3; }
-.tk.done { border-left:4px solid var(--green); } .tk.todo { border-left:4px solid var(--g400); } .tk.prog { border-left:4px solid var(--amber); }
-.src { font-size:13px; color:var(--g400); margin-top:8px; }
-</style></head><body data-title="Scrum: спринти, беклог, канбан" data-sub="Jira Scrum board SCRUM · newbalance-team1.atlassian.net">
-<div class="body" style="padding-top:22px">
+.cols { display:grid; grid-template-columns: 0.8fr 1.5fr; gap:22px; }
+td { font-size:14.5px; padding:6px 9px; } td.d { white-space:nowrap; color:var(--red); font-weight:700; }
+.shot { border:1px solid var(--g200); border-radius:8px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.12); }
+.shot img { display:block; width:100%; height:300px; object-fit:cover; object-position:left top; }
+.kp { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:14px; }
+.kp div { background:var(--g100); border-radius:8px; padding:10px 14px; } .kp b { font-size:32px; display:block; letter-spacing:-.02em; } .kp span { font-size:13px; color:var(--g600); font-weight:600; }
+.src { font-size:13.5px; color:var(--g600); margin-top:8px; line-height:1.4; }
+.warn { margin-top:10px; background:#fdf0d4; border-radius:8px; padding:9px 14px; font-size:14.5px; line-height:1.4; }
+</style></head><body data-title="Scrum: спринти, беклог, Jira" data-sub="Jira Scrum board SCRUM · newbalance-team1.atlassian.net · спринти тижневі">
+<div class="body" style="padding-top:20px">
  <div class="cols">
   <div class="card">
-   <h3>Спринти</h3>
+   <h3>8 спринтів по тижню</h3>
    <table>
-    <tr><th>Спринт</th><th>Дати</th><th>Ціль</th></tr>
+    <tr><th>№</th><th>Дати</th><th>Ціль</th></tr>
     <tr><td>1</td><td class="d">до 14.09</td><td>SRS, архітектура, CRUD</td></tr>
-    <tr><td>2</td><td class="d">31.08–06.09</td><td>Початок розробки, SCRUM-ролі</td></tr>
+    <tr><td>2</td><td class="d">31.08–06.09</td><td>Початок розробки, ролі</td></tr>
     <tr><td>3</td><td class="d">07.09–13.09</td><td>Замовлення, Customer</td></tr>
     <tr><td>4</td><td class="d">14.09–20.09</td><td>Деплой, фронтенд, i18n</td></tr>
-    <tr><td>5</td><td class="d">21.09–27.09</td><td>MVP, авторизація, 4 проєкти</td></tr>
+    <tr><td>5</td><td class="d">21.09–27.09</td><td>MVP, авторизація</td></tr>
     <tr><td>6</td><td class="d">28.09–04.10</td><td>Кабінет, адмін, тести</td></tr>
+    <tr><td>7</td><td class="d">05.10–11.10</td><td>Інтерфейс, безпека</td></tr>
+    <tr><td>8</td><td class="d">12.10–19.10</td><td><b>активний</b>: CI, ZAP, захист</td></tr>
    </table>
-   <div class="src">Team Lead — Панчук Вадим; команда розробки — обидва учасники.</div>
+   <div class="src">Спринти 1-7 закрито, спринт 8 активний. Тривалість спринту один тиждень (не два). Team Lead: Панчук Вадим.</div>
   </div>
-  <div class="card">
-   <h3>Канбан-дошка (стан на 14.10.2026)</h3>
-   <div class="board">
-    <div class="colm"><h4><span>Backlog</span><span>4</span></h4>
-     <div class="tk todo">CI: GitHub Actions (workflow готовий)</div>
-     <div class="tk todo">Кешування категорій (IMemoryCache)</div>
-     <div class="tk todo">Звіт ZAP (безпека)</div>
-     <div class="tk todo">Залишок по кожному розміру</div></div>
-    <div class="colm"><h4><span>In progress</span><span>2</span></h4>
-     <div class="tk prog">Презентація і сценарій доповіді</div>
-     <div class="tk prog">Jira: спринти і внесок команди</div></div>
-    <div class="colm"><h4><span>Done</span><span>16</span></h4>
-     <div class="tk done">SRS, UML, архітектура</div>
-     <div class="tk done">CRUD товарів, замовлення, кошик</div>
-     <div class="tk done">PostgreSQL + Docker + Render</div>
-     <div class="tk done">React-фронтенд (Vercel), UA/EN/FR</div>
-     <div class="tk done">Clean Architecture: 4 проєкти</div>
-     <div class="tk done">Авторизація: пароль, Google, GitHub</div>
-     <div class="tk done">Кабінет, адмін-функції (FR-10–13)</div>
-     <div class="tk done">Фільтри, пошук, сортування (FR-03)</div>
-     <div class="tk done">React Router: /order, /fav, /product</div>
-     <div class="tk done">Форми входу і реєстрації</div>
-     <div class="tk done">Адмін-панель у React</div>
-     <div class="tk done">Розміри і галерея товарів</div>
-     <div class="tk done">Безпека: BOLA, CORS, rate limit</div>
-     <div class="tk done">219 автотестів, покриття 91,1%</div>
-     <div class="tk done">Помилки: глобальний middleware</div>
-     <div class="tk done">Scalar, DocFX, README</div></div>
-   </div>
-   <div class="src">Стан зібрано за репозиторієм. Скрін самої Jira-дошки додається окремо (потрібен вхід в Atlassian).</div>
+  <div>
+   <div class="kp"><div><b>44</b><span>задачі в Jira</span></div><div><b>33</b><span>виконано</span></div><div><b>11</b><span>відкрито в спринті 8</span></div></div>
+   <div class="shot"><img src="../09-team-and-scrum/jira-backlog.png"></div>
+   <div class="src">Знімок Jira: спринт 8 (12-19.10), перенесені задачі.</div>
+   <div class="warn"><b>Чесно:</b> статуси в Jira відстають від коду. CI (GitHub Actions) і кешування вже зроблені, але картки ще не переведено. Внесок Team Lead у Git відсутній (0 комітів), його роль: планування, Jira, документи.</div>
   </div>
  </div>
 </div>

@@ -1,7 +1,7 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
 .cols { display:grid; grid-template-columns: 1.15fr 1fr; gap:22px; }
-.chart { display:flex; align-items:flex-end; gap: 14px; height: 230px; padding: 10px 6px 0; border-bottom:2px solid var(--black); }
+.chart { display:flex; align-items:flex-end; gap: 14px; height: 250px; padding: 10px 6px 0; border-bottom:2px solid var(--black); }
 .col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0; height:100%; }
 .seg { width: 100%; max-width: 54px; } .seg.b { background:var(--black); } .seg.f { background:var(--red); }
 .val { font-size:14px; font-weight:800; margin-bottom:4px; } .day { font-size:13px; color:var(--g600); margin-top:6px; text-align:center; }
@@ -12,21 +12,22 @@ td { font-size:15.5px; } .note { margin-top:10px; font-size:14px; color:var(--g6
 <div class="body" style="padding-top:22px">
  <div class="cols">
   <div class="card">
-   <h3>Коміти за днями (усього 78)</h3>
+   <h3>Коміти за днями (усього 114)</h3>
    <div class="chart">
-<div class="col"><div class="val">3</div><div class="seg b" style="height:16px"></div><div class="day">14.09</div></div>
-<div class="col"><div class="val">9</div><div class="seg b" style="height:49px"></div><div class="day">16.09</div></div>
-<div class="col"><div class="val">1</div><div class="seg b" style="height:5px"></div><div class="day">21.09</div></div>
-<div class="col"><div class="val">3</div><div class="seg f" style="height:5px"></div><div class="seg b" style="height:11px"></div><div class="day">27.09</div></div>
-<div class="col"><div class="val">5</div><div class="seg f" style="height:11px"></div><div class="seg b" style="height:16px"></div><div class="day">28.09</div></div>
-<div class="col"><div class="val">3</div><div class="seg f" style="height:11px"></div><div class="seg b" style="height:5px"></div><div class="day">29.09</div></div>
-<div class="col"><div class="val">4</div><div class="seg f" style="height:5px"></div><div class="seg b" style="height:16px"></div><div class="day">30.09</div></div>
-<div class="col"><div class="val">1</div><div class="seg b" style="height:5px"></div><div class="day">05.10</div></div>
-<div class="col"><div class="val">6</div><div class="seg b" style="height:32px"></div><div class="day">11.10</div></div>
-<div class="col"><div class="val">8</div><div class="seg f" style="height:11px"></div><div class="seg b" style="height:32px"></div><div class="day">12.10</div></div>
-<div class="col"><div class="val">35</div><div class="seg f" style="height:76px"></div><div class="seg b" style="height:113px"></div><div class="day">14.10</div></div>
+<div class="col"><div class="val">3</div><div class="seg b" style="height:13px"></div><div class="day">14.09</div></div>
+<div class="col"><div class="val">9</div><div class="seg b" style="height:38px"></div><div class="day">16.09</div></div>
+<div class="col"><div class="val">1</div><div class="seg b" style="height:4px"></div><div class="day">21.09</div></div>
+<div class="col"><div class="val">3</div><div class="seg f" style="height:4px"></div><div class="seg b" style="height:8px"></div><div class="day">27.09</div></div>
+<div class="col"><div class="val">5</div><div class="seg f" style="height:8px"></div><div class="seg b" style="height:13px"></div><div class="day">28.09</div></div>
+<div class="col"><div class="val">3</div><div class="seg f" style="height:8px"></div><div class="seg b" style="height:4px"></div><div class="day">29.09</div></div>
+<div class="col"><div class="val">4</div><div class="seg f" style="height:4px"></div><div class="seg b" style="height:13px"></div><div class="day">30.09</div></div>
+<div class="col"><div class="val">1</div><div class="seg b" style="height:4px"></div><div class="day">05.10</div></div>
+<div class="col"><div class="val">6</div><div class="seg b" style="height:25px"></div><div class="day">11.10</div></div>
+<div class="col"><div class="val">8</div><div class="seg f" style="height:8px"></div><div class="seg b" style="height:25px"></div><div class="day">12.10</div></div>
+<div class="col"><div class="val">43</div><div class="seg f" style="height:76px"></div><div class="seg b" style="height:105px"></div><div class="day">14.10</div></div>
+<div class="col"><div class="val">28</div><div class="seg f" style="height:71px"></div><div class="seg b" style="height:46px"></div><div class="day">19.10</div></div>
    </div>
-   <div class="leg"><span><i style="background:#111"></i>Бекенд (56)</span><span><i style="background:#cf0a2c"></i>Фронтенд (22)</span></div>
+   <div class="leg"><span><i style="background:#111"></i>Бекенд (71)</span><span><i style="background:#cf0a2c"></i>Фронтенд (43)</span></div>
   </div>
   <div class="card">
    <h3>Гілки і merge (бекенд, фронтенд)</h3>
@@ -34,21 +35,21 @@ td { font-size:15.5px; } .note { margin-top:10px; font-size:14px; color:var(--g6
     <tr><th>Гілка</th><th>Що зроблено</th></tr>
     <tr><td class="mono">feature/security-hardening</td><td>BOLA, CORS, rate limiting</td></tr>
     <tr><td class="mono">feature/catalog-and-admin-api</td><td>фільтри, адмін-API замовлень</td></tr>
-    <tr><td class="mono">feature/sizes-and-gallery</td><td>розміри, галерея, 18 товарів</td></tr>
-    <tr><td class="mono">fix/first-party-session-…</td><td>вхід через GitHub без сторонніх кук</td></tr>
+    <tr><td class="mono">feature/sizes-and-gallery</td><td>розміри, галерея, 70 товарів</td></tr>
+    <tr><td class="mono">fix/first-party-session-…</td><td>сесійні куки на домені сайту</td></tr>
     <tr><td class="mono">feature/spa-routing-and-admin</td><td>маршрути, адмін-панель (фронтенд)</td></tr>
    </table>
-   <p class="note">Нова робота йде у feature- і fix-гілках з merge-комітом у master: 12 merge-комітів у бекенді, 6 у фронтенді. Старий код 14.09–05.10 писався прямо в master.</p>
+   <p class="note">Нова робота йде у feature- і fix-гілках з merge-комітом у master: 14 merge-комітів у бекенді, 13 у фронтенді. Старий код 14.09–05.10 писався прямо в master.</p>
   </div>
  </div>
  <div class="card" style="margin-top:20px">
   <h3>Внесок учасників</h3>
   <table>
    <tr><th>Учасник</th><th>Роль</th><th>Коміти</th><th>Що зроблено</th></tr>
-   <tr><td><b>Ноцколіні Рафаїл</b></td><td>Full-stack розробник</td><td><b>78 (100%)</b></td><td>Бекенд: архітектура, API, БД, авторизація, безпека, тести; фронтенд React (маршрути, адмін-панель); деплой; документація</td></tr>
+   <tr><td><b>Ноцколіні Рафаїл</b></td><td>Full-stack розробник</td><td><b>114 (100%)</b></td><td>Бекенд: архітектура, API, БД, авторизація, безпека, тести; фронтенд React (маршрути, адмін-панель); деплой; документація</td></tr>
    <tr><td><b>Панчук Вадим</b></td><td>Team Lead</td><td><b>0</b></td><td>Запрошений у Jira як учасник; коміти в репозиторії відсутні</td></tr>
   </table>
-  <div class="warn">⚠ Внесок Team Lead у планування, Jira-дошку й рев'ю не відображено в git. Доповнити вручну перед захистом.</div>
+  <div class="warn">⚠ Внесок Team Lead у планування, Jira-дошку й рев'ю не відображено в git. Це чесно: його роль у плануванні, Jira й документах не вимірюється комітами.</div>
  </div>
 </div>
 <script src="slide.js"></script></body></html>

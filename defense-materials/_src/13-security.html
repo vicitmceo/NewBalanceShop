@@ -4,17 +4,16 @@
 .step { display:flex; align-items:center; gap:10px; margin-bottom:9px; font-size:16px; } .step b { background:var(--black); color:#fff; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
 .hash { background:#111; color:#e8e8e8; border-radius:8px; padding:12px 14px; font-family:Consolas,monospace; font-size:13px; line-height:1.5; margin-top:10px; }
 .hash em { color:#ff7b8f; font-style:normal; }
-td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800; } .p { color:var(--amber); font-weight:800; } .n { color:var(--red); font-weight:800; }
+td { font-size:14.5px; padding:6px 8px; } .y { color:var(--green); font-weight:800; } .p { color:var(--amber); font-weight:800; } .n { color:var(--red); font-weight:800; }
 .card h3 { font-size:19px; } .card li { font-size:15px; line-height:1.4; margin-bottom:5px; }
 </style></head><body data-title="Authentication / Authorization та безпека" data-sub="Як зберігаємо паролі, як перевіряємо права і які ризики закрито">
 <div class="body" style="padding-top:20px">
  <div class="cols">
   <div class="card">
-   <h3>Аутентифікація: 3 способи входу</h3>
+   <h3>Аутентифікація: 2 способи входу</h3>
    <div class="step"><b>1</b>Email + пароль: <span class="mono">/api/Auth/register, login</span></div>
    <div class="step"><b>2</b>Google: Firebase ID-токен, API перевіряє підпис</div>
-   <div class="step"><b>3</b>GitHub OAuth (authorization code flow)</div>
-   <div class="step"><b>→</b>Сесія: cookie HttpOnly, Secure, таймаут 30 хв</div>
+      <div class="step"><b>→</b>Сесія: cookie HttpOnly, Secure, таймаут 30 хв</div>
    <div class="hash"><em>Пароль:</em> PBKDF2-HMAC-SHA256<br>100 000 ітерацій · сіль 16 байт · хеш 32 байти<br>формат: ітерації.сіль.хеш · FixedTimeEquals<br><em>Google-користувачі:</em> пароль не зберігається</div>
   </div>
   <div class="card">
@@ -32,6 +31,7 @@ td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800
     <tr><td>CORS / сесія</td><td>Білий список origin, SameSite, /api через домен сайту</td><td class="y">Закрито</td></tr>
     <tr><td>Підбір паролів</td><td>Rate limiting: 10 спроб на хвилину</td><td class="y">Закрито</td></tr>
     <tr><td>Пароль адміна</td><td>У репозиторії лише хеш, пароль змінено</td><td class="y">Закрито</td></tr>
+    <tr><td>Заголовки (ZAP)</td><td>CSP, X-Frame-Options DENY, nosniff, Permissions-Policy, HSTS</td><td class="y">Закрито</td></tr>
    </table>
   </div>
   <div class="card" style="border-color:#1f8f4a">
@@ -43,9 +43,9 @@ td { font-size:15px; padding:8px 8px; } .y { color:var(--green); font-weight:800
     <li><b>Email:</b> унікальний індекс у БД; покупця із замовленнями видалити не можна.</li>
     <li><b>Brute-force:</b> rate limiting на login і реєстрацію.</li>
     <li><b>Секрет:</b> пароль адміна прибрано з коду.</li>
-    <li><b>Архітектура:</b> Firebase за інтерфейсом.</li>
+    <li><b>Заголовки:</b> CSP, frame, nosniff, Permissions-Policy.</li>
    </ul>
-   <p style="font-size:14px;margin-top:6px"><b>Ще в плані:</b> сесії в Redis/БД, звіт ZAP.</p>
+   <p style="font-size:14px;margin-top:6px"><b>ZAP baseline:</b> 0 High, 4 Medium, 4 Low (заголовки), виправлено в vercel.json. <b>Відкрито:</b> сесії в пам'яті процесу (план: Redis/БД), SRI, COOP/COEP.</p>
   </div>
  </div>
 </div>
