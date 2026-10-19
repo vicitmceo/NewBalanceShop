@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using NewBalanceShop.Application.Interfaces;
 using NewBalanceShop.Application.Services;
+using NewBalanceShop.Domain.Entities;
 using NewBalanceShop.Domain.Interfaces;
 using NewBalanceShop.Infrastructure.Data;
 using NewBalanceShop.Infrastructure.Repositories;
@@ -108,7 +109,9 @@ builder.Services.AddSession(options =>
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IRepository<Category>, Repository<Category>>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddSingleton<IGoogleTokenVerifier, FirebaseGoogleTokenVerifier>();
