@@ -41,6 +41,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.CategoryDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.CategoryDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.CategoryDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CategoryDto.yml\" sourcestartlinenumber=\"1\">Категорія товарів у відповідях API.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Application.DTO.CreateOrderDto.yml",
       "output": {
         ".html": {
@@ -80,6 +94,20 @@
       "IsMRef": true,
       "Title": "NewBalanceShop.Application.DTO.CustomerDto",
       "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.CustomerDto.yml\" sourcestartlinenumber=\"1\">Профіль покупця у відповідях API (без хеша пароля).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.GithubExchangeDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.GithubExchangeDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.GithubExchangeDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.GithubExchangeDto.yml\" sourcestartlinenumber=\"1\">Тіло запиту обміну одноразового коду GitHub-входу на сесію.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -167,6 +195,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.SetCartQuantityDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.SetCartQuantityDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.SetCartQuantityDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Application.DTO.UpdateCustomerDto.yml",
       "output": {
         ".html": {
@@ -178,6 +220,20 @@
       "IsMRef": true,
       "Title": "NewBalanceShop.Application.DTO.UpdateCustomerDto",
       "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.UpdateCustomerDto.yml\" sourcestartlinenumber=\"1\">Поля профілю, які покупець може змінити: ПІБ, email, місто, країна, телефон.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.DTO.UpdateOrderStatusDto",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.yml\" sourcestartlinenumber=\"1\">Тіло запиту на зміну статусу замовлення.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -195,6 +251,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.GoogleIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.GoogleIdentity",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.GoogleIdentity.yml\" sourcestartlinenumber=\"1\">Особа, підтверджена Google (через Firebase Authentication).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Application.Interfaces.IAuthService.yml",
       "output": {
         ".html": {
@@ -209,6 +279,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.ICategoryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.ICategoryService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.ICategoryService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.ICategoryService.yml\" sourcestartlinenumber=\"1\">Сценарії роботи з категоріями товарів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Application.Interfaces.ICustomerService.yml",
       "output": {
         ".html": {
@@ -220,6 +304,20 @@
       "IsMRef": true,
       "Title": "NewBalanceShop.Application.Interfaces.ICustomerService",
       "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.ICustomerService.yml\" sourcestartlinenumber=\"1\">Кабінет покупця та адміністрування користувачів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.yml\" sourcestartlinenumber=\"1\">Перевірка токена входу через Google. Реалізація живе в Infrastructure, щоб Application не залежав від SDK.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -335,6 +433,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.CategoryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.CategoryService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.CategoryService",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.CategoryService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.ICategoryService\" data-throw-if-not-resolved=\"false\"></xref>: список категорій тримається в <xref href=\"Microsoft.Extensions.Caching.Memory.IMemoryCache\" data-throw-if-not-resolved=\"false\"></xref>, щоб не ходити в БД на кожен запит каталогу.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Application.Services.CustomerService.yml",
       "output": {
         ".html": {
@@ -388,6 +500,20 @@
       "IsMRef": true,
       "Title": "NewBalanceShop.Application.Services.ProductService",
       "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.ProductService.yml\" sourcestartlinenumber=\"1\">Реалізація <xref href=\"NewBalanceShop.Application.Interfaces.IProductService\" data-throw-if-not-resolved=\"false\"></xref> поверх <xref href=\"NewBalanceShop.Domain.Interfaces.IProductRepository\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Application.Services.ProductSizes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Application.Services.ProductSizes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Application.Services.ProductSizes",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Application.Services.ProductSizes.yml\" sourcestartlinenumber=\"1\">Розбір і перевірка розмірів товару (список через кому в полі <code>Product.Size</code>).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -601,6 +727,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.yml",
       "output": {
         ".html": {
@@ -612,6 +752,118 @@
       "IsMRef": true,
       "Title": "NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin",
       "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.AddMoreProducts",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.SecurityHardening",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -699,6 +951,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.yml\" sourcestartlinenumber=\"1\">Перевірка Firebase ID-токена: підпис звіряється з публічними ключами Google.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Infrastructure.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Infrastructure.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Infrastructure.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Migrations.AddGoogleUidToCustomer.yml",
       "output": {
         ".html": {
@@ -769,6 +1049,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.CategoriesController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Controllers.CategoriesController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Controllers.CategoriesController",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.CategoriesController.yml\" sourcestartlinenumber=\"1\">REST-ендпоінт категорій товарів (лише перегляд).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NewBalanceShop.Presentation.Controllers.CustomersController.yml",
       "output": {
         ".html": {
@@ -835,7 +1129,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "NewBalanceShop.Presentation.Controllers.ProductsController",
-      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.ProductsController.yml\" sourcestartlinenumber=\"1\">REST-ендпоінти каталогу товарів: перегляд і CRUD.</p>\n"
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Controllers.ProductsController.yml\" sourcestartlinenumber=\"1\">REST-ендпоінти каталогу товарів: перегляд для всіх, зміни лише для адміністратора.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -863,6 +1157,76 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "NewBalanceShop.Presentation.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.yml\" sourcestartlinenumber=\"1\">Глобальна обробка непередбачених помилок: логує деталі, клієнту віддає загальний JSON без стека.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Middleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Middleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Security.RequireAdminAttribute",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.yml\" sourcestartlinenumber=\"1\">Пропускає лише адміністратора: 401 без входу, 403 для звичайного покупця.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Security.SessionAuth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Security.SessionAuth.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Security.SessionAuth",
+      "Summary": "<p sourcefile=\"api/NewBalanceShop.Presentation.Security.SessionAuth.yml\" sourcestartlinenumber=\"1\">Читання поточного покупця з сесійної куки (ту саму куку ставить AuthController).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceShop.Presentation.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceShop.Presentation.Security.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceShop.Presentation.Security",
       "Summary": null
     },
     {

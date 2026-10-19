@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Domain_Interfaces_IOrderRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Domain.Interfaces.IOrderRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Domain_Interfaces_IOrderRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Domain.Interfaces.IOrderRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Domain_Interfaces_IOrderRepository" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository" class="text-break">
-Interface IOrderRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IOrderRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -121,6 +121,9 @@ Interface IOrderRepository  <a class="header-action link-secondary" title="View 
       <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdAsync_System_Int32_">IRepository&lt;Order&gt;.GetByIdAsync(int)</a>
     </div>
     <div>
+      <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdNoTrackingAsync_System_Int32_">IRepository&lt;Order&gt;.GetByIdNoTrackingAsync(int)</a>
+    </div>
+    <div>
       <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_AddAsync__0_">IRepository&lt;Order&gt;.AddAsync(Order)</a>
     </div>
     <div>
@@ -143,11 +146,43 @@ Interface IOrderRepository  <a class="header-action link-secondary" title="View 
 </h2>
 
 
+  <a id="NewBalanceShop_Domain_Interfaces_IOrderRepository_GetAllWithItemsAsync_" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync*"></a>
+
+  <h3 id="NewBalanceShop_Domain_Interfaces_IOrderRepository_GetAllWithItemsAsync" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync">
+  GetAllWithItemsAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Усі замовлення з позиціями, від новіших до старіших.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;Order&gt;&gt; GetAllWithItemsAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NewBalanceShop.Domain.Entities.Order.html">Order</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NewBalanceShop_Domain_Interfaces_IOrderRepository_GetByCustomerAsync_" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository.GetByCustomerAsync*"></a>
 
   <h3 id="NewBalanceShop_Domain_Interfaces_IOrderRepository_GetByCustomerAsync_System_Int32_" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository.GetByCustomerAsync(System.Int32)">
   GetByCustomerAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Замовлення покупця з позиціями, нові спочатку.</p>
@@ -185,7 +220,7 @@ Interface IOrderRepository  <a class="header-action link-secondary" title="View 
 
   <h3 id="NewBalanceShop_Domain_Interfaces_IOrderRepository_GetByIdWithItemsAsync_System_Int32_" data-uid="NewBalanceShop.Domain.Interfaces.IOrderRepository.GetByIdWithItemsAsync(System.Int32)">
   GetByIdWithItemsAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Замовлення за ключем разом із позиціями та товарами.</p>
@@ -224,7 +259,7 @@ Interface IOrderRepository  <a class="header-action link-secondary" title="View 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IOrderRepository.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

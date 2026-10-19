@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Application_Interfaces_IAuthService.md&amp;value=---%0Auid%3A%20NewBalanceShop.Application.Interfaces.IAuthService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Application_Interfaces_IAuthService.md&amp;value=---%0Auid%3A%20NewBalanceShop.Application.Interfaces.IAuthService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Application_Interfaces_IAuthService" data-uid="NewBalanceShop.Application.Interfaces.IAuthService" class="text-break">
-Interface IAuthService  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IAuthService  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -125,7 +125,7 @@ Interface IAuthService  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NewBalanceShop_Application_Interfaces_IAuthService_GetByIdAsync_System_Int32_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.GetByIdAsync(System.Int32)">
   GetByIdAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Профіль за ключем.</p>
@@ -160,11 +160,52 @@ Interface IAuthService  <a class="header-action link-secondary" title="View sour
 
 
 
+  <a id="NewBalanceShop_Application_Interfaces_IAuthService_GithubLoginAsync_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync*"></a>
+
+  <h3 id="NewBalanceShop_Application_Interfaces_IAuthService_GithubLoginAsync_System_String_System_String_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync(System.String,System.String)">
+  GithubLoginAsync(string, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Вхід через GitHub: знаходить або створює покупця за логіном GitHub.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;CustomerDto&gt; GithubLoginAsync(string login, string? name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>login</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Логін GitHub.</p>
+</dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Відображуване ім'я (необов'язково).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.CustomerDto.html">CustomerDto</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NewBalanceShop_Application_Interfaces_IAuthService_GoogleLoginAsync_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.GoogleLoginAsync*"></a>
 
   <h3 id="NewBalanceShop_Application_Interfaces_IAuthService_GoogleLoginAsync_System_String_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.GoogleLoginAsync(System.String)">
   GoogleLoginAsync(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Вхід через Google: перевіряє Firebase ID-токен, створює покупця за потреби.</p>
@@ -203,7 +244,7 @@ Interface IAuthService  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NewBalanceShop_Application_Interfaces_IAuthService_LoginAsync_NewBalanceShop_Application_DTO_LoginDto_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.LoginAsync(NewBalanceShop.Application.DTO.LoginDto)">
   LoginAsync(LoginDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Перевіряє email і пароль.</p>
@@ -242,7 +283,7 @@ Interface IAuthService  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NewBalanceShop_Application_Interfaces_IAuthService_RegisterAsync_NewBalanceShop_Application_DTO_RegisterDto_" data-uid="NewBalanceShop.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceShop.Application.DTO.RegisterDto)">
   RegisterAsync(RegisterDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Реєструє покупця й зберігає хеш пароля.</p>
@@ -281,7 +322,7 @@ Interface IAuthService  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IAuthService.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

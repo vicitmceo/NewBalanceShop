@@ -39,12 +39,38 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.AddToCartDto.Quantity
   nameWithType: AddToCartDto.Quantity
+- uid: NewBalanceShop.Application.DTO.AddToCartDto.Size
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.AddToCartDto.html#NewBalanceShop_Application_DTO_AddToCartDto_Size
+  commentId: P:NewBalanceShop.Application.DTO.AddToCartDto.Size
+  fullName: NewBalanceShop.Application.DTO.AddToCartDto.Size
+  nameWithType: AddToCartDto.Size
+- uid: NewBalanceShop.Application.DTO.AddToCartDto.Size*
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.AddToCartDto.html#NewBalanceShop_Application_DTO_AddToCartDto_Size_
+  commentId: Overload:NewBalanceShop.Application.DTO.AddToCartDto.Size
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.AddToCartDto.Size
+  nameWithType: AddToCartDto.Size
 - uid: NewBalanceShop.Application.DTO.CartItemDto
   name: CartItemDto
   href: api/NewBalanceShop.Application.DTO.CartItemDto.html
   commentId: T:NewBalanceShop.Application.DTO.CartItemDto
   fullName: NewBalanceShop.Application.DTO.CartItemDto
   nameWithType: CartItemDto
+- uid: NewBalanceShop.Application.DTO.CartItemDto.ImageUrl
+  name: ImageUrl
+  href: api/NewBalanceShop.Application.DTO.CartItemDto.html#NewBalanceShop_Application_DTO_CartItemDto_ImageUrl
+  commentId: P:NewBalanceShop.Application.DTO.CartItemDto.ImageUrl
+  fullName: NewBalanceShop.Application.DTO.CartItemDto.ImageUrl
+  nameWithType: CartItemDto.ImageUrl
+- uid: NewBalanceShop.Application.DTO.CartItemDto.ImageUrl*
+  name: ImageUrl
+  href: api/NewBalanceShop.Application.DTO.CartItemDto.html#NewBalanceShop_Application_DTO_CartItemDto_ImageUrl_
+  commentId: Overload:NewBalanceShop.Application.DTO.CartItemDto.ImageUrl
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.CartItemDto.ImageUrl
+  nameWithType: CartItemDto.ImageUrl
 - uid: NewBalanceShop.Application.DTO.CartItemDto.Price
   name: Price
   href: api/NewBalanceShop.Application.DTO.CartItemDto.html#NewBalanceShop_Application_DTO_CartItemDto_Price
@@ -97,6 +123,51 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.CartItemDto.Quantity
   nameWithType: CartItemDto.Quantity
+- uid: NewBalanceShop.Application.DTO.CartItemDto.Size
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.CartItemDto.html#NewBalanceShop_Application_DTO_CartItemDto_Size
+  commentId: P:NewBalanceShop.Application.DTO.CartItemDto.Size
+  fullName: NewBalanceShop.Application.DTO.CartItemDto.Size
+  nameWithType: CartItemDto.Size
+- uid: NewBalanceShop.Application.DTO.CartItemDto.Size*
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.CartItemDto.html#NewBalanceShop_Application_DTO_CartItemDto_Size_
+  commentId: Overload:NewBalanceShop.Application.DTO.CartItemDto.Size
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.CartItemDto.Size
+  nameWithType: CartItemDto.Size
+- uid: NewBalanceShop.Application.DTO.CategoryDto
+  name: CategoryDto
+  href: api/NewBalanceShop.Application.DTO.CategoryDto.html
+  commentId: T:NewBalanceShop.Application.DTO.CategoryDto
+  fullName: NewBalanceShop.Application.DTO.CategoryDto
+  nameWithType: CategoryDto
+- uid: NewBalanceShop.Application.DTO.CategoryDto.Id
+  name: Id
+  href: api/NewBalanceShop.Application.DTO.CategoryDto.html#NewBalanceShop_Application_DTO_CategoryDto_Id
+  commentId: P:NewBalanceShop.Application.DTO.CategoryDto.Id
+  fullName: NewBalanceShop.Application.DTO.CategoryDto.Id
+  nameWithType: CategoryDto.Id
+- uid: NewBalanceShop.Application.DTO.CategoryDto.Id*
+  name: Id
+  href: api/NewBalanceShop.Application.DTO.CategoryDto.html#NewBalanceShop_Application_DTO_CategoryDto_Id_
+  commentId: Overload:NewBalanceShop.Application.DTO.CategoryDto.Id
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.CategoryDto.Id
+  nameWithType: CategoryDto.Id
+- uid: NewBalanceShop.Application.DTO.CategoryDto.Name
+  name: Name
+  href: api/NewBalanceShop.Application.DTO.CategoryDto.html#NewBalanceShop_Application_DTO_CategoryDto_Name
+  commentId: P:NewBalanceShop.Application.DTO.CategoryDto.Name
+  fullName: NewBalanceShop.Application.DTO.CategoryDto.Name
+  nameWithType: CategoryDto.Name
+- uid: NewBalanceShop.Application.DTO.CategoryDto.Name*
+  name: Name
+  href: api/NewBalanceShop.Application.DTO.CategoryDto.html#NewBalanceShop_Application_DTO_CategoryDto_Name_
+  commentId: Overload:NewBalanceShop.Application.DTO.CategoryDto.Name
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.CategoryDto.Name
+  nameWithType: CategoryDto.Name
 - uid: NewBalanceShop.Application.DTO.CreateOrderDto
   name: CreateOrderDto
   href: api/NewBalanceShop.Application.DTO.CreateOrderDto.html
@@ -161,6 +232,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.CreateOrderItemDto.Quantity
   nameWithType: CreateOrderItemDto.Quantity
+- uid: NewBalanceShop.Application.DTO.CreateOrderItemDto.Size
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.CreateOrderItemDto.html#NewBalanceShop_Application_DTO_CreateOrderItemDto_Size
+  commentId: P:NewBalanceShop.Application.DTO.CreateOrderItemDto.Size
+  fullName: NewBalanceShop.Application.DTO.CreateOrderItemDto.Size
+  nameWithType: CreateOrderItemDto.Size
+- uid: NewBalanceShop.Application.DTO.CreateOrderItemDto.Size*
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.CreateOrderItemDto.html#NewBalanceShop_Application_DTO_CreateOrderItemDto_Size_
+  commentId: Overload:NewBalanceShop.Application.DTO.CreateOrderItemDto.Size
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.CreateOrderItemDto.Size
+  nameWithType: CreateOrderItemDto.Size
 - uid: NewBalanceShop.Application.DTO.CustomerDto
   name: CustomerDto
   href: api/NewBalanceShop.Application.DTO.CustomerDto.html
@@ -271,6 +355,25 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.CustomerDto.Phone
   nameWithType: CustomerDto.Phone
+- uid: NewBalanceShop.Application.DTO.GithubExchangeDto
+  name: GithubExchangeDto
+  href: api/NewBalanceShop.Application.DTO.GithubExchangeDto.html
+  commentId: T:NewBalanceShop.Application.DTO.GithubExchangeDto
+  fullName: NewBalanceShop.Application.DTO.GithubExchangeDto
+  nameWithType: GithubExchangeDto
+- uid: NewBalanceShop.Application.DTO.GithubExchangeDto.Code
+  name: Code
+  href: api/NewBalanceShop.Application.DTO.GithubExchangeDto.html#NewBalanceShop_Application_DTO_GithubExchangeDto_Code
+  commentId: P:NewBalanceShop.Application.DTO.GithubExchangeDto.Code
+  fullName: NewBalanceShop.Application.DTO.GithubExchangeDto.Code
+  nameWithType: GithubExchangeDto.Code
+- uid: NewBalanceShop.Application.DTO.GithubExchangeDto.Code*
+  name: Code
+  href: api/NewBalanceShop.Application.DTO.GithubExchangeDto.html#NewBalanceShop_Application_DTO_GithubExchangeDto_Code_
+  commentId: Overload:NewBalanceShop.Application.DTO.GithubExchangeDto.Code
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.GithubExchangeDto.Code
+  nameWithType: GithubExchangeDto.Code
 - uid: NewBalanceShop.Application.DTO.GoogleLoginDto
   name: GoogleLoginDto
   href: api/NewBalanceShop.Application.DTO.GoogleLoginDto.html
@@ -451,6 +554,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.OrderItemDto.Quantity
   nameWithType: OrderItemDto.Quantity
+- uid: NewBalanceShop.Application.DTO.OrderItemDto.Size
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.OrderItemDto.html#NewBalanceShop_Application_DTO_OrderItemDto_Size
+  commentId: P:NewBalanceShop.Application.DTO.OrderItemDto.Size
+  fullName: NewBalanceShop.Application.DTO.OrderItemDto.Size
+  nameWithType: OrderItemDto.Size
+- uid: NewBalanceShop.Application.DTO.OrderItemDto.Size*
+  name: Size
+  href: api/NewBalanceShop.Application.DTO.OrderItemDto.html#NewBalanceShop_Application_DTO_OrderItemDto_Size_
+  commentId: Overload:NewBalanceShop.Application.DTO.OrderItemDto.Size
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.OrderItemDto.Size
+  nameWithType: OrderItemDto.Size
 - uid: NewBalanceShop.Application.DTO.OrderItemDto.UnitPrice
   name: UnitPrice
   href: api/NewBalanceShop.Application.DTO.OrderItemDto.html#NewBalanceShop_Application_DTO_OrderItemDto_UnitPrice
@@ -522,6 +638,32 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.ProductDto.Description
   nameWithType: ProductDto.Description
+- uid: NewBalanceShop.Application.DTO.ProductDto.ExtraImages
+  name: ExtraImages
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_ExtraImages
+  commentId: P:NewBalanceShop.Application.DTO.ProductDto.ExtraImages
+  fullName: NewBalanceShop.Application.DTO.ProductDto.ExtraImages
+  nameWithType: ProductDto.ExtraImages
+- uid: NewBalanceShop.Application.DTO.ProductDto.ExtraImages*
+  name: ExtraImages
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_ExtraImages_
+  commentId: Overload:NewBalanceShop.Application.DTO.ProductDto.ExtraImages
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.ProductDto.ExtraImages
+  nameWithType: ProductDto.ExtraImages
+- uid: NewBalanceShop.Application.DTO.ProductDto.Gender
+  name: Gender
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Gender
+  commentId: P:NewBalanceShop.Application.DTO.ProductDto.Gender
+  fullName: NewBalanceShop.Application.DTO.ProductDto.Gender
+  nameWithType: ProductDto.Gender
+- uid: NewBalanceShop.Application.DTO.ProductDto.Gender*
+  name: Gender
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Gender_
+  commentId: Overload:NewBalanceShop.Application.DTO.ProductDto.Gender
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.ProductDto.Gender
+  nameWithType: ProductDto.Gender
 - uid: NewBalanceShop.Application.DTO.ProductDto.Id
   name: Id
   href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Id
@@ -561,6 +703,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.ProductDto.Name
   nameWithType: ProductDto.Name
+- uid: NewBalanceShop.Application.DTO.ProductDto.OldPrice
+  name: OldPrice
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_OldPrice
+  commentId: P:NewBalanceShop.Application.DTO.ProductDto.OldPrice
+  fullName: NewBalanceShop.Application.DTO.ProductDto.OldPrice
+  nameWithType: ProductDto.OldPrice
+- uid: NewBalanceShop.Application.DTO.ProductDto.OldPrice*
+  name: OldPrice
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_OldPrice_
+  commentId: Overload:NewBalanceShop.Application.DTO.ProductDto.OldPrice
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.ProductDto.OldPrice
+  nameWithType: ProductDto.OldPrice
 - uid: NewBalanceShop.Application.DTO.ProductDto.Price
   name: Price
   href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Price
@@ -574,6 +729,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.ProductDto.Price
   nameWithType: ProductDto.Price
+- uid: NewBalanceShop.Application.DTO.ProductDto.ProductType
+  name: ProductType
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_ProductType
+  commentId: P:NewBalanceShop.Application.DTO.ProductDto.ProductType
+  fullName: NewBalanceShop.Application.DTO.ProductDto.ProductType
+  nameWithType: ProductDto.ProductType
+- uid: NewBalanceShop.Application.DTO.ProductDto.ProductType*
+  name: ProductType
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_ProductType_
+  commentId: Overload:NewBalanceShop.Application.DTO.ProductDto.ProductType
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.ProductDto.ProductType
+  nameWithType: ProductDto.ProductType
 - uid: NewBalanceShop.Application.DTO.ProductDto.Size
   name: Size
   href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Size
@@ -600,6 +768,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.ProductDto.Stock
   nameWithType: ProductDto.Stock
+- uid: NewBalanceShop.Application.DTO.ProductDto.Validate(System.ComponentModel.DataAnnotations.ValidationContext)
+  name: Validate(ValidationContext)
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Validate_System_ComponentModel_DataAnnotations_ValidationContext_
+  commentId: M:NewBalanceShop.Application.DTO.ProductDto.Validate(System.ComponentModel.DataAnnotations.ValidationContext)
+  fullName: NewBalanceShop.Application.DTO.ProductDto.Validate(System.ComponentModel.DataAnnotations.ValidationContext)
+  nameWithType: ProductDto.Validate(ValidationContext)
+- uid: NewBalanceShop.Application.DTO.ProductDto.Validate*
+  name: Validate
+  href: api/NewBalanceShop.Application.DTO.ProductDto.html#NewBalanceShop_Application_DTO_ProductDto_Validate_
+  commentId: Overload:NewBalanceShop.Application.DTO.ProductDto.Validate
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.ProductDto.Validate
+  nameWithType: ProductDto.Validate
 - uid: NewBalanceShop.Application.DTO.RegisterDto
   name: RegisterDto
   href: api/NewBalanceShop.Application.DTO.RegisterDto.html
@@ -684,6 +865,25 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.RegisterDto.Phone
   nameWithType: RegisterDto.Phone
+- uid: NewBalanceShop.Application.DTO.SetCartQuantityDto
+  name: SetCartQuantityDto
+  href: api/NewBalanceShop.Application.DTO.SetCartQuantityDto.html
+  commentId: T:NewBalanceShop.Application.DTO.SetCartQuantityDto
+  fullName: NewBalanceShop.Application.DTO.SetCartQuantityDto
+  nameWithType: SetCartQuantityDto
+- uid: NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity
+  name: Quantity
+  href: api/NewBalanceShop.Application.DTO.SetCartQuantityDto.html#NewBalanceShop_Application_DTO_SetCartQuantityDto_Quantity
+  commentId: P:NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity
+  fullName: NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity
+  nameWithType: SetCartQuantityDto.Quantity
+- uid: NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity*
+  name: Quantity
+  href: api/NewBalanceShop.Application.DTO.SetCartQuantityDto.html#NewBalanceShop_Application_DTO_SetCartQuantityDto_Quantity_
+  commentId: Overload:NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.SetCartQuantityDto.Quantity
+  nameWithType: SetCartQuantityDto.Quantity
 - uid: NewBalanceShop.Application.DTO.UpdateCustomerDto
   name: UpdateCustomerDto
   href: api/NewBalanceShop.Application.DTO.UpdateCustomerDto.html
@@ -755,12 +955,95 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.DTO.UpdateCustomerDto.Phone
   nameWithType: UpdateCustomerDto.Phone
+- uid: NewBalanceShop.Application.DTO.UpdateOrderStatusDto
+  name: UpdateOrderStatusDto
+  href: api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.html
+  commentId: T:NewBalanceShop.Application.DTO.UpdateOrderStatusDto
+  fullName: NewBalanceShop.Application.DTO.UpdateOrderStatusDto
+  nameWithType: UpdateOrderStatusDto
+- uid: NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status
+  name: Status
+  href: api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.html#NewBalanceShop_Application_DTO_UpdateOrderStatusDto_Status
+  commentId: P:NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status
+  fullName: NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status
+  nameWithType: UpdateOrderStatusDto.Status
+- uid: NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status*
+  name: Status
+  href: api/NewBalanceShop.Application.DTO.UpdateOrderStatusDto.html#NewBalanceShop_Application_DTO_UpdateOrderStatusDto_Status_
+  commentId: Overload:NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.DTO.UpdateOrderStatusDto.Status
+  nameWithType: UpdateOrderStatusDto.Status
 - uid: NewBalanceShop.Application.Interfaces
   name: NewBalanceShop.Application.Interfaces
   href: api/NewBalanceShop.Application.Interfaces.html
   commentId: N:NewBalanceShop.Application.Interfaces
   fullName: NewBalanceShop.Application.Interfaces
   nameWithType: NewBalanceShop.Application.Interfaces
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity
+  name: GoogleIdentity
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html
+  commentId: T:NewBalanceShop.Application.Interfaces.GoogleIdentity
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity
+  nameWithType: GoogleIdentity
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.#ctor(System.String,System.String,System.String)
+  name: GoogleIdentity(string, string?, string?)
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity__ctor_System_String_System_String_System_String_
+  commentId: M:NewBalanceShop.Application.Interfaces.GoogleIdentity.#ctor(System.String,System.String,System.String)
+  name.vb: New(String, String, String)
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.GoogleIdentity(string, string?, string?)
+  fullName.vb: NewBalanceShop.Application.Interfaces.GoogleIdentity.New(String, String, String)
+  nameWithType: GoogleIdentity.GoogleIdentity(string, string?, string?)
+  nameWithType.vb: GoogleIdentity.New(String, String, String)
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.#ctor*
+  name: GoogleIdentity
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity__ctor_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.GoogleIdentity.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.GoogleIdentity
+  fullName.vb: NewBalanceShop.Application.Interfaces.GoogleIdentity.New
+  nameWithType: GoogleIdentity.GoogleIdentity
+  nameWithType.vb: GoogleIdentity.New
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Email
+  name: Email
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Email
+  commentId: P:NewBalanceShop.Application.Interfaces.GoogleIdentity.Email
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Email
+  nameWithType: GoogleIdentity.Email
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Email*
+  name: Email
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Email_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.GoogleIdentity.Email
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Email
+  nameWithType: GoogleIdentity.Email
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Name
+  name: Name
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Name
+  commentId: P:NewBalanceShop.Application.Interfaces.GoogleIdentity.Name
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Name
+  nameWithType: GoogleIdentity.Name
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Name*
+  name: Name
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Name_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.GoogleIdentity.Name
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Name
+  nameWithType: GoogleIdentity.Name
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid
+  name: Uid
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Uid
+  commentId: P:NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid
+  nameWithType: GoogleIdentity.Uid
+- uid: NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid*
+  name: Uid
+  href: api/NewBalanceShop.Application.Interfaces.GoogleIdentity.html#NewBalanceShop_Application_Interfaces_GoogleIdentity_Uid_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.GoogleIdentity.Uid
+  nameWithType: GoogleIdentity.Uid
 - uid: NewBalanceShop.Application.Interfaces.IAuthService
   name: IAuthService
   href: api/NewBalanceShop.Application.Interfaces.IAuthService.html
@@ -783,6 +1066,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Interfaces.IAuthService.GetByIdAsync
   nameWithType: IAuthService.GetByIdAsync
+- uid: NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync(System.String,System.String)
+  name: GithubLoginAsync(string, string?)
+  href: api/NewBalanceShop.Application.Interfaces.IAuthService.html#NewBalanceShop_Application_Interfaces_IAuthService_GithubLoginAsync_System_String_System_String_
+  commentId: M:NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync(System.String,System.String)
+  name.vb: GithubLoginAsync(String, String)
+  fullName: NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync(string, string?)
+  fullName.vb: NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync(String, String)
+  nameWithType: IAuthService.GithubLoginAsync(string, string?)
+  nameWithType.vb: IAuthService.GithubLoginAsync(String, String)
+- uid: NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync*
+  name: GithubLoginAsync
+  href: api/NewBalanceShop.Application.Interfaces.IAuthService.html#NewBalanceShop_Application_Interfaces_IAuthService_GithubLoginAsync_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.IAuthService.GithubLoginAsync
+  nameWithType: IAuthService.GithubLoginAsync
 - uid: NewBalanceShop.Application.Interfaces.IAuthService.GoogleLoginAsync(System.String)
   name: GoogleLoginAsync(string)
   href: api/NewBalanceShop.Application.Interfaces.IAuthService.html#NewBalanceShop_Application_Interfaces_IAuthService_GoogleLoginAsync_System_String_
@@ -825,6 +1124,25 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Interfaces.IAuthService.RegisterAsync
   nameWithType: IAuthService.RegisterAsync
+- uid: NewBalanceShop.Application.Interfaces.ICategoryService
+  name: ICategoryService
+  href: api/NewBalanceShop.Application.Interfaces.ICategoryService.html
+  commentId: T:NewBalanceShop.Application.Interfaces.ICategoryService
+  fullName: NewBalanceShop.Application.Interfaces.ICategoryService
+  nameWithType: ICategoryService
+- uid: NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync
+  name: GetAllAsync()
+  href: api/NewBalanceShop.Application.Interfaces.ICategoryService.html#NewBalanceShop_Application_Interfaces_ICategoryService_GetAllAsync
+  commentId: M:NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync
+  fullName: NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync()
+  nameWithType: ICategoryService.GetAllAsync()
+- uid: NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync*
+  name: GetAllAsync
+  href: api/NewBalanceShop.Application.Interfaces.ICategoryService.html#NewBalanceShop_Application_Interfaces_ICategoryService_GetAllAsync_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.ICategoryService.GetAllAsync
+  nameWithType: ICategoryService.GetAllAsync
 - uid: NewBalanceShop.Application.Interfaces.ICustomerService
   name: ICustomerService
   href: api/NewBalanceShop.Application.Interfaces.ICustomerService.html
@@ -908,6 +1226,28 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Interfaces.ICustomerService.UpdateAsync
   nameWithType: ICustomerService.UpdateAsync
+- uid: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier
+  name: IGoogleTokenVerifier
+  href: api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.html
+  commentId: T:NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier
+  fullName: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier
+  nameWithType: IGoogleTokenVerifier
+- uid: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync(System.String)
+  name: VerifyAsync(string)
+  href: api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.html#NewBalanceShop_Application_Interfaces_IGoogleTokenVerifier_VerifyAsync_System_String_
+  commentId: M:NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync(System.String)
+  name.vb: VerifyAsync(String)
+  fullName: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync(string)
+  fullName.vb: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync(String)
+  nameWithType: IGoogleTokenVerifier.VerifyAsync(string)
+  nameWithType.vb: IGoogleTokenVerifier.VerifyAsync(String)
+- uid: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync*
+  name: VerifyAsync
+  href: api/NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.html#NewBalanceShop_Application_Interfaces_IGoogleTokenVerifier_VerifyAsync_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier.VerifyAsync
+  nameWithType: IGoogleTokenVerifier.VerifyAsync
 - uid: NewBalanceShop.Application.Interfaces.IOrderService
   name: IOrderService
   href: api/NewBalanceShop.Application.Interfaces.IOrderService.html
@@ -927,6 +1267,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Interfaces.IOrderService.CreateAsync
   nameWithType: IOrderService.CreateAsync
+- uid: NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync
+  name: GetAllAsync()
+  href: api/NewBalanceShop.Application.Interfaces.IOrderService.html#NewBalanceShop_Application_Interfaces_IOrderService_GetAllAsync
+  commentId: M:NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync
+  fullName: NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync()
+  nameWithType: IOrderService.GetAllAsync()
+- uid: NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync*
+  name: GetAllAsync
+  href: api/NewBalanceShop.Application.Interfaces.IOrderService.html#NewBalanceShop_Application_Interfaces_IOrderService_GetAllAsync_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync
+  nameWithType: IOrderService.GetAllAsync
 - uid: NewBalanceShop.Application.Interfaces.IOrderService.GetByCustomerAsync(System.Int32)
   name: GetByCustomerAsync(int)
   href: api/NewBalanceShop.Application.Interfaces.IOrderService.html#NewBalanceShop_Application_Interfaces_IOrderService_GetByCustomerAsync_System_Int32_
@@ -959,6 +1312,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Interfaces.IOrderService.GetByIdAsync
   nameWithType: IOrderService.GetByIdAsync
+- uid: NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync(System.Int32,NewBalanceShop.Domain.Entities.OrderStatus)
+  name: UpdateStatusAsync(int, OrderStatus)
+  href: api/NewBalanceShop.Application.Interfaces.IOrderService.html#NewBalanceShop_Application_Interfaces_IOrderService_UpdateStatusAsync_System_Int32_NewBalanceShop_Domain_Entities_OrderStatus_
+  commentId: M:NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync(System.Int32,NewBalanceShop.Domain.Entities.OrderStatus)
+  name.vb: UpdateStatusAsync(Integer, OrderStatus)
+  fullName: NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync(int, NewBalanceShop.Domain.Entities.OrderStatus)
+  fullName.vb: NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync(Integer, NewBalanceShop.Domain.Entities.OrderStatus)
+  nameWithType: IOrderService.UpdateStatusAsync(int, OrderStatus)
+  nameWithType.vb: IOrderService.UpdateStatusAsync(Integer, OrderStatus)
+- uid: NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync*
+  name: UpdateStatusAsync
+  href: api/NewBalanceShop.Application.Interfaces.IOrderService.html#NewBalanceShop_Application_Interfaces_IOrderService_UpdateStatusAsync_
+  commentId: Overload:NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync
+  nameWithType: IOrderService.UpdateStatusAsync
 - uid: NewBalanceShop.Application.Interfaces.IProductService
   name: IProductService
   href: api/NewBalanceShop.Application.Interfaces.IProductService.html
@@ -1143,15 +1512,15 @@ references:
   commentId: T:NewBalanceShop.Application.Services.AuthService
   fullName: NewBalanceShop.Application.Services.AuthService
   nameWithType: AuthService
-- uid: NewBalanceShop.Application.Services.AuthService.#ctor(NewBalanceShop.Domain.Interfaces.ICustomerRepository)
-  name: AuthService(ICustomerRepository)
-  href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService__ctor_NewBalanceShop_Domain_Interfaces_ICustomerRepository_
-  commentId: M:NewBalanceShop.Application.Services.AuthService.#ctor(NewBalanceShop.Domain.Interfaces.ICustomerRepository)
-  name.vb: New(ICustomerRepository)
-  fullName: NewBalanceShop.Application.Services.AuthService.AuthService(NewBalanceShop.Domain.Interfaces.ICustomerRepository)
-  fullName.vb: NewBalanceShop.Application.Services.AuthService.New(NewBalanceShop.Domain.Interfaces.ICustomerRepository)
-  nameWithType: AuthService.AuthService(ICustomerRepository)
-  nameWithType.vb: AuthService.New(ICustomerRepository)
+- uid: NewBalanceShop.Application.Services.AuthService.#ctor(NewBalanceShop.Domain.Interfaces.ICustomerRepository,NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier)
+  name: AuthService(ICustomerRepository, IGoogleTokenVerifier)
+  href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService__ctor_NewBalanceShop_Domain_Interfaces_ICustomerRepository_NewBalanceShop_Application_Interfaces_IGoogleTokenVerifier_
+  commentId: M:NewBalanceShop.Application.Services.AuthService.#ctor(NewBalanceShop.Domain.Interfaces.ICustomerRepository,NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier)
+  name.vb: New(ICustomerRepository, IGoogleTokenVerifier)
+  fullName: NewBalanceShop.Application.Services.AuthService.AuthService(NewBalanceShop.Domain.Interfaces.ICustomerRepository, NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier)
+  fullName.vb: NewBalanceShop.Application.Services.AuthService.New(NewBalanceShop.Domain.Interfaces.ICustomerRepository, NewBalanceShop.Application.Interfaces.IGoogleTokenVerifier)
+  nameWithType: AuthService.AuthService(ICustomerRepository, IGoogleTokenVerifier)
+  nameWithType.vb: AuthService.New(ICustomerRepository, IGoogleTokenVerifier)
 - uid: NewBalanceShop.Application.Services.AuthService.#ctor*
   name: AuthService
   href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService__ctor_
@@ -1178,6 +1547,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Services.AuthService.GetByIdAsync
   nameWithType: AuthService.GetByIdAsync
+- uid: NewBalanceShop.Application.Services.AuthService.GithubLoginAsync(System.String,System.String)
+  name: GithubLoginAsync(string, string?)
+  href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService_GithubLoginAsync_System_String_System_String_
+  commentId: M:NewBalanceShop.Application.Services.AuthService.GithubLoginAsync(System.String,System.String)
+  name.vb: GithubLoginAsync(String, String)
+  fullName: NewBalanceShop.Application.Services.AuthService.GithubLoginAsync(string, string?)
+  fullName.vb: NewBalanceShop.Application.Services.AuthService.GithubLoginAsync(String, String)
+  nameWithType: AuthService.GithubLoginAsync(string, string?)
+  nameWithType.vb: AuthService.GithubLoginAsync(String, String)
+- uid: NewBalanceShop.Application.Services.AuthService.GithubLoginAsync*
+  name: GithubLoginAsync
+  href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService_GithubLoginAsync_
+  commentId: Overload:NewBalanceShop.Application.Services.AuthService.GithubLoginAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.AuthService.GithubLoginAsync
+  nameWithType: AuthService.GithubLoginAsync
 - uid: NewBalanceShop.Application.Services.AuthService.GoogleLoginAsync(System.String)
   name: GoogleLoginAsync(string)
   href: api/NewBalanceShop.Application.Services.AuthService.html#NewBalanceShop_Application_Services_AuthService_GoogleLoginAsync_System_String_
@@ -1220,6 +1605,56 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Services.AuthService.RegisterAsync
   nameWithType: AuthService.RegisterAsync
+- uid: NewBalanceShop.Application.Services.CategoryService
+  name: CategoryService
+  href: api/NewBalanceShop.Application.Services.CategoryService.html
+  commentId: T:NewBalanceShop.Application.Services.CategoryService
+  fullName: NewBalanceShop.Application.Services.CategoryService
+  nameWithType: CategoryService
+- uid: NewBalanceShop.Application.Services.CategoryService.#ctor(NewBalanceShop.Domain.Interfaces.IRepository{NewBalanceShop.Domain.Entities.Category},Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  name: CategoryService(IRepository<Category>, IMemoryCache)
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService__ctor_NewBalanceShop_Domain_Interfaces_IRepository_NewBalanceShop_Domain_Entities_Category__Microsoft_Extensions_Caching_Memory_IMemoryCache_
+  commentId: M:NewBalanceShop.Application.Services.CategoryService.#ctor(NewBalanceShop.Domain.Interfaces.IRepository{NewBalanceShop.Domain.Entities.Category},Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  name.vb: New(IRepository(Of Category), IMemoryCache)
+  fullName: NewBalanceShop.Application.Services.CategoryService.CategoryService(NewBalanceShop.Domain.Interfaces.IRepository<NewBalanceShop.Domain.Entities.Category>, Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  fullName.vb: NewBalanceShop.Application.Services.CategoryService.New(NewBalanceShop.Domain.Interfaces.IRepository(Of NewBalanceShop.Domain.Entities.Category), Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  nameWithType: CategoryService.CategoryService(IRepository<Category>, IMemoryCache)
+  nameWithType.vb: CategoryService.New(IRepository(Of Category), IMemoryCache)
+- uid: NewBalanceShop.Application.Services.CategoryService.#ctor*
+  name: CategoryService
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService__ctor_
+  commentId: Overload:NewBalanceShop.Application.Services.CategoryService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: NewBalanceShop.Application.Services.CategoryService.CategoryService
+  fullName.vb: NewBalanceShop.Application.Services.CategoryService.New
+  nameWithType: CategoryService.CategoryService
+  nameWithType.vb: CategoryService.New
+- uid: NewBalanceShop.Application.Services.CategoryService.CacheKey
+  name: CacheKey
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService_CacheKey
+  commentId: F:NewBalanceShop.Application.Services.CategoryService.CacheKey
+  fullName: NewBalanceShop.Application.Services.CategoryService.CacheKey
+  nameWithType: CategoryService.CacheKey
+- uid: NewBalanceShop.Application.Services.CategoryService.CacheTtl
+  name: CacheTtl
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService_CacheTtl
+  commentId: F:NewBalanceShop.Application.Services.CategoryService.CacheTtl
+  fullName: NewBalanceShop.Application.Services.CategoryService.CacheTtl
+  nameWithType: CategoryService.CacheTtl
+- uid: NewBalanceShop.Application.Services.CategoryService.GetAllAsync
+  name: GetAllAsync()
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService_GetAllAsync
+  commentId: M:NewBalanceShop.Application.Services.CategoryService.GetAllAsync
+  fullName: NewBalanceShop.Application.Services.CategoryService.GetAllAsync()
+  nameWithType: CategoryService.GetAllAsync()
+- uid: NewBalanceShop.Application.Services.CategoryService.GetAllAsync*
+  name: GetAllAsync
+  href: api/NewBalanceShop.Application.Services.CategoryService.html#NewBalanceShop_Application_Services_CategoryService_GetAllAsync_
+  commentId: Overload:NewBalanceShop.Application.Services.CategoryService.GetAllAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.CategoryService.GetAllAsync
+  nameWithType: CategoryService.GetAllAsync
 - uid: NewBalanceShop.Application.Services.CustomerService
   name: CustomerService
   href: api/NewBalanceShop.Application.Services.CustomerService.html
@@ -1360,6 +1795,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Services.OrderService.CreateAsync
   nameWithType: OrderService.CreateAsync
+- uid: NewBalanceShop.Application.Services.OrderService.GetAllAsync
+  name: GetAllAsync()
+  href: api/NewBalanceShop.Application.Services.OrderService.html#NewBalanceShop_Application_Services_OrderService_GetAllAsync
+  commentId: M:NewBalanceShop.Application.Services.OrderService.GetAllAsync
+  fullName: NewBalanceShop.Application.Services.OrderService.GetAllAsync()
+  nameWithType: OrderService.GetAllAsync()
+- uid: NewBalanceShop.Application.Services.OrderService.GetAllAsync*
+  name: GetAllAsync
+  href: api/NewBalanceShop.Application.Services.OrderService.html#NewBalanceShop_Application_Services_OrderService_GetAllAsync_
+  commentId: Overload:NewBalanceShop.Application.Services.OrderService.GetAllAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.OrderService.GetAllAsync
+  nameWithType: OrderService.GetAllAsync
 - uid: NewBalanceShop.Application.Services.OrderService.GetByCustomerAsync(System.Int32)
   name: GetByCustomerAsync(int)
   href: api/NewBalanceShop.Application.Services.OrderService.html#NewBalanceShop_Application_Services_OrderService_GetByCustomerAsync_System_Int32_
@@ -1392,6 +1840,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Services.OrderService.GetByIdAsync
   nameWithType: OrderService.GetByIdAsync
+- uid: NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync(System.Int32,NewBalanceShop.Domain.Entities.OrderStatus)
+  name: UpdateStatusAsync(int, OrderStatus)
+  href: api/NewBalanceShop.Application.Services.OrderService.html#NewBalanceShop_Application_Services_OrderService_UpdateStatusAsync_System_Int32_NewBalanceShop_Domain_Entities_OrderStatus_
+  commentId: M:NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync(System.Int32,NewBalanceShop.Domain.Entities.OrderStatus)
+  name.vb: UpdateStatusAsync(Integer, OrderStatus)
+  fullName: NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync(int, NewBalanceShop.Domain.Entities.OrderStatus)
+  fullName.vb: NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync(Integer, NewBalanceShop.Domain.Entities.OrderStatus)
+  nameWithType: OrderService.UpdateStatusAsync(int, OrderStatus)
+  nameWithType.vb: OrderService.UpdateStatusAsync(Integer, OrderStatus)
+- uid: NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync*
+  name: UpdateStatusAsync
+  href: api/NewBalanceShop.Application.Services.OrderService.html#NewBalanceShop_Application_Services_OrderService_UpdateStatusAsync_
+  commentId: Overload:NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.OrderService.UpdateStatusAsync
+  nameWithType: OrderService.UpdateStatusAsync
 - uid: NewBalanceShop.Application.Services.PasswordHasher
   name: PasswordHasher
   href: api/NewBalanceShop.Application.Services.PasswordHasher.html
@@ -1545,6 +2009,44 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Application.Services.ProductService.UpdateAsync
   nameWithType: ProductService.UpdateAsync
+- uid: NewBalanceShop.Application.Services.ProductSizes
+  name: ProductSizes
+  href: api/NewBalanceShop.Application.Services.ProductSizes.html
+  commentId: T:NewBalanceShop.Application.Services.ProductSizes
+  fullName: NewBalanceShop.Application.Services.ProductSizes
+  nameWithType: ProductSizes
+- uid: NewBalanceShop.Application.Services.ProductSizes.Parse(System.String)
+  name: Parse(string?)
+  href: api/NewBalanceShop.Application.Services.ProductSizes.html#NewBalanceShop_Application_Services_ProductSizes_Parse_System_String_
+  commentId: M:NewBalanceShop.Application.Services.ProductSizes.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: NewBalanceShop.Application.Services.ProductSizes.Parse(string?)
+  fullName.vb: NewBalanceShop.Application.Services.ProductSizes.Parse(String)
+  nameWithType: ProductSizes.Parse(string?)
+  nameWithType.vb: ProductSizes.Parse(String)
+- uid: NewBalanceShop.Application.Services.ProductSizes.Parse*
+  name: Parse
+  href: api/NewBalanceShop.Application.Services.ProductSizes.html#NewBalanceShop_Application_Services_ProductSizes_Parse_
+  commentId: Overload:NewBalanceShop.Application.Services.ProductSizes.Parse
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.ProductSizes.Parse
+  nameWithType: ProductSizes.Parse
+- uid: NewBalanceShop.Application.Services.ProductSizes.Resolve(System.String,System.String,System.String)
+  name: Resolve(string, string?, string?)
+  href: api/NewBalanceShop.Application.Services.ProductSizes.html#NewBalanceShop_Application_Services_ProductSizes_Resolve_System_String_System_String_System_String_
+  commentId: M:NewBalanceShop.Application.Services.ProductSizes.Resolve(System.String,System.String,System.String)
+  name.vb: Resolve(String, String, String)
+  fullName: NewBalanceShop.Application.Services.ProductSizes.Resolve(string, string?, string?)
+  fullName.vb: NewBalanceShop.Application.Services.ProductSizes.Resolve(String, String, String)
+  nameWithType: ProductSizes.Resolve(string, string?, string?)
+  nameWithType.vb: ProductSizes.Resolve(String, String, String)
+- uid: NewBalanceShop.Application.Services.ProductSizes.Resolve*
+  name: Resolve
+  href: api/NewBalanceShop.Application.Services.ProductSizes.html#NewBalanceShop_Application_Services_ProductSizes_Resolve_
+  commentId: Overload:NewBalanceShop.Application.Services.ProductSizes.Resolve
+  isSpec: "True"
+  fullName: NewBalanceShop.Application.Services.ProductSizes.Resolve
+  nameWithType: ProductSizes.Resolve
 - uid: NewBalanceShop.Domain.Entities
   name: NewBalanceShop.Domain.Entities
   href: api/NewBalanceShop.Domain.Entities.html
@@ -1667,6 +2169,12 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Entities.Customer.GoogleUid
   nameWithType: Customer.GoogleUid
+- uid: NewBalanceShop.Domain.Entities.Customer.GuestId
+  name: GuestId
+  href: api/NewBalanceShop.Domain.Entities.Customer.html#NewBalanceShop_Domain_Entities_Customer_GuestId
+  commentId: F:NewBalanceShop.Domain.Entities.Customer.GuestId
+  fullName: NewBalanceShop.Domain.Entities.Customer.GuestId
+  nameWithType: Customer.GuestId
 - uid: NewBalanceShop.Domain.Entities.Customer.Id
   name: Id
   href: api/NewBalanceShop.Domain.Entities.Customer.html#NewBalanceShop_Domain_Entities_Customer_Id
@@ -1926,6 +2434,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Entities.OrderItem.Quantity
   nameWithType: OrderItem.Quantity
+- uid: NewBalanceShop.Domain.Entities.OrderItem.Size
+  name: Size
+  href: api/NewBalanceShop.Domain.Entities.OrderItem.html#NewBalanceShop_Domain_Entities_OrderItem_Size
+  commentId: P:NewBalanceShop.Domain.Entities.OrderItem.Size
+  fullName: NewBalanceShop.Domain.Entities.OrderItem.Size
+  nameWithType: OrderItem.Size
+- uid: NewBalanceShop.Domain.Entities.OrderItem.Size*
+  name: Size
+  href: api/NewBalanceShop.Domain.Entities.OrderItem.html#NewBalanceShop_Domain_Entities_OrderItem_Size_
+  commentId: Overload:NewBalanceShop.Domain.Entities.OrderItem.Size
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Entities.OrderItem.Size
+  nameWithType: OrderItem.Size
 - uid: NewBalanceShop.Domain.Entities.OrderItem.UnitPrice
   name: UnitPrice
   href: api/NewBalanceShop.Domain.Entities.OrderItem.html#NewBalanceShop_Domain_Entities_OrderItem_UnitPrice
@@ -2046,6 +2567,32 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Entities.Product.Description
   nameWithType: Product.Description
+- uid: NewBalanceShop.Domain.Entities.Product.ExtraImages
+  name: ExtraImages
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_ExtraImages
+  commentId: P:NewBalanceShop.Domain.Entities.Product.ExtraImages
+  fullName: NewBalanceShop.Domain.Entities.Product.ExtraImages
+  nameWithType: Product.ExtraImages
+- uid: NewBalanceShop.Domain.Entities.Product.ExtraImages*
+  name: ExtraImages
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_ExtraImages_
+  commentId: Overload:NewBalanceShop.Domain.Entities.Product.ExtraImages
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Entities.Product.ExtraImages
+  nameWithType: Product.ExtraImages
+- uid: NewBalanceShop.Domain.Entities.Product.Gender
+  name: Gender
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_Gender
+  commentId: P:NewBalanceShop.Domain.Entities.Product.Gender
+  fullName: NewBalanceShop.Domain.Entities.Product.Gender
+  nameWithType: Product.Gender
+- uid: NewBalanceShop.Domain.Entities.Product.Gender*
+  name: Gender
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_Gender_
+  commentId: Overload:NewBalanceShop.Domain.Entities.Product.Gender
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Entities.Product.Gender
+  nameWithType: Product.Gender
 - uid: NewBalanceShop.Domain.Entities.Product.Id
   name: Id
   href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_Id
@@ -2085,6 +2632,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Entities.Product.Name
   nameWithType: Product.Name
+- uid: NewBalanceShop.Domain.Entities.Product.OldPrice
+  name: OldPrice
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_OldPrice
+  commentId: P:NewBalanceShop.Domain.Entities.Product.OldPrice
+  fullName: NewBalanceShop.Domain.Entities.Product.OldPrice
+  nameWithType: Product.OldPrice
+- uid: NewBalanceShop.Domain.Entities.Product.OldPrice*
+  name: OldPrice
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_OldPrice_
+  commentId: Overload:NewBalanceShop.Domain.Entities.Product.OldPrice
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Entities.Product.OldPrice
+  nameWithType: Product.OldPrice
 - uid: NewBalanceShop.Domain.Entities.Product.Price
   name: Price
   href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_Price
@@ -2098,6 +2658,19 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Entities.Product.Price
   nameWithType: Product.Price
+- uid: NewBalanceShop.Domain.Entities.Product.ProductType
+  name: ProductType
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_ProductType
+  commentId: P:NewBalanceShop.Domain.Entities.Product.ProductType
+  fullName: NewBalanceShop.Domain.Entities.Product.ProductType
+  nameWithType: Product.ProductType
+- uid: NewBalanceShop.Domain.Entities.Product.ProductType*
+  name: ProductType
+  href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_ProductType_
+  commentId: Overload:NewBalanceShop.Domain.Entities.Product.ProductType
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Entities.Product.ProductType
+  nameWithType: Product.ProductType
 - uid: NewBalanceShop.Domain.Entities.Product.Size
   name: Size
   href: api/NewBalanceShop.Domain.Entities.Product.html#NewBalanceShop_Domain_Entities_Product_Size
@@ -2152,12 +2725,41 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Interfaces.ICustomerRepository.GetByEmailAsync
   nameWithType: ICustomerRepository.GetByEmailAsync
+- uid: NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync(System.Int32)
+  name: HasOrdersAsync(int)
+  href: api/NewBalanceShop.Domain.Interfaces.ICustomerRepository.html#NewBalanceShop_Domain_Interfaces_ICustomerRepository_HasOrdersAsync_System_Int32_
+  commentId: M:NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync(System.Int32)
+  name.vb: HasOrdersAsync(Integer)
+  fullName: NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync(int)
+  fullName.vb: NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync(Integer)
+  nameWithType: ICustomerRepository.HasOrdersAsync(int)
+  nameWithType.vb: ICustomerRepository.HasOrdersAsync(Integer)
+- uid: NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync*
+  name: HasOrdersAsync
+  href: api/NewBalanceShop.Domain.Interfaces.ICustomerRepository.html#NewBalanceShop_Domain_Interfaces_ICustomerRepository_HasOrdersAsync_
+  commentId: Overload:NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Interfaces.ICustomerRepository.HasOrdersAsync
+  nameWithType: ICustomerRepository.HasOrdersAsync
 - uid: NewBalanceShop.Domain.Interfaces.IOrderRepository
   name: IOrderRepository
   href: api/NewBalanceShop.Domain.Interfaces.IOrderRepository.html
   commentId: T:NewBalanceShop.Domain.Interfaces.IOrderRepository
   fullName: NewBalanceShop.Domain.Interfaces.IOrderRepository
   nameWithType: IOrderRepository
+- uid: NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync
+  name: GetAllWithItemsAsync()
+  href: api/NewBalanceShop.Domain.Interfaces.IOrderRepository.html#NewBalanceShop_Domain_Interfaces_IOrderRepository_GetAllWithItemsAsync
+  commentId: M:NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync
+  fullName: NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync()
+  nameWithType: IOrderRepository.GetAllWithItemsAsync()
+- uid: NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync*
+  name: GetAllWithItemsAsync
+  href: api/NewBalanceShop.Domain.Interfaces.IOrderRepository.html#NewBalanceShop_Domain_Interfaces_IOrderRepository_GetAllWithItemsAsync_
+  commentId: Overload:NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Interfaces.IOrderRepository.GetAllWithItemsAsync
+  nameWithType: IOrderRepository.GetAllWithItemsAsync
 - uid: NewBalanceShop.Domain.Interfaces.IOrderRepository.GetByCustomerAsync(System.Int32)
   name: GetByCustomerAsync(int)
   href: api/NewBalanceShop.Domain.Interfaces.IOrderRepository.html#NewBalanceShop_Domain_Interfaces_IOrderRepository_GetByCustomerAsync_System_Int32_
@@ -2212,6 +2814,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByCategoryAsync
   nameWithType: IProductRepository.GetByCategoryAsync
+- uid: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Int32})
+  name: GetByIdsAsync(IEnumerable<int>)
+  href: api/NewBalanceShop.Domain.Interfaces.IProductRepository.html#NewBalanceShop_Domain_Interfaces_IProductRepository_GetByIdsAsync_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: GetByIdsAsync(IEnumerable(Of Integer))
+  fullName: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: IProductRepository.GetByIdsAsync(IEnumerable<int>)
+  nameWithType.vb: IProductRepository.GetByIdsAsync(IEnumerable(Of Integer))
+- uid: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync*
+  name: GetByIdsAsync
+  href: api/NewBalanceShop.Domain.Interfaces.IProductRepository.html#NewBalanceShop_Domain_Interfaces_IProductRepository_GetByIdsAsync_
+  commentId: Overload:NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync
+  nameWithType: IProductRepository.GetByIdsAsync
 - uid: NewBalanceShop.Domain.Interfaces.IRepository`1
   name: IRepository<T>
   href: api/NewBalanceShop.Domain.Interfaces.IRepository-1.html
@@ -2273,6 +2891,24 @@ references:
   fullName.vb: NewBalanceShop.Domain.Interfaces.IRepository(Of T).GetByIdAsync
   nameWithType: IRepository<T>.GetByIdAsync
   nameWithType.vb: IRepository(Of T).GetByIdAsync
+- uid: NewBalanceShop.Domain.Interfaces.IRepository`1.GetByIdNoTrackingAsync(System.Int32)
+  name: GetByIdNoTrackingAsync(int)
+  href: api/NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdNoTrackingAsync_System_Int32_
+  commentId: M:NewBalanceShop.Domain.Interfaces.IRepository`1.GetByIdNoTrackingAsync(System.Int32)
+  name.vb: GetByIdNoTrackingAsync(Integer)
+  fullName: NewBalanceShop.Domain.Interfaces.IRepository<T>.GetByIdNoTrackingAsync(int)
+  fullName.vb: NewBalanceShop.Domain.Interfaces.IRepository(Of T).GetByIdNoTrackingAsync(Integer)
+  nameWithType: IRepository<T>.GetByIdNoTrackingAsync(int)
+  nameWithType.vb: IRepository(Of T).GetByIdNoTrackingAsync(Integer)
+- uid: NewBalanceShop.Domain.Interfaces.IRepository`1.GetByIdNoTrackingAsync*
+  name: GetByIdNoTrackingAsync
+  href: api/NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdNoTrackingAsync_
+  commentId: Overload:NewBalanceShop.Domain.Interfaces.IRepository`1.GetByIdNoTrackingAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Domain.Interfaces.IRepository<T>.GetByIdNoTrackingAsync
+  fullName.vb: NewBalanceShop.Domain.Interfaces.IRepository(Of T).GetByIdNoTrackingAsync
+  nameWithType: IRepository<T>.GetByIdNoTrackingAsync
+  nameWithType.vb: IRepository(Of T).GetByIdNoTrackingAsync
 - uid: NewBalanceShop.Domain.Interfaces.IRepository`1.Remove(`0)
   name: Remove(T)
   href: api/NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_Remove__0_
@@ -2439,6 +3075,51 @@ references:
   commentId: N:NewBalanceShop.Infrastructure.Migrations
   fullName: NewBalanceShop.Infrastructure.Migrations
   nameWithType: NewBalanceShop.Infrastructure.Migrations
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos
+  name: AccessoryPhotos
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos
+  nameWithType: AccessoryPhotos
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AccessoryPhotos.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.BuildTargetModel
+  nameWithType: AccessoryPhotos.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AccessoryPhotos.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Down
+  nameWithType: AccessoryPhotos.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AccessoryPhotos.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.html#NewBalanceShop_Infrastructure_Migrations_AccessoryPhotos_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AccessoryPhotos.Up
+  nameWithType: AccessoryPhotos.Up
 - uid: NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin
   name: AddCustomerIsAdmin
   href: api/NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.html
@@ -2484,6 +3165,366 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Infrastructure.Migrations.AddCustomerIsAdmin.Up
   nameWithType: AddCustomerIsAdmin.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice
+  name: AddGenderProductTypeOldPrice
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice
+  nameWithType: AddGenderProductTypeOldPrice
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddGenderProductTypeOldPrice.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.BuildTargetModel
+  nameWithType: AddGenderProductTypeOldPrice.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddGenderProductTypeOldPrice.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Down
+  nameWithType: AddGenderProductTypeOldPrice.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddGenderProductTypeOldPrice.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.html#NewBalanceShop_Infrastructure_Migrations_AddGenderProductTypeOldPrice_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddGenderProductTypeOldPrice.Up
+  nameWithType: AddGenderProductTypeOldPrice.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts
+  name: AddMoreProducts
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts
+  nameWithType: AddMoreProducts
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddMoreProducts.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.BuildTargetModel
+  nameWithType: AddMoreProducts.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddMoreProducts.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Down
+  nameWithType: AddMoreProducts.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddMoreProducts.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.html#NewBalanceShop_Infrastructure_Migrations_AddMoreProducts_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.AddMoreProducts.Up
+  nameWithType: AddMoreProducts.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos
+  name: BetterSneakerPhotos
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos
+  nameWithType: BetterSneakerPhotos
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: BetterSneakerPhotos.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.BuildTargetModel
+  nameWithType: BetterSneakerPhotos.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: BetterSneakerPhotos.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Down
+  nameWithType: BetterSneakerPhotos.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: BetterSneakerPhotos.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.html#NewBalanceShop_Infrastructure_Migrations_BetterSneakerPhotos_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.BetterSneakerPhotos.Up
+  nameWithType: BetterSneakerPhotos.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos
+  name: ClothingGalleryPhotos
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos
+  nameWithType: ClothingGalleryPhotos
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: ClothingGalleryPhotos.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.BuildTargetModel
+  nameWithType: ClothingGalleryPhotos.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ClothingGalleryPhotos.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Down
+  nameWithType: ClothingGalleryPhotos.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ClothingGalleryPhotos.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.html#NewBalanceShop_Infrastructure_Migrations_ClothingGalleryPhotos_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ClothingGalleryPhotos.Up
+  nameWithType: ClothingGalleryPhotos.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery
+  name: ProductSizesAndGallery
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery
+  nameWithType: ProductSizesAndGallery
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: ProductSizesAndGallery.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.BuildTargetModel
+  nameWithType: ProductSizesAndGallery.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ProductSizesAndGallery.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Down
+  nameWithType: ProductSizesAndGallery.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ProductSizesAndGallery.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.html#NewBalanceShop_Infrastructure_Migrations_ProductSizesAndGallery_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ProductSizesAndGallery.Up
+  nameWithType: ProductSizesAndGallery.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword
+  name: RotateSeedAdminPassword
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword
+  nameWithType: RotateSeedAdminPassword
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: RotateSeedAdminPassword.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.BuildTargetModel
+  nameWithType: RotateSeedAdminPassword.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: RotateSeedAdminPassword.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Down
+  nameWithType: RotateSeedAdminPassword.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: RotateSeedAdminPassword.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.html#NewBalanceShop_Infrastructure_Migrations_RotateSeedAdminPassword_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.RotateSeedAdminPassword.Up
+  nameWithType: RotateSeedAdminPassword.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening
+  name: SecurityHardening
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.SecurityHardening
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening
+  nameWithType: SecurityHardening
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: SecurityHardening.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.BuildTargetModel
+  nameWithType: SecurityHardening.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: SecurityHardening.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Down
+  nameWithType: SecurityHardening.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: SecurityHardening.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.SecurityHardening.html#NewBalanceShop_Infrastructure_Migrations_SecurityHardening_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.SecurityHardening.Up
+  nameWithType: SecurityHardening.Up
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos
+  name: ShortsAndSocksPhotos
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html
+  commentId: T:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos
+  nameWithType: ShortsAndSocksPhotos
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: ShortsAndSocksPhotos.BuildTargetModel(ModelBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_BuildTargetModel_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.BuildTargetModel
+  nameWithType: ShortsAndSocksPhotos.BuildTargetModel
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ShortsAndSocksPhotos.Down(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down*
+  name: Down
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_Down_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Down
+  nameWithType: ShortsAndSocksPhotos.Down
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ShortsAndSocksPhotos.Up(MigrationBuilder)
+- uid: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up*
+  name: Up
+  href: api/NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.html#NewBalanceShop_Infrastructure_Migrations_ShortsAndSocksPhotos_Up_
+  commentId: Overload:NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Migrations.ShortsAndSocksPhotos.Up
+  nameWithType: ShortsAndSocksPhotos.Up
 - uid: NewBalanceShop.Infrastructure.Repositories
   name: NewBalanceShop.Infrastructure.Repositories
   href: api/NewBalanceShop.Infrastructure.Repositories.html
@@ -2531,6 +3572,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.GetByEmailAsync
   nameWithType: CustomerRepository.GetByEmailAsync
+- uid: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync(System.Int32)
+  name: HasOrdersAsync(int)
+  href: api/NewBalanceShop.Infrastructure.Repositories.CustomerRepository.html#NewBalanceShop_Infrastructure_Repositories_CustomerRepository_HasOrdersAsync_System_Int32_
+  commentId: M:NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync(System.Int32)
+  name.vb: HasOrdersAsync(Integer)
+  fullName: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync(int)
+  fullName.vb: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync(Integer)
+  nameWithType: CustomerRepository.HasOrdersAsync(int)
+  nameWithType.vb: CustomerRepository.HasOrdersAsync(Integer)
+- uid: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync*
+  name: HasOrdersAsync
+  href: api/NewBalanceShop.Infrastructure.Repositories.CustomerRepository.html#NewBalanceShop_Infrastructure_Repositories_CustomerRepository_HasOrdersAsync_
+  commentId: Overload:NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync
+  nameWithType: CustomerRepository.HasOrdersAsync
 - uid: NewBalanceShop.Infrastructure.Repositories.OrderRepository
   name: OrderRepository
   href: api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.html
@@ -2556,6 +3613,19 @@ references:
   fullName.vb: NewBalanceShop.Infrastructure.Repositories.OrderRepository.New
   nameWithType: OrderRepository.OrderRepository
   nameWithType.vb: OrderRepository.New
+- uid: NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync
+  name: GetAllWithItemsAsync()
+  href: api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.html#NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetAllWithItemsAsync
+  commentId: M:NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync
+  fullName: NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync()
+  nameWithType: OrderRepository.GetAllWithItemsAsync()
+- uid: NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync*
+  name: GetAllWithItemsAsync
+  href: api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.html#NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetAllWithItemsAsync_
+  commentId: Overload:NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync
+  nameWithType: OrderRepository.GetAllWithItemsAsync
 - uid: NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetByCustomerAsync(System.Int32)
   name: GetByCustomerAsync(int)
   href: api/NewBalanceShop.Infrastructure.Repositories.OrderRepository.html#NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetByCustomerAsync_System_Int32_
@@ -2629,6 +3699,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByCategoryAsync
   nameWithType: ProductRepository.GetByCategoryAsync
+- uid: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Int32})
+  name: GetByIdsAsync(IEnumerable<int>)
+  href: api/NewBalanceShop.Infrastructure.Repositories.ProductRepository.html#NewBalanceShop_Infrastructure_Repositories_ProductRepository_GetByIdsAsync_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: GetByIdsAsync(IEnumerable(Of Integer))
+  fullName: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: ProductRepository.GetByIdsAsync(IEnumerable<int>)
+  nameWithType.vb: ProductRepository.GetByIdsAsync(IEnumerable(Of Integer))
+- uid: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync*
+  name: GetByIdsAsync
+  href: api/NewBalanceShop.Infrastructure.Repositories.ProductRepository.html#NewBalanceShop_Infrastructure_Repositories_ProductRepository_GetByIdsAsync_
+  commentId: Overload:NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Repositories.ProductRepository.GetByIdsAsync
+  nameWithType: ProductRepository.GetByIdsAsync
 - uid: NewBalanceShop.Infrastructure.Repositories.Repository`1
   name: Repository<T>
   href: api/NewBalanceShop.Infrastructure.Repositories.Repository-1.html
@@ -2717,6 +3803,24 @@ references:
   fullName.vb: NewBalanceShop.Infrastructure.Repositories.Repository(Of T).GetByIdAsync
   nameWithType: Repository<T>.GetByIdAsync
   nameWithType.vb: Repository(Of T).GetByIdAsync
+- uid: NewBalanceShop.Infrastructure.Repositories.Repository`1.GetByIdNoTrackingAsync(System.Int32)
+  name: GetByIdNoTrackingAsync(int)
+  href: api/NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdNoTrackingAsync_System_Int32_
+  commentId: M:NewBalanceShop.Infrastructure.Repositories.Repository`1.GetByIdNoTrackingAsync(System.Int32)
+  name.vb: GetByIdNoTrackingAsync(Integer)
+  fullName: NewBalanceShop.Infrastructure.Repositories.Repository<T>.GetByIdNoTrackingAsync(int)
+  fullName.vb: NewBalanceShop.Infrastructure.Repositories.Repository(Of T).GetByIdNoTrackingAsync(Integer)
+  nameWithType: Repository<T>.GetByIdNoTrackingAsync(int)
+  nameWithType.vb: Repository(Of T).GetByIdNoTrackingAsync(Integer)
+- uid: NewBalanceShop.Infrastructure.Repositories.Repository`1.GetByIdNoTrackingAsync*
+  name: GetByIdNoTrackingAsync
+  href: api/NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdNoTrackingAsync_
+  commentId: Overload:NewBalanceShop.Infrastructure.Repositories.Repository`1.GetByIdNoTrackingAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Repositories.Repository<T>.GetByIdNoTrackingAsync
+  fullName.vb: NewBalanceShop.Infrastructure.Repositories.Repository(Of T).GetByIdNoTrackingAsync
+  nameWithType: Repository<T>.GetByIdNoTrackingAsync
+  nameWithType.vb: Repository(Of T).GetByIdNoTrackingAsync
 - uid: NewBalanceShop.Infrastructure.Repositories.Repository`1.Remove(`0)
   name: Remove(T)
   href: api/NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_Remove__0_
@@ -2768,6 +3872,34 @@ references:
   fullName.vb: NewBalanceShop.Infrastructure.Repositories.Repository(Of T).Update
   nameWithType: Repository<T>.Update
   nameWithType.vb: Repository(Of T).Update
+- uid: NewBalanceShop.Infrastructure.Services
+  name: NewBalanceShop.Infrastructure.Services
+  href: api/NewBalanceShop.Infrastructure.Services.html
+  commentId: N:NewBalanceShop.Infrastructure.Services
+  fullName: NewBalanceShop.Infrastructure.Services
+  nameWithType: NewBalanceShop.Infrastructure.Services
+- uid: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier
+  name: FirebaseGoogleTokenVerifier
+  href: api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.html
+  commentId: T:NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier
+  fullName: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier
+  nameWithType: FirebaseGoogleTokenVerifier
+- uid: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync(System.String)
+  name: VerifyAsync(string)
+  href: api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.html#NewBalanceShop_Infrastructure_Services_FirebaseGoogleTokenVerifier_VerifyAsync_System_String_
+  commentId: M:NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync(System.String)
+  name.vb: VerifyAsync(String)
+  fullName: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync(string)
+  fullName.vb: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync(String)
+  nameWithType: FirebaseGoogleTokenVerifier.VerifyAsync(string)
+  nameWithType.vb: FirebaseGoogleTokenVerifier.VerifyAsync(String)
+- uid: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync*
+  name: VerifyAsync
+  href: api/NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.html#NewBalanceShop_Infrastructure_Services_FirebaseGoogleTokenVerifier_VerifyAsync_
+  commentId: Overload:NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Infrastructure.Services.FirebaseGoogleTokenVerifier.VerifyAsync
+  nameWithType: FirebaseGoogleTokenVerifier.VerifyAsync
 - uid: NewBalanceShop.Migrations
   name: NewBalanceShop.Migrations
   href: api/NewBalanceShop.Migrations.html
@@ -2966,15 +4098,15 @@ references:
   commentId: T:NewBalanceShop.Presentation.Controllers.CartController
   fullName: NewBalanceShop.Presentation.Controllers.CartController
   nameWithType: CartController
-- uid: NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService)
-  name: CartController(IProductService, IOrderService)
-  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController__ctor_NewBalanceShop_Application_Interfaces_IProductService_NewBalanceShop_Application_Interfaces_IOrderService_
-  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService)
-  name.vb: New(IProductService, IOrderService)
-  fullName: NewBalanceShop.Presentation.Controllers.CartController.CartController(NewBalanceShop.Application.Interfaces.IProductService, NewBalanceShop.Application.Interfaces.IOrderService)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.New(NewBalanceShop.Application.Interfaces.IProductService, NewBalanceShop.Application.Interfaces.IOrderService)
-  nameWithType: CartController.CartController(IProductService, IOrderService)
-  nameWithType.vb: CartController.New(IProductService, IOrderService)
+- uid: NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)
+  name: CartController(IProductService, IOrderService, ICustomerService)
+  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController__ctor_NewBalanceShop_Application_Interfaces_IProductService_NewBalanceShop_Application_Interfaces_IOrderService_NewBalanceShop_Application_Interfaces_ICustomerService_
+  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)
+  name.vb: New(IProductService, IOrderService, ICustomerService)
+  fullName: NewBalanceShop.Presentation.Controllers.CartController.CartController(NewBalanceShop.Application.Interfaces.IProductService, NewBalanceShop.Application.Interfaces.IOrderService, NewBalanceShop.Application.Interfaces.ICustomerService)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.New(NewBalanceShop.Application.Interfaces.IProductService, NewBalanceShop.Application.Interfaces.IOrderService, NewBalanceShop.Application.Interfaces.ICustomerService)
+  nameWithType: CartController.CartController(IProductService, IOrderService, ICustomerService)
+  nameWithType.vb: CartController.New(IProductService, IOrderService, ICustomerService)
 - uid: NewBalanceShop.Presentation.Controllers.CartController.#ctor*
   name: CartController
   href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController__ctor_
@@ -2998,15 +4130,12 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.CartController.AddToCart
   nameWithType: CartController.AddToCart
-- uid: NewBalanceShop.Presentation.Controllers.CartController.Checkout(System.Int32)
-  name: Checkout(int)
-  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_Checkout_System_Int32_
-  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.Checkout(System.Int32)
-  name.vb: Checkout(Integer)
-  fullName: NewBalanceShop.Presentation.Controllers.CartController.Checkout(int)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.Checkout(Integer)
-  nameWithType: CartController.Checkout(int)
-  nameWithType.vb: CartController.Checkout(Integer)
+- uid: NewBalanceShop.Presentation.Controllers.CartController.Checkout
+  name: Checkout()
+  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_Checkout
+  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.Checkout
+  fullName: NewBalanceShop.Presentation.Controllers.CartController.Checkout()
+  nameWithType: CartController.Checkout()
 - uid: NewBalanceShop.Presentation.Controllers.CartController.Checkout*
   name: Checkout
   href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_Checkout_
@@ -3027,15 +4156,15 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.CartController.GetCart
   nameWithType: CartController.GetCart
-- uid: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32)
-  name: RemoveFromCart(int)
-  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_System_Int32_
-  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32)
-  name.vb: RemoveFromCart(Integer)
-  fullName: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(int)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(Integer)
-  nameWithType: CartController.RemoveFromCart(int)
-  nameWithType.vb: CartController.RemoveFromCart(Integer)
+- uid: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32,System.String)
+  name: RemoveFromCart(int, string?)
+  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_System_Int32_System_String_
+  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32,System.String)
+  name.vb: RemoveFromCart(Integer, String)
+  fullName: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(int, string?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(Integer, String)
+  nameWithType: CartController.RemoveFromCart(int, string?)
+  nameWithType.vb: CartController.RemoveFromCart(Integer, String)
 - uid: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart*
   name: RemoveFromCart
   href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_
@@ -3043,6 +4172,60 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart
   nameWithType: CartController.RemoveFromCart
+- uid: NewBalanceShop.Presentation.Controllers.CartController.SetQuantity(System.Int32,NewBalanceShop.Application.DTO.SetCartQuantityDto,System.String)
+  name: SetQuantity(int, SetCartQuantityDto, string?)
+  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_SetQuantity_System_Int32_NewBalanceShop_Application_DTO_SetCartQuantityDto_System_String_
+  commentId: M:NewBalanceShop.Presentation.Controllers.CartController.SetQuantity(System.Int32,NewBalanceShop.Application.DTO.SetCartQuantityDto,System.String)
+  name.vb: SetQuantity(Integer, SetCartQuantityDto, String)
+  fullName: NewBalanceShop.Presentation.Controllers.CartController.SetQuantity(int, NewBalanceShop.Application.DTO.SetCartQuantityDto, string?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.CartController.SetQuantity(Integer, NewBalanceShop.Application.DTO.SetCartQuantityDto, String)
+  nameWithType: CartController.SetQuantity(int, SetCartQuantityDto, string?)
+  nameWithType.vb: CartController.SetQuantity(Integer, SetCartQuantityDto, String)
+- uid: NewBalanceShop.Presentation.Controllers.CartController.SetQuantity*
+  name: SetQuantity
+  href: api/NewBalanceShop.Presentation.Controllers.CartController.html#NewBalanceShop_Presentation_Controllers_CartController_SetQuantity_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.CartController.SetQuantity
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Controllers.CartController.SetQuantity
+  nameWithType: CartController.SetQuantity
+- uid: NewBalanceShop.Presentation.Controllers.CategoriesController
+  name: CategoriesController
+  href: api/NewBalanceShop.Presentation.Controllers.CategoriesController.html
+  commentId: T:NewBalanceShop.Presentation.Controllers.CategoriesController
+  fullName: NewBalanceShop.Presentation.Controllers.CategoriesController
+  nameWithType: CategoriesController
+- uid: NewBalanceShop.Presentation.Controllers.CategoriesController.#ctor(NewBalanceShop.Application.Interfaces.ICategoryService)
+  name: CategoriesController(ICategoryService)
+  href: api/NewBalanceShop.Presentation.Controllers.CategoriesController.html#NewBalanceShop_Presentation_Controllers_CategoriesController__ctor_NewBalanceShop_Application_Interfaces_ICategoryService_
+  commentId: M:NewBalanceShop.Presentation.Controllers.CategoriesController.#ctor(NewBalanceShop.Application.Interfaces.ICategoryService)
+  name.vb: New(ICategoryService)
+  fullName: NewBalanceShop.Presentation.Controllers.CategoriesController.CategoriesController(NewBalanceShop.Application.Interfaces.ICategoryService)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.CategoriesController.New(NewBalanceShop.Application.Interfaces.ICategoryService)
+  nameWithType: CategoriesController.CategoriesController(ICategoryService)
+  nameWithType.vb: CategoriesController.New(ICategoryService)
+- uid: NewBalanceShop.Presentation.Controllers.CategoriesController.#ctor*
+  name: CategoriesController
+  href: api/NewBalanceShop.Presentation.Controllers.CategoriesController.html#NewBalanceShop_Presentation_Controllers_CategoriesController__ctor_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.CategoriesController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: NewBalanceShop.Presentation.Controllers.CategoriesController.CategoriesController
+  fullName.vb: NewBalanceShop.Presentation.Controllers.CategoriesController.New
+  nameWithType: CategoriesController.CategoriesController
+  nameWithType.vb: CategoriesController.New
+- uid: NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll
+  name: GetAll()
+  href: api/NewBalanceShop.Presentation.Controllers.CategoriesController.html#NewBalanceShop_Presentation_Controllers_CategoriesController_GetAll
+  commentId: M:NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll
+  fullName: NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll()
+  nameWithType: CategoriesController.GetAll()
+- uid: NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll*
+  name: GetAll
+  href: api/NewBalanceShop.Presentation.Controllers.CategoriesController.html#NewBalanceShop_Presentation_Controllers_CategoriesController_GetAll_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Controllers.CategoriesController.GetAll
+  nameWithType: CategoriesController.GetAll
 - uid: NewBalanceShop.Presentation.Controllers.CustomersController
   name: CustomersController
   href: api/NewBalanceShop.Presentation.Controllers.CustomersController.html
@@ -3167,15 +4350,15 @@ references:
   commentId: T:NewBalanceShop.Presentation.Controllers.GithubAuthController
   fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController
   nameWithType: GithubAuthController
-- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory)
-  name: GithubAuthController(IConfiguration, IHttpClientFactory)
-  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_Net_Http_IHttpClientFactory_
-  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory)
-  name.vb: New(IConfiguration, IHttpClientFactory)
-  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.GithubAuthController(Microsoft.Extensions.Configuration.IConfiguration, System.Net.Http.IHttpClientFactory)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.New(Microsoft.Extensions.Configuration.IConfiguration, System.Net.Http.IHttpClientFactory)
-  nameWithType: GithubAuthController.GithubAuthController(IConfiguration, IHttpClientFactory)
-  nameWithType.vb: GithubAuthController.New(IConfiguration, IHttpClientFactory)
+- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory,NewBalanceShop.Application.Interfaces.IAuthService,Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  name: GithubAuthController(IConfiguration, IHttpClientFactory, IAuthService, IMemoryCache)
+  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_Net_Http_IHttpClientFactory_NewBalanceShop_Application_Interfaces_IAuthService_Microsoft_Extensions_Caching_Memory_IMemoryCache_
+  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory,NewBalanceShop.Application.Interfaces.IAuthService,Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  name.vb: New(IConfiguration, IHttpClientFactory, IAuthService, IMemoryCache)
+  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.GithubAuthController(Microsoft.Extensions.Configuration.IConfiguration, System.Net.Http.IHttpClientFactory, NewBalanceShop.Application.Interfaces.IAuthService, Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.New(Microsoft.Extensions.Configuration.IConfiguration, System.Net.Http.IHttpClientFactory, NewBalanceShop.Application.Interfaces.IAuthService, Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  nameWithType: GithubAuthController.GithubAuthController(IConfiguration, IHttpClientFactory, IAuthService, IMemoryCache)
+  nameWithType.vb: GithubAuthController.New(IConfiguration, IHttpClientFactory, IAuthService, IMemoryCache)
 - uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor*
   name: GithubAuthController
   href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_
@@ -3186,15 +4369,15 @@ references:
   fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.New
   nameWithType: GithubAuthController.GithubAuthController
   nameWithType.vb: GithubAuthController.New
-- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String)
-  name: Callback(string)
-  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_System_String_
-  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String)
-  name.vb: Callback(String)
-  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(string)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(String)
-  nameWithType: GithubAuthController.Callback(string)
-  nameWithType.vb: GithubAuthController.Callback(String)
+- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String,System.String)
+  name: Callback(string, string?)
+  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_System_String_System_String_
+  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String,System.String)
+  name.vb: Callback(String, String)
+  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(string, string?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(String, String)
+  nameWithType: GithubAuthController.Callback(string, string?)
+  nameWithType.vb: GithubAuthController.Callback(String, String)
 - uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback*
   name: Callback
   href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_
@@ -3202,12 +4385,28 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback
   nameWithType: GithubAuthController.Callback
-- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login
-  name: Login()
-  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Login
-  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.Login
-  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login()
-  nameWithType: GithubAuthController.Login()
+- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange(NewBalanceShop.Application.DTO.GithubExchangeDto)
+  name: Exchange(GithubExchangeDto)
+  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Exchange_NewBalanceShop_Application_DTO_GithubExchangeDto_
+  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange(NewBalanceShop.Application.DTO.GithubExchangeDto)
+  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange(NewBalanceShop.Application.DTO.GithubExchangeDto)
+  nameWithType: GithubAuthController.Exchange(GithubExchangeDto)
+- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange*
+  name: Exchange
+  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Exchange_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange
+  nameWithType: GithubAuthController.Exchange
+- uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login(System.String)
+  name: Login(string?)
+  href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Login_System_String_
+  commentId: M:NewBalanceShop.Presentation.Controllers.GithubAuthController.Login(System.String)
+  name.vb: Login(String)
+  fullName: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login(string?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login(String)
+  nameWithType: GithubAuthController.Login(string?)
+  nameWithType.vb: GithubAuthController.Login(String)
 - uid: NewBalanceShop.Presentation.Controllers.GithubAuthController.Login*
   name: Login
   href: api/NewBalanceShop.Presentation.Controllers.GithubAuthController.html#NewBalanceShop_Presentation_Controllers_GithubAuthController_Login_
@@ -3247,15 +4446,15 @@ references:
   commentId: T:NewBalanceShop.Presentation.Controllers.OrdersController
   fullName: NewBalanceShop.Presentation.Controllers.OrdersController
   nameWithType: OrdersController
-- uid: NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService)
-  name: OrdersController(IOrderService)
-  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController__ctor_NewBalanceShop_Application_Interfaces_IOrderService_
-  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService)
-  name.vb: New(IOrderService)
-  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.OrdersController(NewBalanceShop.Application.Interfaces.IOrderService)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.OrdersController.New(NewBalanceShop.Application.Interfaces.IOrderService)
-  nameWithType: OrdersController.OrdersController(IOrderService)
-  nameWithType.vb: OrdersController.New(IOrderService)
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)
+  name: OrdersController(IOrderService, ICustomerService)
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController__ctor_NewBalanceShop_Application_Interfaces_IOrderService_NewBalanceShop_Application_Interfaces_ICustomerService_
+  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)
+  name.vb: New(IOrderService, ICustomerService)
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.OrdersController(NewBalanceShop.Application.Interfaces.IOrderService, NewBalanceShop.Application.Interfaces.ICustomerService)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.OrdersController.New(NewBalanceShop.Application.Interfaces.IOrderService, NewBalanceShop.Application.Interfaces.ICustomerService)
+  nameWithType: OrdersController.OrdersController(IOrderService, ICustomerService)
+  nameWithType.vb: OrdersController.New(IOrderService, ICustomerService)
 - uid: NewBalanceShop.Presentation.Controllers.OrdersController.#ctor*
   name: OrdersController
   href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController__ctor_
@@ -3279,15 +4478,28 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.OrdersController.Create
   nameWithType: OrdersController.Create
-- uid: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Int32)
-  name: GetByCustomer(int)
-  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_System_Int32_
-  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Int32)
-  name.vb: GetByCustomer(Integer)
-  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(int)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(Integer)
-  nameWithType: OrdersController.GetByCustomer(int)
-  nameWithType.vb: OrdersController.GetByCustomer(Integer)
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.GetAll
+  name: GetAll()
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_GetAll
+  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.GetAll
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.GetAll()
+  nameWithType: OrdersController.GetAll()
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.GetAll*
+  name: GetAll
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_GetAll_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.OrdersController.GetAll
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.GetAll
+  nameWithType: OrdersController.GetAll
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Nullable{System.Int32})
+  name: GetByCustomer(int?)
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_System_Nullable_System_Int32__
+  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Nullable{System.Int32})
+  name.vb: GetByCustomer(Integer?)
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(int?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(Integer?)
+  nameWithType: OrdersController.GetByCustomer(int?)
+  nameWithType.vb: OrdersController.GetByCustomer(Integer?)
 - uid: NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer*
   name: GetByCustomer
   href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_
@@ -3311,6 +4523,22 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.OrdersController.GetById
   nameWithType: OrdersController.GetById
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus(System.Int32,NewBalanceShop.Application.DTO.UpdateOrderStatusDto)
+  name: UpdateStatus(int, UpdateOrderStatusDto)
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_UpdateStatus_System_Int32_NewBalanceShop_Application_DTO_UpdateOrderStatusDto_
+  commentId: M:NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus(System.Int32,NewBalanceShop.Application.DTO.UpdateOrderStatusDto)
+  name.vb: UpdateStatus(Integer, UpdateOrderStatusDto)
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus(int, NewBalanceShop.Application.DTO.UpdateOrderStatusDto)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus(Integer, NewBalanceShop.Application.DTO.UpdateOrderStatusDto)
+  nameWithType: OrdersController.UpdateStatus(int, UpdateOrderStatusDto)
+  nameWithType.vb: OrdersController.UpdateStatus(Integer, UpdateOrderStatusDto)
+- uid: NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus*
+  name: UpdateStatus
+  href: api/NewBalanceShop.Presentation.Controllers.OrdersController.html#NewBalanceShop_Presentation_Controllers_OrdersController_UpdateStatus_
+  commentId: Overload:NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus
+  nameWithType: OrdersController.UpdateStatus
 - uid: NewBalanceShop.Presentation.Controllers.PreferencesController
   name: PreferencesController
   href: api/NewBalanceShop.Presentation.Controllers.PreferencesController.html
@@ -3400,15 +4628,15 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.ProductsController.Delete
   nameWithType: ProductsController.Delete
-- uid: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(System.Nullable{System.Int32})
-  name: GetAll(int?)
-  href: api/NewBalanceShop.Presentation.Controllers.ProductsController.html#NewBalanceShop_Presentation_Controllers_ProductsController_GetAll_System_Nullable_System_Int32__
-  commentId: M:NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(System.Nullable{System.Int32})
-  name.vb: GetAll(Integer?)
-  fullName: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(int?)
-  fullName.vb: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(Integer?)
-  nameWithType: ProductsController.GetAll(int?)
-  nameWithType.vb: ProductsController.GetAll(Integer?)
+- uid: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.String,System.String,System.String,System.String,System.Nullable{System.Boolean})
+  name: GetAll(int?, string?, string?, decimal?, decimal?, string?, string?, string?, string?, bool?)
+  href: api/NewBalanceShop.Presentation.Controllers.ProductsController.html#NewBalanceShop_Presentation_Controllers_ProductsController_GetAll_System_Nullable_System_Int32__System_String_System_String_System_Nullable_System_Decimal__System_Nullable_System_Decimal__System_String_System_String_System_String_System_String_System_Nullable_System_Boolean__
+  commentId: M:NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.String,System.String,System.String,System.String,System.Nullable{System.Boolean})
+  name.vb: GetAll(Integer?, String, String, Decimal?, Decimal?, String, String, String, String, Boolean?)
+  fullName: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(int?, string?, string?, decimal?, decimal?, string?, string?, string?, string?, bool?)
+  fullName.vb: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll(Integer?, String, String, Decimal?, Decimal?, String, String, String, String, Boolean?)
+  nameWithType: ProductsController.GetAll(int?, string?, string?, decimal?, decimal?, string?, string?, string?, string?, bool?)
+  nameWithType.vb: ProductsController.GetAll(Integer?, String, String, Decimal?, Decimal?, String, String, String, String, Boolean?)
 - uid: NewBalanceShop.Presentation.Controllers.ProductsController.GetAll*
   name: GetAll
   href: api/NewBalanceShop.Presentation.Controllers.ProductsController.html#NewBalanceShop_Presentation_Controllers_ProductsController_GetAll_
@@ -3467,3 +4695,97 @@ references:
   isSpec: "True"
   fullName: NewBalanceShop.Presentation.Controllers.SetBlockedDto.Blocked
   nameWithType: SetBlockedDto.Blocked
+- uid: NewBalanceShop.Presentation.Middleware
+  name: NewBalanceShop.Presentation.Middleware
+  href: api/NewBalanceShop.Presentation.Middleware.html
+  commentId: N:NewBalanceShop.Presentation.Middleware
+  fullName: NewBalanceShop.Presentation.Middleware
+  nameWithType: NewBalanceShop.Presentation.Middleware
+- uid: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware
+  name: ExceptionHandlingMiddleware
+  href: api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html
+  commentId: T:NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware
+  fullName: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware
+  nameWithType: ExceptionHandlingMiddleware
+- uid: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware})
+  name: ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>)
+  href: api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html#NewBalanceShop_Presentation_Middleware_ExceptionHandlingMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_NewBalanceShop_Presentation_Middleware_ExceptionHandlingMiddleware__
+  commentId: M:NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware})
+  name.vb: New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware))
+  fullName: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware>)
+  fullName.vb: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger(Of NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware))
+  nameWithType: ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>)
+  nameWithType.vb: ExceptionHandlingMiddleware.New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware))
+- uid: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.#ctor*
+  name: ExceptionHandlingMiddleware
+  href: api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html#NewBalanceShop_Presentation_Middleware_ExceptionHandlingMiddleware__ctor_
+  commentId: Overload:NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.ExceptionHandlingMiddleware
+  fullName.vb: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.New
+  nameWithType: ExceptionHandlingMiddleware.ExceptionHandlingMiddleware
+  nameWithType.vb: ExceptionHandlingMiddleware.New
+- uid: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  name: InvokeAsync(HttpContext)
+  href: api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html#NewBalanceShop_Presentation_Middleware_ExceptionHandlingMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_
+  commentId: M:NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  fullName: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  nameWithType: ExceptionHandlingMiddleware.InvokeAsync(HttpContext)
+- uid: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.html#NewBalanceShop_Presentation_Middleware_ExceptionHandlingMiddleware_InvokeAsync_
+  commentId: Overload:NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Middleware.ExceptionHandlingMiddleware.InvokeAsync
+  nameWithType: ExceptionHandlingMiddleware.InvokeAsync
+- uid: NewBalanceShop.Presentation.Security
+  name: NewBalanceShop.Presentation.Security
+  href: api/NewBalanceShop.Presentation.Security.html
+  commentId: N:NewBalanceShop.Presentation.Security
+  fullName: NewBalanceShop.Presentation.Security
+  nameWithType: NewBalanceShop.Presentation.Security
+- uid: NewBalanceShop.Presentation.Security.RequireAdminAttribute
+  name: RequireAdminAttribute
+  href: api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.html
+  commentId: T:NewBalanceShop.Presentation.Security.RequireAdminAttribute
+  fullName: NewBalanceShop.Presentation.Security.RequireAdminAttribute
+  nameWithType: RequireAdminAttribute
+- uid: NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
+  name: OnAuthorizationAsync(AuthorizationFilterContext)
+  href: api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.html#NewBalanceShop_Presentation_Security_RequireAdminAttribute_OnAuthorizationAsync_Microsoft_AspNetCore_Mvc_Filters_AuthorizationFilterContext_
+  commentId: M:NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
+  fullName: NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
+  nameWithType: RequireAdminAttribute.OnAuthorizationAsync(AuthorizationFilterContext)
+- uid: NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync*
+  name: OnAuthorizationAsync
+  href: api/NewBalanceShop.Presentation.Security.RequireAdminAttribute.html#NewBalanceShop_Presentation_Security_RequireAdminAttribute_OnAuthorizationAsync_
+  commentId: Overload:NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Security.RequireAdminAttribute.OnAuthorizationAsync
+  nameWithType: RequireAdminAttribute.OnAuthorizationAsync
+- uid: NewBalanceShop.Presentation.Security.SessionAuth
+  name: SessionAuth
+  href: api/NewBalanceShop.Presentation.Security.SessionAuth.html
+  commentId: T:NewBalanceShop.Presentation.Security.SessionAuth
+  fullName: NewBalanceShop.Presentation.Security.SessionAuth
+  nameWithType: SessionAuth
+- uid: NewBalanceShop.Presentation.Security.SessionAuth.CustomerIdSessionKey
+  name: CustomerIdSessionKey
+  href: api/NewBalanceShop.Presentation.Security.SessionAuth.html#NewBalanceShop_Presentation_Security_SessionAuth_CustomerIdSessionKey
+  commentId: F:NewBalanceShop.Presentation.Security.SessionAuth.CustomerIdSessionKey
+  fullName: NewBalanceShop.Presentation.Security.SessionAuth.CustomerIdSessionKey
+  nameWithType: SessionAuth.CustomerIdSessionKey
+- uid: NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync(Microsoft.AspNetCore.Http.HttpContext,NewBalanceShop.Application.Interfaces.ICustomerService)
+  name: GetCurrentAsync(HttpContext, ICustomerService)
+  href: api/NewBalanceShop.Presentation.Security.SessionAuth.html#NewBalanceShop_Presentation_Security_SessionAuth_GetCurrentAsync_Microsoft_AspNetCore_Http_HttpContext_NewBalanceShop_Application_Interfaces_ICustomerService_
+  commentId: M:NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync(Microsoft.AspNetCore.Http.HttpContext,NewBalanceShop.Application.Interfaces.ICustomerService)
+  fullName: NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync(Microsoft.AspNetCore.Http.HttpContext, NewBalanceShop.Application.Interfaces.ICustomerService)
+  nameWithType: SessionAuth.GetCurrentAsync(HttpContext, ICustomerService)
+- uid: NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync*
+  name: GetCurrentAsync
+  href: api/NewBalanceShop.Presentation.Security.SessionAuth.html#NewBalanceShop_Presentation_Security_SessionAuth_GetCurrentAsync_
+  commentId: Overload:NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync
+  isSpec: "True"
+  fullName: NewBalanceShop.Presentation.Security.SessionAuth.GetCurrentAsync
+  nameWithType: SessionAuth.GetCurrentAsync

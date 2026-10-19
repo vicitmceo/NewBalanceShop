@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Infrastructure_Repositories_OrderRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Infrastructure.Repositories.OrderRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Infrastructure_Repositories_OrderRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Infrastructure.Repositories.OrderRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Infrastructure_Repositories_OrderRepository" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository" class="text-break">
-Class OrderRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class OrderRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -139,6 +139,9 @@ Class OrderRepository  <a class="header-action link-secondary" title="View sourc
       <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdAsync_System_Int32_">Repository&lt;Order&gt;.GetByIdAsync(int)</a>
     </div>
     <div>
+      <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdNoTrackingAsync_System_Int32_">Repository&lt;Order&gt;.GetByIdNoTrackingAsync(int)</a>
+    </div>
+    <div>
       <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_AddAsync__0_">Repository&lt;Order&gt;.AddAsync(Order)</a>
     </div>
     <div>
@@ -186,7 +189,7 @@ Class OrderRepository  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="NewBalanceShop_Infrastructure_Repositories_OrderRepository__ctor_NewBalanceShop_Infrastructure_Data_ShopDbContext_" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.#ctor(NewBalanceShop.Infrastructure.Data.ShopDbContext)">
   OrderRepository(ShopDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -217,11 +220,43 @@ Class OrderRepository  <a class="header-action link-secondary" title="View sourc
 </h2>
 
 
+  <a id="NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetAllWithItemsAsync_" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync*"></a>
+
+  <h3 id="NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetAllWithItemsAsync" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetAllWithItemsAsync">
+  GetAllWithItemsAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Усі замовлення з позиціями, від новіших до старіших.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;List&lt;Order&gt;&gt; GetAllWithItemsAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NewBalanceShop.Domain.Entities.Order.html">Order</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetByCustomerAsync_" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetByCustomerAsync*"></a>
 
   <h3 id="NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetByCustomerAsync_System_Int32_" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetByCustomerAsync(System.Int32)">
   GetByCustomerAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Замовлення покупця з позиціями, нові спочатку.</p>
@@ -259,7 +294,7 @@ Class OrderRepository  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="NewBalanceShop_Infrastructure_Repositories_OrderRepository_GetByIdWithItemsAsync_System_Int32_" data-uid="NewBalanceShop.Infrastructure.Repositories.OrderRepository.GetByIdWithItemsAsync(System.Int32)">
   GetByIdWithItemsAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Замовлення за ключем разом із позиціями та товарами.</p>
@@ -298,7 +333,7 @@ Class OrderRepository  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/OrderRepository.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

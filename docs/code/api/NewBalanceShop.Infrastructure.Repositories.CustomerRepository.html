@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Infrastructure_Repositories_CustomerRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Infrastructure.Repositories.CustomerRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Infrastructure_Repositories_CustomerRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Infrastructure.Repositories.CustomerRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Infrastructure_Repositories_CustomerRepository" data-uid="NewBalanceShop.Infrastructure.Repositories.CustomerRepository" class="text-break">
-Class CustomerRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class CustomerRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -139,6 +139,9 @@ Class CustomerRepository  <a class="header-action link-secondary" title="View so
       <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdAsync_System_Int32_">Repository&lt;Customer&gt;.GetByIdAsync(int)</a>
     </div>
     <div>
+      <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_GetByIdNoTrackingAsync_System_Int32_">Repository&lt;Customer&gt;.GetByIdNoTrackingAsync(int)</a>
+    </div>
+    <div>
       <a class="xref" href="NewBalanceShop.Infrastructure.Repositories.Repository-1.html#NewBalanceShop_Infrastructure_Repositories_Repository_1_AddAsync__0_">Repository&lt;Customer&gt;.AddAsync(Customer)</a>
     </div>
     <div>
@@ -186,7 +189,7 @@ Class CustomerRepository  <a class="header-action link-secondary" title="View so
 
   <h3 id="NewBalanceShop_Infrastructure_Repositories_CustomerRepository__ctor_NewBalanceShop_Infrastructure_Data_ShopDbContext_" data-uid="NewBalanceShop.Infrastructure.Repositories.CustomerRepository.#ctor(NewBalanceShop.Infrastructure.Data.ShopDbContext)">
   CustomerRepository(ShopDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -221,7 +224,7 @@ Class CustomerRepository  <a class="header-action link-secondary" title="View so
 
   <h3 id="NewBalanceShop_Infrastructure_Repositories_CustomerRepository_GetByEmailAsync_System_String_" data-uid="NewBalanceShop.Infrastructure.Repositories.CustomerRepository.GetByEmailAsync(System.String)">
   GetByEmailAsync(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Знаходить покупця за email.</p>
@@ -256,11 +259,49 @@ Class CustomerRepository  <a class="header-action link-secondary" title="View so
 
 
 
+  <a id="NewBalanceShop_Infrastructure_Repositories_CustomerRepository_HasOrdersAsync_" data-uid="NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync*"></a>
+
+  <h3 id="NewBalanceShop_Infrastructure_Repositories_CustomerRepository_HasOrdersAsync_System_Int32_" data-uid="NewBalanceShop.Infrastructure.Repositories.CustomerRepository.HasOrdersAsync(System.Int32)">
+  HasOrdersAsync(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Чи є в покупця замовлення.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; HasOrdersAsync(int customerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>customerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Ключ покупця.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Infrastructure/Repositories/CustomerRepository.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_GithubAuthController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.GithubAuthController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_GithubAuthController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.GithubAuthController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Presentation_Controllers_GithubAuthController" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController" class="text-break">
-Class GithubAuthController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class GithubAuthController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -683,16 +683,16 @@ public class GithubAuthController : ControllerBase</code></pre>
 
   <a id="NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_Net_Http_IHttpClientFactory_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory)">
-  GithubAuthController(IConfiguration, IHttpClientFactory)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_Net_Http_IHttpClientFactory_NewBalanceShop_Application_Interfaces_IAuthService_Microsoft_Extensions_Caching_Memory_IMemoryCache_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.IHttpClientFactory,NewBalanceShop.Application.Interfaces.IAuthService,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+  GithubAuthController(IConfiguration, IHttpClientFactory, IAuthService, IMemoryCache)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GithubAuthController(IConfiguration config, IHttpClientFactory httpClientFactory)</code></pre>
+    <pre><code class="lang-csharp hljs">public GithubAuthController(IConfiguration config, IHttpClientFactory httpClientFactory, IAuthService authService, IMemoryCache cache)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -700,6 +700,10 @@ public class GithubAuthController : ControllerBase</code></pre>
     <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
     <dd></dd>
     <dt><code>httpClientFactory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory">IHttpClientFactory</a></dt>
+    <dd></dd>
+    <dt><code>authService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.IAuthService.html">IAuthService</a></dt>
+    <dd></dd>
+    <dt><code>cache</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory.imemorycache">IMemoryCache</a></dt>
     <dd></dd>
   </dl>
 
@@ -720,9 +724,9 @@ public class GithubAuthController : ControllerBase</code></pre>
 
   <a id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_System_String_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String)">
-  Callback(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Callback_System_String_System_String_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Callback(System.String,System.String)">
+  Callback(string, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Обмінює код на токен, зберігає профіль GitHub у сесії й повертає на фронтенд.</p>
@@ -731,13 +735,16 @@ public class GithubAuthController : ControllerBase</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpGet(&quot;callback&quot;)]
-public Task&lt;IActionResult&gt; Callback(string code)</code></pre>
+public Task&lt;IActionResult&gt; Callback(string code, string? state = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Одноразовий код від GitHub.</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Origin сайту, з якого почався вхід (повторно перевіряється за білим списком).</p>
 </dd>
   </dl>
 
@@ -757,11 +764,52 @@ public Task&lt;IActionResult&gt; Callback(string code)</code></pre>
 
 
 
+  <a id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Exchange_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange*"></a>
+
+  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Exchange_NewBalanceShop_Application_DTO_GithubExchangeDto_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Exchange(NewBalanceShop.Application.DTO.GithubExchangeDto)">
+  Exchange(GithubExchangeDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Обмінює одноразовий код, виданий після входу через GitHub, на сесію покупця.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;exchange&quot;)]
+[EnableRateLimiting(&quot;auth&quot;)]
+public Task&lt;ActionResult&lt;CustomerDto&gt;&gt; Exchange(GithubExchangeDto dto)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dto</code> <a class="xref" href="NewBalanceShop.Application.DTO.GithubExchangeDto.html">GithubExchangeDto</a></dt>
+    <dd><p>Код із параметра ghcode.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.CustomerDto.html">CustomerDto</a>&gt;&gt;</dt>
+    <dd><p>200 і профіль покупця; 401, якщо код невідомий, використаний або прострочений.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Login_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Login*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Login" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Login">
-  Login()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Login_System_String_" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Login(System.String)">
+  Login(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Перенаправляє на сторінку авторизації GitHub.</p>
@@ -770,9 +818,15 @@ public Task&lt;IActionResult&gt; Callback(string code)</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpGet(&quot;login&quot;)]
-public IActionResult Login()</code></pre>
+public IActionResult Login(string? returnUrl = null)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>returnUrl</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Origin сайту, на який повернути користувача (лише з білого списку).</p>
+</dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -794,7 +848,7 @@ public IActionResult Login()</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Logout" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Logout">
   Logout()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Прибирає профіль GitHub із сесії.</p>
@@ -827,7 +881,7 @@ public IActionResult Logout()</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_GithubAuthController_Me" data-uid="NewBalanceShop.Presentation.Controllers.GithubAuthController.Me">
   Me()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L164"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Профіль GitHub із сесії або 401.</p>
@@ -860,7 +914,7 @@ public IActionResult Me()</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/GithubAuthController.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/GithubAuthController.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
 

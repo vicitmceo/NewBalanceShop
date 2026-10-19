@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Application_Interfaces_IOrderService.md&amp;value=---%0Auid%3A%20NewBalanceShop.Application.Interfaces.IOrderService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Application_Interfaces_IOrderService.md&amp;value=---%0Auid%3A%20NewBalanceShop.Application.Interfaces.IOrderService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Application_Interfaces_IOrderService" data-uid="NewBalanceShop.Application.Interfaces.IOrderService" class="text-break">
-Interface IOrderService  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IOrderService  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -125,7 +125,7 @@ Interface IOrderService  <a class="header-action link-secondary" title="View sou
 
   <h3 id="NewBalanceShop_Application_Interfaces_IOrderService_CreateAsync_NewBalanceShop_Application_DTO_CreateOrderDto_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.CreateAsync(NewBalanceShop.Application.DTO.CreateOrderDto)">
   CreateAsync(CreateOrderDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Створює замовлення: перевіряє покупця, товар і склад, рахує суму, зменшує залишок.</p>
@@ -160,11 +160,43 @@ Interface IOrderService  <a class="header-action link-secondary" title="View sou
 
 
 
+  <a id="NewBalanceShop_Application_Interfaces_IOrderService_GetAllAsync_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync*"></a>
+
+  <h3 id="NewBalanceShop_Application_Interfaces_IOrderService_GetAllAsync" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.GetAllAsync">
+  GetAllAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Усі замовлення магазину (для адміністратора), від новіших до старіших.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;OrderDto&gt;&gt; GetAllAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.OrderDto.html">OrderDto</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NewBalanceShop_Application_Interfaces_IOrderService_GetByCustomerAsync_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.GetByCustomerAsync*"></a>
 
   <h3 id="NewBalanceShop_Application_Interfaces_IOrderService_GetByCustomerAsync_System_Int32_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.GetByCustomerAsync(System.Int32)">
   GetByCustomerAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Історія замовлень покупця.</p>
@@ -202,7 +234,7 @@ Interface IOrderService  <a class="header-action link-secondary" title="View sou
 
   <h3 id="NewBalanceShop_Application_Interfaces_IOrderService_GetByIdAsync_System_Int32_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.GetByIdAsync(System.Int32)">
   GetByIdAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Замовлення за ключем.</p>
@@ -237,11 +269,50 @@ Interface IOrderService  <a class="header-action link-secondary" title="View sou
 
 
 
+  <a id="NewBalanceShop_Application_Interfaces_IOrderService_UpdateStatusAsync_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync*"></a>
+
+  <h3 id="NewBalanceShop_Application_Interfaces_IOrderService_UpdateStatusAsync_System_Int32_NewBalanceShop_Domain_Entities_OrderStatus_" data-uid="NewBalanceShop.Application.Interfaces.IOrderService.UpdateStatusAsync(System.Int32,NewBalanceShop.Domain.Entities.OrderStatus)">
+  UpdateStatusAsync(int, OrderStatus)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Змінює статус замовлення. <code>false</code>, якщо замовлення не знайдено.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; UpdateStatusAsync(int id, OrderStatus status)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>status</code> <a class="xref" href="NewBalanceShop.Domain.Entities.OrderStatus.html">OrderStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Application/Interfaces/IOrderService.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

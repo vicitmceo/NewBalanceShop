@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_CartController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.CartController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_CartController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.CartController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Presentation_Controllers_CartController" data-uid="NewBalanceShop.Presentation.Controllers.CartController" class="text-break">
-Class CartController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class CartController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -683,16 +683,16 @@ public class CartController : ControllerBase</code></pre>
 
   <a id="NewBalanceShop_Presentation_Controllers_CartController__ctor_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.#ctor*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_CartController__ctor_NewBalanceShop_Application_Interfaces_IProductService_NewBalanceShop_Application_Interfaces_IOrderService_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService)">
-  CartController(IProductService, IOrderService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_CartController__ctor_NewBalanceShop_Application_Interfaces_IProductService_NewBalanceShop_Application_Interfaces_IOrderService_NewBalanceShop_Application_Interfaces_ICustomerService_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.#ctor(NewBalanceShop.Application.Interfaces.IProductService,NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)">
+  CartController(IProductService, IOrderService, ICustomerService)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CartController(IProductService productService, IOrderService orderService)</code></pre>
+    <pre><code class="lang-csharp hljs">public CartController(IProductService productService, IOrderService orderService, ICustomerService customerService)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -700,6 +700,8 @@ public class CartController : ControllerBase</code></pre>
     <dt><code>productService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.IProductService.html">IProductService</a></dt>
     <dd></dd>
     <dt><code>orderService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.IOrderService.html">IOrderService</a></dt>
+    <dd></dd>
+    <dt><code>customerService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.ICustomerService.html">ICustomerService</a></dt>
     <dd></dd>
   </dl>
 
@@ -722,10 +724,10 @@ public class CartController : ControllerBase</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CartController_AddToCart_NewBalanceShop_Application_DTO_AddToCartDto_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.AddToCart(NewBalanceShop.Application.DTO.AddToCartDto)">
   AddToCart(AddToCartDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Додає товар у кошик (збільшує кількість, якщо вже є).</p>
+  <div class="markdown level1 summary"><p>Додає товар у кошик (збільшує кількість, якщо така позиція вже є). Розмір обов'язковий, якщо їх кілька.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -737,14 +739,14 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt;&gt; AddToCart(
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>dto</code> <a class="xref" href="NewBalanceShop.Application.DTO.AddToCartDto.html">AddToCartDto</a></dt>
-    <dd><p>Товар і кількість.</p>
+    <dd><p>Товар, розмір і кількість.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.CartItemDto.html">CartItemDto</a>&gt;&gt;&gt;</dt>
-    <dd><p>Оновлений кошик або 404.</p>
+    <dd><p>Оновлений кошик, 404 або 400 (розмір не обрано / не вистачає на складі).</p>
 </dd>
   </dl>
 
@@ -760,9 +762,9 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt;&gt; AddToCart(
 
   <a id="NewBalanceShop_Presentation_Controllers_CartController_Checkout_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.Checkout*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_CartController_Checkout_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.Checkout(System.Int32)">
-  Checkout(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_CartController_Checkout" data-uid="NewBalanceShop.Presentation.Controllers.CartController.Checkout">
+  Checkout()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Оформлює замовлення з кошика й очищає його.</p>
@@ -771,20 +773,14 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt;&gt; AddToCart(
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpPost(&quot;checkout&quot;)]
-public Task&lt;ActionResult&lt;OrderDto&gt;&gt; Checkout(int customerId)</code></pre>
+public Task&lt;ActionResult&lt;OrderDto&gt;&gt; Checkout()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>customerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Ключ покупця.</p>
-</dd>
-  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.OrderDto.html">OrderDto</a>&gt;&gt;</dt>
-    <dd><p>Створене замовлення або 400.</p>
+    <dd><p>Створене замовлення або 400. Покупець береться із сесії, гість оформлює на службового «Гостя».</p>
 </dd>
   </dl>
 
@@ -802,7 +798,7 @@ public Task&lt;ActionResult&lt;OrderDto&gt;&gt; Checkout(int customerId)</code><
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CartController_GetCart" data-uid="NewBalanceShop.Presentation.Controllers.CartController.GetCart">
   GetCart()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Поточний кошик.</p>
@@ -833,24 +829,27 @@ public ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt; GetCart()</code></pre>
 
   <a id="NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32)">
-  RemoveFromCart(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_CartController_RemoveFromCart_System_Int32_System_String_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.RemoveFromCart(System.Int32,System.String)">
+  RemoveFromCart(int, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Прибирає товар з кошика.</p>
+  <div class="markdown level1 summary"><p>Прибирає позицію з кошика.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpDelete(&quot;{productId}&quot;)]
-public ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt; RemoveFromCart(int productId)</code></pre>
+public ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt; RemoveFromCart(int productId, string? size = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>productId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>Ключ товару.</p>
+</dd>
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Розмір позиції; без нього прибираються всі розміри товару.</p>
 </dd>
   </dl>
 
@@ -871,11 +870,57 @@ public ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt; RemoveFromCart(int pro
 
 
 
+  <a id="NewBalanceShop_Presentation_Controllers_CartController_SetQuantity_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.SetQuantity*"></a>
+
+  <h3 id="NewBalanceShop_Presentation_Controllers_CartController_SetQuantity_System_Int32_NewBalanceShop_Application_DTO_SetCartQuantityDto_System_String_" data-uid="NewBalanceShop.Presentation.Controllers.CartController.SetQuantity(System.Int32,NewBalanceShop.Application.DTO.SetCartQuantityDto,System.String)">
+  SetQuantity(int, SetCartQuantityDto, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Встановлює кількість позиції в кошику (не більше залишку на складі).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPut(&quot;{productId}&quot;)]
+public Task&lt;ActionResult&lt;IEnumerable&lt;CartItemDto&gt;&gt;&gt; SetQuantity(int productId, SetCartQuantityDto dto, string? size = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>productId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Ключ товару.</p>
+</dd>
+    <dt><code>dto</code> <a class="xref" href="NewBalanceShop.Application.DTO.SetCartQuantityDto.html">SetCartQuantityDto</a></dt>
+    <dd><p>Нова кількість.</p>
+</dd>
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Розмір позиції (якщо розмірів кілька).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.CartItemDto.html">CartItemDto</a>&gt;&gt;&gt;</dt>
+    <dd><p>Оновлений кошик; 404, якщо позиції немає; 400 при перевищенні залишку.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CartController.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CartController.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

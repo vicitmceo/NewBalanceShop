@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_CustomersController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.CustomersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_CustomersController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.CustomersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Presentation_Controllers_CustomersController" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController" class="text-break">
-Class CustomersController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class CustomersController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -685,7 +685,7 @@ public class CustomersController : ControllerBase</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController__ctor_NewBalanceShop_Application_Interfaces_ICustomerService_NewBalanceShop_Application_Interfaces_IOrderService_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.#ctor(NewBalanceShop.Application.Interfaces.ICustomerService,NewBalanceShop.Application.Interfaces.IOrderService)">
   CustomersController(ICustomerService, IOrderService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -722,7 +722,7 @@ public class CustomersController : ControllerBase</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_Delete_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.Delete(System.Int32)">
   Delete(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Видаляє покупця (лише адміністратор).</p>
@@ -744,7 +744,7 @@ public Task&lt;IActionResult&gt; Delete(int id)</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd><p>204 або 404.</p>
+    <dd><p>204, 404 або 409 (є замовлення).</p>
 </dd>
   </dl>
 
@@ -762,7 +762,7 @@ public Task&lt;IActionResult&gt; Delete(int id)</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_GetAll" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.GetAll">
   GetAll()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Список користувачів (лише адміністратор).</p>
@@ -795,7 +795,7 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;CustomerDto&gt;&gt;&gt; GetAll()</
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_GetById_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.GetById(System.Int32)">
   GetById(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Профіль (власник або адміністратор).</p>
@@ -834,7 +834,7 @@ public Task&lt;ActionResult&lt;CustomerDto&gt;&gt; GetById(int id)</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_GetOrders_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.GetOrders(System.Int32)">
   GetOrders(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Історія замовлень (власник або адміністратор), лише читання.</p>
@@ -873,7 +873,7 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;OrderDto&gt;&gt;&gt; GetOrders(int
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_SetBlocked_System_Int32_NewBalanceShop_Presentation_Controllers_SetBlockedDto_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.SetBlocked(System.Int32,NewBalanceShop.Presentation.Controllers.SetBlockedDto)">
   SetBlocked(int, SetBlockedDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Блокує або розблоковує покупця (лише адміністратор).</p>
@@ -915,7 +915,7 @@ public Task&lt;ActionResult&lt;CustomerDto&gt;&gt; SetBlocked(int id, SetBlocked
 
   <h3 id="NewBalanceShop_Presentation_Controllers_CustomersController_Update_System_Int32_NewBalanceShop_Application_DTO_UpdateCustomerDto_" data-uid="NewBalanceShop.Presentation.Controllers.CustomersController.Update(System.Int32,NewBalanceShop.Application.DTO.UpdateCustomerDto)">
   Update(int, UpdateCustomerDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Оновлює профіль (власник або адміністратор).</p>
@@ -957,7 +957,7 @@ public Task&lt;ActionResult&lt;CustomerDto&gt;&gt; Update(int id, UpdateCustomer
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/CustomersController.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/CustomersController.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

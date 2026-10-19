@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_OrdersController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.OrdersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Presentation_Controllers_OrdersController.md&amp;value=---%0Auid%3A%20NewBalanceShop.Presentation.Controllers.OrdersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Presentation_Controllers_OrdersController" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController" class="text-break">
-Class OrdersController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class OrdersController  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -683,21 +683,23 @@ public class OrdersController : ControllerBase</code></pre>
 
   <a id="NewBalanceShop_Presentation_Controllers_OrdersController__ctor_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.#ctor*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController__ctor_NewBalanceShop_Application_Interfaces_IOrderService_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService)">
-  OrdersController(IOrderService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController__ctor_NewBalanceShop_Application_Interfaces_IOrderService_NewBalanceShop_Application_Interfaces_ICustomerService_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.#ctor(NewBalanceShop.Application.Interfaces.IOrderService,NewBalanceShop.Application.Interfaces.ICustomerService)">
+  OrdersController(IOrderService, ICustomerService)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrdersController(IOrderService orderService)</code></pre>
+    <pre><code class="lang-csharp hljs">public OrdersController(IOrderService orderService, ICustomerService customerService)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>orderService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.IOrderService.html">IOrderService</a></dt>
+    <dd></dd>
+    <dt><code>customerService</code> <a class="xref" href="NewBalanceShop.Application.Interfaces.ICustomerService.html">ICustomerService</a></dt>
     <dd></dd>
   </dl>
 
@@ -720,7 +722,7 @@ public class OrdersController : ControllerBase</code></pre>
 
   <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_Create_NewBalanceShop_Application_DTO_CreateOrderDto_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.Create(NewBalanceShop.Application.DTO.CreateOrderDto)">
   Create(CreateOrderDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Створює замовлення.</p>
@@ -735,7 +737,7 @@ public Task&lt;ActionResult&lt;OrderDto&gt;&gt; Create(CreateOrderDto dto)</code
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>dto</code> <a class="xref" href="NewBalanceShop.Application.DTO.CreateOrderDto.html">CreateOrderDto</a></dt>
-    <dd><p>Покупець і позиції.</p>
+    <dd><p>Позиції (поле customerId ігнорується: покупець береться із сесії).</p>
 </dd>
   </dl>
 
@@ -756,33 +758,68 @@ public Task&lt;ActionResult&lt;OrderDto&gt;&gt; Create(CreateOrderDto dto)</code
 
 
 
-  <a id="NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer*"></a>
+  <a id="NewBalanceShop_Presentation_Controllers_OrdersController_GetAll_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetAll*"></a>
 
-  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Int32)">
-  GetByCustomer(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_GetAll" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetAll">
+  GetAll()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Замовлення покупця.</p>
+  <div class="markdown level1 summary"><p>Усі замовлення магазину (лише адміністратор).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpGet(&quot;all&quot;)]
+public Task&lt;ActionResult&lt;IEnumerable&lt;OrderDto&gt;&gt;&gt; GetAll()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.OrderDto.html">OrderDto</a>&gt;&gt;&gt;</dt>
+    <dd><p>200; 401 без входу, 403 для звичайного покупця.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer*"></a>
+
+  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_GetByCustomer_System_Nullable_System_Int32__" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetByCustomer(System.Nullable{System.Int32})">
+  GetByCustomer(int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Замовлення поточного покупця; адміністратор може вказати customerId.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpGet]
-public Task&lt;ActionResult&lt;IEnumerable&lt;OrderDto&gt;&gt;&gt; GetByCustomer(int customerId)</code></pre>
+public Task&lt;ActionResult&lt;IEnumerable&lt;OrderDto&gt;&gt;&gt; GetByCustomer(int? customerId)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>customerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Ключ покупця.</p>
+    <dt><code>customerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Лише для адміністратора.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.OrderDto.html">OrderDto</a>&gt;&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>200, 401 без входу, 403 при спробі дивитись чужі замовлення.</p>
+</dd>
   </dl>
 
 
@@ -799,10 +836,10 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;OrderDto&gt;&gt;&gt; GetByCustomer
 
   <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_GetById_System_Int32_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.GetById(System.Int32)">
   GetById(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Замовлення за ключем.</p>
+  <div class="markdown level1 summary"><p>Замовлення за ключем (власник або адміністратор).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -821,7 +858,50 @@ public Task&lt;ActionResult&lt;OrderDto&gt;&gt; GetById(int id)</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="NewBalanceShop.Application.DTO.OrderDto.html">OrderDto</a>&gt;&gt;</dt>
-    <dd><p>200 або 404.</p>
+    <dd><p>200; 404, якщо замовлення немає або воно чуже (існування чужих замовлень не розкриваємо).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NewBalanceShop_Presentation_Controllers_OrdersController_UpdateStatus_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus*"></a>
+
+  <h3 id="NewBalanceShop_Presentation_Controllers_OrdersController_UpdateStatus_System_Int32_NewBalanceShop_Application_DTO_UpdateOrderStatusDto_" data-uid="NewBalanceShop.Presentation.Controllers.OrdersController.UpdateStatus(System.Int32,NewBalanceShop.Application.DTO.UpdateOrderStatusDto)">
+  UpdateStatus(int, UpdateOrderStatusDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Змінює статус замовлення (лише адміністратор).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPatch(&quot;{id}/status&quot;)]
+public Task&lt;IActionResult&gt; UpdateStatus(int id, UpdateOrderStatusDto dto)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Ключ замовлення.</p>
+</dd>
+    <dt><code>dto</code> <a class="xref" href="NewBalanceShop.Application.DTO.UpdateOrderStatusDto.html">UpdateOrderStatusDto</a></dt>
+    <dd><p>Новий статус.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>204; 404, якщо замовлення немає; 401/403 без прав.</p>
 </dd>
   </dl>
 
@@ -839,7 +919,7 @@ public Task&lt;ActionResult&lt;OrderDto&gt;&gt; GetById(int id)</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/Presentation/Controllers/OrdersController.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/Presentation/Controllers/OrdersController.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

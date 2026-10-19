@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/master/apiSpec/new?filename=NewBalanceShop_Domain_Interfaces_IProductRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Domain.Interfaces.IProductRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/vicitmceo/NewBalanceShop/new/feature/gender-sale-filters/apiSpec/new?filename=NewBalanceShop_Domain_Interfaces_IProductRepository.md&amp;value=---%0Auid%3A%20NewBalanceShop.Domain.Interfaces.IProductRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NewBalanceShop_Domain_Interfaces_IProductRepository" data-uid="NewBalanceShop.Domain.Interfaces.IProductRepository" class="text-break">
-Interface IProductRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IProductRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -121,6 +121,9 @@ Interface IProductRepository  <a class="header-action link-secondary" title="Vie
       <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdAsync_System_Int32_">IRepository&lt;Product&gt;.GetByIdAsync(int)</a>
     </div>
     <div>
+      <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_GetByIdNoTrackingAsync_System_Int32_">IRepository&lt;Product&gt;.GetByIdNoTrackingAsync(int)</a>
+    </div>
+    <div>
       <a class="xref" href="NewBalanceShop.Domain.Interfaces.IRepository-1.html#NewBalanceShop_Domain_Interfaces_IRepository_1_AddAsync__0_">IRepository&lt;Product&gt;.AddAsync(Product)</a>
     </div>
     <div>
@@ -147,7 +150,7 @@ Interface IProductRepository  <a class="header-action link-secondary" title="Vie
 
   <h3 id="NewBalanceShop_Domain_Interfaces_IProductRepository_GetByCategoryAsync_System_Int32_" data-uid="NewBalanceShop.Domain.Interfaces.IProductRepository.GetByCategoryAsync(System.Int32)">
   GetByCategoryAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Товари однієї категорії.</p>
@@ -181,11 +184,49 @@ Interface IProductRepository  <a class="header-action link-secondary" title="Vie
 
 
 
+  <a id="NewBalanceShop_Domain_Interfaces_IProductRepository_GetByIdsAsync_" data-uid="NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync*"></a>
+
+  <h3 id="NewBalanceShop_Domain_Interfaces_IProductRepository_GetByIdsAsync_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="NewBalanceShop.Domain.Interfaces.IProductRepository.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Int32})">
+  GetByIdsAsync(IEnumerable&lt;int&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Товари за набором ключів одним запитом (з відстеженням змін, для оновлення залишків).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;Product&gt;&gt; GetByIdsAsync(IEnumerable&lt;int&gt; ids)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ids</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>Ключі товарів; дублікати ігноруються.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NewBalanceShop.Domain.Entities.Product.html">Product</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/master/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/vicitmceo/NewBalanceShop/blob/feature/gender-sale-filters/NewBalanceShop.Domain/Interfaces/IProductRepository.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 
