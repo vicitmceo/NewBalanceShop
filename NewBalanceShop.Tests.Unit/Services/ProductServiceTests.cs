@@ -151,4 +151,46 @@ public class ProductServiceTests
         Assert.False(result);
         _repo.Verify(r => r.Remove(It.IsAny<Product>()), Times.Never);
     }
+
+    [Fact]
+    public async Task CreateAsync_PersistsGenderProductTypeAndOldPrice()
+    {
+        Product? captured = null;
+        _repo.Setup(r => r.AddAsync(It.IsAny<Product>())).Callback<Product>(p => captured = p).Returns(Task.CompletedTask);
+        var dto = new ProductDto { Name = "X", CategoryId = 1, Gender = "men", ProductType = "Running", Price = 100m, OldPrice = 150m };
+
+        var result = await _sut.CreateAsync(dto);
+
+        Assert.Equal("men", captured!.Gender);
+        Assert.Equal("Running", captured.ProductType);
+        Assert.Equal(150m, captured.OldPrice);
+        Assert.Equal(150m, result.OldPrice);
+    }
+
+    [Fact]
+    public async Task UpdateAsync_UpdatesGenderProductTypeAndOldPrice()
+    {
+        var existing = MakeProduct(1);
+        _repo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(existing);
+        var dto = new ProductDto { Name = "Updated", CategoryId = 1, Gender = "kids", ProductType = "Socks", Price = 100m, OldPrice = 150m };
+
+        await _sut.UpdateAsync(1, dto);
+
+        Assert.Equal("kids", existing.Gender);
+        Assert.Equal("Socks", existing.ProductType);
+        Assert.Equal(150m, existing.OldPrice);
+    }
+
+    [Fact]
+    public async Task UpdateAsync_WithoutOldPrice_ClearsSale()
+    {
+        var existing = MakeProduct(1);
+        existing.OldPrice = 5000m;
+        _repo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(existing);
+
+        await _sut.UpdateAsync(1, new ProductDto { Name = "U", CategoryId = 1, Price = 100m, OldPrice = null });
+
+        Assert.Null(existing.OldPrice);
+    }
+
 }

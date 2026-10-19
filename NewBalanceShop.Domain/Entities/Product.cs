@@ -16,6 +16,14 @@ public class Product
     [StringLength(80)]
     public string Brand { get; set; } = "New Balance";
 
+    /// <summary>Для кого товар: <c>men</c>, <c>women</c>, <c>kids</c> або <c>unisex</c> (за замовчуванням).</summary>
+    [StringLength(10)]
+    public string Gender { get; set; } = "unisex";
+
+    /// <summary>Тип товару для навігації каталогу (наприклад, "Running", "Lifestyle", "Jackets &amp; Vests", "Socks").</summary>
+    [StringLength(60)]
+    public string ProductType { get; set; } = string.Empty;
+
     /// <summary>Зовнішній ключ на <see cref="Category"/>.</summary>
     public int CategoryId { get; set; }
     public Category? Category { get; set; }
@@ -31,6 +39,10 @@ public class Product
     /// <summary>Ціна в гривнях, від 0 до 1 000 000.</summary>
     [Range(0, 1000000)]
     public decimal Price { get; set; }
+
+    /// <summary>Стара ціна до знижки в гривнях; <c>null</c> — товар не на розпродажі.</summary>
+    [Range(0, 1000000)]
+    public decimal? OldPrice { get; set; }
 
     /// <summary>Кількість на складі; зменшується при оформленні замовлення.</summary>
     [Range(0, int.MaxValue)]

@@ -22,6 +22,10 @@ public class ShopDbContext : DbContext
             .Property(p => p.Price)
             .HasPrecision(10, 2);
 
+        modelBuilder.Entity<Product>()
+            .Property(p => p.OldPrice)
+            .HasPrecision(10, 2);
+
         modelBuilder.Entity<Order>()
             .Property(o => o.TotalPrice)
             .HasPrecision(10, 2);

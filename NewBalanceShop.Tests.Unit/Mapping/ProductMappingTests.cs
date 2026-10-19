@@ -68,4 +68,38 @@ public class ProductMappingTests
         Assert.Equal(dto.ImageUrl, entity.ImageUrl);
         Assert.Equal(dto.Description, entity.Description);
     }
+
+    [Fact]
+    public void ToDto_MapsGenderProductTypeAndOldPrice()
+    {
+        var product = new Product { Gender = "women", ProductType = "Running", Price = 100m, OldPrice = 150m };
+
+        var dto = product.ToDto();
+
+        Assert.Equal("women", dto.Gender);
+        Assert.Equal("Running", dto.ProductType);
+        Assert.Equal(150m, dto.OldPrice);
+    }
+
+    [Fact]
+    public void ToEntity_MapsGenderProductTypeAndOldPrice()
+    {
+        var dto = new ProductDto { Gender = "kids", ProductType = "Socks", Price = 100m, OldPrice = 150m };
+
+        var entity = dto.ToEntity();
+
+        Assert.Equal("kids", entity.Gender);
+        Assert.Equal("Socks", entity.ProductType);
+        Assert.Equal(150m, entity.OldPrice);
+    }
+
+    [Fact]
+    public void NewProduct_DefaultsToUnisexWithoutTypeAndNotOnSale()
+    {
+        var dto = new Product().ToDto();
+
+        Assert.Equal("unisex", dto.Gender);
+        Assert.Equal(string.Empty, dto.ProductType);
+        Assert.Null(dto.OldPrice);
+    }
 }

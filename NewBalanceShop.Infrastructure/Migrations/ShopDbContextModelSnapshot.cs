@@ -224,6 +224,11 @@ namespace NewBalanceShop.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -234,9 +239,18 @@ namespace NewBalanceShop.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
+                    b.Property<decimal?>("OldPrice")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("numeric(10,2)");
+
                     b.Property<decimal>("Price")
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("character varying(60)");
 
                     b.Property<string>("Size")
                         .IsRequired()
@@ -261,9 +275,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Сірий",
                             Description = "Класичні кросівки New Balance 574.",
                             ExtraImages = "/images/nb574-b.jpg,/images/nb574-c.jpg",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb574.jpg",
                             Name = "New Balance 574",
                             Price = 3299m,
+                            ProductType = "",
                             Size = "38,39,40,41,42,43,44,45",
                             Stock = 15
                         },
@@ -275,9 +291,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Білий",
                             Description = "Ретро-баскетбольні кросівки New Balance 550.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb550.jpg",
                             Name = "New Balance 550",
                             Price = 4199m,
+                            ProductType = "",
                             Size = "40,41,42,43,44,45",
                             Stock = 10
                         },
@@ -289,9 +307,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "Худі з логотипом New Balance.",
                             ExtraImages = "/images/nb-hoodie-life.jpg",
+                            Gender = "unisex",
                             ImageUrl = "",
                             Name = "NB Essentials Hoodie",
                             Price = 1899m,
+                            ProductType = "",
                             Size = "S,M,L,XL",
                             Stock = 20
                         },
@@ -303,9 +323,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Бежевий",
                             Description = "Низькі кросівки в стилі баскетбольної класики 80-х: шкіра, масивна підошва.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb480.jpg",
                             Name = "New Balance 480",
                             Price = 3799m,
+                            ProductType = "",
                             Size = "36,37,38,39,40,41,42",
                             Stock = 12
                         },
@@ -317,9 +339,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Срібний",
                             Description = "Технологічні кросівки з металізованими вставками й амортизацією ABZORB.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb1906r.jpg",
                             Name = "New Balance 1906R",
                             Price = 5599m,
+                            ProductType = "",
                             Size = "40,41,42,43,44,45,46",
                             Stock = 8
                         },
@@ -331,9 +355,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Сливовий",
                             Description = "Замша та сітка, підошва N-ERGY: комфорт на цілий день.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb2002r.jpg",
                             Name = "New Balance 2002R",
                             Price = 5999m,
+                            ProductType = "",
                             Size = "38,39,40,41,42,43",
                             Stock = 6
                         },
@@ -345,9 +371,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Коричневий",
                             Description = "Скейт-версія 480 із замшею й посиленою підошвою.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-numeric480.jpg",
                             Name = "New Balance Numeric 480",
                             Price = 3999m,
+                            ProductType = "",
                             Size = "41,42,43,44,45,46",
                             Stock = 9
                         },
@@ -359,9 +387,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Сірий",
                             Description = "Бейсболка з вишитим логотипом, регульований ремінець.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-cap.jpg",
                             Name = "NB Essentials Cap",
                             Price = 799m,
+                            ProductType = "",
                             Size = "One size",
                             Stock = 40
                         },
@@ -373,9 +403,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "Рюкзак 25 л для тренувань і міста, відділення для ноутбука.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "",
                             Name = "NB Sport Backpack",
                             Price = 1599m,
+                            ProductType = "",
                             Size = "One size",
                             Stock = 18
                         },
@@ -387,9 +419,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Білий",
                             Description = "Бавовняна футболка прямого крою з логотипом на грудях.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-tee.jpg",
                             Name = "NB Classic Tee",
                             Price = 999m,
+                            ProductType = "",
                             Size = "S,M,L,XL",
                             Stock = 30
                         },
@@ -401,9 +435,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Срібний",
                             Description = "Бігові кросівки зі сріблястим верхом і помаранчевими акцентами, амортизація ABZORB.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb1062.jpg",
                             Name = "New Balance 1062",
                             Price = 4799m,
+                            ProductType = "",
                             Size = "40,41,42,43,44,45",
                             Stock = 14
                         },
@@ -415,9 +451,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Лавандовий",
                             Description = "Жіноча версія класичної 574 у ніжних пастельних відтінках.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb574w.jpg",
                             Name = "New Balance 574 Pastel Women",
                             Price = 3999m,
+                            ProductType = "",
                             Size = "36,37,38,39,40,41",
                             Stock = 10
                         },
@@ -429,9 +467,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Синій",
                             Description = "Стабільні бігові кросівки з сріблясто-синім верхом і підтримкою стопи.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb1225.jpg",
                             Name = "New Balance 1225",
                             Price = 4299m,
+                            ProductType = "",
                             Size = "40,41,42,43,44,45,46",
                             Stock = 16
                         },
@@ -443,9 +483,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "Трейлові кросівки з агресивним протектором і піною Fresh Foam.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-trailmore.jpg",
                             Name = "New Balance Fresh Foam Trail",
                             Price = 4599m,
+                            ProductType = "",
                             Size = "40,41,42,43,44,45,46",
                             Stock = 11
                         },
@@ -457,9 +499,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "Легка спортивна куртка на блискавці з кишенями.",
                             ExtraImages = "/images/nb-jacket-life.jpg",
+                            Gender = "unisex",
                             ImageUrl = "",
                             Name = "NB Track Jacket",
                             Price = 2499m,
+                            ProductType = "",
                             Size = "S,M,L,XL,XXL",
                             Stock = 22
                         },
@@ -471,9 +515,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "Легкі бігові шорти з логотипом New Balance і вологовідвідною тканиною.",
                             ExtraImages = "/images/nb-run-life.jpg",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-shorts.jpg",
                             Name = "NB Training Shorts",
                             Price = 1199m,
+                            ProductType = "",
                             Size = "S,M,L,XL",
                             Stock = 28
                         },
@@ -485,9 +531,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Чорний",
                             Description = "В'язана шапка з відворотом і вишитим логотипом.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-beanie.jpg",
                             Name = "NB Knit Beanie",
                             Price = 699m,
+                            ProductType = "",
                             Size = "One size",
                             Stock = 35
                         },
@@ -499,9 +547,11 @@ namespace NewBalanceShop.Migrations
                             Color = "Смугастий",
                             Description = "Теплі шкарпетки з вовни в смужку для прогулянок і холодної погоди.",
                             ExtraImages = "",
+                            Gender = "unisex",
                             ImageUrl = "/images/nb-socks.jpg",
                             Name = "NB Knit Wool Socks",
                             Price = 549m,
+                            ProductType = "",
                             Size = "S,M,L",
                             Stock = 60
                         });

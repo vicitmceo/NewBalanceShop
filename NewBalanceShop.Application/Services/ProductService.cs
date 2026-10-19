@@ -49,10 +49,13 @@ public class ProductService : IProductService
 
         existing.Name = dto.Name;
         existing.Brand = dto.Brand;
+        existing.Gender = dto.Gender;
+        existing.ProductType = dto.ProductType;
         existing.CategoryId = dto.CategoryId;
         existing.Size = dto.Size;
         existing.Color = dto.Color;
         existing.Price = dto.Price;
+        existing.OldPrice = dto.OldPrice;
         existing.Stock = dto.Stock;
         existing.ImageUrl = dto.ImageUrl;
         existing.ExtraImages = dto.ExtraImages;
