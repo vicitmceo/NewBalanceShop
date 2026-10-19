@@ -8,16 +8,16 @@
 .cap { text-align:center; font-size:15px; color:#5c5c5c; margin-top:10px; font-weight:600; }
 .card li { font-size:16.5px; line-height:1.5; margin-bottom:7px; } .card h3 { font-size:21px; }
 .flow { display:flex; flex-direction:column; gap:8px; font-size:15px; margin-top:10px; } .flow div { background:var(--g100); border-radius:6px; padding:8px 12px; } .flow b { color:var(--red); }
-</style></head><body data-title="Вхід і реєстрація" data-sub="Email + пароль, Google, GitHub · одна сторінка з перемикачем «Вхід / Реєстрація»">
+</style></head><body data-title="Вхід і реєстрація" data-sub="Email + пароль і Google (GitHub прибрано) · одна сторінка з перемикачем «Вхід / Реєстрація»">
 <div class="body" style="padding-top:26px">
  <div class="cols">
-  <div><div class="desk"><img src="../16-live-ui-screenshots/crop-login.png"></div><div class="cap">Комп'ютер</div></div>
+  <div><div class="desk"><img src="../16-live-ui-screenshots/live-18-register.png"></div><div class="cap">Комп'ютер</div></div>
   <div><div class="phone"><img src="../16-live-ui-screenshots/live-15-mobile-login.png"></div><div class="cap">Телефон</div></div>
   <div style="display:flex;flex-direction:column;gap:18px">
-   <div class="card"><h3>Три способи входу</h3><ul>
+   <div class="card"><h3>Два способи входу</h3><ul>
     <li><b>Email і пароль:</b> PBKDF2, 100 000 ітерацій, сіль.</li>
     <li><b>Google:</b> Firebase ID-токен, підпис перевіряє сервер.</li>
-    <li><b>GitHub:</b> OAuth, після входу створюється акаунт покупця.</li>
+    <li>Реєстрація: ім'я, email, пароль від 8 символів.</li>
    </ul></div>
    <div class="card"><h3>Сесія і куки: проксі /api</h3>
     <p style="font-size:16px">Сторінка та API на різних доменах, браузери блокують «сторонні» куки. Рішення: запити йдуть на той самий домен, а Vercel проксує <span class="mono">/api</span> на сервер.</p>

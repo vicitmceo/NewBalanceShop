@@ -1,24 +1,28 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
-.cols { display:grid; grid-template-columns: 1.3fr 1fr; gap:22px; height:738px; }
+.shots { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
 .shot { border:1px solid var(--g200); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.10); background:#fff; }
-.shot img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
-.right { display:flex; flex-direction:column; gap:18px; }
-.right .shot { height:330px; flex-shrink:0; }
-.card li { font-size:16px; line-height:1.45; margin-bottom:5px; } .card h3 { font-size:20px; }
-</style></head><body data-title="Каталог і картка товару" data-sub="Живий сайт newbalance.cc.cd · 18 товарів, реальні фото, розміри, фільтри">
-<div class="body" style="padding-top:26px">
- <div class="cols">
-  <div class="shot"><img src="../16-live-ui-screenshots/live-01-catalog.png"></div>
-  <div class="right">
-   <div class="shot"><img src="../16-live-ui-screenshots/live-02-product.png"></div>
-   <div class="card"><h3>Що є на сайті</h3><ul>
-    <li><b>Каталог:</b> категорії, пошук, бренд, розмір, діапазон цін, сортування. Фільтри зберігаються в адресі, ними можна ділитися.</li>
-    <li><b>Картка товару</b> <span class="mono">/product/:id</span>: галерея з трьох кадрів і вибір розміру.</li>
-    <li><b>Розмір</b> обирається прямо на картці каталогу, кнопка «В кошик» додає одразу.</li>
-    <li><b>Фото:</b> вільні ліцензії (CC0 / CC BY) з Wikimedia, автори в <span class="mono">CREDITS.md</span>.</li>
-   </ul></div>
-  </div>
+.shot img { display:block; width:100%; height:298px; object-fit:cover; object-position:top; }
+.cap { font-size:14px; color:var(--g600); font-weight:700; margin:7px 2px 0; }
+.txt { display:grid; grid-template-columns: repeat(3,1fr); gap:20px; margin-top:24px; }
+.card li { font-size:17px; line-height:1.45; margin-bottom:4px; } .card h3 { font-size:19px; margin-bottom:6px; }
+</style></head><body data-title="Каталог і картка товару" data-sub="Живий сайт newbalance.cc.cd · стиль newbalance.com · 70 товарів, фільтри в адресі, UA/EN/FR">
+<div class="body" style="padding-top:20px">
+ <div class="shots">
+  <div><div class="shot"><img src="../16-live-ui-screenshots/live-16-home.png"></div><div class="cap">Головна: банер, герой, категорії, добірка</div></div>
+  <div><div class="shot"><img src="../16-live-ui-screenshots/live-01-catalog.png"></div><div class="cap">Каталог «Чоловікам»: фільтри ліворуч</div></div>
+  <div><div class="shot"><img src="../16-live-ui-screenshots/live-02-product.png"></div><div class="cap">Картка товару: галерея, розмір, ціна</div></div>
+ </div>
+ <div class="txt">
+  <div class="card"><h3>Вітрина</h3><ul>
+   <li>Чорна смуга зверху, біла шапка: Новинки, Чоловікам, Жінкам, Дітям, Розпродаж, пошук, обране, вхід, кошик.</li>
+   <li>Сірі плитки товарів, друге фото при наведенні, бейдж «Розпродаж» і стара ціна.</li></ul></div>
+  <div class="card"><h3>Каталог</h3><ul>
+   <li>Фільтри: стать, категорія, тип, розмір, ціна, сортування. Усе в адресі: <span class="mono">/?g=women&amp;cat=2&amp;sort=price_asc</span>.</li>
+   <li>Сервер фільтрує сам (<span class="mono">gender, type, sale, sort</span>); категорії кешуються.</li></ul></div>
+  <div class="card"><h3>Чесно про контент</h3><ul>
+   <li>Назви й фото з newbalance.com: навчальний макет, не афілійований з брендом.</li>
+   <li>Мови UA / EN / FR через власний випадаючий список.</li></ul></div>
  </div>
 </div>
 <script src="slide.js"></script></body></html>

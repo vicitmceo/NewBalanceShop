@@ -1,13 +1,14 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Mulish:wght@400;700&display=swap");
 .cols { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
 .sw { display:flex; gap:10px; flex-wrap:wrap; }
 .c { width:112px; }
 .c i { display:block; height:64px; border-radius:6px; border:1px solid var(--g200); }
 .c span { display:block; font-size:12px; margin-top:5px; color:var(--g600); font-family:Consolas,monospace; }
 .c b { font-size:13px; }
-.btn { border:0; border-radius:4px; padding:11px 20px; font-weight:700; font-size:14px; margin-right:8px; font-family:inherit; }
-.b1 { background:#111; color:#fff; } .b2 { background:var(--red); color:#fff; } .b3 { background:#fff; color:#5c5c5c; border:1px solid var(--g200); }
+.btn { border:0; border-radius:999px; padding:11px 22px; font-weight:700; font-size:14px; margin-right:8px; font-family:inherit; }
+.b1 { background:#111; color:#fff; } .b2 { background:var(--red); color:#fff; } .b3 { background:#fff; color:#111; border:1px solid #111; }
 .thumb { aspect-ratio: 1/1; border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; position:relative; }
 .thumb .t { font-size:42px; font-weight:800; letter-spacing:-1px; } .thumb .s { font-size:9px; letter-spacing:2px; opacity:.6; font-weight:700; }
 .tag { position:absolute; top:8px; left:8px; background:var(--red); color:#fff; font-size:9px; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:999px; }
@@ -15,7 +16,7 @@
 .ok { background:#eaf7ee; color:#1f6b39; border:1px solid #bfe6cc; padding:10px 14px; border-radius:4px; font-size:14px; margin-bottom:8px; }
 .er { background:#fdecec; color:#a3122b; border:1px solid #f4c4cb; padding:10px 14px; border-radius:4px; font-size:14px; }
 .nav { display:flex; gap:22px; font-weight:600; font-size:14px; align-items:center; margin-bottom:10px; } .nav .a { border-bottom:2px solid #111; padding-bottom:3px; }
-</style></head><body data-title="UI Kit" data-sub="Дизайн-токени та компоненти фронтенду (React, App.css)">
+</style></head><body data-title="UI Kit" data-sub="Дизайн-токени та компоненти фронтенду (React) · стиль newbalance.com: чорне, біле, червоний акцент">
 <div class="body">
  <div class="cols">
   <div style="display:flex;flex-direction:column;gap:22px">
@@ -27,25 +28,22 @@
      <div class="c"><i style="background:#e2e2e2"></i><b>Gray 200</b><span>#e2e2e2</span></div>
      <div class="c"><i style="background:#f4f4f4"></i><b>Gray 100</b><span>#f4f4f4</span></div></div></div>
    <div class="card"><h3>Типографіка</h3>
-     <div style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.05">Заголовок 800</div>
-     <div style="font-size:20px;font-weight:800;margin-top:10px">Заголовок розділу 20/800</div>
-     <div style="font-size:15px;color:#5c5c5c;margin-top:8px;line-height:1.5">Основний текст 13–15 px. Шрифт: Helvetica Neue, Helvetica, Arial, system-ui.</div></div>
+     <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:50px;font-weight:500;line-height:1.05">Нова колекція</div>
+     <div style="font-family:Mulish,Arial,sans-serif;font-size:20px;font-weight:700;margin-top:10px">Заголовок розділу, Mulish 700</div>
+     <div style="font-family:Mulish,Arial,sans-serif;font-size:15px;color:#5c5c5c;margin-top:8px;line-height:1.5">Основний текст 14-16 px. Заголовки: Cormorant Garamond, текст: Mulish.</div></div>
   </div>
   <div style="display:flex;flex-direction:column;gap:22px">
    <div class="card"><h3>Кнопки</h3>
-     <button class="btn b1">В кошик</button><button class="btn b2">Hover / Купити</button><button class="btn b3">Вийти</button></div>
+     <button class="btn b1">В кошик</button><button class="btn b2">Розпродаж</button><button class="btn b3">Вийти</button></div>
    <div class="card"><h3>Навігація й мова</h3>
-     <div class="nav"><span class="a">Каталог</span><span>Мої замовлення</span><span style="border:1px solid #e2e2e2;border-radius:6px;padding:4px 10px">UA ▾</span></div></div>
+     <div class="nav"><span class="a">Чоловікам</span><span>Жінкам</span><span style="color:#cf0a2c">Розпродаж</span><span style="border:1px solid #111;border-radius:999px;padding:4px 12px">UA ▾</span></div></div>
    <div class="card"><h3>Форми та статуси</h3>
-     <div class="field"><label>ID покупця</label><div>1</div></div>
+     <div class="field"><label>Email</label><div>user@example.com</div></div>
      <div class="ok">Замовлення #12 оформлено!</div><div class="er">Помилка запиту: 401</div></div>
   </div>
-  <div class="card"><h3>Картка товару</h3>
-   <div class="grid2" style="gap:14px">
-    <div><div class="thumb" style="background:linear-gradient(135deg,#7d838c,#4b4f57)"><span class="tag">Новинка</span><span class="t">574</span><span class="s">NEW BALANCE</span></div><div style="font-weight:700;font-size:15px;margin-top:10px">New Balance 574</div><div style="color:#8c8c8c;font-size:12px">Розмір 42 · Сірий</div><div style="font-weight:800;margin-top:4px">3 299 ₴</div></div>
-    <div><div class="thumb" style="background:linear-gradient(135deg,#f4f4f4,#dcdcdc);color:#111"><span class="t">550</span><span class="s">NEW BALANCE</span></div><div style="font-weight:700;font-size:15px;margin-top:10px">New Balance 550</div><div style="color:#8c8c8c;font-size:12px">Розмір 43 · Білий</div><div style="font-weight:800;margin-top:4px">4 199 ₴</div></div>
-   </div>
-   <p style="margin-top:16px;font-size:14px;color:#5c5c5c">Фото товарів замінено типографськими плитками: немає прав на офіційні фото бренду.</p></div>
+  <div class="card"><h3>Плитка товару</h3>
+   <div style="width:100%;height:300px;border-radius:6px;background:url(../16-live-ui-screenshots/live-01-catalog.png) -291px -170px/1008px auto no-repeat"></div>
+   <p style="margin-top:16px;font-size:14px;color:#5c5c5c">Сіра плитка, назва, тип, ціна, розміри-піли; сердечко, бейдж «Розпродаж» і стара ціна. Фото й назви з newbalance.com: навчальний макет, не афілійований з брендом.</p></div>
  </div>
 </div>
 <script src="slide.js"></script></body></html>
