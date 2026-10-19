@@ -112,15 +112,16 @@ public class ProductsControllerTests
 
     private static List<ProductDto> Sample() => new()
     {
-        new() { Id = 1, Name = "Alpha Runner", Brand = "New Balance", Price = 3000m, Size = "42", Color = "Black", Description = "fast" },
-        new() { Id = 2, Name = "Beta Hoodie", Brand = "New Balance", Price = 1500m, Size = "L", Color = "Grey", Description = "warm" },
-        new() { Id = 3, Name = "Gamma Cap", Brand = "Other", Price = 500m, Size = "One size", Color = "Black", Description = "sun" },
+        new() { Id = 1, Name = "Alpha Runner", Brand = "New Balance", Gender = "men", ProductType = "Running", OldPrice = 3500m, Price = 3000m, Size = "42", Color = "Black", Description = "fast" },
+        new() { Id = 2, Name = "Beta Hoodie", Brand = "New Balance", Gender = "women", ProductType = "Hoodies", Price = 1500m, Size = "L", Color = "Grey", Description = "warm" },
+        new() { Id = 3, Name = "Gamma Cap", Brand = "Other", Gender = "unisex", ProductType = "Hats", OldPrice = 800m, Price = 500m, Size = "One size", Color = "Black", Description = "sun" },
     };
 
-    private async Task<List<ProductDto>> Run(string? q = null, string? brand = null, decimal? min = null, decimal? max = null, string? size = null, string? sort = null)
+    private async Task<List<ProductDto>> Run(string? q = null, string? brand = null, decimal? min = null, decimal? max = null, string? size = null, string? sort = null,
+        string? gender = null, string? type = null, bool? sale = null, List<ProductDto>? products = null)
     {
-        _service.Setup(s => s.GetAllAsync()).ReturnsAsync(Sample());
-        var result = await _sut.GetAll(null, q, brand, min, max, size, sort);
+        _service.Setup(s => s.GetAllAsync()).ReturnsAsync(products ?? Sample());
+        var result = await _sut.GetAll(null, q, brand, min, max, size, sort, gender, type, sale);
         var ok = Assert.IsType<OkObjectResult>(result.Result);
         return Assert.IsAssignableFrom<IEnumerable<ProductDto>>(ok.Value).ToList();
     }
@@ -158,5 +159,84 @@ public class ProductsControllerTests
     public async Task GetAll_WithSort_OrdersProducts(string sort, int[] expectedIds)
     {
         Assert.Equal(expectedIds, (await Run(sort: sort)).Select(p => p.Id));
+    }
+
+    private static List<ProductDto> GenderSample() => new()
+    {
+        new() { Id = 10, Name = "Men Runner", Gender = "men", ProductType = "Running", Price = 100m },
+        new() { Id = 11, Name = "Women Runner", Gender = "women", ProductType = "Running", Price = 100m },
+        new() { Id = 12, Name = "Unisex Sneaker", Gender = "unisex", ProductType = "Lifestyle", Price = 100m },
+        new() { Id = 13, Name = "Kids Runner", Gender = "kids", ProductType = "Running", Price = 100m },
+        new() { Id = 14, Name = "Men Socks", Gender = "men", ProductType = "Socks", Price = 100m },
+    };
+
+    [Theory]
+    [InlineData("men", new[] { 10, 12, 14 })]
+    [InlineData("women", new[] { 11, 12 })]
+    [InlineData("kids", new[] { 13 })]
+    [InlineData("MEN", new[] { 10, 12, 14 })]
+    [InlineData(" kids ", new[] { 13 })]
+    [InlineData("unisex", new[] { 12 })]
+    [InlineData("alien", new int[0])]
+    public async Task GetAll_WithGender_MenAndWomenAlsoIncludeUnisex_KidsOnlyKids(string gender, int[] expectedIds)
+    {
+        var result = await Run(gender: gender, products: GenderSample());
+
+        Assert.Equal(expectedIds, result.Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithoutGender_ReturnsEveryGender()
+    {
+        var result = await Run(products: GenderSample());
+
+        Assert.Equal(5, result.Count);
+    }
+
+    [Theory]
+    [InlineData("Running", new[] { 10, 11, 13 })]
+    [InlineData("running", new[] { 10, 11, 13 })]
+    [InlineData(" SOCKS ", new[] { 14 })]
+    [InlineData("Run", new int[0])]
+    public async Task GetAll_WithType_IsExactCaseInsensitiveMatch(string type, int[] expectedIds)
+    {
+        var result = await Run(type: type, products: GenderSample());
+
+        Assert.Equal(expectedIds, result.Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithGenderAndType_CombinesFilters()
+    {
+        var result = await Run(gender: "men", type: "Running", products: GenderSample());
+
+        Assert.Equal(new[] { 10 }, result.Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithSaleTrue_ReturnsOnlyProductsWithOldPrice()
+    {
+        Assert.Equal(new[] { 1, 3 }, (await Run(sale: true)).Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithSaleFalseOrMissing_DoesNotFilterBySale()
+    {
+        Assert.Equal(3, (await Run(sale: false)).Count);
+        Assert.Equal(3, (await Run(sale: null)).Count);
+    }
+
+    [Fact]
+    public async Task GetAll_WithSearch_MatchesBrandAndProductType()
+    {
+        Assert.Equal(new[] { 3 }, (await Run(q: "OTHER")).Select(p => p.Id));
+        Assert.Equal(new[] { 1 }, (await Run(q: "running")).Select(p => p.Id));
+        Assert.Equal(new[] { 3 }, (await Run(q: "hats")).Select(p => p.Id));
+    }
+
+    [Fact]
+    public async Task GetAll_WithSortNew_ReturnsNewestFirst()
+    {
+        Assert.Equal(new[] { 3, 2, 1 }, (await Run(sort: "new")).Select(p => p.Id));
     }
 }
