@@ -188,6 +188,8 @@ dotnet test --collect:"XPlat Code Coverage"    # покриття
 - Унікальний індекс на email покупця
 - SQL-ін'єкції: EF Core параметризує запити; XSS: React екранує вивід
 - Секрети (БД, Firebase, GitHub) лише в змінних середовища
+- OWASP ZAP baseline (GitHub Actions, `zap.yml`): 0 High; Medium/Low щодо заголовків безпеки закрито в `vercel.json` фронтенду (CSP, X-Frame-Options, nosniff, Permissions-Policy). Звіт: [docs/zap/zap-report/report_html.html](docs/zap/zap-report/report_html.html)
+- CI: збирання й тести на кожен push (`ci.yml`)
 - Глобальний middleware повертає клієнту загальну помилку без стека, деталі лише в лог
 
 Сесії зберігаються в пам'яті процесу, тому після перезапуску API користувачам доведеться увійти знову.
