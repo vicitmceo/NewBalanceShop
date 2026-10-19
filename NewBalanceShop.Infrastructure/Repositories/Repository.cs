@@ -19,6 +19,9 @@ public class Repository<T> : IRepository<T> where T : class
 
     public async Task<T?> GetByIdAsync(int id) => await Db.Set<T>().FindAsync(id);
 
+    public async Task<T?> GetByIdNoTrackingAsync(int id) =>
+        await Db.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id);
+
     public async Task AddAsync(T entity) => await Db.Set<T>().AddAsync(entity);
 
     public void Update(T entity) => Db.Set<T>().Update(entity);

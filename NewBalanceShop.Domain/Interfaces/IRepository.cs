@@ -10,6 +10,10 @@ public interface IRepository<T> where T : class
     /// <param name="id">Первинний ключ.</param>
     /// <returns>Сутність або <c>null</c>.</returns>
     Task<T?> GetByIdAsync(int id);
+    /// <summary>Знаходить запис за ключем без відстеження змін (для читання: швидше й без зайвого тримання сутності в контексті).</summary>
+    /// <param name="id">Первинний ключ.</param>
+    /// <returns>Сутність або <c>null</c>.</returns>
+    Task<T?> GetByIdNoTrackingAsync(int id);
     /// <summary>Додає сутність (збереження після <see cref="SaveChangesAsync"/>).</summary>
     Task AddAsync(T entity);
     /// <summary>Позначає сутність як змінену.</summary>

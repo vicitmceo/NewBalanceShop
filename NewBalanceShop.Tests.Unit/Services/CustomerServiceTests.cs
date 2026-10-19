@@ -50,7 +50,7 @@ public class CustomerServiceTests
     [Fact]
     public async Task GetByIdAsync_WithExistingId_ReturnsCustomer()
     {
-        _repo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer(1));
+        _repo.Setup(r => r.GetByIdNoTrackingAsync(1)).ReturnsAsync(MakeCustomer(1));
 
         var result = await _sut.GetByIdAsync(1);
 
@@ -61,7 +61,7 @@ public class CustomerServiceTests
     [Fact]
     public async Task GetByIdAsync_WithNonExistingId_ReturnsNull()
     {
-        _repo.Setup(r => r.GetByIdAsync(999)).ReturnsAsync((Customer?)null);
+        _repo.Setup(r => r.GetByIdNoTrackingAsync(999)).ReturnsAsync((Customer?)null);
 
         var result = await _sut.GetByIdAsync(999);
 

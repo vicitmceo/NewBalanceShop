@@ -44,7 +44,7 @@ public class ProductServiceTests
     [Fact]
     public async Task GetByIdAsync_WithExistingId_ReturnsProduct()
     {
-        _repo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeProduct(1));
+        _repo.Setup(r => r.GetByIdNoTrackingAsync(1)).ReturnsAsync(MakeProduct(1));
 
         var result = await _sut.GetByIdAsync(1);
 
@@ -55,7 +55,7 @@ public class ProductServiceTests
     [Fact]
     public async Task GetByIdAsync_WithNonExistingId_ReturnsNull()
     {
-        _repo.Setup(r => r.GetByIdAsync(999)).ReturnsAsync((Product?)null);
+        _repo.Setup(r => r.GetByIdNoTrackingAsync(999)).ReturnsAsync((Product?)null);
 
         var result = await _sut.GetByIdAsync(999);
 
@@ -193,4 +193,14 @@ public class ProductServiceTests
         Assert.Null(existing.OldPrice);
     }
 
+    [Fact]
+    public async Task GetByIdAsync_ReadsWithoutTracking()
+    {
+        _repo.Setup(r => r.GetByIdNoTrackingAsync(1)).ReturnsAsync(MakeProduct(1));
+
+        await _sut.GetByIdAsync(1);
+
+        _repo.Verify(r => r.GetByIdNoTrackingAsync(1), Times.Once);
+        _repo.Verify(r => r.GetByIdAsync(It.IsAny<int>()), Times.Never);
+    }
 }

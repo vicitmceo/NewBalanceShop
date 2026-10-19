@@ -18,4 +18,10 @@ public class ProductRepository : Repository<Product>, IProductRepository
             .Where(p => p.CategoryId == categoryId)
             .ToListAsync();
     }
+
+    public async Task<List<Product>> GetByIdsAsync(IEnumerable<int> ids)
+    {
+        var distinctIds = ids.Distinct().ToList();
+        return await Db.Products.Where(p => distinctIds.Contains(p.Id)).ToListAsync();
+    }
 }

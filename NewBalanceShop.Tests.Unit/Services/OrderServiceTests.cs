@@ -42,7 +42,7 @@ public class OrderServiceTests
     public async Task CreateAsync_WithNonExistingProduct_ThrowsInvalidOperationException()
     {
         _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
-        _productRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Product?)null);
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product>());
 
         await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.CreateAsync(MakeCreateDto()));
     }
@@ -51,7 +51,7 @@ public class OrderServiceTests
     public async Task CreateAsync_WithInsufficientStock_ThrowsInvalidOperationException()
     {
         _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
-        _productRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeProduct(stock: 1));
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { MakeProduct(stock: 1) });
 
         var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.CreateAsync(MakeCreateDto(quantity: 5)));
         Assert.Contains("Недостатньо товару", ex.Message);
@@ -62,7 +62,7 @@ public class OrderServiceTests
     {
         var product = MakeProduct(stock: 10);
         _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
-        _productRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(product);
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { product });
         _orderRepo.Setup(r => r.GetByIdWithItemsAsync(It.IsAny<int>())).ReturnsAsync(new Order { Id = 1, CustomerId = 1 });
 
         await _sut.CreateAsync(MakeCreateDto(quantity: 3));
@@ -76,7 +76,7 @@ public class OrderServiceTests
     {
         var product = MakeProduct(price: 150m, stock: 10);
         _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
-        _productRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(product);
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { product });
 
         Order? saved = null;
         _orderRepo.Setup(r => r.AddAsync(It.IsAny<Order>())).Callback<Order>(o => saved = o).Returns(Task.CompletedTask);
@@ -92,7 +92,7 @@ public class OrderServiceTests
     {
         var product = MakeProduct();
         _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
-        _productRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(product);
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { product });
 
         Order? saved = null;
         _orderRepo.Setup(r => r.AddAsync(It.IsAny<Order>())).Callback<Order>(o => saved = o).Returns(Task.CompletedTask);
@@ -133,5 +133,76 @@ public class OrderServiceTests
         var result = await _sut.GetByCustomerAsync(1);
 
         Assert.Equal(2, result.Count);
+    }
+
+    [Fact]
+    public async Task CreateAsync_WithSeveralItems_LoadsAllProductsInOneQuery()
+    {
+        var first = MakeProduct(1, price: 100m, stock: 10);
+        var second = MakeProduct(2, price: 50m, stock: 10);
+        _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { first, second });
+        Order? saved = null;
+        _orderRepo.Setup(r => r.AddAsync(It.IsAny<Order>())).Callback<Order>(o => saved = o).Returns(Task.CompletedTask);
+        _orderRepo.Setup(r => r.GetByIdWithItemsAsync(It.IsAny<int>())).ReturnsAsync(() => saved);
+        var dto = new CreateOrderDto
+        {
+            CustomerId = 1,
+            Items = new List<CreateOrderItemDto>
+            {
+                new() { ProductId = 1, Quantity = 2 },
+                new() { ProductId = 2, Quantity = 1 }
+            }
+        };
+
+        var result = await _sut.CreateAsync(dto);
+
+        Assert.Equal(250m, result.TotalPrice);
+        Assert.Equal(8, first.Stock);
+        Assert.Equal(9, second.Stock);
+        _productRepo.Verify(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>()), Times.Once);
+        _productRepo.Verify(r => r.GetByIdAsync(It.IsAny<int>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task CreateAsync_WithOneMissingProductAmongSeveral_Throws()
+    {
+        _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { MakeProduct(1) });
+        var dto = new CreateOrderDto
+        {
+            CustomerId = 1,
+            Items = new List<CreateOrderItemDto> { new() { ProductId = 1, Quantity = 1 }, new() { ProductId = 77, Quantity = 1 } }
+        };
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => _sut.CreateAsync(dto));
+
+        Assert.Contains("77", ex.Message);
+        _orderRepo.Verify(r => r.AddAsync(It.IsAny<Order>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task CreateAsync_WithSameProductInTwoLines_DecreasesStockForBoth()
+    {
+        var product = MakeProduct(1, stock: 10);
+        product.Size = "40,41";
+        _customerRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(MakeCustomer());
+        _productRepo.Setup(r => r.GetByIdsAsync(It.IsAny<IEnumerable<int>>())).ReturnsAsync(new List<Product> { product });
+        Order? saved = null;
+        _orderRepo.Setup(r => r.AddAsync(It.IsAny<Order>())).Callback<Order>(o => saved = o).Returns(Task.CompletedTask);
+        _orderRepo.Setup(r => r.GetByIdWithItemsAsync(It.IsAny<int>())).ReturnsAsync(() => saved);
+        var dto = new CreateOrderDto
+        {
+            CustomerId = 1,
+            Items = new List<CreateOrderItemDto>
+            {
+                new() { ProductId = 1, Quantity = 3, Size = "40" },
+                new() { ProductId = 1, Quantity = 4, Size = "41" }
+            }
+        };
+
+        await _sut.CreateAsync(dto);
+
+        Assert.Equal(3, product.Stock);
     }
 }

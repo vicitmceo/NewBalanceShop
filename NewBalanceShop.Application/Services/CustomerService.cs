@@ -23,7 +23,7 @@ public class CustomerService : ICustomerService
 
     public async Task<CustomerDto?> GetByIdAsync(int id)
     {
-        var customer = await _customerRepository.GetByIdAsync(id);
+        var customer = await _customerRepository.GetByIdNoTrackingAsync(id);
         return customer?.ToDto();
     }
 

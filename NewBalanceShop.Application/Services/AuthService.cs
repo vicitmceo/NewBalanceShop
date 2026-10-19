@@ -55,7 +55,7 @@ public class AuthService : IAuthService
 
     public async Task<CustomerDto?> GetByIdAsync(int customerId)
     {
-        var customer = await _customerRepository.GetByIdAsync(customerId);
+        var customer = await _customerRepository.GetByIdNoTrackingAsync(customerId);
         return customer?.ToDto();
     }
 

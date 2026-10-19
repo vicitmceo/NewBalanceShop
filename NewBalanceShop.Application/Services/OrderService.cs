@@ -38,10 +38,13 @@ public class OrderService : IOrderService
 
         decimal total = 0m;
 
+        // усі товари замовлення — одним запитом замість окремого запиту на кожну позицію
+        var products = (await _productRepository.GetByIdsAsync(dto.Items.Select(i => i.ProductId)))
+            .ToDictionary(p => p.Id);
+
         foreach (var itemDto in dto.Items)
         {
-            var product = await _productRepository.GetByIdAsync(itemDto.ProductId);
-            if (product is null)
+            if (!products.TryGetValue(itemDto.ProductId, out var product))
                 throw new InvalidOperationException($"Товар з id={itemDto.ProductId} не знайдено.");
 
             if (product.Stock < itemDto.Quantity)

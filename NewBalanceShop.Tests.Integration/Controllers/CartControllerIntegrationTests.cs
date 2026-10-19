@@ -227,4 +227,23 @@ public class CartControllerIntegrationTests : IDisposable
         var order = await response.Content.ReadFromJsonAsync<OrderDto>();
         Assert.Equal("44", order!.Items[0].Size);
     }
+
+    [Fact]
+    public async Task Checkout_WithSeveralProducts_CreatesOrderWithAllLinesAndDecreasesStock()
+    {
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "42", Quantity = 2 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 1, Size = "43", Quantity = 1 });
+        await _client.PostAsJsonAsync("/api/Cart", new AddToCartDto { ProductId = 2, Size = "42", Quantity = 1 });
+        var before1 = (await _client.GetFromJsonAsync<ProductDto>("/api/Products/1"))!.Stock;
+        var before2 = (await _client.GetFromJsonAsync<ProductDto>("/api/Products/2"))!.Stock;
+
+        var response = await _client.PostAsync("/api/Cart/checkout", null);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var order = await response.Content.ReadFromJsonAsync<OrderDto>();
+        Assert.Equal(3, order!.Items.Count);
+        Assert.Equal(3299m * 3 + 4199m, order.TotalPrice);
+        Assert.Equal(before1 - 3, (await _client.GetFromJsonAsync<ProductDto>("/api/Products/1"))!.Stock);
+        Assert.Equal(before2 - 1, (await _client.GetFromJsonAsync<ProductDto>("/api/Products/2"))!.Stock);
+    }
 }
