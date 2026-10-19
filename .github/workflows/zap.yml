@@ -1,0 +1,20 @@
+name: ZAP baseline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"
+
+jobs:
+  zap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: OWASP ZAP baseline scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: "https://newbalance.cc.cd"
+          allow_issue_writing: false
+          fail_action: false
+          artifact_name: zap-report
