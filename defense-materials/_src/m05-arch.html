@@ -1,0 +1,30 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.flow { display:grid; grid-template-columns: 1fr 44px 1.1fr 44px 1.5fr 44px 1fr; align-items:stretch; margin-top:4px; }
+.ar { display:flex; align-items:center; justify-content:center; font-size:34px; color:var(--red); font-weight:800; }
+.bx { border:2px solid var(--black); border-radius:10px; padding:14px 16px; background:#fff; } .bx h4 { font-size:19px; margin-bottom:4px; } .bx p { font-size:14.5px; color:var(--g600); line-height:1.4; } .bx .where { font-size:13px; font-weight:800; color:var(--red); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; }
+.layers { display:flex; flex-direction:column; gap:6px; margin-top:8px; } .layers div { background:var(--g100); border-radius:6px; padding:6px 10px; font-size:14px; } .layers div b { font-size:14.5px; } .layers .dm { background:var(--black); color:#fff; }
+.low { display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:20px; }
+.low .card li { font-size:16px; line-height:1.45; margin-bottom:4px; } .low .card h3 { font-size:20px; }
+</style></head><body data-title="Архітектура: Clean Architecture і розміщення" data-sub="React на Vercel · ASP.NET Core 9 у Docker на Render · PostgreSQL на Render">
+<div class="body" style="padding-top:20px;zoom:1.28">
+ <div class="flow">
+  <div class="bx"><div class="where">Клієнт</div><h4>Браузер</h4><p>Покупець або адміністратор</p></div><div class="ar">→</div>
+  <div class="bx"><div class="where">Vercel</div><h4>React + Vite</h4><p>Router, i18n UA/EN/FR, вхід Google. Проксі <span class="mono">/api</span> на сервер.</p></div><div class="ar">→</div>
+  <div class="bx" style="border-color:var(--red)"><div class="where">Render · Docker</div><h4>ASP.NET Core 9 API</h4>
+   <div class="layers"><div><b>Web API:</b> контролери, DI, CORS</div><div><b>Application:</b> сервіси, DTO</div><div class="dm"><b>Domain:</b> сутності, інтерфейси</div><div><b>Infrastructure:</b> EF Core, репозиторії</div></div></div><div class="ar">→</div>
+  <div class="bx"><div class="where">Render</div><h4>PostgreSQL</h4><p>Товари, покупці, замовлення. Безкоштовний план до ~18.11.2026.</p></div>
+ </div>
+ <div class="low">
+  <div class="card"><h3>Чиста архітектура</h3><ul>
+   <li>Domain без залежностей; усі стрілки між шарами ведуть до Domain.</li>
+   <li>Контролери не знають про EF Core: працюють через сервіси.</li>
+   <li>Google-токен перевіряється за інтерфейсом, реалізація в Infrastructure.</li>
+   <li>Патерни: Repository, DI, Service Layer, DTO, Middleware.</li></ul></div>
+  <div class="card"><h3>Розміщення</h3><ul>
+   <li>Запити <span class="mono">/api</span> йдуть на домен сайту, Vercel проксує їх на Render: кука належить сайту й не блокується.</li>
+   <li>Деплой з git push: Render збирає Docker, Vercel збирає React.</li>
+   <li>Документація API: Scalar; код: DocFX.</li></ul></div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

@@ -1,0 +1,33 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: 0.9fr 1.25fr 0.9fr; gap:20px; }
+.kp { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; } .kp div { background:var(--g100); border-radius:8px; padding:10px 14px; } .kp b { font-size:34px; letter-spacing:-.02em; display:block; line-height:1.1; } .kp span { font-size:12.5px; color:var(--g600); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+td { font-size:15px; padding:7px 8px; } .y { color:var(--green); font-weight:800; white-space:nowrap; }
+.card h3 { font-size:19px; } .card li { font-size:15.5px; line-height:1.4; margin-bottom:4px; }
+</style></head><body data-title="Безпека, тести, CI і метрики" data-sub="Результати виміряно 19.10.2026 з репозиторіїв і прогону тестів">
+<div class="body" style="padding-top:20px;zoom:1.32">
+ <div class="cols">
+  <div class="card">
+   <h3>Якість</h3>
+   <div class="kp"><div><b>295</b><span>тестів, усі зелені</span></div><div><b>93,4%</b><span>покриття рядків</span></div><div><b>CI</b><span>GitHub Actions, обидва репо</span></div><div><b>0 High</b><span>OWASP ZAP baseline</span></div></div>
+   <ul><li>190 unit + 105 integration.</li><li>Тести знайшли 3 реальні баги.</li><li>114 комітів, 34 ендпоїнти, 70 товарів.</li></ul>
+  </div>
+  <div class="card">
+   <h3>Безпека</h3>
+   <table>
+    <tr><th>Загроза</th><th>Захист</th><th></th></tr>
+    <tr><td>Паролі</td><td>PBKDF2, сіль, 100 000 ітерацій</td><td class="y">OK</td></tr>
+    <tr><td>BOLA / IDOR</td><td>покупець береться із сесії</td><td class="y">Закрито</td></tr>
+    <tr><td>Адмін-функції</td><td>роль IsAdmin: 401 / 403</td><td class="y">Закрито</td></tr>
+    <tr><td>Підбір паролів</td><td>rate limiting на вхід</td><td class="y">Закрито</td></tr>
+    <tr><td>CORS, сесія</td><td>білий список, куки на домені сайту</td><td class="y">Закрито</td></tr>
+    <tr><td>Заголовки (ZAP)</td><td>CSP, X-Frame-Options, nosniff</td><td class="y">Закрито</td></tr>
+   </table>
+  </div>
+  <div class="card">
+   <h3>Чесні обмеження</h3>
+   <ul><li>Сесії в пам'яті процесу (план: Redis або БД).</li><li>Безкоштовна БД Render діє до ~18.11.2026, міграція запланована.</li><li>ZAP: 0 High, 4 Medium, 4 Low; заголовки виправлено, повторний скан не робили.</li><li>Фото з newbalance.com, оплати немає.</li></ul>
+  </div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>

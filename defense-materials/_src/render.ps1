@@ -32,6 +32,11 @@ $map = @{
   '18-flow'           = '16-live-ui-screenshots\slide-flow.png'
   '19-admin'          = '16-live-ui-screenshots\slide-admin.png'
   '20-auth'           = '16-live-ui-screenshots\slide-auth.png'
+  'm03-srs-plan'      = '02-srs-and-plan\srs-and-plan.png'
+  'm05-arch'          = '04-architecture\architecture-clean-deploy.png'
+  'm06-ui'            = '16-live-ui-screenshots\slide-ui-summary.png'
+  'm07-quality'       = '10-testing-and-logging\quality-security-metrics.png'
+  'm08-links'         = '15-contacts-and-key-idea\links.png'
   '15a-contacts'      = '15-contacts-and-key-idea\contacts-qr.png'
   '15b-keyidea'       = '15-contacts-and-key-idea\key-idea.png'
 }

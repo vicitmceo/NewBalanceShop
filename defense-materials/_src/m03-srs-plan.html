@@ -1,0 +1,39 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.cols { display:grid; grid-template-columns: 1fr 1fr; gap:22px; }
+td { font-size:16px; padding:8px 10px; } .st { font-weight:800; font-size:14px; color:var(--green); white-space:nowrap; }
+.big { display:flex; gap:16px; margin-bottom:14px; } .big div { flex:1; background:var(--g100); border-radius:8px; padding:12px 16px; } .big b { font-size:40px; letter-spacing:-.02em; display:block; line-height:1.1; } .big span { font-size:13px; color:var(--g600); font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+.sp td.d { color:var(--red); font-weight:700; white-space:nowrap; font-size:15px; } .sp td { font-size:15.5px; padding:7px 10px; }
+.nfr { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; } .nfr .pill { font-size:14px; }
+</style></head><body data-title="Вимоги (SRS) і план робіт" data-sub="13 функціональних вимог, усі реалізовано · 8 тижневих спринтів">
+<div class="body" style="padding-top:22px;zoom:1.3">
+ <div class="cols">
+  <div class="card">
+   <div class="big"><div><b>13 / 13</b><span>функціональних вимог</span></div><div><b>5 тижнів</b><span>14.09 – 19.10</span></div></div>
+   <table>
+    <tr><th>Вимоги</th><th>Стан</th></tr>
+    <tr><td><b>FR-01..03</b> Каталог: список, товар, фільтри, пошук</td><td class="st">Готово</td></tr>
+    <tr><td><b>FR-04..06</b> Додати, змінити, видалити товар</td><td class="st">Готово</td></tr>
+    <tr><td><b>FR-07..09</b> Кошик, замовлення без реєстрації, статуси</td><td class="st">Готово</td></tr>
+    <tr><td><b>FR-10, 11</b> Кабінет: профіль, історія замовлень</td><td class="st">Готово</td></tr>
+    <tr><td><b>FR-12, 13</b> Адмін: блокування, видалення користувачів</td><td class="st">Готово</td></tr>
+   </table>
+   <div class="nfr"><span class="pill">Безпека</span><span class="pill">Надійність</span><span class="pill">Продуктивність</span><span class="pill">UA / EN / FR</span><span class="pill">Адаптивна верстка</span></div>
+  </div>
+  <div class="card sp">
+   <h3>План робіт: 8 спринтів по тижню</h3>
+   <table>
+    <tr><th>№</th><th>Дати</th><th>Що зроблено</th></tr>
+    <tr><td>1</td><td class="d">до 14.09</td><td>SRS, архітектура, CRUD</td></tr>
+    <tr><td>2</td><td class="d">31.08–06.09</td><td>Початок розробки, ролі</td></tr>
+    <tr><td>3</td><td class="d">07.09–13.09</td><td>Замовлення, Customer</td></tr>
+    <tr><td>4</td><td class="d">14.09–20.09</td><td>Деплой, фронтенд, мови</td></tr>
+    <tr><td>5</td><td class="d">21.09–27.09</td><td>MVP, авторизація</td></tr>
+    <tr><td>6</td><td class="d">28.09–04.10</td><td>Кабінет, адмін, тести</td></tr>
+    <tr><td>7</td><td class="d">05.10–11.10</td><td>Інтерфейс, безпека</td></tr>
+    <tr><td>8</td><td class="d">12.10–19.10</td><td><b>CI, ZAP, захист</b> (активний)</td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+<script src="slide.js"></script></body></html>
